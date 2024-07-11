@@ -12,10 +12,16 @@ class ActivityController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('authadmin:activity_show')->only('json','index');
-        $this->middleware('authadmin:activity_create')->only('create','store');
-        $this->middleware('authadmin:activity_edit')->only('edit', 'update');
-        $this->middleware('authadmin:activity_delete')->only('destroy');
+        // $this->middleware('authadmin:activity_show')->only('json','index');
+        // $this->middleware('authadmin:activity_create')->only('create','store');
+        // $this->middleware('authadmin:activity_edit')->only('edit', 'update');
+        // $this->middleware('authadmin:activity_delete')->only('destroy');
+                      
+        $this->middleware('permission:read-activites')->only('json','index');
+        $this->middleware('permission:create-activites')->only('create','store');
+        $this->middleware('permission:edit-activites')->only('edit', 'update');
+        $this->middleware('permission:delete-activites')->only('destroy');
+
     }
 
     public function json()

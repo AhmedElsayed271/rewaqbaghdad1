@@ -1,9 +1,9 @@
 @extends('layout.admin.app')
-@section('title', __('global.admins'))
+@section('title', __('global.roles'))
 
 @section('breadcrumb')
 <li class="breadcrumb-item">@yield('title')</li>
-<li class="breadcrumb-item"><a href="{{ url('/admin/admins/create') }}">{{__('global.add_admin')}}</a></li>
+<li class="breadcrumb-item"><a href="{{ url('/admin/roles/create') }}">{{__('global.add_role')}}</a></li>
 @endsection
 
 @section('datatable-css')
@@ -20,9 +20,8 @@
         <thead>
             <tr>
                 <th>{{ __('global.id') }}</th>
-                <th>{{ __('global.admin_name') }}</th>
-                <th>{{ __('global.email') }}</th>
-                {{-- <th>{{ __('global.groups') }}</th> --}}
+                <th>{{ __('global.role_name') }}</th>
+                <th>{{ __('global.display_name') }}</th>
                 <th>{{ __('global.created_at') }}</th>
                 <th>{{ __('global.actions') }}</th>
             </tr>
@@ -31,7 +30,7 @@
     </table>
 </div>
 
-
+    <button class="btn btn-danger">test</button>
 @endsection
 
 @section('script')
@@ -53,14 +52,13 @@
             @if(app()->getLocale()=='ar')
             language: {"url": "{{ url('/admin/assets/plugins/datatable/Arabic.json') }}"},
             @endif
-            ajax: "{{ url('/admin/admins/json') }}",
+            ajax: "{{ route('roles.index') }}",
             scrollY:550,
             scrollX:true,
             columns: [
                 {data: 'id', name: 'id'},
                 {data: 'name', name: 'name'},
-                {data: 'email', name: 'email'},
-                // {data: 'group.name', name: 'group.name'},
+                {data: 'display_name', name: 'display_name'},
                 {data: 'created_at', name: 'created_at'},
             ],
             columnDefs: [
@@ -73,14 +71,10 @@
                 {
                     targets: 4,
                     render: function (data, type, row, meta) {
-                        var edit = '<a href="{{ url('/admin/admins') }}/'+row.id+'/edit" class="btn mb-1 btn-sm btn-info"><i class="fa-fw fas fa-pen-alt"></i></a>';
-                        var del = '<form style="display:inline-block" action="{{url('/admin/admins')}}/'+row.id+'" method="post">@csrf {{ method_field('DELETE') }} <button onclick="if(confirm(`{{__("global.alert_delete")}}`)){return true;}else{return false;}" class="btn btn-sm mb-1 btn-danger"><i class="far fa-fw fa-trash-alt"></i></button></form>';
-                        if( row.main == 'normal' )
-                        {
-                            return edit+' '+ del;
-                        }else {
-                            return '';
-                        }
+                        var edit = '<a href="{{ url('/admin/roles') }}/'+row.id+'/edit" class="btn mb-1 btn-sm btn-info"><i class="fa-fw fas fa-pen-alt"></i></a>';
+                        var del = '<form style="display:inline-block" action="{{url('/admin/roles')}}/'+row.id+'" method="post">@csrf {{ method_field('DELETE') }} <button onclick="if(confirm(`{{__("global.alert_delete")}}`)){return true;}else{return false;}" class="btn btn-sm mb-1 btn-danger"><i class="far fa-fw fa-trash-alt"></i></button></form>';
+                        console.log(row);
+                        return edit+' '+ del;
                     }
                 },
                 

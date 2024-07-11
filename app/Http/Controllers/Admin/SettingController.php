@@ -12,8 +12,9 @@ class SettingController extends Controller
 
     public function __construct()
     {
-        $this->middleware('authadmin:setting_show')->only('index');
-        $this->middleware('authadmin:setting_edit')->only('update');
+        $this->middleware('permission:read-setting')->only('json','index');
+
+        $this->middleware('permission:edit-setting')->only('edit', 'update');
     }
 
     /**

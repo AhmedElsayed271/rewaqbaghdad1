@@ -19,10 +19,10 @@ class SliderController extends Controller
 
     public function __construct()
     {
-        $this->middleware('authadmin:slider_show')->only('json','index');
-        $this->middleware('authadmin:slider_create')->only('create','store');
-        $this->middleware('authadmin:slider_edit')->only('edit', 'update');
-        $this->middleware('authadmin:slider_delete')->only('destroy');
+        $this->middleware('permission:read-slider')->only('json','index');
+        $this->middleware('permission:create-slider')->only('create','store');
+        $this->middleware('permission:edit-slider')->only('edit', 'update');
+        $this->middleware('permission:delete-slider')->only('destroy');
     }
 
     public function json()

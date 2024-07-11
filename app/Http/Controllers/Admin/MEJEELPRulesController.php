@@ -22,7 +22,7 @@ class MEJEELPRulesController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('authadmin:khetab_magazinerules_edit')->only('edit', 'update');
+        $this->middleware('permission:edit-MEJEELPMagazinerule')->only('edit', 'update');
     }
     
     public function edit()

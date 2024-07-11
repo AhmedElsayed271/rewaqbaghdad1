@@ -1,15 +1,17 @@
 <?php
 
 use App\Models\Admin;
+use App\Http\Middleware\AuthAdmin;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\RoleController;
 
 
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'admin','middleware' => AuthAdmin::class], function () {
     
     // Admin Auth
-    Route::get('/auth', 'AuthAdminController@login');
-    Route::post('/auth', 'AuthAdminController@check');
+  
+
     Route::get('/logout', 'AuthAdminController@logout');
     Route::get('/forgot/password', 'AuthAdminController@ForgotPassword');
     Route::post('/forgot/password', 'AuthAdminController@SendPassword');
@@ -193,10 +195,21 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/test', function () {
         
 
+        dd(Auth::guard('admin')->user()->hasPermission('read-khetabmagazinemeam'));
+
         $admin = Admin::find(1);
         return Auth::guard('admin')->login($admin);
 
     });
+
+}); // End Group Admin
+Route::group(['prefix' => 'admin'], function () {
+    
+    // Admin Auth
+    Route::get('/auth', 'AuthAdminController@login');
+    Route::post('/auth', 'AuthAdminController@check');
+    
+    
 
 }); // End Group Admin
 

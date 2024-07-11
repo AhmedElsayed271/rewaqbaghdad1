@@ -11,10 +11,15 @@ class VersioncategoryController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('authadmin:versioncategory_show')->only('json','index');
-        $this->middleware('authadmin:versioncategory_create')->only('create','store');
-        $this->middleware('authadmin:versioncategory_edit')->only('edit', 'update');
-        $this->middleware('authadmin:versioncategory_delete')->only('destroy');
+        // $this->middleware('authadmin:versioncategory_show')->only('json','index');
+        // $this->middleware('authadmin:versioncategory_create')->only('create','store');
+        // $this->middleware('authadmin:versioncategory_edit')->only('edit', 'update');
+        // $this->middleware('authadmin:versioncategory_delete')->only('destroy');
+
+        $this->middleware('permission:read-versionCategory')->only('json','index');
+        $this->middleware('permission:create-versionCategory')->only('create','store');
+        $this->middleware('permission:edit-versionCategory')->only('edit', 'update');
+        $this->middleware('permission:delete-versionCategory')->only('destroy');
     }
 
     public function json()

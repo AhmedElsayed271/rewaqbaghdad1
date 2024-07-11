@@ -13,11 +13,13 @@ class AboutController extends Controller
 
     public function __construct()
     {
-        $this->middleware('authadmin:about_show');
+        $this->middleware('permission:read-about');
+        $this->middleware('permission:update-about');
     }
     
     public function index()
-    {
+    {   
+
         $row = About::with('translations','alltargets','allvisions','allmeans')->first();
         return view('admin.about.index', compact('row'));
     }

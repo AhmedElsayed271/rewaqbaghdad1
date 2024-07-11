@@ -22,10 +22,14 @@ class MEJEELPTeamController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('authadmin:magazineteam_show')->only('json','index');
-        $this->middleware('authadmin:magazineteam_create')->only('create','store');
-        $this->middleware('authadmin:magazineteam_edit')->only('edit', 'update');
-        $this->middleware('authadmin:magazineteam_delete')->only('destroy');
+        // $this->middleware('authadmin:magazineteam_show')->only('json','index');
+        // $this->middleware('authadmin:magazineteam_create')->only('create','store');
+        // $this->middleware('authadmin:magazineteam_edit')->only('edit', 'update');
+        // $this->middleware('authadmin:magazineteam_delete')->only('destroy');
+        $this->middleware('permission:read-MEJEELPTeam')->only('json','index');
+        $this->middleware('permission:create-MEJEELPTeam')->only('create','store');
+        $this->middleware('permission:edit-MEJEELPTeam')->only('edit', 'update');
+        $this->middleware('permission:delete-MEJEELPTeam')->only('destroy');
     }
 
     public function json()

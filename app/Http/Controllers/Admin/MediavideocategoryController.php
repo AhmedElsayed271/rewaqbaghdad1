@@ -12,10 +12,16 @@ class MediavideocategoryController extends Controller
 
     public function __construct()
     {
-        $this->middleware('authadmin:mediavideocategory_show')->only('json','index');
-        $this->middleware('authadmin:mediavideocategory_create')->only('create','store');
-        $this->middleware('authadmin:mediavideocategory_edit')->only('edit', 'update');
-        $this->middleware('authadmin:mediavideocategory_delete')->only('destroy');
+        // $this->middleware('authadmin:mediavideocategory_show')->only('json','index');
+        // $this->middleware('authadmin:mediavideocategory_create')->only('create','store');
+        // $this->middleware('authadmin:mediavideocategory_edit')->only('edit', 'update');
+        // $this->middleware('authadmin:mediavideocategory_delete')->only('destroy');
+
+        
+        $this->middleware('permission:read-categoryLibraryPhoto')->only('json','index');
+        $this->middleware('permission:create-categoryLibraryPhoto')->only('create','store');
+        $this->middleware('permission:edit-categoryLibraryPhoto')->only('edit', 'update');
+        $this->middleware('permission:delete-categoryLibraryPhoto')->only('destroy');
     }
 
     public function json()

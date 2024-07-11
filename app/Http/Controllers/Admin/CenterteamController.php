@@ -12,10 +12,17 @@ class CenterteamController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('authadmin:centerteam_show')->only('json','index','UpdateDescription');
-        $this->middleware('authadmin:centerteam_create')->only('create','store');
-        $this->middleware('authadmin:centerteam_edit')->only('edit', 'update');
-        $this->middleware('authadmin:centerteam_delete')->only('destroy');
+
+        // Old Permission
+        // $this->middleware('authadmin:centerteam_show')->only('json','index','UpdateDescription');
+        // $this->middleware('authadmin:centerteam_create')->only('create','store');
+        // $this->middleware('authadmin:centerteam_edit')->only('edit', 'update');
+        // $this->middleware('authadmin:centerteam_delete')->only('destroy');
+
+        $this->middleware('permission:read-centerTeam')->only('json','index','UpdateDescription');
+        $this->middleware('permission:update-centerTeam')->only('create','store');
+        $this->middleware('permission:edit-centerTeam')->only('edit', 'update');
+        $this->middleware('permission:delete-centerTeam')->only('destroy');
     }
 
     public function UpdateDescription(Request $request)

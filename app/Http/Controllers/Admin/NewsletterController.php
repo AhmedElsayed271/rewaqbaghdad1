@@ -13,8 +13,9 @@ class NewsletterController extends Controller
 
     public function __construct()
     {
-        $this->middleware('authadmin:newsletter_show')->only('json','index');
-        $this->middleware('authadmin:newsletter_delete')->only('destroy');
+        $this->middleware('permission:read-newsLetter')->only('json','index');
+
+        $this->middleware('permission:edit-newsLetter')->only('edit', 'update');
     }
 
     public function json()

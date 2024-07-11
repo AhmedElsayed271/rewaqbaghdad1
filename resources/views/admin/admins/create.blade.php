@@ -25,14 +25,13 @@
             </div>
             <br />
 
-            {{-- <label>{{ __('global.groups') }}  <strong class="text-danger">*</strong></label>
-            <select class="form-control" name="group_id" required="required">
-                @foreach($groups as $group)
-                    <option value="{{ $group->id }}">{{ $group->name }}</option>
+            <label>{{ __('global.groups') }}  <strong class="text-danger">*</strong></label>
+            <select class="form-control" name="role_id" required="required">
+                @foreach($roles as $role)
+                    <option value="{{ $role->id }}">{{ $role->name }}</option>
                 @endforeach
             </select>
-            <br /> --}}
-            <input type="hidden" name="group_id" value="1" />
+            <br />
 
         </div>
 
@@ -69,13 +68,13 @@
 
 @section('script')
 <script>
-    $(document).ready(function(){
-        $('.pass_show').append('<span class="ptxt">{{__('global.show')}}</span>');  
-    });
-    $(document).on('click','.pass_show .ptxt', function(){ 
-        $(this).text($(this).text() == "{{__('global.show')}}" ? "{{__('global.hide')}}" : "{{__('global.show')}}"); 
-        $(this).prev().attr('type', function(index, attr){return attr == 'password' ? 'text' : 'password'; }); 
-    });
+    // $(document).ready(function(){
+    //     $('.pass_show').append('<span class="ptxt">{{__('global.show')}}</span>');  
+    // });
+    // $(document).on('click','.pass_show .ptxt', function(){ 
+    //     $(this).text($(this).text() == "{{__('global.show')}}" ? "{{__('global.hide')}}" : "{{__('global.show')}}"); 
+    //     $(this).prev().attr('type', function(index, attr){return attr == 'password' ? 'text' : 'password'; }); 
+    // });
     $('#admin-logo').filemanager('file');
 </script>
 @endsection

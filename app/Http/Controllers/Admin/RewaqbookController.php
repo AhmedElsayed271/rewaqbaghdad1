@@ -11,10 +11,16 @@ class RewaqbookController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('authadmin:rewaqbook_show')->only('json','index');
-        $this->middleware('authadmin:rewaqbook_create')->only('create','store');
-        $this->middleware('authadmin:rewaqbook_edit')->only('edit', 'update');
-        $this->middleware('authadmin:rewaqbook_delete')->only('destroy');
+        // $this->middleware('authadmin:rewaqbook_show')->only('json','index');
+        // $this->middleware('authadmin:rewaqbook_create')->only('create','store');
+        // $this->middleware('authadmin:rewaqbook_edit')->only('edit', 'update');
+        // $this->middleware('authadmin:rewaqbook_delete')->only('destroy');
+
+        
+        $this->middleware('permission:read-RewaqBooks')->only('json','index');
+        $this->middleware('permission:create-RewaqBooks')->only('create','store');
+        $this->middleware('permission:edit-RewaqBooks')->only('edit', 'update');
+        $this->middleware('permission:delete-RewaqBooks ')->only('destroy');
     }
 
     public function json()

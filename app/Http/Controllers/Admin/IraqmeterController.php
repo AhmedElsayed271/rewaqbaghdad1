@@ -12,10 +12,10 @@ class IraqmeterController extends Controller
 
     public function __construct()
     {
-        $this->middleware('authadmin:iraqmeter_show')->only('json','index');
-        $this->middleware('authadmin:iraqmeter_create')->only('create','store');
-        $this->middleware('authadmin:iraqmeter_edit')->only('edit', 'update');
-        $this->middleware('authadmin:iraqmeter_delete')->only('destroy');
+        $this->middleware('permission:read-iraqMeter')->only('json','index');
+        $this->middleware('permission:create-iraqMeter')->only('create','store');
+        $this->middleware('permission:edit-iraqMeter')->only('edit', 'update');
+        $this->middleware('permission:delete-iraqMeter')->only('destroy');
     }
     
     public function json()

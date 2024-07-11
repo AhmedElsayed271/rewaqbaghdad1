@@ -13,7 +13,9 @@ class MagazineController extends Controller
     
     public function __construct()
     {
-        $this->middleware('authadmin:magazine_edit')->only('edit', 'update');
+        // $this->middleware('authadmin:magazine_edit')->only('edit', 'update');
+        
+        $this->middleware('permission:edit-MagazineInfo ')->only('edit', 'update');
     }
 
     public function edit()

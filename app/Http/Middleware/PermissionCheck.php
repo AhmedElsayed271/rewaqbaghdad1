@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class AuthAdmin
+class PermissionCheck
 {
     /**
      * Handle an incoming request.
@@ -14,15 +14,14 @@ class AuthAdmin
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
-    public function handle(Request $request, Closure $next,$rol=null)
+    public function handle(Request $request, Closure $next, $permission)
     {
-        $AuthAdmin = auth('admin');
-        // dd($AuthAdmin->check());
-        if($AuthAdmin->check() )
-        {   
-            return $next($request);
+        $admin = auth('admin')->user();
+
+        if(!$admin->hasPermission($permission) && !$admin->is_superadmin) {
+            abort(403);
         }
 
-        return redirect('/admin/auth');
+        return $next($request);
     }
 }

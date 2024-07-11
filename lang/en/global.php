@@ -25,12 +25,16 @@ return [
     'updated_at' => 'Update date',
     'select_all' => 'select all',
     'view_all' => 'view all',
-
+    'roles' => "roles",
+    'role_create' => "create role",
+    'add_role' => "add role",
+    'role_name' => "role name",
     'edit' => 'edit',
     'btn_save' => 'save',
     'btn_create' => 'Create data',
     'btn_update' => 'Updating data',
-
+    'role_edit' => 'edit role',
+    'role_create' => 'Create Role',
     'notifications'=> 'notifications',
     'unread_notifications'=> 'You have :count an unread notification',
     'messages'=> 'Messages',

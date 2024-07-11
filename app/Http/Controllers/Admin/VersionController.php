@@ -13,10 +13,17 @@ class VersionController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('authadmin:version_show')->only('json','index');
-        $this->middleware('authadmin:version_create')->only('create','store');
-        $this->middleware('authadmin:version_edit')->only('edit', 'update');
-        $this->middleware('authadmin:version_delete')->only('destroy');
+        // $this->middleware('authadmin:version_show')->only('json','index');
+        // $this->middleware('authadmin:version_create')->only('create','store');
+        // $this->middleware('authadmin:version_edit')->only('edit', 'update');
+        // $this->middleware('authadmin:version_delete')->only('destroy');
+
+        $this->middleware('permission:read-versionNews')->only('json','index');
+        $this->middleware('permission:create-versionNews')->only('create','store');
+        $this->middleware('permission:edit-versionNews')->only('edit', 'update');
+        $this->middleware('permission:delete-versionNews')->only('destroy');
+
+        
     }
 
     public function json()

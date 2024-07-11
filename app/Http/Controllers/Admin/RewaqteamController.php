@@ -13,10 +13,15 @@ class RewaqteamController extends Controller
 
     public function __construct()
     {
-        $this->middleware('authadmin:rewaqteam_show')->only('json','index');
-        $this->middleware('authadmin:rewaqteam_create')->only('create','store');
-        $this->middleware('authadmin:rewaqteam_edit')->only('edit', 'update');
-        $this->middleware('authadmin:rewaqteam_delete')->only('destroy');
+        // $this->middleware('authadmin:rewaqteam_show')->only('json','index');
+        // $this->middleware('authadmin:rewaqteam_create')->only('create','store');
+        // $this->middleware('authadmin:rewaqteam_edit')->only('edit', 'update');
+        // $this->middleware('authadmin:rewaqteam_delete')->only('destroy');
+
+        $this->middleware('permission:read-rewaqTeam')->only('json','index');
+        $this->middleware('permission:create-rewaqTeam')->only('create','store');
+        $this->middleware('permission:edit-rewaqTeam')->only('edit', 'update');
+        $this->middleware('permission:delete-rewaqTeam')->only('destroy');
     }
 
     public function json()

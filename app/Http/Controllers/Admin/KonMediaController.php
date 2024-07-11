@@ -14,10 +14,10 @@ class KonMediaController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('authadmin:medianews_show')->only('json','index');
-        $this->middleware('authadmin:medianews_create')->only('create','store');
-        $this->middleware('authadmin:medianews_edit')->only('edit', 'update');
-        $this->middleware('authadmin:medianews_delete')->only('destroy');
+            $this->middleware('permission:read-konMedia')->only('json','index');
+            $this->middleware('permission:create-konMedia')->only('create','store');
+            $this->middleware('permission:edit-konMedia')->only('edit', 'update');
+            $this->middleware('permission:delete-konMedia')->only('destroy');
     }
 
     public function json()

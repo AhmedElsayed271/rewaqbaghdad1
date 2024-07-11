@@ -12,7 +12,8 @@ class KhetabMagazinerulesController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('authadmin:khetab_magazinerules_edit')->only('edit', 'update');
+        // $this->middleware('authadmin:khetab_magazinerules_edit')->only('edit', 'update');
+        $this->middleware('permission:edit-khetabmagazinerulesedit')->only('edit', 'update');
     }
     
     public function edit()

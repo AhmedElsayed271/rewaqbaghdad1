@@ -11,10 +11,15 @@ class MagazineteamController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('authadmin:magazineteam_show')->only('json','index');
-        $this->middleware('authadmin:magazineteam_create')->only('create','store');
-        $this->middleware('authadmin:magazineteam_edit')->only('edit', 'update');
-        $this->middleware('authadmin:magazineteam_delete')->only('destroy');
+        // $this->middleware('authadmin:magazineteam_show')->only('json','index');
+        // $this->middleware('authadmin:magazineteam_create')->only('create','store');
+        // $this->middleware('authadmin:magazineteam_edit')->only('edit', 'update');
+        // $this->middleware('authadmin:magazineteam_delete')->only('destroy');
+
+        $this->middleware('permission:read-RewaMagazineTeam')->only('json','index');
+        $this->middleware('permission:create-RewaMagazineTeam')->only('create','store');
+        $this->middleware('permission:edit-RewaMagazineTeam')->only('edit', 'update');
+        $this->middleware('permission:delete-RewaMagazineTeam ')->only('destroy');
     }
 
     public function json()

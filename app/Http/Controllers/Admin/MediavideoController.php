@@ -13,10 +13,15 @@ class MediavideoController extends Controller
 
     public function __construct()
     {
-        $this->middleware('authadmin:mediavideo_show')->only('json','index');
-        $this->middleware('authadmin:mediavideo_create')->only('create','store');
-        $this->middleware('authadmin:mediavideo_edit')->only('edit', 'update');
-        $this->middleware('authadmin:mediavideo_delete')->only('destroy');
+        // $this->middleware('authadmin:mediavideo_show')->only('json','index');
+        // $this->middleware('authadmin:mediavideo_create')->only('create','store');
+        // $this->middleware('authadmin:mediavideo_edit')->only('edit', 'update');
+        // $this->middleware('authadmin:mediavideo_delete')->only('destroy');
+
+        $this->middleware('permission:read-libraryVideo')->only('json','index');
+        $this->middleware('permission:create-libraryVideo')->only('create','store');
+        $this->middleware('permission:edit-libraryVideo')->only('edit', 'update');
+        $this->middleware('permission:delete-libraryVideo')->only('destroy');
     }
 
     public function json()

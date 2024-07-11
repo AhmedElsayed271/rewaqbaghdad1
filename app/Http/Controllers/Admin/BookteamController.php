@@ -12,10 +12,16 @@ class BookteamController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('authadmin:bookteam_show')->only('json','index','UpdateDescription');
-        $this->middleware('authadmin:bookteam_create')->only('create','store');
-        $this->middleware('authadmin:bookteam_edit')->only('edit', 'update');
-        $this->middleware('authadmin:bookteam_delete')->only('destroy');
+        // $this->middleware('authadmin:bookteam_show')->only('json','index','UpdateDescription');
+        // $this->middleware('authadmin:bookteam_create')->only('create','store');
+        // $this->middleware('authadmin:bookteam_edit')->only('edit', 'update');
+        // $this->middleware('authadmin:bookteam_delete')->only('destroy');
+
+        
+        $this->middleware('permission:read-bookTeam')->only('json','index','UpdateDescription');
+        $this->middleware('permission:update-bookTeam')->only('create','store');
+        $this->middleware('permission:edit-bookTeam')->only('edit', 'update');
+        $this->middleware('permission:delete-bookTeam')->only('destroy');
     }
 
     public function UpdateDescription(Request $request)

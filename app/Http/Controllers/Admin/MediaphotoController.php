@@ -11,10 +11,15 @@ class MediaphotoController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('authadmin:mediaphoto_show')->only('json','index');
-        $this->middleware('authadmin:mediaphoto_create')->only('create','store');
-        $this->middleware('authadmin:mediaphoto_edit')->only('edit', 'update');
-        $this->middleware('authadmin:mediaphoto_delete')->only('destroy');
+        // $this->middleware('authadmin:mediaphoto_show')->only('json','index');
+        // $this->middleware('authadmin:mediaphoto_create')->only('create','store');
+        // $this->middleware('authadmin:mediaphoto_edit')->only('edit', 'update');
+        // $this->middleware('authadmin:mediaphoto_delete')->only('destroy');
+
+        $this->middleware('permission:read-libraryPhoto')->only('json','index');
+        $this->middleware('permission:create-libraryPhoto')->only('create','store');
+        $this->middleware('permission:edit-libraryPhoto')->only('edit', 'update');
+        $this->middleware('permission:delete-libraryPhoto')->only('destroy');
     }
 
     public function json()

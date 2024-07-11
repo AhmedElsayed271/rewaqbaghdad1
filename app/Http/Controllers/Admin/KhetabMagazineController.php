@@ -17,7 +17,8 @@ class KhetabMagazineController extends Controller
     
     public function __construct()
     {
-        $this->middleware('authadmin:khetab_magazine_edit')->only('edit', 'update');
+        // $this->middleware('authadmin:khetab_magazine_edit')->only('edit', 'update');
+        $this->middleware('permission:edit-khetabmagazineedit')->only('edit', 'update');
     }
 
     public function edit()

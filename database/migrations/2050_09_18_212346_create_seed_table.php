@@ -316,7 +316,7 @@ return new class extends Migration
                 'password'=> bcrypt(123456),
                 'img'=>'/admin/demo.svg',
                 'main'=>'main',
-                'group_id'=> 1,
+                'is_superadmin'=>1,
                 'email_verified_at'=>now(),
                 'created_at'=>now(),
                 'updated_at'=>now(),

@@ -15,8 +15,8 @@ class AuthAdminController extends Controller
 
     public function __construct()
     {
-        $this->middleware('authadmin:home_show')->only('home');
-        $this->middleware('authadmin:error_403')->only('Error403');
+        // $this->middleware('authadmin:home_show')->only('home');
+        // $this->middleware('authadmin:error_403')->only('Error403');
     }
 
     public function home()
@@ -40,7 +40,8 @@ class AuthAdminController extends Controller
     }
 
     public function check(Request $request)
-    {
+    {   
+        // 
         $remembar = $request->remember ? true : false;
         if ( auth('admin')->attempt(['email'=>$request->email, 'password'=>$request->password], $remembar) ):
             $admin = Admin::where("email", $request->email)->first();

@@ -12,7 +12,9 @@ class RewaqpublishruleController extends Controller
 
     public function __construct()
     {
-        $this->middleware('authadmin:rewaqpublishrule_edit')->only('edit', 'update');
+        // $this->middleware('authadmin:rewaqpublishrule_edit')->only('edit', 'update');
+        $this->middleware('permission:edit-rewaqPublishRule')->only('edit', 'update');
+        
     }
     
     public function edit()

@@ -11,7 +11,8 @@ class MagazinerulesController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('authadmin:magazinerules_edit')->only('edit', 'update');
+        // $this->middleware('authadmin:magazinerules_edit')->only('edit', 'update');
+        $this->middleware('permission:edit-rewaqMagazineRules ')->only('edit', 'update');
     }
     
     public function edit()

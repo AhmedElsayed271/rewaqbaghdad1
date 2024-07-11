@@ -13,7 +13,8 @@ class RewaqController extends Controller
 
     public function __construct()
     {
-        $this->middleware('authadmin:rewaq_edit')->only('edit', 'update');
+        // $this->middleware('authadmin:rewaq_edit')->only('edit', 'update');
+        $this->middleware('permission:edit-rewaq')->only('edit', 'update');
     }
     
     public function edit()

@@ -23,9 +23,9 @@ return new class extends Migration
             $table->enum('main', ['normal', 'main'])->default('normal');
             $table->string('info', 255)->nullable();
             $table->string('img', 100)->nullable();
-
-            $table->bigInteger('group_id')->unsigned();
-            $table->foreign('group_id')->references('id')->on('groups')->onDelete('cascade')->onUpdate('cascade');
+            $table->boolean('is_superadmin')->default(0);
+            // $table->bigInteger('group_id')->unsigned();
+            // $table->foreign('group_id')->references('id')->on('groups')->onDelete('cascade')->onUpdate('cascade');
             
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();

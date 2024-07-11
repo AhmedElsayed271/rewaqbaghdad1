@@ -11,10 +11,15 @@ class MedianewsController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('authadmin:medianews_show')->only('json','index');
-        $this->middleware('authadmin:medianews_create')->only('create','store');
-        $this->middleware('authadmin:medianews_edit')->only('edit', 'update');
-        $this->middleware('authadmin:medianews_delete')->only('destroy');
+        // $this->middleware('authadmin:medianews_show')->only('json','index');
+        // $this->middleware('authadmin:medianews_create')->only('create','store');
+        // $this->middleware('authadmin:medianews_edit')->only('edit', 'update');
+        // $this->middleware('authadmin:medianews_delete')->only('destroy');
+
+        $this->middleware('permission:read-mediaNews')->only('json','index');
+        $this->middleware('permission:create-mediaNews')->only('create','store');
+        $this->middleware('permission:edit-mediaNews')->only('edit', 'update');
+        $this->middleware('permission:delete-mediaNews')->only('destroy');
     }
 
     public function json()

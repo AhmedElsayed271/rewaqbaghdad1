@@ -14,9 +14,27 @@ class RoleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+
+    public function __construct()
     {
-        //
+        // $this->middleware('authadmin:profile_edit')->only('profile', 'UpdateProfile');
+        
+        $this->middleware('permission:read-roles')->only('json','index');
+        $this->middleware('permission:create-roles')->only('create','store');
+        $this->middleware('permission:edit-roles')->only('edit', 'update');
+        $this->middleware('permission:delete-roles')->only('destroy');
+    }
+    public function index(Request $request)
+    {
+       
+        if ($request->ajax()) {
+            $query = Role::get();
+            return datatables($query)->editColumn('created_at', function ($row) {
+                return $row->created_at;
+            })->make(true);
+        }
+
+       return view('admin.roles.index');
     }
 
     /**
@@ -26,9 +44,8 @@ class RoleController extends Controller
      */
     public function create()
     {
-        $admins = Admin::get();
 
-        return view('admin.roles.create', compact('admins'));
+        return view('admin.roles.create');
     }
 
     /**
@@ -39,14 +56,24 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        $role = Role::create([
-            'name' => $request->name,
-            'display_name' => $request->name,
+
+        $request->validate([
+            'name'          => 'required|unique:roles,name',
+            'permissions'   => "required|array",
         ]);
 
+        // Validate and store the role
+        $role = Role::create([
+            'name' => $request->name,
+            'description' => $request->description,
+            'display_name' => $request->name,
+        ]);
+    
+        // Assuming attachPermissions is a method on the Role model or related class
         $role->attachPermissions($request->permissions);
-
-        return redirect()->route('roles.index');
+        
+        // Redirect to the index page after successful creation
+        return redirect()->route('roles.index')->with('success', __('global.alert_done_create'));
     }
 
     /**
@@ -68,7 +95,9 @@ class RoleController extends Controller
      */
     public function edit($id)
     {
-        //
+        $role = Role::findOrFail($id);
+
+        return view('admin.roles.edit', compact('role'));
     }
 
     /**
@@ -80,7 +109,23 @@ class RoleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name'          => 'required|unique:roles,name,' . $id,
+            'permissions'   => "required|array",
+        ]);
+
+
+        $role = Role::findOrFail($id);
+
+        $role->update([
+            'name' => $request->name,
+            'display_name' => $request->name,
+            'description' => $request->description,
+        ]);
+
+        $role->syncPermissions($request->permissions);
+
+        return redirect()->route('roles.index')->with('success', __('global.alert_done_update'));
     }
 
     /**
@@ -91,6 +136,11 @@ class RoleController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        $role = Role::findOrFail($id);
+
+        $role->delete();
+
+        return redirect()->route('roles.index')->with('success', __('global.alert_done_delete'));
     }
 }

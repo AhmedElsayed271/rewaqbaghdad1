@@ -12,8 +12,11 @@ class ElectronicserviceController extends Controller
 
     public function __construct()
     {
-        $this->middleware('authadmin:electronic_show')->only('json','index');
-        $this->middleware('authadmin:electronic_edit')->only('edit', 'update');
+
+        $this->middleware('permission:read-electronicsService')->only('json','index');
+
+        $this->middleware('permission:edit-electronicsService')->only('edit', 'update');
+
     }
 
     public function json()

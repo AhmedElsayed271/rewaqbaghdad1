@@ -11,10 +11,10 @@ class EventsController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('authadmin:events_show')->only('json','index');
-        $this->middleware('authadmin:events_create')->only('create','store');
-        $this->middleware('authadmin:events_edit')->only('edit', 'update');
-        $this->middleware('authadmin:events_delete')->only('destroy');
+        $this->middleware('permission:read-events')->only('json','index');
+        $this->middleware('permission:create-events')->only('create','store');
+        $this->middleware('permission:edit-events')->only('edit', 'update');
+        $this->middleware('permission:delete-events')->only('destroy');
     }
 
     public function json()

@@ -25,13 +25,16 @@ return [
     'updated_at' => 'تاريخ التحديث',
     'select_all' => 'تحديد الكل',
     'view_all' => 'عرض الكل',
-
-
+    'roles' => "الصلاحيات",
+    'role_create' => "انشاء صلاحية",
+    'add_role' => "اضافة صلاحية",
+    'role_name' => "اسم الصلاحية",
     'edit' => 'تعديل',
     'btn_save' => 'حفظ',
     'btn_create' => 'إنشاء البيانات',
     'btn_update' => 'تحديث البيانات',
-
+    'role_edit' => 'تعديل الصلاحية',
+    'role_create' => 'انشاء الصلاحية',
     'notifications'=> 'إشعارات',
     'unread_notifications'=> 'لديك :count إشعارًا غير مقروء',
     'messages'=> 'رسائل',

@@ -12,10 +12,15 @@ class MagazineblogController extends Controller
 
     public function __construct()
     {
-        $this->middleware('authadmin:magazineblog_show')->only('json','index');
-        $this->middleware('authadmin:magazineblog_create')->only('create','store');
-        $this->middleware('authadmin:magazineblog_edit')->only('edit', 'update');
-        $this->middleware('authadmin:magazineblog_delete')->only('destroy');
+        // $this->middleware('authadmin:magazineblog_show')->only('json','index');
+        // $this->middleware('authadmin:magazineblog_create')->only('create','store');
+        // $this->middleware('authadmin:magazineblog_edit')->only('edit', 'update');
+        // $this->middleware('authadmin:magazineblog_delete')->only('destroy');
+
+        $this->middleware('permission:read-magazineblog')->only('json','index');
+        $this->middleware('permission:create-magazineblog')->only('create','store');
+        $this->middleware('permission:edit-magazineblog')->only('edit', 'update');
+        $this->middleware('permission:delete-magazineblog')->only('destroy');
     }
 
     public function json()

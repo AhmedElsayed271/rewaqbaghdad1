@@ -12,10 +12,11 @@ class KhetabMagazineteamController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('authadmin:khetab_magazineteam_show')->only('json','index');
-        $this->middleware('authadmin:khetab_magazineteam_create')->only('create','store');
-        $this->middleware('authadmin:khetab_magazineteam_edit')->only('edit', 'update');
-        $this->middleware('authadmin:khetab_magazineteam_delete')->only('destroy');
+
+        $this->middleware('permission:read-khetabmagazinemteam')->only('json','index');
+        $this->middleware('permission:create-khetabmagazinemteam')->only('create','store');
+        $this->middleware('permission:edit-khetabmagazinemteam')->only('edit', 'update');
+        $this->middleware('permission:delete-khetabmagazinemteam')->only('destroy');
     }
 
     public function json()

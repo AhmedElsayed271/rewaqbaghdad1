@@ -1,30 +1,30 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-use App\Http\Controllers\Controller;
+use App\Models\Role;
 
 use App\Models\Admin;
 use App\Models\Group;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class AdminController extends Controller
 {
 
     public function __construct()
     {
-        $this->middleware('authadmin:profile_edit')->only('profile', 'UpdateProfile');
+        // $this->middleware('authadmin:profile_edit')->only('profile', 'UpdateProfile');
         
-        $this->middleware('authadmin:admin_show')->only('json','index');
-        $this->middleware('authadmin:admin_create')->only('create','store');
-        $this->middleware('authadmin:admin_edit')->only('edit', 'update');
-        $this->middleware('authadmin:admin_delete')->only('destroy');
+        $this->middleware('permission:read-admins')->only('json','index');
+        $this->middleware('permission:create-admins')->only('create','store');
+        $this->middleware('permission:edit-admins')->only('edit', 'update');
+        $this->middleware('permission:delete-admins')->only('destroy');
     }
 
 
     public function json()
     {
-        $query = Admin::select('id','name','email','main','group_id','created_at')
-        ->with('group:id,name')->get();
+        $query = Admin::select('id','name','email','main','created_at')->where('is_superadmin',0)->get();
         return datatables($query)->editColumn('created_at', function ($row) {
             return $row->created_at;
         })->make(true);
@@ -46,9 +46,9 @@ class AdminController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        $groups = Group::select('id','name')->get();
-        return view('admin.admins.create', compact('groups'));
+    {   
+        $roles = Role::get();
+        return view('admin.admins.create', compact('roles'));
     }
 
     /**
@@ -58,12 +58,12 @@ class AdminController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        $validatedData = $request->validate([
+    {   
+    
+         $validatedData = $request->validate([
             'name' => 'required|max:50',
+            'role_id' => 'required|exists:roles,id',
             'email' => 'required|email|max:30|unique:admins',
-            'password' => 'required|string|min:6|max:32',
-            'group_id' => 'required|exists:groups,id',
             'info' => 'nullable|string|max:255',
             'img' => 'nullable|string|max:100',
         ]);
@@ -74,8 +74,9 @@ class AdminController extends Controller
         $admin->password = bcrypt($request->password);
         $admin->info = nl2br($request->info);
         $admin->img = $request->img;
-        $admin->group_id = $request->group_id;
         $admin->save();
+
+        $admin->attachRole($validatedData['role_id']);
 
         return redirect('/admin/admins')->with('success', __('global.alert_done_create'));
     }
@@ -99,8 +100,8 @@ class AdminController extends Controller
      */
     public function edit(Admin $admin)
     {
-        $groups = Group::select('id','name')->get();
-        return view('admin.admins.edit', compact('groups','admin'));
+        $roles = Role::get();
+        return view('admin.admins.edit', compact('roles','admin'));
     }
 
     /**
@@ -117,26 +118,29 @@ class AdminController extends Controller
             'email' => 'required|email|unique:admins,email,'.$admin->id,
             'info' => 'nullable|string|max:255',
             'img' => 'nullable|string|max:100',
-            'group_id' => 'required|integer|exists:groups,id',
+            'role_id' => 'required|exists:roles,id',
+            'password' => 'nullable|string|min:6|max:32', // Allow password to be nullable
         ]);
-
-        if( empty($request->password) ):
-            $password = $admin->password;
-        else:
-            $validatedData = $request->validate([
-                'password' => 'required|string|min:6|max:32',
-            ]);
+    
+        // Check if password is provided and update if necessary
+        if (!empty($request->password)) {
             $password = bcrypt($request->password);
-        endif;
-        Admin::where('id', $admin->id)
-        ->update([
-            'name'      => $request->name,
-            'email'     => $request->email,
-            'password'  => $password,
-            'info'      => nl2br($request->info),
-            'img'       => $request->img,
-            'group_id'  => $request->group_id,
+        } else {
+            $password = $admin->password; // Maintain current password if not updated
+        }
+    
+        // Update the admin record
+        $admin->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => $password,
+            'info' => nl2br($request->info),
+            'img' => $request->img,
         ]);
+    
+        // Sync roles
+        $admin->syncRoles([$validatedData['role_id']]);
+    
         return redirect('/admin/admins')->with('success', __('global.alert_done_update'));
     }
 

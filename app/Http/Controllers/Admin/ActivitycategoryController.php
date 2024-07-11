@@ -12,10 +12,16 @@ class ActivitycategoryController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('authadmin:activitycategory_show')->only('json','index');
-        $this->middleware('authadmin:activitycategory_create')->only('create','store');
-        $this->middleware('authadmin:activitycategory_edit')->only('edit', 'update');
-        $this->middleware('authadmin:activitycategory_delete')->only('destroy');
+        // $this->middleware('authadmin:activitycategory_show')->only('json','index');
+        // $this->middleware('authadmin:activitycategory_create')->only('create','store');
+        // $this->middleware('authadmin:activitycategory_edit')->only('edit', 'update');
+        // $this->middleware('authadmin:activitycategory_delete')->only('destroy');
+
+                
+        $this->middleware('permission:read-activitesCategory')->only('json','index');
+        $this->middleware('permission:create-activitesCategory')->only('create','store');
+        $this->middleware('permission:edit-activitesCategory')->only('edit', 'update');
+        $this->middleware('permission:delete-activitesCategory')->only('destroy');
     }
 
     public function json()

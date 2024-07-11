@@ -22,10 +22,11 @@ class MEJEELPBlogsController extends Controller
 
     public function __construct()
     {
-        $this->middleware('authadmin:khetab_magazineblog_show')->only('json','index');
-        $this->middleware('authadmin:khetab_magazineblog_create')->only('create','store');
-        $this->middleware('authadmin:khetab_magazineblog_edit')->only('edit', 'update');
-        $this->middleware('authadmin:khetab_magazineblog_delete')->only('destroy');
+       
+        $this->middleware('permission:read-MEJEELPBlog')->only('json','index');
+        $this->middleware('permission:create-MEJEELPBlog')->only('create','store');
+        $this->middleware('permission:edit-MEJEELPBlog')->only('edit', 'update');
+        $this->middleware('permission:delete-MEJEELPBlog')->only('destroy');;
     }
 
     public function json()

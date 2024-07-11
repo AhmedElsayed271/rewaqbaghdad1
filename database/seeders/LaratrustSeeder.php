@@ -16,11 +16,11 @@ class LaratrustSeeder extends Seeder
     public function run()
     {
         foreach(config('permissions.roles') as $key => $values){
-            foreach($values as $value){
+            foreach($values['permission'] as $value){
                 $sub_role = Permission::firstOrCreate([
-                    'name'          => $value . '-' . $key,
-                    'display_name'  => $value . ' ' . $key,
-                    'description'   => $value . ' ' . $key,
+                    'name'          => $value['permission'] . '-' . $key,
+                    'display_name'  => $value['permission'] . ' ' . $key,
+                    'description'   => $value['permission'] . ' ' . $key,
                 ]);
             }
         }

@@ -25,6 +25,13 @@
             </div>
             <br />
 
+            <label>{{ __('global.groups') }}  <strong class="text-danger">*</strong></label>
+            <select class="form-control" name="role_id" required="required">
+                @foreach($roles as $role)
+                    <option value="{{ $role->id }}">{{ $role->name }}</option>
+                @endforeach
+            </select>
+            <br />
             {{-- <label>{{ __('global.groups') }}  <strong class="text-danger">*</strong></label>
             <select class="form-control" name="group_id" required="required">
                 @foreach($groups as $group)

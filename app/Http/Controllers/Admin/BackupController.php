@@ -12,11 +12,10 @@ class BackupController extends Controller
     private $DS = DIRECTORY_SEPARATOR;
     public function __construct()
     {
-        $this->middleware('authadmin:backup_show')->only('index');
-        $this->middleware('authadmin:backup_create')->only('create');
-        $this->middleware('authadmin:backup_delete')->only('delete');
-        $this->middleware('authadmin:backup_download')->only('download');
-        $this->middleware('authadmin:backup_restore')->only('restore');
+        $this->middleware('permission:read-backup')->only('json','index');
+        $this->middleware('permission:create-backup')->only('create','store');
+        $this->middleware('permission:edit-backup')->only('edit', 'update');
+        $this->middleware('permission:delete-backup')->only('destroy');
     }
 
     public function index()
