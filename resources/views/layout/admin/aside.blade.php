@@ -138,7 +138,7 @@
                             </li>
                         @endif
 
-                        @if ($admin->hasPermission('read-activities') || $admin->is_superadmin)
+                        @if ($admin->hasPermission('read-activites') || $admin->is_superadmin)
                             <li><a class="slide-item"
                                     href="{{ url(appLangKey() . '/admin/activities') }}">{{ __('global.activity.news') }}</a>
                             </li>
@@ -371,6 +371,15 @@
                 <a class="side-menu__item" href="{{ url(appLangKey() . '/admin/events') }}">
                     <i class="fa-regular fa-calendar-days"></i>
                     <span class="side-menu__label">{{ __('global.event.title') }}</span>
+                </a>
+            </li>
+            @endif
+            @if ($admin->hasPermission('read-faqs') || $admin->is_superadmin)
+
+            <li class="slide">
+                <a class="side-menu__item" href="{{ url(appLangKey() . '/admin/faq') }}">
+                    <i class="fa-regular fa-calendar-days"></i>
+                    <span class="side-menu__label">{{ __('global.faq_title') }}</span>
                 </a>
             </li>
             @endif

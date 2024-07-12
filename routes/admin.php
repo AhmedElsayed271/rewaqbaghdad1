@@ -1,11 +1,16 @@
 <?php
 
 use App\Models\Admin;
+use App\Models\Rewaqbook;
+use App\Models\MEJEELPblog;
 use App\Http\Middleware\AuthAdmin;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\RoleController;
 
+use Illuminate\Support\Facades\Route;
+use App\Models\MEJEELPblogTranslation;
+use App\Http\Controllers\Admin\FaqController;
+use App\Http\Controllers\Admin\RoleController;
+use App\Http\Controllers\Admin\KhetabMagazineblogController;
 
 Route::group(['prefix' => 'admin','middleware' => AuthAdmin::class], function () {
     
@@ -185,17 +190,22 @@ Route::group(['prefix' => 'admin','middleware' => AuthAdmin::class], function ()
     // Events 
     Route::get('/events/json', 'EventsController@json');
     Route::resource('/events', 'EventsController');
-    
+
+    Route::get('/faq/json', 'FaqController@json');
+    Route::resource('/faq', 'FaqController');
     // Slider 
     Route::get('/slider/json', 'SliderController@json');
     Route::resource('/slider', 'SliderController');
     Route::post('/slider/getdata', 'SliderController@ajax');
+
     
 
     Route::get('/test', function () {
         
 
-        dd(Auth::guard('admin')->user()->hasPermission('read-khetabmagazinemeam'));
+        return MEJEELPblog::with('translation')->get();
+
+        dd(auth('admin')->user()->hasPermission('update-events'));
 
         $admin = Admin::find(1);
         return Auth::guard('admin')->login($admin);

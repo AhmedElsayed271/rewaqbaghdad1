@@ -1,7 +1,5 @@
 <?php
 
-
-
 return [
     'roles' => [
         'admins' => [
@@ -11,7 +9,7 @@ return [
                 ['permission' => 'update', 'name' => 'update'], 
                 ['permission' => 'delete', 'name' => 'delete']
             ],
-            'name' => "global.roles"
+             'name' => 'global.admins'
         ],
         'roles' => [
             'permission' => [
@@ -20,7 +18,8 @@ return [
                 ['permission' => 'update', 'name' => 'update'], 
                 ['permission' => 'delete', 'name' => 'delete']
             ],
-            'name' => 'global.admins'
+     
+            'name' => "global.roles"
         ],
         'centerTeam' => [
             'permission' => [
@@ -111,7 +110,7 @@ return [
                 ['permission' => 'update', 'name' => 'update'], 
                 ['permission' => 'delete', 'name' => 'delete']
             ],
-            'name' => 'global.media.video.categories'
+                  'name' => 'global.media.video.title'
         ],
         'categoryLibraryPhoto' => [
             'permission' => [
@@ -120,7 +119,8 @@ return [
                 ['permission' => 'update', 'name' => 'update'], 
                 ['permission' => 'delete', 'name' => 'delete']
             ],
-            'name' => 'global.media.video.title'
+      
+              'name' => 'global.media.video.categories'
         ],
         'rewaqTeam' => [
             'permission' => [
@@ -248,6 +248,15 @@ return [
                 ['permission' => 'delete', 'name' => 'delete']
             ],
             'name' => 'global.event.title'
+        ],
+        'faqs' => [
+            'permission' => [
+                ['permission' => 'read', 'name' => 'read'], 
+                ['permission' => 'create', 'name' => 'create'], 
+                ['permission' => 'update', 'name' => 'update'], 
+                ['permission' => 'delete', 'name' => 'delete']
+            ],
+            'name' => 'global.faq_title'
         ],
         'iraqMeter' => [
             'permission' => [

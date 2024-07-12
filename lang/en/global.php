@@ -35,10 +35,10 @@ return [
     'btn_update' => 'Updating data',
     'role_edit' => 'edit role',
     'role_create' => 'Create Role',
-    'notifications'=> 'notifications',
-    'unread_notifications'=> 'You have :count an unread notification',
-    'messages'=> 'Messages',
-    'unread_messages'=> 'You have :count unread messages',
+    'notifications' => 'notifications',
+    'unread_notifications' => 'You have :count an unread notification',
+    'messages' => 'Messages',
+    'unread_messages' => 'You have :count unread messages',
     'sort' => 'sort',
     'slug' => 'Slug',
     'close' => 'cancel',
@@ -69,7 +69,7 @@ return [
     'address' => 'the address',
     '' => '',
     '' => '',
-    
+
     /********************* groups *******************/
     'groups' => 'مجموعات الصلاحيات',
     'group_create' => 'Create a new group',
@@ -77,7 +77,20 @@ return [
     'page_name' => 'Page name',
     '' => '',
     '' => '',
-    
+
+
+    /********************* faq *******************/
+    'faq_title' => 'common questions',
+    'faq_add' => 'Add question',
+    'faq_edit' => 'Edit question',
+    'faq_question' => 'The Question',
+    'faq_answer' => 'The answer',
+    'group_create' => 'Create a new group',
+    'group_name' => 'group name',
+    'page_name' => 'Page name',
+    '' => '',
+    '' => '',
+
     /********************* Backup *******************/
     'alertBackup' => 'The database is being restored. <br/> Please do not close the page',
     'alertDownload' => 'Are you sure to download the file?',
@@ -114,13 +127,13 @@ return [
     'alert_done_create' => 'Data created successfully',
     'alert_done_update' => 'The data has been updated successfully',
     'alert_done_delete' => 'The data has been deleted successfully',
-    
+
     //
     'alert_main_group' => 'You cannot update or delete the main group',
     'alert_error_403' => 'You do not have permission to open this page',
-    
+
     'alert_error_login' => 'Error in the login information',
-    
+
     //
     'alert_main_admin' => 'The main manager cannot be deleted',
 
@@ -132,7 +145,7 @@ return [
 
     /********************* About *******************/
     'about' => [
-        'aside_title' => 'who are we', 
+        'aside_title' => 'who are we',
         'title' => 'About the center',
         'img1' => 'Picture of About the center',
         'img2' => 'Picture of Center goals',
@@ -148,7 +161,7 @@ return [
         'means_name' => 'The name of the mean',
 
     ],
-    
+
     'center_member' => [
         'title' => 'Center members',
         'name' => 'member name',
@@ -160,7 +173,7 @@ return [
         'cv_link' => 'CV link',
 
         'jobs_titles' => [
-            'ar'=>[
+            'ar' => [
                 'cbd' => 'Chairman',
                 'ceo' => 'CEO',
                 'mem' => 'Member of the Board of Directors',
@@ -173,9 +186,9 @@ return [
                 'emp' => 'Rewaq employee',
             ]
         ],
-        
+
     ],
-    
+
     'book_team' => [
         'description_page' => 'Page description',
         'title' => 'writers',
@@ -189,7 +202,7 @@ return [
         'job_type' => 'writer',
 
         'jobs_titles' => [
-            'ar'=>'writer',
+            'ar' => 'writer',
             'en' => 'writer',
         ],
 
@@ -212,7 +225,7 @@ return [
         'news_tags' => 'decorations',
         'created_at' => 'date of publication',
     ],
-    
+
     'activity' => [
         'title' => 'activities',
         'categories' => 'Activities sections',
@@ -324,7 +337,7 @@ return [
                     'am'    => 'project manager Assistant',
                     'ps'   => 'Project supervisor',
                 ],
-                'en'=>[
+                'en' => [
                     'pm'   => 'Project Manager',
                     'am'    => 'Assistant Manager',
                     'ps'   => 'Project Supervisor',
@@ -332,7 +345,7 @@ return [
             ],
         ],
     ],
-    
+
     'magazine' => [
         'title' => 'Al-Rewaq Magazine',
         'magazine_edit' => 'Modifying the data of Al-Rewaq Magazine',
@@ -347,8 +360,8 @@ return [
             'name' => 'the address',
             'img' => 'The prominent image',
             'pdf' => 'PDF file',
-            'promo_url'=> 'Promo link',
-            'number'=> 'issue number',
+            'promo_url' => 'Promo link',
+            'number' => 'issue number',
             'tags' => 'decorations',
             'writer' => 'the name of the author',
             'description' => 'short description',
@@ -368,7 +381,7 @@ return [
             'cv_link' => 'CV link',
 
             'jobs_titles' => [
-                'ar'=>[
+                'ar' => [
                     'cbd'   => 'Chairman',
                     'ec'    => 'editor-in-chief',
                     'dec'   => 'Deputy Editor-in-Chief',
@@ -399,8 +412,8 @@ return [
             'name' => 'the address',
             'img' => 'The prominent image',
             'pdf' => 'PDF file',
-            'promo_url'=> 'Promo link',
-            'number'=> 'issue number',
+            'promo_url' => 'Promo link',
+            'number' => 'issue number',
             'tags' => 'decorations',
             'writer' => 'the name of the author',
             'description' => 'short description',
@@ -420,7 +433,7 @@ return [
             'cv_link' => 'CV link',
 
             'jobs_titles' => [
-                'ar'=>[
+                'ar' => [
                     'cbd'   => 'Chairman',
                     'ec'    => 'editor-in-chief',
                     'dec'   => 'Deputy Editor-in-Chief',
@@ -453,8 +466,8 @@ return [
             'name' => 'the address',
             'img' => 'The prominent image',
             'pdf' => 'PDF file',
-            'promo_url'=> 'Promo link',
-            'number'=> 'issue number',
+            'promo_url' => 'Promo link',
+            'number' => 'issue number',
             'tags' => 'decorations',
             'writer' => 'the name of the author',
             'description' => 'short description',
@@ -474,7 +487,7 @@ return [
             'cv_link' => 'CV link',
 
             'jobs_titles' => [
-                'ar'=>[
+                'ar' => [
                     'cbd'   => 'Chairman',
                     'ec'    => 'editor-in-chief',
                     'dec'   => 'Deputy Editor-in-Chief',
@@ -509,7 +522,7 @@ return [
         ],
     ],
 
-'kone_media' => [
+    'kone_media' => [
         'title' => 'Kon news',
         'add' => 'Add new news',
         'name' => 'The name of the news',
@@ -539,7 +552,7 @@ return [
         'url' => 'Event link',
         'created_at' => 'date of publication',
     ],
-    
+
     'slider' => [
         'title' => 'Slider',
         'add' => 'Add a new slider',

@@ -78,7 +78,14 @@
                     render: function (data, type, row, meta) {
                         var edit = '<a href="{{ url('/admin/magazine-team') }}/'+row.id+'/edit" class="btn mb-1 btn-sm btn-info"><i class="fa-fw fas fa-pen-alt"></i></a>';
                         var del = '<form style="display:inline-block" action="{{url('/admin/magazine-team')}}/'+row.id+'" method="post">@csrf {{ method_field('DELETE') }} <button onclick="if(confirm(`{{__("global.alert_delete")}}`)){return true;}else{return false;}" class="btn btn-sm mb-1 btn-danger"><i class="far fa-fw fa-trash-alt"></i></button></form>';
-                        return edit+' '+ del;
+                        var btns = '';
+                        @if(auth('admin')->user()->hasPermission('update-RewaMagazineTeam') || auth('admin')->user()->is_superadmin)
+                            btns += edit + ' ' ;
+                         @endif
+                        @if(auth('admin')->user()->hasPermission('delete-RewaMagazineTeam') || auth('admin')->user()->is_superadmin)
+                            btns += del;
+                        @endif
+                        return btns;
                     }
                 },
                 

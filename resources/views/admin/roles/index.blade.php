@@ -30,7 +30,6 @@
     </table>
 </div>
 
-    <button class="btn btn-danger">test</button>
 @endsection
 
 @section('script')
@@ -73,8 +72,15 @@
                     render: function (data, type, row, meta) {
                         var edit = '<a href="{{ url('/admin/roles') }}/'+row.id+'/edit" class="btn mb-1 btn-sm btn-info"><i class="fa-fw fas fa-pen-alt"></i></a>';
                         var del = '<form style="display:inline-block" action="{{url('/admin/roles')}}/'+row.id+'" method="post">@csrf {{ method_field('DELETE') }} <button onclick="if(confirm(`{{__("global.alert_delete")}}`)){return true;}else{return false;}" class="btn btn-sm mb-1 btn-danger"><i class="far fa-fw fa-trash-alt"></i></button></form>';
-                        console.log(row);
-                        return edit+' '+ del;
+                        var btns = '';
+                        @if(auth('admin')->user()->hasPermission('update-roles') || auth('admin')->user()->is_superadmin)
+                            btns += edit + ' ' ;
+                         @endif
+                        @if(auth('admin')->user()->hasPermission('delete-roles') || auth('admin')->user()->is_superadmin)
+                            btns += del;
+                        @endif
+                   
+                        return btns;
                     }
                 },
                 

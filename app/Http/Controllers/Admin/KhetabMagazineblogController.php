@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Models\Magazineblog;
 use Illuminate\Http\Request;
 use App\Models\KhetabMagazineblog;
+use App\Http\Controllers\Controller;
 use App\Models\KhetabMagazineblogTranslation;
 
 class KhetabMagazineblogController extends Controller
@@ -12,10 +13,10 @@ class KhetabMagazineblogController extends Controller
 
     public function __construct()
     {
-        $this->middleware('authadmin:khetab_magazineblog_show')->only('json','index');
-        $this->middleware('authadmin:khetab_magazineblog_create')->only('create','store');
-        $this->middleware('authadmin:khetab_magazineblog_edit')->only('edit', 'update');
-        $this->middleware('authadmin:khetab_magazineblog_delete')->only('destroy');
+        // $this->middleware('authadmin:khetab_magazineblog_show')->only('json','index');
+        // $this->middleware('authadmin:khetab_magazineblog_create')->only('create','store');
+        // $this->middleware('authadmin:khetab_magazineblog_edit')->only('edit', 'update');
+        // $this->middleware('authadmin:khetab_magazineblog_delete')->only('destroy');
     }
 
     public function json()

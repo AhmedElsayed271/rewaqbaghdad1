@@ -125,7 +125,7 @@ class RoleController extends Controller
 
         $role->syncPermissions($request->permissions);
 
-        return redirect()->route('roles.index')->with('success', __('global.alert_done_update'));
+        return redirect()->route('roles.edit', $id)->with('success', __('global.alert_done_update'));
     }
 
     /**

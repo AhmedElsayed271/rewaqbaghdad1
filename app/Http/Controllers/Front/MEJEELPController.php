@@ -2,21 +2,24 @@
 
 namespace App\Http\Controllers\Front;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-
-
 use App\Models\MEJEELP;
-use App\Models\MEJEELPTransalation;
-
-use App\Models\MEJEELPTeam;
-use App\Models\MEJEELPTranslation;
-
 use App\Models\MEJEELPblog;
-use App\Models\MEJEELPblogTranslation;
+
 
 use App\Models\MEJEELPRule;
+use App\Models\MEJEELPTeam;
+
+use Illuminate\Http\Request;
+use App\Mail\SendContactMail;
+
+use App\Models\MEJEELPTranslation;
+use App\Models\MEJEELPTransalation;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
+use App\Models\MEJEELPblogTranslation;
 use App\Models\MEJEELPRuleTranslation;
+use Illuminate\Support\Facades\Cookie;
 
 class MEJEELPController extends Controller
 {

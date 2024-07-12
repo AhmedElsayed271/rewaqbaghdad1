@@ -1,9 +1,9 @@
 @extends('layout.admin.app')
-@section('title', __('global.event.title'))
+@section('title', __('global.faq_title'))
 
 @section('breadcrumb')
 <li class="breadcrumb-item">@yield('title')</li>
-<li class="breadcrumb-item"><a href="{{ url('/admin/events/create') }}">{{__('global.event.add')}}</a></li>
+<li class="breadcrumb-item"><a href="{{ url('/admin/faq/create') }}">{{__('global.faq_add')}}</a></li>
 @endsection
 
 @section('datatable-css')
@@ -17,7 +17,7 @@
 @section('content')
 
 <div class="mb-2">
-    <a class="btn btn-secondary" href="{{ url('/admin/events/create') }}">{{__('global.event.add')}}</a>
+    <a class="btn btn-secondary" href="{{ url('/admin/faq/create') }}">{{__('global.faq_add')}}</a>
 </div>
 
 <div class="table-responsive">
@@ -25,8 +25,8 @@
         <thead>
             <tr>
                 <th>{{__('global.id')}}</th>
-                <th>{{__('global.event.name')}}</th>
-                <th>{{__('global.slug')}}</th>
+                <th>{{__('global.faq_question')}}</th>
+                <th>{{__('global.faq_answer')}}</th>
                 <th>{{__('global.created_at')}}</th>
                 <th>{{__('global.actions')}}</th>
             </tr>
@@ -55,22 +55,16 @@
             @if(app()->getLocale()=='ar')
             language: {"url": "{{ url('/admin/assets/plugins/datatable/Arabic.json') }}"},
             @endif
-            ajax: "{{ url('/admin/events/json') }}",
+            ajax: "{{ url('/admin/faq/json') }}",
             scrollY:550,
             scrollX:true,
             columns: [
                 {data: 'id', name: 'id'},
-                {data: 'translation.name', name: 'translation.name'},
-                {data: 'url', name: 'url'},
+                {data: 'translation.question', name: 'translation.question'},
+                {data: 'translation.answer', name: 'translation.answer'},
                 {data: 'created_at', name: 'created_at'},
             ],
             columnDefs: [
-                {
-                    targets: 2,
-                    render: function (data, type, row, meta) {
-                        return "<a target='_blank' href='/event/"+data+"'><i class='fa-solid fa-up-right-from-square'></i></a>";
-                    }
-                },
                 {
                     targets: 3,
                     render: function (data, type, row, meta) {
@@ -80,13 +74,13 @@
                 {
                     targets: 4,
                     render: function (data, type, row, meta) {
-                        var edit = '<a href="{{ url('/admin/events') }}/'+row.id+'/edit" class="btn mb-1 btn-sm btn-info"><i class="fa-fw fas fa-pen-alt"></i></a>';
-                        var del = '<form style="display:inline-block" action="{{url('/admin/events')}}/'+row.id+'" method="post">@csrf {{ method_field('DELETE') }} <button onclick="if(confirm(`{{__("global.alert_delete")}}`)){return true;}else{return false;}" class="btn btn-sm mb-1 btn-danger"><i class="far fa-fw fa-trash-alt"></i></button></form>';
+                        var edit = '<a href="{{ url('/admin/faq') }}/'+row.id+'/edit" class="btn mb-1 btn-sm btn-info"><i class="fa-fw fas fa-pen-alt"></i></a>';
+                        var del = '<form style="display:inline-block" action="{{url('/admin/faq')}}/'+row.id+'" method="post">@csrf {{ method_field('DELETE') }} <button onclick="if(confirm(`{{__("global.alert_delete")}}`)){return true;}else{return false;}" class="btn btn-sm mb-1 btn-danger"><i class="far fa-fw fa-trash-alt"></i></button></form>';
                         var btns = '';
-                        @if(auth('admin')->user()->hasPermission('update-events') || auth('admin')->user()->is_superadmin)
+                        @if(auth('admin')->user()->hasPermission('update-faqs') || auth('admin')->user()->is_superadmin)
                             btns += edit + ' ' ;
                          @endif
-                        @if(auth('admin')->user()->hasPermission('delete-events') || auth('admin')->user()->is_superadmin)
+                        @if(auth('admin')->user()->hasPermission('delete-faqs') || auth('admin')->user()->is_superadmin)
                             btns += del;
                         @endif
                         return btns;

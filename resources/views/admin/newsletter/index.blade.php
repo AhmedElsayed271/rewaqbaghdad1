@@ -162,7 +162,14 @@
                     targets: 4,
                     render: function (data, type, row, meta) {
                         var del = '<form style="display:inline-block" action="{{url('/admin/newsletters')}}/'+row.id+'" method="post">@csrf {{ method_field('DELETE') }} <button onclick="if(confirm(`{{__("global.alert_delete")}}`)){return true;}else{return false;}" class="btn btn-sm mb-1 btn-danger"><i class="far fa-fw fa-trash-alt"></i></button></form>';
-                        return  del;
+                        var btns = '';
+                        @if(auth('admin')->user()->hasPermission('update-events') || auth('admin')->user()->is_superadmin)
+                            btns += edit + ' ' ;
+                         @endif
+                        @if(auth('admin')->user()->hasPermission('delete-events') || auth('admin')->user()->is_superadmin)
+                            btns += del;
+                        @endif
+                        return btns;
                     }
                 },
             ]

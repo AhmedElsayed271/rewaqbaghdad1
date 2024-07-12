@@ -2,19 +2,20 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-
 use App\Models\MEJEELP;
-use App\Models\MEJEELPTransalation;
-
-use App\Models\MEJEELPTeam;
-use App\Models\MEJEELPTranslation;
-
 use App\Models\MEJEELPblog;
-use App\Models\MEJEELPblogTranslation;
 
 use App\Models\MEJEELPRule;
+use App\Models\MEJEELPTeam;
+
+use Illuminate\Http\Request;
+use App\Models\KhetabMagazineblog;
+
+use App\Models\MEJEELPTranslation;
+use App\Models\MEJEELPTransalation;
+
+use App\Http\Controllers\Controller;
+use App\Models\MEJEELPblogTranslation;
 use App\Models\MEJEELPRuleTranslation;
 
 class MEJEELPBlogsController extends Controller
@@ -31,7 +32,7 @@ class MEJEELPBlogsController extends Controller
 
     public function json()
     {
-        $query = MEJEELPblog::select('id','slug','created_at')->with('translation:title,parent_id')->get();
+        $query = MEJEELPblog::with('translation')->select('id','slug','created_at')->get();
         return datatables($query)->editColumn('created_at', function ($row) {
             return $row->created_at;
         })->make(true);
@@ -43,7 +44,8 @@ class MEJEELPBlogsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {   
+        $query = MEJEELPblog::select('id','slug','created_at')->with('translation:title,parent_id')->get();
         return view('admin.MEJEELP_magazine.blog.index');
     }
 
