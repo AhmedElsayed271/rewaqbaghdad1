@@ -10,49 +10,155 @@
 {{-- @section('script')@endsection --}}
 
 @section('content')
-<style>
-.slide-image {
-    position: relative;
-}
+    <style>
+        .slide-image {
+            position: relative;
+        }
 
-.slider_button {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    margin: 10px;
-    background:rgb(141, 232, 255);
-    border-radius: 4px;
-    color: rgba(101, 101, 101, 0.784);
-}
-</style>
-<div class="banner container-fluid">
-    <div class="swiper-container">
-        <div class="swiper mySwiper swiper-h">
-            <div class="swiper-wrapper">
+        .slider_button {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            margin: 10px;
+            background: rgb(141, 232, 255);
+            border-radius: 4px;
+            color: rgba(101, 101, 101, 0.784);
+        }
 
-                @foreach ($sliders as $slider)
+        .inner-box .lower-content h5 {
+            color: var(--new-color) !important;
+        }
+    </style>
+    <div class="banner container-fluid">
+        <div class="swiper-container">
+            <div class="swiper mySwiper swiper-h">
+                <div class="swiper-wrapper">
 
-                    <div class="swiper-slide">
-                        @if(!empty($slider->btn_url))
-                            <a target="{{$slider->btn_target}}" href="{{$slider->btn_url}}">
+                    @foreach ($sliders as $slider)
+                        <div class="swiper-slide">
+                            @if (!empty($slider->btn_url))
+                                <a target="{{ $slider->btn_target }}" href="{{ $slider->btn_url }}">
+                                    <div class="slide-image">
+                                        <img src="{{ $slider->img }}" alt="{{ $slider->translation->title }}">
+                                        <button style="position: absolute" class="slider_button">عرض المزيد</button>
+                                    </div>
+                                </a>
+                            @else
                                 <div class="slide-image">
-                                    <img src="{{$slider->img}}" alt="{{$slider->translation->title}}">
-                                      <button style="position: absolute" class="slider_button">عرض المزيد</button>
+                                    <img src="{{ $slider->img }}" alt="{{ $slider->translation->title }}">
+                                    <button style="position: absolute" class="slider_button">عرض المزيد</button>
                                 </div>
-                            </a>
-                        @else
-                            <div class="slide-image">
-                                <img src="{{$slider->img}}" alt="{{$slider->translation->title}}">
-                                  <button style="position: absolute" class="slider_button">عرض المزيد</button>
-                            </div>
-                        @endif
-                    </div>
-                @endforeach
+                            @endif
+                        </div>
+                    @endforeach
+                </div>
             </div>
         </div>
     </div>
-</div>
 
+
+    {{-- News Section --}}
+
+    <section class="container my-5">
+        <div class="section-title text-right pb-30">
+            <h2 class="title">أخبار المركز </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <a href="/">
+                    <div class="shadow-sm">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="/uploads/files/shares/news/651bcf8ce577a.jpg" class="rounded" alt="news-image">
+                            </div>
+                        </div>
+                        <div class="news-block-two">
+                            <div class="inner-box">
+                                <div class="lower-content">
+                                    <h5>مركز تفكير يُقدم رؤى وافكار ودراسات وبحوث للنخب والمختصين ومتخذي القرار. تصدر عنه
+                                        مجلة "الرواق" والتي تعنى بالتركيز على عنوان واحد وتستكتب فيه خيرة الباحثين والكتاب
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    {{-- Projects Section --}}
+    <section class="container">
+        <div class="section-title text-right pb-30">
+            <h2 class="title">مشاريـع المركز</h2>
+        </div>
+        <div class="projects row justify-content-center align-items-center">
+            <div class="col-md-3 my-2">
+                <a href="">
+                    <div class="project-img mx-auto">
+                        <img src="/uploads/files/shares/projects/alrewaq.png" alt="project-img1">
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 my-2">
+                <a href="">
+                    <div class="project-img mx-auto">
+                        <img src="/uploads/files/shares/projects/img2.png" alt="project-img2">
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 my-2">
+                <a href="">
+                    <div class="project-img mx-auto">
+                        <img src="/uploads/files/shares/projects/img3.png" alt="project-img3">
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 my-2">
+                <a href="">
+                    <div class="project-img mx-auto">
+                        <img src="/uploads/files/shares/projects/img4.png" alt="project-img4">
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 my-2">
+                <a href="">
+                    <div class="project-img mx-auto">
+                        <img src="/uploads/files/shares/projects/img5.png" alt="project-img5">
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 my-2">
+                <a href="">
+                    <div class="project-img mx-auto">
+                        <img src="/uploads/files/shares/projects/img6.png" alt="project-img6">
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 my-2">
+                <a href="">
+                    <div class="project-img mx-auto">
+                        <img src="/uploads/files/shares/projects/img7.png" alt="project-img7">
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 my-2">
+                <a href="">
+                    <div class="project-img mx-auto">
+                        <img src="/uploads/files/shares/projects//kun.png" alt="project-img8">
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    {{--
 @if (!$Medianews->isEmpty())
     <section class="center-blogs mt-10">
         <div class="container">
@@ -88,9 +194,9 @@
             </div>
         </div>
     </section>
-@endif
+@endif --}}
 
-{{-- @if (!$versions->isEmpty())
+    {{-- @if (!$versions->isEmpty())
 <section class="researchers-sec mb-5">
     <div class="container">
         <div class="section-title text-right pb-30">
@@ -146,7 +252,7 @@
 </section>
 @endif --}}
 
-{{-- <section class="title mt-10">
+    {{-- <section class="title mt-10">
     <div class="container">
         <div class="section-title text-right pb-30">
             <img src="{{url('front/assets/img/Rectangle (2).png')}}" alt=""> <h2 class="title "><span class="baby-blue">{{__('front.i')}}</span> {{__('front.parliament')}}</h2>
@@ -216,109 +322,96 @@
 </section> --}}
 
 
-@if(!$iraqmeterBlogs->isEmpty())
-    <section class="title mt-10">
+
+
+
+
+    {{-- @if (!$books->isEmpty())
+        <section class="our-books-sec">
+            <div class="container">
+                <div class="section-title text-right pb-30">
+                    <img src="{{ url('front/assets/img/magazine.png') }}" class="img-shadow" alt="" />
+                    <h2 class="title ">{{ __('front.rewaq') }}</h2>
+                </div>
+                <div class="row overflow-hidden" data-aos="zoom-in" data-aos-duration="1000">
+                    <div class="section-title m-0 text-right pb-30">
+                        <h2 class="sub-title">{{ __('front.our_books') }}</h2>
+                    </div>
+                    <div class="swiper-container overflow-hidden">
+                        <div class="news-block-two swiper-wrapper">
+
+                            @foreach ($books as $book)
+                                <a class="swiper-slide" href="{{ langUrl('/rewaq/book/' . $book->slug) }}"
+                                    title="{{ $book->translation->title }}">
+                                    <div class="inner-box-book">
+                                        <div class="img-box">
+                                            <img src="{{ $book->img }}" alt="{{ $book->translation->title }}">
+                                        </div>
+                                        <div class="content">
+                                            <p>{{ $book->translation->title }}</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            @endforeach
+                        </div>
+                    </div>
+                    <div class="swiper-button-prevs"></div>
+                    <div class="swiper-button-nexts"></div>
+                </div>
+            </div>
+        </section>
+    @endif --}}
+
+
+    {{-- <section class="our-books-sec">
+            <div class="container">
+                <div class="section-title text-right pb-30">
+                    <img src="{{ url('front/assets/img/magazine.png') }}" class="img-shadow" alt="" />
+                    <h2 class="title ">{{ __('front.rewaq') }}</h2>
+                </div>
+                <div class="row overflow-hidden" data-aos="zoom-in" data-aos-duration="1000">
+                    <div class="swiper-container overflow-hidden">
+                        <div class="news-block-two swiper-wrapper">
+                                <a class="swiper-slide" href=""
+                                    title="">
+                                    <div class="inner-box-book">
+                                        <div class="img-box">
+                                            <img src="/uploads/files/shares/Desktop/ъдщбjeellp.png" alt="">
+                                        </div>
+                                        <div class="content">
+                                            <p>test test</p>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a class="swiper-slide" href=""
+                                    title="">
+                                    <div class="inner-box-book">
+                                        <div class="img-box">
+                                            <img src="/uploads/files/shares/Desktop/ъдщбjeellp.png" alt="">
+                                        </div>
+                                        <div class="content">
+                                            <p>test test</p>
+                                        </div>
+                                    </div>
+                                </a>
+                        </div>
+                    </div>
+                    <div class="swiper-button-prevs"></div>
+                    <div class="swiper-button-nexts"></div>
+                </div>
+            </div>
+    </section> --}}
+
+    {{-- <section class="title mt-10 custom-title-mobile">
         <div class="container">
             <div class="section-title text-right pb-30">
-                <img src="{{url('front/assets/img/meters.png')}}" alt="">
-                <h2 class="title">{{__('front.iraqmeter')}}</h2>
+                <img src="{{ url('/front/assets/img/rewaq.png') }}" alt="" />
+                <h2 class="title">{{ __('front.magazine') }}</h2>
             </div>
         </div>
-    </section>
-    <section class="iraq-meters p-3 mb-30">
-        <div class="devider-one"></div>
-        <div class="devider-two"></div>
-        <div class="container">
+    </section> --}}
 
-            <div class="row">
-                <div class="swiper-container overflow-hidden">
-                    <div class="swiper-wrapper">
-                        @foreach ($iraqmeterBlogs as $iraqBlog)
-                            <a class="swiper-slide" href="{{ langUrl('/iraq/meter/'.$iraqBlog->slug) }}">
-                                <div class="row justify-content-center align-items-center">
-                                    <div class="col-lg-5" data-aos="fade-up" data-aos-duration="1000">
-                                        <div class="image-box">
-                                            <img height="208" src="{{ $iraqBlog->img }}" alt="{{ $iraqBlog->translation->title }}">
-                                        </div>
-                                    </div>
-                                    <div class="iraq-meter-margin-img"></div>
-                                    <div class="col-lg-6 col-md-12 col-sm-12 content-column" data-aos="fade-down" data-aos-duration="1000">
-                                        <div class="content_block_1">
-                                            <div class="content-box iraq-meters-text-box">
-                                                <div class="text">
-                                                    <h2 class="title">{{ $iraqBlog->translation->title }}</h2>
-                                                    <p>{{ $iraqBlog->translation->description }}</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        @endforeach
-                    </div>
-                </div>
-                <div class="swiper-nexts"></div>
-                <div class="swiper-prevs"></div>
-            </div>
-
-            <div class="row mt-10 top40">
-                <div class="col-lg-12 mb-3">
-                    <a href="{{langUrl('/iraq/meter')}}" class="btn btn">
-                        {{__('front.for_more')}}
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-@endif
-
-
-
-@if (!$books->isEmpty())
-<section class="our-books-sec">
-    <div class="container">
-        <div class="section-title text-right pb-30">
-            <img src="{{url('front/assets/img/magazine.png')}}" class="img-shadow" alt="" />
-            <h2 class="title ">{{__('front.rewaq')}}</h2>
-        </div>
-        <div class="row overflow-hidden" data-aos="zoom-in" data-aos-duration="1000">
-            <div class="section-title m-0 text-right pb-30">
-                <h2 class="sub-title">{{__('front.our_books')}}</h2>
-            </div>
-            <div class="swiper-container overflow-hidden">
-                <div class="news-block-two swiper-wrapper">
-
-                    @foreach ($books as $book)
-                        <a class="swiper-slide" href="{{ langUrl('/rewaq/book/'.$book->slug) }}" title="{{$book->translation->title}}">
-                            <div class="inner-box-book">
-                                <div class="img-box">
-                                    <img src="{{$book->img}}" alt="{{$book->translation->title}}">
-                                </div>
-                                <div class="content">
-                                    <p>{{$book->translation->title}}</p>
-                                </div>
-                            </div>
-                        </a>
-                    @endforeach
-                </div>
-            </div>
-            <div class="swiper-button-prevs"></div>
-            <div class="swiper-button-nexts"></div>
-        </div>
-    </div>
-</section>
-@endif
-
-<section class="title mt-10 custom-title-mobile">
-    <div class="container">
-        <div class="section-title text-right pb-30">
-            <img src="{{url('/front/assets/img/rewaq.png')}}" alt="" />
-            <h2 class="title">{{__('front.magazine')}}</h2>
-        </div>
-    </div>
-</section>
-
-<section class="magazine-sec bg-light p-4">
+    {{-- <section class="magazine-sec bg-light p-4">
     <div class="container">
         <div class="row justify-content-center align-items-center">
             <div class="col-lg-12 mb-5 text-center">
@@ -328,7 +421,7 @@
             <div class="col-lg-4" data-aos="fade-up" data-aos-duration="1000">
                 <div class="h-100">
                     <div class="position-sticky sticky-top">
-                        @if(!empty($magazineBlog->img))
+                        @if (!empty($magazineBlog->img))
                             <div class="image-box">
                                 <img src="{{$magazineBlog->img}}" alt="{{$magazineBlog->translation->title}}">
                             </div>
@@ -339,13 +432,13 @@
             </div>
             <div class="col-lg-8 h-25 steps-con" data-aos="fade-down" data-aos-duration="1000">
                 <ul class="steps">
-                    @for ($i = 1; $i <10; $i++)
+                    @for ($i = 1; $i < 10; $i++)
                         @php
                             $title = "title_".$i;
                             $content = "content_".$i;
                         @endphp
 
-                        @if(!empty($magazineBlog->translation->$title))
+                        @if (!empty($magazineBlog->translation->$title))
                             <li>
                                 <small>
                                     <strong>{{$magazineBlog->translation->$title}}</strong>
@@ -363,7 +456,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 
 
     {{-- <section class="title mt-10">
@@ -447,7 +540,7 @@
             </div>
         </div>
     </section> --}}
-{{--
+    {{--
       <section class="booking-section">
         <div class="container">
             <div class="row align-items-center">
@@ -576,63 +669,78 @@
     </div>
 </section> --}}
 
-<section class="subescribe-sec bg-light pt-3 mt-5 mb-5">
-    <div class="container">
+    <section class="subescribe-sec bg-light pt-3 mt-5 mb-5">
+        <div class="container">
 
-        <div class="row align-items-center">
-            <div class="col-lg-8" data-aos="fade-up" data-aos-duration="1000">
-                <div class="content_block_1">
-                    <div class="content-box">
-                        <div class="text">
-                            <h2 class="title">{{__('front.subscribe_with_us')}}</h2>
-                            <form action="{{url('subscription')}}" method="post">@csrf
-                                <button type="submit" class="submit">{{__('front.subscription')}}</button>
-                                <input type="email" name="email" required placeholder="{{__('front.enter_email')}}">
-                            </form>
-                            <h2 class="title">{{__('front.follow_social_sites')}}</h2>
+            <div class="row align-items-center">
+                <div class="col-lg-8" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="content_block_1">
+                        <div class="content-box">
+                            <div class="text">
+                                <h2 class="title">{{ __('front.subscribe_with_us') }}</h2>
+                                <form action="{{ url('subscription') }}" method="post">@csrf
+                                    <button type="submit" class="submit">{{ __('front.subscription') }}</button>
+                                    <input type="email" name="email" required
+                                        placeholder="{{ __('front.enter_email') }}">
+                                </form>
+                                <h2 class="title">{{ __('front.follow_social_sites') }}</h2>
 
-                            <ul class="d-flex social-media">
-                                @if(!empty($SiteData->facebook))
-                                    <li><a target="_balnak" href="{{$SiteData->facebook}}"><i class="fa-brands fa-facebook"></i></a></li>
-                                @endif
-                                @if(!empty($SiteData->twitter))
-                                    <li><a href="{{$SiteData->twitter}}" target="_blank"><i class="fa-brands fa-twitter"></i></a><li>
-                                @endif
+                                <ul class="d-flex social-media">
+                                    @if (!empty($SiteData->facebook))
+                                        <li><a target="_balnak" href="{{ $SiteData->facebook }}"><i
+                                                    class="fa-brands fa-facebook"></i></a></li>
+                                    @endif
+                                    @if (!empty($SiteData->twitter))
+                                        <li><a href="{{ $SiteData->twitter }}" target="_blank"><i
+                                                    class="fa-brands fa-twitter"></i></a>
+                                        <li>
+                                    @endif
 
-                                @if(!empty($SiteData->instagram))
-                                    <li><a href="{{$SiteData->instagram}}" target="_blank"><i class="fa-brands fa-instagram"></i></a><li>
-                                @endif
-                                @if(!empty($SiteData->linkedin))
-                                    <li><a href="{{$SiteData->linkedin}}" target="_blank"><i class="fa-brands fa-linkedin"></i></a><li>
-                                @endif
-                                @if(!empty($SiteData->youtube))
-                                    <li><a href="{{$SiteData->youtube}}" target="_blank"><i class="fa-brands fa-youtube"></i></a><li>
-                                @endif
-                                @if(!empty($SiteData->telegram))
-                                    <li><a href="{{$SiteData->telegram}}" target="_blank"><i class="fa-brands fa-telegram"></i></a><li>
-                                @endif
-                                @if(!empty($SiteData->tiktok))
-                                    <li><a href="{{$SiteData->tiktok}}" target="_blank"><i class="fa-brands fa-tiktok"></i></a><li>
-                                @endif
-                                @if(!empty($SiteData->whatsapp))
-                                    <li><a href="{{$SiteData->whatsapp}}" target="_blank"><i class="fa-brands fa-whatsapp"></i></a><li>
-                                @endif
-                            </ul>
+                                    @if (!empty($SiteData->instagram))
+                                        <li><a href="{{ $SiteData->instagram }}" target="_blank"><i
+                                                    class="fa-brands fa-instagram"></i></a>
+                                        <li>
+                                    @endif
+                                    @if (!empty($SiteData->linkedin))
+                                        <li><a href="{{ $SiteData->linkedin }}" target="_blank"><i
+                                                    class="fa-brands fa-linkedin"></i></a>
+                                        <li>
+                                    @endif
+                                    @if (!empty($SiteData->youtube))
+                                        <li><a href="{{ $SiteData->youtube }}" target="_blank"><i
+                                                    class="fa-brands fa-youtube"></i></a>
+                                        <li>
+                                    @endif
+                                    @if (!empty($SiteData->telegram))
+                                        <li><a href="{{ $SiteData->telegram }}" target="_blank"><i
+                                                    class="fa-brands fa-telegram"></i></a>
+                                        <li>
+                                    @endif
+                                    @if (!empty($SiteData->tiktok))
+                                        <li><a href="{{ $SiteData->tiktok }}" target="_blank"><i
+                                                    class="fa-brands fa-tiktok"></i></a>
+                                        <li>
+                                    @endif
+                                    @if (!empty($SiteData->whatsapp))
+                                        <li><a href="{{ $SiteData->whatsapp }}" target="_blank"><i
+                                                    class="fa-brands fa-whatsapp"></i></a>
+                                        <li>
+                                    @endif
+                                </ul>
+                            </div>
+
                         </div>
-
                     </div>
-                </div>
 
-            </div>
-            <div class="col-lg-4" data-aos="fade-down" data-aos-duration="1000">
-                @if(appLangKey()=='ar')
-                <img src="/front/assets/img/frame.png" alt="mokups">
-                @else
-                <img src="/front/assets/img/frameEn.png" alt="mokups">
-                @endif
+                </div>
+                <div class="col-lg-4" data-aos="fade-down" data-aos-duration="1000">
+                    @if (appLangKey() == 'ar')
+                        <img src="/front/assets/img/frame.png" alt="mokups">
+                    @else
+                        <img src="/front/assets/img/frameEn.png" alt="mokups">
+                    @endif
+                </div>
             </div>
         </div>
-    </div>
-</section>
-
+    </section>
 @endsection

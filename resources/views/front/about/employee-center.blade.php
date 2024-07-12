@@ -1,53 +1,166 @@
 @extends('layout.front.app')
 @section('title', __('front.center_members'))
 
+<style>
+    .members-center .text-heading h1 {
+        color: var(--new-color);
+        width: 50%;
+    }
+
+    .center-cards .card-title {
+        color: var(--new-color);
+        background-color: white;
+    }
+
+    .center-cards .card-title img {
+        width: 70px;
+        height: 60px;
+    }
+
+    .center-cards .row>div {
+        background-color: var(--new-color)
+    }
+
+    .ceo-speech{
+        background-color: var(--new-color)
+    }
+    .ceo-img img{
+        width: 80%;
+        height: 80%;
+    }
+        @media (max-width:767px) {
+        .members-center .text-heading h1 {
+            width: 100%;
+        }
+    }
+
+</style>
 
 @section('content')
 
-<section class="breadcrumb mt-4">
-    <div class="container">
-     <nav aria-label="breadcrumb">
-         <ol class="breadcrumb">
-           <li class="breadcrumb-item"><a href="{{ langUrl() }}">{{__('front.home')}}</a></li>
-           <li class="breadcrumb-item"><a href="{{ url()->current() }}">{{ __('front.who_we') }}</a></li>
-           <li class="breadcrumb-item active">@yield('title')</li>
-         </ol>
-       </nav>
-    </div>
-</section>
+    <section class="breadcrumb mt-4">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ langUrl() }}">{{ __('front.home') }}</a></li>
+                    <li class="breadcrumb-item"><a href="{{ url()->current() }}">{{ __('front.who_we') }}</a></li>
+                    <li class="breadcrumb-item active">@yield('title')</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
 
 
-<section class="members-center bg-white">
-    <div class="container mt-10 mb-5 margin-top0">
-        <div class="row mb-5">
+    <section class="members-center bg-white">
+        <div class="container mt-5 mb-5 margin-top0">
+            <div class="text-heading text-center ">
+                <h1 class="mx-auto font-bold ">مركز رواق بغداد للسياسات العامة،
+                    مركز فكري يهتم بثلاثة محاور رئيسة:
+                </h1>
+            </div>
+            <div class="center-cards my-5">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-md-4 rounded">
+                        <div class="p-3">
+                            <div class="card-title py-2 rounded d-flex justify-content-center align-items-center">
+                                <img src="/uploads/files/shares/icons/Group 23.png" alt="title-img" />
+                                <h3 class="font-bold p-2">العلاقات العامة </h3>
+                            </div>
+                            <div class="card-body">
+                                <p class="font-bold text-white py-2 pt-4">يعنى المركز بتطوير وتعزيز العلاقات
+                                    بين المؤسسات والشركات والأفراد
+                                    والحكومات، وذلك من خلال تقديم
+                                    الاستشارات والتوجيهات اللازمة لتوثيق
+                                    العلاقات العامة وصياغة الرسائل
+                                    الرسائل الإعلامية المناسبة.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 rounded ">
+                        <div class="p-3 ">
+                            <div class="card-title py-2 rounded d-flex justify-content-center align-items-center">
+                                <img src="/uploads/files/shares/icons/Group 24.png" alt="title-img" />
+                                <h3 class="font-bold p-2">البرامج</h3>
+                            </div>
+                            <div class="card-body">
+                                <p class="font-bold text-white py-2 pt-4">يعنى المركز بتطوير وتعزيز العلاقات
+                                    بين المؤسسات والشركات والأفراد
+                                    والحكومات، وذلك من خلال تقديم
+                                    الاستشارات والتوجيهات اللازمة لتوثيق
+                                    العلاقات العامة وصياغة الرسائل
+                                    الرسائل الإعلامية المناسبة.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 rounded">
+                        <div class="p-3 ">
+                            <div class="card-title py-2 rounded d-flex justify-content-center align-items-center">
+                                <img src="/uploads/files/shares/icons/Frame 77.png" alt="title-img" />
+                                <h3 class="font-bold p-2">الدراسات والأبحاث</h3>
+                            </div>
+                            <div class="card-body">
+                                <p class="font-bold text-white py-2 pt-4">يعنى المركز بتطوير وتعزيز العلاقات
+                                    بين المؤسسات والشركات والأفراد
+                                    والحكومات، وذلك من خلال تقديم
+                                    الاستشارات والتوجيهات اللازمة لتوثيق
+                                    العلاقات العامة وصياغة الرسائل
+                                    الرسائل الإعلامية المناسبة.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section class="ceo-speech container rounded">
+                <div class="speech-info py-3 px-4 row">
+                    <div class="content col-md-8">
+                        <h3 class="font-bold text-white">كلمة رئيس المركز :</h3>
+                        <p class="text-white">خمس سنوات مرت ولا زال رواق بغداد يخطو خطوات حثيثة نحو بناء مركز تفكير يعمل
+                            بموضوعية واحتراف. تغيّر الرواق بعد عامه الثالث ليكون مشتملاً على ستّة مشاريع:
+                            أنا البرلمان، دار الرواق، مجلة الرواق، عراق ميتر، (كُنْ ) للتدريب والتطوير بودكاست (فكّر).
+                            وثلاثة مهام، وهي: أوراق السياسات وتقدير الموقف الجلسات والحلقات النقاشية،
+                            والعلاقات العامة. يتولى إدارة كل مشروع من المشاريع وكل مهمةٍ من المهمات
+                            أحد شبابنا الكفوئين الحريصين وقد أصبحوا مثالاً يحتذى به ونموذجاً يشار إليه. </p>
+                    </div>
+                    <div class="ceo-img col-md-3">
+                        <img src="/uploads/files/shares/ceo.png" alt="ceo-img" />
+                    </div>
+                </div>
+            </section>
+
+
+            {{-- <div class="row mb-5">
             <div class="col-lg-12">
                 <div class="title-page text-center d-block">
-                    {{ __('front.board_directors') }} 
+                    {{ __('front.board_directors') }}
                  </div>
                  @php
                     $description = "description_".appLangKey();
                  @endphp
                 <p class="desc">{{ $setting->$description }}</p>
             </div>
-        </div>
-        <div class="row justify-content-center align-items-center">
-            
-            @if (!$teamsCBD->isEmpty())
+        </div> --}}
+            <div class="row justify-content-center align-items-center">
+
+                {{-- @if (!$teamsCBD->isEmpty())
                 <div class="col-lg-12">
-                    @if(appLangKey()=='ar')
+                    @if (appLangKey() == 'ar')
                     <img src="/front/assets/img/ceo.png" class="img-fluid ceo-img" alt="">
                     @else
                     <img src="/front/assets/img/ceoEn.png" class="img-fluid ceo-img" alt="">
                     @endif
                 </div>
-            @endif
+            @endif --}}
 
-            @foreach ($teamsCBD as $CBD)
+                {{-- @foreach ($teamsCBD as $CBD)
                 <div class="modal fade" id="CBD-{{$CBD->id}}" tabindex="-1" aria-labelledby="CBD-{{$CBD->id}}Title"  aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered max-w-100">
                     <div class="modal-content">
                         <div class="modal-header height45">
-                        
+
                             <a href="#" data-bs-dismiss="modal" aria-label="Close">
                                 <img src="/front/assets/img/close.png" class="close" alt="close">
                             </a>
@@ -75,157 +188,171 @@
                     </div>
                     </a>
                 </div>
-            @endforeach
+            @endforeach --}}
 
-            @if (!$teamsCEO->isEmpty())
-                <div class="col-lg-12">
-                    @if(appLangKey()=='ar')
-                    <img src="/front/assets/img/cto.png" class="img-fluid ceo-img" alt="">
-                    @else
-                    <img src="/front/assets/img/ctoEn.png" class="img-fluid ceo-img" alt="">
-                    @endif
-                    
-                </div>
-            @endif
+                @if (!$teamsCEO->isEmpty())
+                    <div class="col-lg-12">
+                        @if (appLangKey() == 'ar')
+                            <img src="/front/assets/img/cto.png" class="img-fluid ceo-img" alt="">
+                        @else
+                            <img src="/front/assets/img/ctoEn.png" class="img-fluid ceo-img" alt="">
+                        @endif
 
-            @foreach ($teamsCEO as $CEO)
-                <div class="modal fade" id="CEO-{{$CEO->id}}" tabindex="-1" aria-labelledby="CEO-{{$CEO->id}}Title"  aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered max-w-100">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                        
-                            <a href="#" data-bs-dismiss="modal" aria-label="Close">
-                                <img src="/front/assets/img/close.png" class="close" alt="close">
-                            </a>
+                    </div>
+                @endif
+
+                @foreach ($teamsCEO as $CEO)
+                    <div class="modal fade" id="CEO-{{ $CEO->id }}" tabindex="-1"
+                        aria-labelledby="CEO-{{ $CEO->id }}Title" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered max-w-100">
+                            <div class="modal-content">
+                                <div class="modal-header">
+
+                                    <a href="#" data-bs-dismiss="modal" aria-label="Close">
+                                        <img src="/front/assets/img/close.png" class="close" alt="close">
+                                    </a>
+                                </div>
+                                <div class="modal-body text-center">
+                                    <div class="img-box"><img src="{{ $CEO->img }}" alt="{{ $CEO->translation->name }}">
+                                    </div>
+                                    <p class="name">{{ $CEO->translation->name }}</p>
+                                    <a href="mailto:{{ $CEO->email }}">{{ $CEO->email }} <img
+                                            src="/front/assets/img/mail.png" alt=""></a>
+                                    <p>{!! $CEO->translation->description !!}</p>
+                                    @if (!empty($CEO->cv_link))
+                                        <a href="{{ $CEO->cv_link }}"
+                                            class="btn btn-info text-white">{{ __('front.to_go_to_resume') }}</a>
+                                    @endif
+                                </div>
+                            </div>
                         </div>
-                        <div class="modal-body text-center">
+                    </div>
+
+                    <div class="col-lg-12 text-center">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#CEO-{{ $CEO->id }}">
                             <div class="img-box"><img src="{{ $CEO->img }}" alt="{{ $CEO->translation->name }}"></div>
-                            <p class="name">{{ $CEO->translation->name }}</p>
-                            <a href="mailto:{{ $CEO->email }}">{{ $CEO->email }} <img src="/front/assets/img/mail.png" alt=""></a>
-                            <p>{!! $CEO->translation->description !!}</p>
-                            @if (!empty($CEO->cv_link))
-                                <a href="{{ $CEO->cv_link }}" class="btn btn-info text-white">{{ __('front.to_go_to_resume') }}</a>
-                            @endif
+                            <div class="desc-member">
+                                <small>
+                                    <strong>{{ $CEO->translation->name }}</strong>
+                                </small>
+                                <p>{{ $CEO->translation->job_title }}</p>
+                            </div>
+                        </a>
+                    </div>
+                @endforeach
+
+
+                @if (!$teamsMEM->isEmpty())
+                    <div class="col-lg-12">
+                        @if (appLangKey() == 'ar')
+                            <img src="/front/assets/img/members.png" class="img-fluid ceo-img" alt="">
+                        @else
+                            <img src="/front/assets/img/membersEn.png" class="img-fluid ceo-img" alt="">
+                        @endif
+                    </div>
+                @endif
+
+
+                @foreach ($teamsMEM as $MEM)
+                    <div class="modal fade" id="MEM-{{ $MEM->id }}" tabindex="-1"
+                        aria-labelledby="MEM-{{ $MEM->id }}Title" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered max-w-100">
+                            <div class="modal-content">
+                                <div class="modal-header">
+
+                                    <a href="#" data-bs-dismiss="modal" aria-label="Close">
+                                        <img src="/front/assets/img/close.png" class="close" alt="close">
+                                    </a>
+                                </div>
+                                <div class="modal-body text-center">
+                                    <div class="img-box"><img src="{{ $MEM->img }}"
+                                            alt="{{ $MEM->translation->name }}"></div>
+                                    <p class="name">{{ $MEM->translation->name }}</p>
+                                    <a href="mailto:{{ $MEM->email }}">{{ $MEM->email }} <img
+                                            src="/front/assets/img/mail.png" alt=""></a>
+                                    <p>{!! $MEM->translation->description !!}</p>
+                                    @if (!empty($MEM->cv_link))
+                                        <a href="{{ $MEM->cv_link }}"
+                                            class="btn btn-info text-white">{{ __('front.to_go_to_resume') }}</a>
+                                    @endif
+                                </div>
+                            </div>
                         </div>
                     </div>
+
+                    <div class="col-lg-4 text-center">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#MEM-{{ $MEM->id }}">
+                            <div class="img-box"><img src="{{ $MEM->img }}" alt="{{ $MEM->translation->name }}">
+                            </div>
+                            <div class="desc-member">
+                                <small>
+                                    <strong>{{ $MEM->translation->name }}</strong>
+                                </small>
+                                <p>{{ $MEM->translation->job_title }}</p>
+                            </div>
+                        </a>
+
                     </div>
-                </div>
+                @endforeach
 
-                <div class="col-lg-12 text-center">
-                    <a href="#" data-bs-toggle="modal" data-bs-target="#CEO-{{$CEO->id}}">
-                    <div class="img-box"><img src="{{ $CEO->img }}" alt="{{ $CEO->translation->name }}"></div>
-                    <div class="desc-member">
-                        <small>
-                            <strong>{{ $CEO->translation->name }}</strong>
-                        </small>
-                        <p>{{ $CEO->translation->job_title }}</p>
+
+                @if (!$teamsEMP->isEmpty())
+                    <div class="col-lg-12">
+                        @if (appLangKey() == 'ar')
+                            <img src="/front/assets/img/emploayee.png" class="img-fluid ceo-img" alt="">
+                        @else
+                            <img src="/front/assets/img/emploayeeEn.png" class="img-fluid ceo-img" alt="">
+                        @endif
                     </div>
-                    </a>
-                </div>
-            @endforeach
+                @endif
 
+                @foreach ($teamsEMP as $EMP)
+                    <div class="modal fade" id="EMP-{{ $EMP->id }}" tabindex="-1"
+                        aria-labelledby="EMP-{{ $EMP->id }}Title" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered max-w-100">
+                            <div class="modal-content">
+                                <div class="modal-header">
 
-            @if (!$teamsMEM->isEmpty())
-                <div class="col-lg-12">
-                    @if(appLangKey()=='ar')
-                    <img src="/front/assets/img/members.png" class="img-fluid ceo-img" alt="">
-                    @else
-                    <img src="/front/assets/img/membersEn.png" class="img-fluid ceo-img" alt="">
-                    @endif
-                </div>
-            @endif
-
-
-            @foreach ($teamsMEM as $MEM)
-                <div class="modal fade" id="MEM-{{$MEM->id}}" tabindex="-1" aria-labelledby="MEM-{{$MEM->id}}Title"  aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered max-w-100">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                        
-                            <a href="#" data-bs-dismiss="modal" aria-label="Close">
-                                <img src="/front/assets/img/close.png" class="close" alt="close">
-                            </a>
-                        </div>
-                        <div class="modal-body text-center">
-                            <div class="img-box"><img src="{{ $MEM->img }}" alt="{{ $MEM->translation->name }}"></div>
-                            <p class="name">{{ $MEM->translation->name }}</p>
-                            <a href="mailto:{{ $MEM->email }}">{{ $MEM->email }} <img src="/front/assets/img/mail.png" alt=""></a>
-                            <p>{!! $MEM->translation->description !!}</p>
-                            @if (!empty($MEM->cv_link))
-                                <a href="{{ $MEM->cv_link }}" class="btn btn-info text-white">{{ __('front.to_go_to_resume') }}</a>
-                            @endif
-                        </div>
-                    </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 text-center">
-                    <a href="#" data-bs-toggle="modal" data-bs-target="#MEM-{{$MEM->id}}">
-                <div class="img-box"><img src="{{ $MEM->img }}" alt="{{ $MEM->translation->name }}"></div>
-                    <div class="desc-member">
-                        <small>
-                            <strong>{{ $MEM->translation->name }}</strong>
-                        </small>
-                        <p>{{ $MEM->translation->job_title }}</p>
-                    </div>
-                    </a>
-                
-                </div>
-            @endforeach
-            
-
-            @if (!$teamsEMP->isEmpty())
-                <div class="col-lg-12">
-                    @if(appLangKey()=='ar')
-                    <img src="/front/assets/img/emploayee.png" class="img-fluid ceo-img" alt="">
-                    @else
-                    <img src="/front/assets/img/emploayeeEn.png" class="img-fluid ceo-img" alt="">
-                    @endif
-                </div>
-            @endif
-
-            @foreach ($teamsEMP as $EMP)
-                <div class="modal fade" id="EMP-{{$EMP->id}}" tabindex="-1" aria-labelledby="EMP-{{$EMP->id}}Title"  aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered max-w-100">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                        
-                            <a href="#" data-bs-dismiss="modal" aria-label="Close">
-                                <img src="/front/assets/img/close.png" class="close" alt="close">
-                            </a>
-                        </div>
-                        <div class="modal-body text-center">
-                            <div class="img-box"><img src="{{ $EMP->img }}" alt="{{ $EMP->translation->name }}"></div>
-                            <p class="name">{{ $EMP->translation->name }}</p>
-                            <a href="mailto:{{ $EMP->email }}">{{ $EMP->email }} <img src="/front/assets/img/mail.png" alt=""></a>
-                            <p>{!! $EMP->translation->description !!}</p>
-                            @if (!empty($EMP->cv_link))
-                                <a href="{{ $EMP->cv_link }}" class="btn btn-info text-white">{{ __('front.to_go_to_resume') }}</a>
-                            @endif
+                                    <a href="#" data-bs-dismiss="modal" aria-label="Close">
+                                        <img src="/front/assets/img/close.png" class="close" alt="close">
+                                    </a>
+                                </div>
+                                <div class="modal-body text-center">
+                                    <div class="img-box"><img src="{{ $EMP->img }}"
+                                            alt="{{ $EMP->translation->name }}"></div>
+                                    <p class="name">{{ $EMP->translation->name }}</p>
+                                    <a href="mailto:{{ $EMP->email }}">{{ $EMP->email }} <img
+                                            src="/front/assets/img/mail.png" alt=""></a>
+                                    <p>{!! $EMP->translation->description !!}</p>
+                                    @if (!empty($EMP->cv_link))
+                                        <a href="{{ $EMP->cv_link }}"
+                                            class="btn btn-info text-white">{{ __('front.to_go_to_resume') }}</a>
+                                    @endif
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    <div class="col-lg-4 text-center">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#EMP-{{ $EMP->id }}">
+                            <div class="img-box"><img src="{{ $EMP->img }}" alt="{{ $EMP->translation->name }}">
+                            </div>
+                            <div class="desc-member">
+                                <small>
+                                    <strong>{{ $EMP->translation->name }}</strong>
+                                </small>
+                                <p>{{ $EMP->translation->job_title }}</p>
+                            </div>
+                        </a>
                     </div>
-                </div>
-                <div class="col-lg-4 text-center">
-                    <a href="#" data-bs-toggle="modal" data-bs-target="#EMP-{{$EMP->id}}">
-                <div class="img-box"><img src="{{ $EMP->img }}" alt="{{ $EMP->translation->name }}"></div>
-                    <div class="desc-member">
-                        <small>
-                            <strong>{{ $EMP->translation->name }}</strong>
-                        </small>
-                        <p>{{ $EMP->translation->job_title }}</p>
-                    </div>
-                    </a>
-                </div>
-            @endforeach
-            
+                @endforeach
+
+            </div>
         </div>
-    </div>
-    {{-- <div class="modal fade" id="exampleModalCenter" tabindex="-1" aria-labelledby="exampleModalCenterTitle"  aria-hidden="true">
+        {{-- <div class="modal fade" id="exampleModalCenter" tabindex="-1" aria-labelledby="exampleModalCenterTitle"  aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered max-w-100">
           <div class="modal-content">
             <div class="modal-header">
-             
+
                 <a href="#" data-bs-dismiss="modal" aria-label="Close">
                     <img src="/front/assets/img/close.png" class="close" alt="close">
                 </a>
@@ -244,7 +371,7 @@
           </div>
         </div>
     </div> --}}
-</section>
+    </section>
 
 
 

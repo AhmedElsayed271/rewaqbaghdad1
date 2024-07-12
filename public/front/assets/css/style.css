@@ -2,7 +2,30 @@
   font-family: Almarai, sans-serif;
   direction: rtl;
 }
+:root {
+    --new-color: #2BC1D2;
+}
 
+* {
+    box-sizing: border-box;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.projects {
+    justify-content: center;
+    align-items: center;
+}
+
+.g-5 {
+    gap: 25px;
+}
 img {
   width: 100%;
 }
@@ -69,7 +92,7 @@ figure {
   top: 7px;
 }
 
-.researchers-sec .row .section-title::before {
+.news-sec .row .section-title::before {
   content: "";
   border-top: 1px solid rgb(128, 128, 128);
   position: absolute;
@@ -79,7 +102,7 @@ figure {
   right: 0px;
 }
 
-.researchers-sec .section-title {
+.news-sec .section-title {
   display: flex;
   justify-content: start;
   align-items: center;
@@ -140,8 +163,7 @@ figure {
   width: 500px;
 }
 
-.banner {
-}
+
 
 .banner .swiper-slide img {
   height: 70vh;
@@ -171,7 +193,7 @@ figure {
       text-align: center !important;
   }
 
-  .researchers-sec .row .section-title {
+  .news-sec .row .section-title {
       display: flex !important;
   }
 
@@ -194,7 +216,7 @@ figure {
       height: auto;
   }
 
-  .researchers-sec .row .section-title::before {
+  .news-sec .row .section-title::before {
       top: 13px;
   }
 
@@ -332,7 +354,7 @@ figure {
   border-radius: 5px;
   overflow: hidden;
   transition: all 0.5s ease 0s;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px 0px;
+/* box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px 0px; */
   margin-bottom: 10px;
 }
 
@@ -342,30 +364,7 @@ figure {
   transition: all 0.5s ease 0s;
 }
 
-.news-block-two .inner-box .image-box::before {
-  position: absolute;
-  content: "";
-  background: linear-gradient(45deg, black, transparent);
-  width: 100%;
-  height: 100%;
-  left: 0px;
-  top: 0px;
-  right: 0px;
-  opacity: 0.85;
-  transition: all 0.5s ease 0s;
-}
 
-.news-block-two .inner-box:hover .image-box::before {
-  position: absolute;
-  content: "";
-  background: linear-gradient(45deg, black, transparent);
-  width: 100%;
-  height: 100%;
-  left: 0px;
-  top: 0px;
-  right: 0px;
-  opacity: 0;
-}
 
 .news-block-two .inner-box .image-box .image img {
   width: 100%;
@@ -443,8 +442,7 @@ figure {
   color: rgb(0, 0, 0);
 }
 
-.news-block-two .inner-box .lower-content small p {
-  font-size: 13px;
+.news-block-two .inner-box .lower-content small h5 {
   font-weight: 700;
   color: rgb(24, 149, 168);
 }
@@ -501,15 +499,16 @@ figure {
   margin-bottom: 2px;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+-webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
 
-.researchers-sec {
+.news-sec {
   position: relative;
 }
 
-.researchers-sec .swiper-button-next, .swiper-button-prev {
+.news-sec .swiper-button-next,
+.swiper-button-prev {
   width: 92px;
   background: none;
   display: flex;
@@ -517,10 +516,10 @@ figure {
   align-items: center;
 }
 
-.researchers-sec .swiper-button-prev::before {
+.news-sec .swiper-button-prev::before {
   content: "\f053";
   font-family: FontAwesome;
-  background-color: grey;
+/* background-color: grey; */
   color: rgb(255, 255, 255);
   border-radius: 50px;
   display: flex;
@@ -532,10 +531,10 @@ figure {
   font-size: 21px;
 }
 
-.researchers-sec .swiper-button-next::before {
+.news-sec .swiper-button-next::before {
   content: "\f054";
   font-family: FontAwesome;
-  background-color: grey;
+/* background-color: grey; */
   color: rgb(255, 255, 255);
   border-radius: 50px;
   display: flex;
@@ -4516,7 +4515,7 @@ div.bg-green {
   direction: ltr;
 }
 .underline{
-  
+
 text-decoration: underline;
 }
 .vector-about .social-box li img {
@@ -4639,7 +4638,7 @@ text-align: center;
 
 
 @media (max-width: 768px)  {
-    
+
     .swiper-button-prev,
     .swiper-button-next,
     .nexts,.prevs,
@@ -4651,7 +4650,7 @@ text-align: center;
         display: none !important;
     }
     .menu {
-       border: unset !important; 
+    border: unset !important;
     }
     .center-blogs,
     .custom-title-mobile{
@@ -4677,5 +4676,7 @@ text-align: center;
         margin-left: 20px !important;
     }
 }
-
-
+/* projects styles */
+.projects .project-img {
+    width: 50%;
+}

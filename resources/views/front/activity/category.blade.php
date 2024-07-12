@@ -15,7 +15,7 @@
             </div>
             <div class="col-lg-1">
             </div>
-            
+
             <div class="col-lg-6 pt-5   ">
                 <small class="title-sec mb-2">
                     <strong>{{ formatDate($activities[0]->created_at) }}</strong>
@@ -44,7 +44,7 @@
             <div class="col-lg-8">
 
                 <div class="d-grid justify-content-start align-items-center">
-                    <p class="text-blue">{{__('front.select_type_activity')}}</p>
+                    {{-- <p class="text-blue">{{__('front.select_type_activity')}}</p> --}}
                     <select class="mb-4 ">
                         <option value="{{langUrl('/activities')}}" data-display="{{__('front.all_results')}}">{{__('front.all_results')}}</option>
                         @foreach ($ActivityCats as $cat)
@@ -52,13 +52,13 @@
                         @endforeach
                     </select>
                 </div>
-               
+
                 <div class="row justify-content-center align-items-center">
                     @foreach ($activities as $key => $row)
-                        @if ($key == 0) 
+                        @if ($key == 0)
                             @php continue @endphp
                         @endif
-                    
+
                         <div class="col-lg-4">
                             <a href="{{ langUrl('/activity/'.$row->slug) }}">
                                 <div class="img-box pb-3 pt-3">
@@ -78,11 +78,11 @@
                         </div>
                         <hr>
                     @endforeach
-                    
-                    
+
+
                 </div>
             </div>
-            <div class="col-lg-3 margin20">
+            {{-- <div class="col-lg-3 margin20">
                 <div class="form-group">
                   @include('front.events')
                   <div class="widget_raper mt-3">
@@ -113,8 +113,8 @@
                     </div>
 
                 </div>
-            </div>
-            <div class="col-lg-12 mt-3 text-center">{!! $activities->links() !!}</div>
+            </div> --}}
+            {{-- <div class="col-lg-12 mt-3 text-center">{!! $activities->links() !!}</div> --}}
         </div>
     </div>
 </section>
@@ -131,7 +131,7 @@
         });
     });
     $(document).ready(function(){
-        $('#datepicker').datepicker(); 
+        $('#datepicker').datepicker();
     });
 </script>
 @endsection

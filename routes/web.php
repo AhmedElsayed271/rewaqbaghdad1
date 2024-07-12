@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Front\FaqController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,8 +30,8 @@ Route::group(['namespace' => 'Front'], function(){
     Route::get('/about-us', 'AboutController@AboutUs');
     Route::get('/employee/center', 'AboutController@EmployeeCenter');
     Route::get('/center/writers', 'AboutController@CenterWriters');
-    
-    
+
+
     Route::get('/versions/category/{slug}', 'VersionController@category');
     Route::get('/version/tag/{tag}', 'VersionController@Tag');
     Route::get('/versions', 'VersionController@All');
@@ -41,12 +42,12 @@ Route::group(['namespace' => 'Front'], function(){
     Route::get('/activities/tag/{tag}', 'ActivityController@Tag');
     Route::get('/activities', 'ActivityController@All');
     Route::get('/activity/{slug}', 'ActivityController@SingleActivity');
-    
+
 
     Route::get('/rewaq', 'RewaqController@index');
     Route::get('/rewaq/book/{slug}', 'RewaqController@book');
     Route::get('/rewaq/book/tag/{tag}', 'RewaqController@Tag');
-    
+
     Route::get('/rewaq/publish/role', 'RewaqController@PublishRole');
     Route::get('/rewaq/editorial-board', 'RewaqController@EditorialBoard');
     Route::get('/rewaq/contact-us', 'RewaqController@contact');
@@ -79,21 +80,21 @@ Route::group(['namespace' => 'Front'], function(){
 
     Route::get('/parliament', 'ParliamentController@index');
 
-   
+
     Route::get('/kon-media/center/news', 'KonMediaController@news');
     Route::get('/kon-media/center/news/{slug}', 'KonMediaController@SingleNews');
     Route::get('/kon-media/center/news/tag/{tag}', 'KonMediaController@Tag');
-    
-    
+
+
     Route::get('/iraq/meter', 'IraqmeterController@Info');
     Route::get('/iraq/meter/blogs', 'IraqmeterController@blogs');
     Route::get('/iraq/meter/{slug}', 'IraqmeterController@SingleBlog');
     Route::get('/iraq/meter/tag/{tag}', 'IraqmeterController@Tag');
-    
-    
+
+
     Route::get('/boadcast', 'IraqmeterController@boadcast');
     Route::get('/boadcast/details', 'IraqmeterController@boadcastDetails');
-    
+
     Route::get('/kon', 'IraqmeterController@kon');
 
 
@@ -104,23 +105,24 @@ Route::group(['namespace' => 'Front'], function(){
 
     Route::get('/media/center/gallery', 'MediacenterController@Gallery');
     Route::get('/media/center/videos', 'MediacenterController@videos');
-    
-    
+
+
     Route::get('/visit-center', 'ElectronicController@VisitCenter');
     Route::post('/visit-center', 'ElectronicController@VisitCenterSendMail');
-    
+
     Route::get('/request-survey', 'ElectronicController@RequestSurvey');
     Route::post('/request-survey', 'ElectronicController@RequestSurveySendMail');
-    
+
     Route::get('/request-host-event', 'ElectronicController@RequestHost');
     Route::post('/request-host-event', 'ElectronicController@RequestHostSendMail');
-    
+
     Route::get('/membership-request', 'ElectronicController@MembershipRequest');
     Route::post('/membership-request', 'ElectronicController@MembershipRequestSendMail');
-    
+
     Route::get('/request-invitation', 'ElectronicController@RequestInvitation');
     Route::post('/request-invitation', 'ElectronicController@RequestInvitationSendMail');
-    
+    Route::get('/faq', 'FaqController@faq');
+
 });
 
 
