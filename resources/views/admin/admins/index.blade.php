@@ -22,6 +22,7 @@
                     <th>{{ __('global.id') }}</th>
                     <th>{{ __('global.admin_name') }}</th>
                     <th>{{ __('global.email') }}</th>
+                    <th>{{ __('global.role') }}</th>
                     <th>{{ __('global.created_at') }}</th>
                     <th>{{ __('global.actions') }}</th>
                 </tr>
@@ -86,18 +87,22 @@
                         name: 'email'
                     },
                     {
+                        data: 'role',
+                        name: 'role'
+                    },
+                    {
                         data: 'created_at',
                         name: 'created_at'
                     },
                 ],
                 columnDefs: [{
-                        targets: 3,
+                        targets: 4,
                         render: function(data, type, row, meta) {
                             return data.substr(0, 10);
                         }
                     },
                     {
-                        targets: 4,
+                        targets: 5,
                         render: function(data, type, row, meta) {
                             var edit = '<a href="{{ url('/admin/admins') }}/' + row.id +
                                 '/edit" class="btn mb-1 btn-sm btn-info"><i class="fa-fw fas fa-pen-alt"></i></a>';

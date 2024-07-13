@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Support\Facades\Route;
 use App\Models\MEJEELPblogTranslation;
+use Illuminate\Support\Facades\Response;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\KhetabMagazineblogController;
@@ -202,6 +203,8 @@ Route::group(['prefix' => 'admin','middleware' => AuthAdmin::class], function ()
 
     Route::get('/test', function () {
         
+        return Response::download('uploads/files/shares/668ef189193d2.jpg');
+        dd(auth('admin')->user()->getRoleId());
 
         return MEJEELPblog::with('translation')->get();
 

@@ -158,7 +158,7 @@
 
 
 
-    {{--
+    
 @if (!$Medianews->isEmpty())
     <section class="center-blogs mt-10">
         <div class="container">
@@ -194,7 +194,7 @@
             </div>
         </div>
     </section>
-@endif --}}
+@endif
 
     {{-- @if (!$versions->isEmpty())
 <section class="researchers-sec mb-5">

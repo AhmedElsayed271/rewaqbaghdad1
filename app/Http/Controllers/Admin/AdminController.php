@@ -25,7 +25,10 @@ class AdminController extends Controller
     public function json()
     {
         $query = Admin::select('id','name','email','main','created_at')->where('is_superadmin',0)->get();
-        return datatables($query)->editColumn('created_at', function ($row) {
+        return datatables($query) 
+        ->addColumn('role', function($row) {
+            return $row->getRole();
+        })->editColumn('created_at', function ($row) {
             return $row->created_at;
         })->make(true);
     }

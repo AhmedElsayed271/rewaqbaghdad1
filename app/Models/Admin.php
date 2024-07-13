@@ -18,4 +18,21 @@ class Admin extends Authenticatable
     {
         return $this->hasOne('App\Models\Group', 'id', 'group_id');
     }
+
+    
+    public function getRole(){
+        if(count($this->roles) > 0){
+            return $this->roles[0]->name;
+        } else {
+            return null;
+        }
+    }
+
+    public function getRoleId(){
+        if(count($this->roles) > 0){
+            return $this->roles[0]->id;
+        } else {
+            return null;
+        }
+    }
 }
