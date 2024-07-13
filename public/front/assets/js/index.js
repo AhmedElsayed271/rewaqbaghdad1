@@ -2,13 +2,18 @@
  if ($('.center-blogs  .swiper-container').length) {
     var testimonialsSlider_1 = new Swiper('.center-blogs  .swiper-container', {
         // Optional parameters
-        effect: 'coverflow',
+
         grabCursor: true,
         centeredSlides: true,
+        spaceBetween: 20,
         slidesPerView: 'auto',
         loop: true,
         rtl: true,
         slideShadows: false,
+        navigation: {
+            nextEl: '.nexts',
+            prevEl: '.prevs',
+        },
         coverflowEffect: {
             rotate: 5,
             stretch: 0,

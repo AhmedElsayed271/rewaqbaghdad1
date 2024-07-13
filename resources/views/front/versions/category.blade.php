@@ -4,22 +4,22 @@
 @section('content')
 
 @if(!$versions->isEmpty())
-<section class="about-us-sec bg-white-greding-blue mb-5">
+<section class="about-us-sec py-3 mb-5">
     <div class="container">
         <div class="row pt-5 justify-content-center align-items-basline">
             <div class="col-lg-5">
                 <h2 class="title-sec text-white">
                     @yield('title')
                 </h2>
-                <div class="img-box text-center pb-3">
+                <div class="img-box text-center pb-3 border-0">
                     <img src="{{ $versions[0]->img }}" alt="{{$versions[0]->translation->title}}" class="border-0">
                 </div>
             </div>
-            
+
             <div class="col-lg-1">
             </div>
-            
-            <div class="col-lg-6 pt-5   ">
+
+            <div class="col-lg-6 pt-5">
                 <small class="title-sec mb-2">
                     <strong>{{ formatDate($versions[0]->created_at) }}</strong>
                 </small>
@@ -39,7 +39,7 @@
                             </a>
                         </h4>
                     </div>
-                </div> 
+                </div>
                 <div class="col-lg-1">
                     <div class="text">
                         <figure class="admin-thumb">
@@ -47,7 +47,7 @@
                                 <img class="border-0 border-radius0 object-fit0" src="/front/assets/img/a.png" alt="{{$versions[0]->translation->title}}">
                             </a>
                         </figure>
-                        
+
                     </div>
                 </div>
                 <div class="col-lg-3">
@@ -78,10 +78,10 @@
                     @endforeach
                   </select>
                 </div>
-               
+
                 <div class="row justify-content-center align-items-center">
                     @foreach ($versions as $key => $row)
-                        @if ($key == 0) 
+                        @if ($key == 0)
                             @php continue @endphp
                         @endif
                         <div class="col-lg-4">
@@ -166,7 +166,7 @@
 
                 </div>
             </div>
-            
+
         </div>
     </div>
 </section>
@@ -175,7 +175,7 @@
     <div class="modal-dialog modal-dialog-centered max-w-100">
     <div class="modal-content">
         <div class="modal-header modal-header2 height45">
-        
+
             <a href="#" data-bs-dismiss="modal" aria-label="Close">
                 <img src="/front/assets/img/close.png" class="close close-modal2" alt="close">
             </a>
@@ -223,7 +223,7 @@
         });
 
     });
-    
+
     $(document).ready(function() {
         $('select').niceSelect();
         $('select').on('change', function() {
@@ -231,7 +231,7 @@
         });
     });
     $(document).ready(function(){
-        $('#datepicker').datepicker(); 
+        $('#datepicker').datepicker();
     });
 </script>
 @endsection

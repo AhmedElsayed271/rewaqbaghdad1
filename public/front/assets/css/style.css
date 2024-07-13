@@ -4,6 +4,7 @@
 }
 :root {
     --new-color: #2BC1D2;
+    --white-color: #fff;
 }
 
 * {
@@ -17,12 +18,44 @@
 .font-bold {
     font-weight: 700;
 }
+.rounded-30 {
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+}
 
+.rounded-40 {
+    border-radius: 40px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    -ms-border-radius: 40px;
+    -o-border-radius: 40px;
+}
+
+.about-us-sec .container>div {
+    background-color: var(--new-color);
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+}
+
+.about-us-sec .container>div div p {
+    color: var(--white-color);
+    text-align: start;
+}
+
+.about-us-sec .container>div div .img-box {
+    border: 1.7px solid var(--white-color);
+}
 .projects {
     justify-content: center;
     align-items: center;
 }
-
+/* END My Own Style */
 .g-5 {
     gap: 25px;
 }
@@ -55,7 +88,7 @@ figure {
 }
 
 .section-title {
-  margin-bottom: 80px;
+margin-bottom: 30px;
   position: relative;
   display: flex;
   align-items: center;
@@ -300,17 +333,22 @@ figure {
   border: 1.5px solid rgb(128, 128, 128);
   background-color: rgba(255, 255, 255, 0.99);
   box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 20px 0px;
+-webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
 }
 
 .card:hover img {
   filter: none;
 }
 
-.card img {
+/* .card img {
   filter: saturate(0.5);
   transition: all 0.5s ease 0s;
 }
 
+*/
 .inner-box-book:hover img {
   filter: none;
 }
@@ -1218,7 +1256,7 @@ footer .submit {
 
 .about-us-sec .img-box img {
   text-align: center;
-  object-fit: cover;
+/* object-fit: cover; */
   border-radius: 10px;
   width: 100% !important;
   height: 250px !important;

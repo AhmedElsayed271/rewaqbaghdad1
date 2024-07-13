@@ -11,9 +11,15 @@
 
 @section('content')
     <style>
+        .news-sction .card-body p {
+            color: var(--new-color);
+            font-size: 20px !important;
+        }
+
         .slide-image {
             position: relative;
         }
+
 
         .slider_button {
             position: absolute;
@@ -57,37 +63,63 @@
     </div>
 
 
-    {{-- News Section --}}
 
-    <section class="container my-5">
-        <div class="section-title text-right pb-30">
-            <h2 class="title">أخبار المركز </h2>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <a href="/">
-                    <div class="shadow-sm">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="/uploads/files/shares/news/651bcf8ce577a.jpg" class="rounded" alt="news-image">
+    @if (!$Medianews->isEmpty())
+        <section class="center-blogs mt-10">
+            <div class="container">
+                <div class="section-title text-right pb-30">
+                    <h2 class="title">{{ __('front.center_news') }}</h2>
+                </div>
+                <div class="row d-flex align-items-center news-sction" data-aos="zoom-in" data-aos-duration="1000">
+                    <div class="col-12 ">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                @foreach ($Medianews as $Medianew)
+                                    <a href="{{ langUrl('/media/center/news/' . $Medianew->slug) }}">
+                                        <div class="swiper-slide ">
+                                            <div class="card border-0 shadow-none rounded">
+                                                <img class="card-img-top" height="332" src="{{ $Medianew->slider_img }}"
+                                                    alt="{{ $Medianew->translation->title }}">
+                                                <div class="card-img-overlay">
+                                                    <a href="{{ langUrl('/media/center/news/' . $Medianew->slug) }}"
+                                                        class="btn btn-dark btn-sm text-white">{{ __('front.latest_news') }}</a>
+                                                    <a href="{{ langUrl('/media/center/news/' . $Medianew->slug) }}"
+                                                        class="btn btn-light btn-sm">{{ formatDate($Medianew->created_at) }}</a>
+                                                </div>
+                                                <div class="card-body">
+                                                    {{-- <h4 class="card-title">{{$Medianew->translation->title}}</h4> --}}
+                                                    {{-- card-text --}}
+                                                    <p class="card-text py-2">{{ $Medianew->translation->description }}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                @endforeach
                             </div>
                         </div>
-                        <div class="news-block-two">
-                            <div class="inner-box">
-                                <div class="lower-content">
-                                    <h5>مركز تفكير يُقدم رؤى وافكار ودراسات وبحوث للنخب والمختصين ومتخذي القرار. تصدر عنه
-                                        مجلة "الرواق" والتي تعنى بالتركيز على عنوان واحد وتستكتب فيه خيرة الباحثين والكتاب
-                                    </h5>
-                                </div>
-                            </div>
-                        </div>
+                        <div class="nexts"></div>
+                        <div class="prevs"></div>
                     </div>
-                </a>
+                </div>
+            </div>
+        </section>
+    @endif
+
+    <div class="center-activity container">
+        <div class="section-title justify-content-center pb-30 ">
+            <h2 class="title">نشاطات المركز</h2>
+        </div>
+        <div class="section-title text-right pb-30">
+            <h2 class="title">الندوات</h2>
+            <div class="all-activity">
+
             </div>
         </div>
-    </section>
+        <div class="section-title text-right pb-30">
+            <h2 class="title">الحلقات النقاشية</h2>
+        </div>
 
-
+    </div>
     {{-- Projects Section --}}
     <section class="container">
         <div class="section-title text-right pb-30">
@@ -95,21 +127,21 @@
         </div>
         <div class="projects row justify-content-center align-items-center">
             <div class="col-md-3 my-2">
-                <a href="">
+                <a href="/magazine">
                     <div class="project-img mx-auto">
                         <img src="/uploads/files/shares/projects/alrewaq.png" alt="project-img1">
                     </div>
                 </a>
             </div>
             <div class="col-md-3 my-2">
-                <a href="">
+                <a href="https://www.iamtheparliament.com" target="_self">
                     <div class="project-img mx-auto">
                         <img src="/uploads/files/shares/projects/img2.png" alt="project-img2">
                     </div>
                 </a>
             </div>
             <div class="col-md-3 my-2">
-                <a href="">
+                <a href="/rewaq">
                     <div class="project-img mx-auto">
                         <img src="/uploads/files/shares/projects/img3.png" alt="project-img3">
                     </div>
@@ -130,21 +162,21 @@
                 </a>
             </div>
             <div class="col-md-3 my-2">
-                <a href="">
+                <a href="/iraq/meter">
                     <div class="project-img mx-auto">
                         <img src="/uploads/files/shares/projects/img6.png" alt="project-img6">
                     </div>
                 </a>
             </div>
             <div class="col-md-3 my-2">
-                <a href="">
+                <a href="/boadcast">
                     <div class="project-img mx-auto">
                         <img src="/uploads/files/shares/projects/img7.png" alt="project-img7">
                     </div>
                 </a>
             </div>
             <div class="col-md-3 my-2">
-                <a href="">
+                <a href="/kon">
                     <div class="project-img mx-auto">
                         <img src="/uploads/files/shares/projects//kun.png" alt="project-img8">
                     </div>
@@ -156,45 +188,6 @@
 
 
 
-
-
-    
-@if (!$Medianews->isEmpty())
-    <section class="center-blogs mt-10">
-        <div class="container">
-            <div class="section-title text-right pb-30">
-                <h2 class="title">{{__('front.center_news')}}</h2>
-            </div>
-            <div class="row d-flex align-items-center" data-aos="zoom-in" data-aos-duration="1000">
-                <div class="col-12 ">
-                    <div class="swiper-container">
-                        <div class="swiper-wrapper">
-                            @foreach ($Medianews as $Medianew)
-                                <a href="{{ langUrl('/media/center/news/'.$Medianew->slug) }}">
-                                    <div class="swiper-slide">
-                                        <div class="card">
-                                            <img class="card-img card-img-top" height="332" src="{{$Medianew->slider_img}}" alt="{{$Medianew->translation->title}}">
-                                            <div class="card-img-overlay">
-                                                <a href="{{ langUrl('/media/center/news/'.$Medianew->slug) }}" class="btn btn-dark btn-sm text-white">{{__('front.latest_news')}}</a>
-                                                <a href="{{ langUrl('/media/center/news/'.$Medianew->slug) }}" class="btn btn-light btn-sm">{{ formatDate($Medianew->created_at) }}</a>
-                                            </div>
-                                            <div class="card-body">
-                                                <h4 class="card-title">{{$Medianew->translation->title}}</h4>
-                                                <p class="card-text">{{$Medianew->translation->description}}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            @endforeach
-                        </div>
-                    </div>
-                    <div class="nexts"></div>
-                    <div class="prevs"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-@endif
 
     {{-- @if (!$versions->isEmpty())
 <section class="researchers-sec mb-5">
