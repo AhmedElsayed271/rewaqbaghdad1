@@ -112,7 +112,6 @@
         <div class="section-title text-right pb-30">
             <h2 class="title">الندوات</h2>
             <div class="all-activity">
-
             </div>
         </div>
         <div class="section-title text-right pb-30">
