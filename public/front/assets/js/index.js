@@ -70,8 +70,8 @@ var swipers = new Swiper(".our-books-sec .swiper-container", {
       clickable: true,
     },
     navigation: {
-        nextEl: '.swiper-button-nexts',
-        prevEl: '.swiper-button-prevs',
+      nextEl: '.nexts',
+      prevEl: '.prevs',
       },
       breakpoints: {
         640: {
