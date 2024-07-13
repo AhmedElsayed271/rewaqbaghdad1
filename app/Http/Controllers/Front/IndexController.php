@@ -2,33 +2,34 @@
 
 namespace App\Http\Controllers\Front;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use Carbon\Carbon;
+use App\Models\Events;
 
 use App\Models\Slider;
-use App\Models\Activity;
 use App\Models\Version;
-use App\Models\Rewaqbook;
-
+use App\Models\Activity;
 use App\Models\Magazine;
-use App\Models\Magazineblog;
+
 use App\Models\Iraqmeter;
-use App\Models\Parliament;
+use App\Models\Medianews;
+use App\Models\Rewaqbook;
 use App\Models\Newsletter;
-use App\Models\ActivityTranslation;
+use App\Models\Parliament;
+use App\Models\Magazineblog;
 
-use Illuminate\Support\Facades\Mail;
-use App\Mail\SubscriptionNewsletter;
+use Illuminate\Http\Request;
+use App\Models\Activitycategory;
 
+use App\Models\EventsTranslation;
 use App\Models\VersionTranslation;
-use App\Models\RewaqbookTranslation;
-use App\Models\MagazineblogTranslation;
+use App\Models\ActivityTranslation;
+use App\Http\Controllers\Controller;
+use App\Mail\SubscriptionNewsletter;
 use App\Models\IraqmeterTranslation;
 use App\Models\MedianewsTranslation;
-use App\Models\Medianews;
-use App\Models\Events;
-use App\Models\EventsTranslation;
-use Carbon\Carbon;
+use App\Models\RewaqbookTranslation;
+use Illuminate\Support\Facades\Mail;
+use App\Models\MagazineblogTranslation;
 
 class IndexController extends Controller
 {
@@ -173,7 +174,9 @@ class IndexController extends Controller
         ->orderBy('created_at', 'DESC')->limit(6)->get();
         
         $parliament = Parliament::first();
-        return view('front.index', compact('magazine','parliament','iraqmeterBlogs','magazineBlog','sliders','Medianews', 'versions','books'));
+
+        $activitiesCategory = Activitycategory::with('translation','activites.translation')->get();
+        return view('front.index', compact('magazine','parliament','iraqmeterBlogs','magazineBlog','sliders','Medianews', 'versions','books','activitiesCategory'));
     }
     
     public function subscription(Request $request)

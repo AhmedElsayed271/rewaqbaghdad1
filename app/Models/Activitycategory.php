@@ -19,4 +19,9 @@ class Activitycategory extends Model
         return $this->hasMany('App\Models\ActivitycategoryTranslation', 'category_id', 'id');
     }
 
+    public function activites()
+    {
+        return $this->hasMany(Activity::class,'category_id', 'id');
+    }
+
 }
