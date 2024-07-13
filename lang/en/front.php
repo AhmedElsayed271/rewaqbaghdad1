@@ -10,6 +10,8 @@ return [
     'who_we' => 'Who We Are?',
     'targets' => 'Our Goals',
     'vision' => 'Our Vision',
+    'ourvision' => 'our vision',
+ 
     'means' => 'Our Means',
     'about_us' => 'About Us',
     // 

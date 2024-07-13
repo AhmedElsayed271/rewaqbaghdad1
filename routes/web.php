@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Front\FaqController;
+use App\Http\Controllers\OurvisionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -122,6 +123,7 @@ Route::group(['namespace' => 'Front'], function(){
     Route::get('/request-invitation', 'ElectronicController@RequestInvitation');
     Route::post('/request-invitation', 'ElectronicController@RequestInvitationSendMail');
     Route::get('/faq', 'FaqController@faq');
+    Route::get('/ourvision ', 'OurvisionController@ourvision')->name('ourvision');
 
 });
 

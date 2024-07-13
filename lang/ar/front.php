@@ -79,7 +79,7 @@ return [
     'request_participation' => 'طلب دعوة للنشر او المشاركة البحثية',
 
     'alert_send_contact_main' => 'تم ارسال رسالتك بنجاح',
-
+      'ourvision' => 'الرؤية الاهداف',
     'magazine' => 'مجلة الرواق',
     'khetab_magazine' => 'مجلة الخطاب',
     'MEJEELP_magazine' => 'مجلة MEJEELP',

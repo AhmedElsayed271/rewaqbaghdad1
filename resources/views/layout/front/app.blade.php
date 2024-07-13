@@ -259,6 +259,10 @@
                                             </li>
                                             <li>
                                                 <a class="dropdown-item"
+                                                    href="{{ langUrl('/ourvision') }}">{{ __('front.ourvision') }} </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item"
                                                     href="{{ langUrl('/employee/center') }}">{{ __('front.center_members') }}</a>
                                             </li>
                                             <li>
