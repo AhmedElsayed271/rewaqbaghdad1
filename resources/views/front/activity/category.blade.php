@@ -4,29 +4,30 @@
 @section('content')
 
 @if(!$activities->isEmpty())
-<section class="about-us-sec bg-white-greding mb-5">
+{{-- bg-white-greding --}}
+<section class="about-us-sec my-5">
     <div class="container">
         <div class="row pt-5 justify-content-center align-items-basline">
             <div class="col-lg-5">
                 <h2 class="title-sec">@yield('title')</h2>
-                <div class="img-box text-center pb-3">
+                <div class="img-box text-center pb-3 border-0">
                     <img src="{{ $activities[0]->img }}" alt="{{ $activities[0]->translation->title }}" class="border-0">
                 </div>
             </div>
             <div class="col-lg-1">
             </div>
 
-            <div class="col-lg-6 pt-5   ">
+            <div class="col-lg-6 pt-5">
                 <small class="title-sec mb-2">
                     <strong>{{ formatDate($activities[0]->created_at) }}</strong>
                 </small>
-                <strong class="pt-3 pb-3 d-block title-activite">{{ $activities[0]->translation->title }}</strong>
-                <div class="sub-title color-black">{{ $activities[0]->translation->description }}</div>
+                {{-- <strong class="pt-3 pb-3 d-block title-activite">{{ $activities[0]->translation->title }}</strong> --}}
+                <div class="sub-title color-black py-2">{{ $activities[0]->translation->description }}</div>
                 <br>
               <div class="row align-items-center">
                 <div class="col-lg-12 ">
-                    <div class="text float-left">
-                        <a href="{{ langUrl('/activity/'.$activities[0]->slug) }}" class="btn btn">
+                    <div class="text float-right">
+                        <a href="{{ langUrl('/activity/'.$activities[0]->slug) }}" class="btn btn text-white">
                             {{__('front.for_more')}}
                         </a>
                     </div>
@@ -42,7 +43,6 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8">
-
                 <div class="d-grid justify-content-start align-items-center">
                     {{-- <p class="text-blue">{{__('front.select_type_activity')}}</p> --}}
                     <select class="mb-4 ">

@@ -2,6 +2,10 @@
 @section('title', __('front.center_members'))
 
 <style>
+    .center-cards{
+        margin-bottom: 6rem !important ;
+        margin-top: 3rem !important ;
+    }
     .members-center .text-heading h1 {
         color: var(--new-color);
         width: 50%;
@@ -21,19 +25,32 @@
         background-color: var(--new-color)
     }
 
-    .ceo-speech{
+    .ceo-speech {
         background-color: var(--new-color)
     }
-    .ceo-img img{
-        width: 80%;
-        height: 80%;
+
+    .ceo-img img {
+        width: 100%;
     }
-        @media (max-width:767px) {
+
+    @media (max-width:767px) {
         .members-center .text-heading h1 {
             width: 100%;
         }
     }
 
+    @media (min-width:767px) {
+        .speech-info{
+            position: relative;
+        }
+        .ceo-img {
+            position: absolute;
+            left: 30px;
+            top: -30px;
+            bottom: -30px;
+
+        }
+    }
 </style>
 
 @section('content')
@@ -52,17 +69,17 @@
 
 
     <section class="members-center bg-white">
-        <div class="container mt-5 mb-5 margin-top0">
+        <div class="container my-5 mb-5 ">
             <div class="text-heading text-center ">
                 <h1 class="mx-auto font-bold ">مركز رواق بغداد للسياسات العامة،
                     مركز فكري يهتم بثلاثة محاور رئيسة:
                 </h1>
             </div>
-            <div class="center-cards my-5">
+            <div class="center-cards ">
                 <div class="row justify-content-center align-items-center">
-                    <div class="col-md-4 rounded">
-                        <div class="p-3">
-                            <div class="card-title py-2 rounded d-flex justify-content-center align-items-center">
+                    <div class="col-md-4 rounded pb-5 pt-2">
+                        <div class="p-2">
+                            <div class="card-title py-1 rounded d-flex justify-content-center align-items-center">
                                 <img src="/uploads/files/shares/icons/Group 23.png" alt="title-img" />
                                 <h3 class="font-bold p-2">العلاقات العامة </h3>
                             </div>
@@ -77,9 +94,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 rounded ">
-                        <div class="p-3 ">
-                            <div class="card-title py-2 rounded d-flex justify-content-center align-items-center">
+                    <div class="col-md-4 rounded pb-5 pt-2 ">
+                        <div class="p-2">
+                            <div class="card-title py-1 rounded d-flex justify-content-center align-items-center">
                                 <img src="/uploads/files/shares/icons/Group 24.png" alt="title-img" />
                                 <h3 class="font-bold p-2">البرامج</h3>
                             </div>
@@ -94,9 +111,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 rounded">
-                        <div class="p-3 ">
-                            <div class="card-title py-2 rounded d-flex justify-content-center align-items-center">
+                    <div class="col-md-4 rounded pb-5 pt-2">
+                        <div class="p-2 ">
+                            <div class="card-title py-1 rounded d-flex justify-content-center align-items-center">
                                 <img src="/uploads/files/shares/icons/Frame 77.png" alt="title-img" />
                                 <h3 class="font-bold p-2">الدراسات والأبحاث</h3>
                             </div>
@@ -114,19 +131,19 @@
                 </div>
             </div>
 
-            <section class="ceo-speech container rounded">
-                <div class="speech-info py-3 px-4 row">
+            <section class="ceo-speech container rounded my-5">
+                <div class="speech-info py-5 px-4 my-5">
                     <div class="content col-md-8">
                         <h3 class="font-bold text-white">كلمة رئيس المركز :</h3>
-                        <p class="text-white">خمس سنوات مرت ولا زال رواق بغداد يخطو خطوات حثيثة نحو بناء مركز تفكير يعمل
+                        <p class="text-white" style="font-size: 20px">خمس سنوات مرت ولا زال رواق بغداد يخطو خطوات حثيثة نحو بناء مركز تفكير يعمل
                             بموضوعية واحتراف. تغيّر الرواق بعد عامه الثالث ليكون مشتملاً على ستّة مشاريع:
                             أنا البرلمان، دار الرواق، مجلة الرواق، عراق ميتر، (كُنْ ) للتدريب والتطوير بودكاست (فكّر).
                             وثلاثة مهام، وهي: أوراق السياسات وتقدير الموقف الجلسات والحلقات النقاشية،
                             والعلاقات العامة. يتولى إدارة كل مشروع من المشاريع وكل مهمةٍ من المهمات
                             أحد شبابنا الكفوئين الحريصين وقد أصبحوا مثالاً يحتذى به ونموذجاً يشار إليه. </p>
                     </div>
-                    <div class="ceo-img col-md-3">
-                        <img src="/uploads/files/shares/ceo.png" alt="ceo-img" />
+                    <div class="ceo-img" style="width: 280px">
+                        <img src="/uploads/files/shares/ceo.png" alt="ceo-img" class="mx-auto" />
                     </div>
                 </div>
             </section>
@@ -143,9 +160,8 @@
                 <p class="desc">{{ $setting->$description }}</p>
             </div>
         </div> --}}
-            <div class="row justify-content-center align-items-center">
 
-                {{-- @if (!$teamsCBD->isEmpty())
+            {{-- @if (!$teamsCBD->isEmpty())
                 <div class="col-lg-12">
                     @if (appLangKey() == 'ar')
                     <img src="/front/assets/img/ceo.png" class="img-fluid ceo-img" alt="">
@@ -155,7 +171,7 @@
                 </div>
             @endif --}}
 
-                {{-- @foreach ($teamsCBD as $CBD)
+            {{-- @foreach ($teamsCBD as $CBD)
                 <div class="modal fade" id="CBD-{{$CBD->id}}" tabindex="-1" aria-labelledby="CBD-{{$CBD->id}}Title"  aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered max-w-100">
                     <div class="modal-content">
@@ -189,9 +205,10 @@
                     </a>
                 </div>
             @endforeach --}}
+            <div class="row justify-content-center align-items-center">
 
                 @if (!$teamsCEO->isEmpty())
-                    <div class="col-lg-12">
+                    <div class="col-md-4">
                         @if (appLangKey() == 'ar')
                             <img src="/front/assets/img/cto.png" class="img-fluid ceo-img" alt="">
                         @else
@@ -207,7 +224,6 @@
                         <div class="modal-dialog modal-dialog-centered max-w-100">
                             <div class="modal-content">
                                 <div class="modal-header">
-
                                     <a href="#" data-bs-dismiss="modal" aria-label="Close">
                                         <img src="/front/assets/img/close.png" class="close" alt="close">
                                     </a>
@@ -228,7 +244,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-12 text-center">
+                    <div class="col-md-4 text-center">
                         <a href="#" data-bs-toggle="modal" data-bs-target="#CEO-{{ $CEO->id }}">
                             <div class="img-box"><img src="{{ $CEO->img }}" alt="{{ $CEO->translation->name }}"></div>
                             <div class="desc-member">
@@ -241,8 +257,11 @@
                     </div>
                 @endforeach
 
+                <div class="my-5 text-center">
+                    <h3 class="font-bold">اعضاء مجلس الادارة</h3>
+                </div>
 
-                @if (!$teamsMEM->isEmpty())
+                {{-- @if (!$teamsMEM->isEmpty())
                     <div class="col-lg-12">
                         @if (appLangKey() == 'ar')
                             <img src="/front/assets/img/members.png" class="img-fluid ceo-img" alt="">
@@ -250,7 +269,7 @@
                             <img src="/front/assets/img/membersEn.png" class="img-fluid ceo-img" alt="">
                         @endif
                     </div>
-                @endif
+                @endif --}}
 
 
                 @foreach ($teamsMEM as $MEM)
@@ -259,7 +278,6 @@
                         <div class="modal-dialog modal-dialog-centered max-w-100">
                             <div class="modal-content">
                                 <div class="modal-header">
-
                                     <a href="#" data-bs-dismiss="modal" aria-label="Close">
                                         <img src="/front/assets/img/close.png" class="close" alt="close">
                                     </a>
@@ -280,7 +298,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-4 text-center">
+                    <div class="col-md-4 text-center">
                         <a href="#" data-bs-toggle="modal" data-bs-target="#MEM-{{ $MEM->id }}">
                             <div class="img-box"><img src="{{ $MEM->img }}" alt="{{ $MEM->translation->name }}">
                             </div>
@@ -295,16 +313,19 @@
                     </div>
                 @endforeach
 
-
+                {{--
                 @if (!$teamsEMP->isEmpty())
-                    <div class="col-lg-12">
+                    <div class="col-md-12">
                         @if (appLangKey() == 'ar')
                             <img src="/front/assets/img/emploayee.png" class="img-fluid ceo-img" alt="">
                         @else
                             <img src="/front/assets/img/emploayeeEn.png" class="img-fluid ceo-img" alt="">
                         @endif
                     </div>
-                @endif
+                @endif --}}
+                <div class="my-5 text-center">
+                    <h3 class="font-bold">رواق الموظفين</h3>
+                </div>
 
                 @foreach ($teamsEMP as $EMP)
                     <div class="modal fade" id="EMP-{{ $EMP->id }}" tabindex="-1"
