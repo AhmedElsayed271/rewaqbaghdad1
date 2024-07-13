@@ -7,7 +7,44 @@
 
 {{-- @section('style')@endsection --}}
 
-{{-- @section('script')@endsection --}}
+@section('js')
+    <script>
+        $(document).ready(function() {
+            @if (!$activitiesCategory->isEmpty())
+                @foreach ($activitiesCategory as $index => $activityCategory)
+                    if ($(".activityes-categories{{ $index }}  .swiper-container").length) {
+                        var testimonialsSlider_1 = new Swiper(".activityes-categories{{ $index }}  .swiper-container", {
+                                // Optional parameters
+
+                                grabCursor: true,
+                                centeredSlides: true,
+                                spaceBetween: 20,
+                                slidesPerView: 'auto',
+                                loop: true,
+                                rtl: true,
+                                slideShadows: false,
+                                navigation: {
+                                    nextEl: '.nexts',
+                                    prevEl: '.prevs',
+                                },
+                                coverflowEffect: {
+                                    rotate: 5,
+                                    stretch: 0,
+                                    depth: 10,
+                                    modifier: 2,
+                                },
+                                on: {
+                                    resize: function() {
+                                        this.update();
+                                    }
+                                },
+                            });
+                    }
+                @endforeach
+            @endif
+        })
+    </script>
+@endsection
 
 @section('content')
     <style>
@@ -103,6 +140,57 @@
                 </div>
             </div>
         </section>
+    @endif
+    @if (!$activitiesCategory->isEmpty())
+        @foreach ($activitiesCategory as $index => $activityCategory)
+            <section class="mt-10 activityes-categories{{ $index }}">
+                <div class="container">
+                    <div class="section-title text-right pb-30">
+                        <h2 class="title">{{ $activityCategory->translation->name }}</h2>
+                    </div>
+                    <div class="row d-flex align-items-center news-sction" data-aos="zoom-in" data-aos-duration="1000">
+                        <div class="col-12 ">
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    @foreach ($activityCategory->activites as $key => $row)
+                                        {{-- @if ($key == 0)
+                                            @php continue @endphp
+                                        @endif --}}
+                                        <div class=" col-12 col-xs-12 col-md-6 col-lg-4" style="margin-left: 20px">
+                                            <div class="swiper-slide">
+                                                <div class="card" style="border: none ">
+                                                    <a href="{{ langUrl('/activity/' . $row->slug) }}">
+                                                        <div class="img-box">
+                                                            <img class="card-img-top" src="{{ $row->img }}"
+                                                                alt="{{ $row->translation->title }}" class="border-0">
+                                                        </div>
+                                                    </a>
+
+                                                    <div class="card-body">
+                                                        <a href="{{ langUrl('/activity/' . $row->slug) }}">
+                                                            <small class="title-sec mb-1">
+                                                                <strong>{{ formatDate($row->created_at) }}</strong>
+                                                            </small>
+                                                            <strong
+                                                                class="pt-1 pb-1 d-block">{{ $row->translation->title }}</strong>
+                                                            <div>{{ $row->translation->description }}</div>
+                                                            <strong
+                                                                class="department-name mb-4">{{ $row->category->name }}</strong>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                            <div class="nexts"></div>
+                            <div class="prevs"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        @endforeach
     @endif
 
     <div class="center-activity container">
