@@ -156,6 +156,7 @@ return [
         'img2' => 'Picture of Center goals',
         'targets' => 'Center goals',
         'target_name' => 'target name',
+        'target_content'    => 'target content',
         'addrow' => 'Add a new field',
         'alert_del_row' => 'Are you sure to delete this field?',
 

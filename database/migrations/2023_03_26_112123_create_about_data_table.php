@@ -19,6 +19,8 @@ return new class extends Migration
             $table->enum('type', ['targets','vision','means'])->default('targets');
             $table->string('content_ar', 255)->nullable();
             $table->string('content_en', 255)->nullable();
+            $table->string('name_ar', 255)->nullable();
+            $table->string('name_en', 255)->nullable();
 
             $table->bigInteger('about_id')->unsigned();
             $table->foreign('about_id')->references('id')->on('abouts')->onDelete('cascade')->onUpdate('cascade');

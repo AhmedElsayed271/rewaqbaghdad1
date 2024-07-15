@@ -26,7 +26,8 @@ class AboutController extends Controller
     
     public function update(Request $request)
     {
-        return $request;
+        
+
         $validatedData = $request->validate([
             'img1' => 'required|string|max:200',
             'img2' => 'required|string|max:200',
@@ -34,15 +35,15 @@ class AboutController extends Controller
             'description' => 'array',
             'description.*' => 'required|string',
             
-            // 'target_ar' => 'array',
-            // 'target_ar.*' => 'required|string|max:255',
-            // 'target_en' => 'array',
-            // 'target_en.*' => 'required|string|max:255',
+            'target_ar' => 'array',
+            'target_ar.*' => 'required|max:255',
+            'target_en' => 'array',
+            'target_en.*' => 'required|max:255',
 
-            'vision_ar' => 'array',
-            'vision_ar.*' => 'required|string|max:255',
-            'vision_en' => 'array',
-            'vision_en.*' => 'required|string|max:255',
+          
+            'vision_ar' => 'required|max:255',
+
+            'vision_en' => 'required|max:255',
             
             'means_ar' => 'array',
             'means_ar.*' => 'required|string|max:255',
@@ -68,23 +69,24 @@ class AboutController extends Controller
             AboutData::truncate();
         \DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
-        foreach ($request->target_ar as $tarKey => $target) :
+        foreach ($request->target_ar['content_ar'] as $index => $target) :
             $tar = new AboutData;
             $tar->type = 'targets';
-            $tar->content_ar = $request->target_ar[$tarKey];
-            $tar->content_en = $request->target_en[$tarKey];
+            $tar->content_ar = $request->target_ar['content_ar'][$index];
+            $tar->content_en = $request->target_en['content_en'][$index];
+            $tar->name_ar = $request->target_ar['name_ar'][$index];
+            $tar->name_en = $request->target_en['name_en'][$index];
             $tar->about_id = $id;
             $tar->save();
         endforeach;
 
-        foreach ($request->vision_ar as $viKey => $vision) :
-            $vi = new AboutData;
-            $vi->type = 'vision';
-            $vi->content_ar = $request->vision_ar[$viKey];
-            $vi->content_en = $request->vision_en[$viKey];
-            $vi->about_id = $id;
-            $vi->save();
-        endforeach;
+
+            AboutData::firstOrCreate(['type' => 'vision'], [
+                'content_ar' =>  $request->vision_ar,
+                'content_en' =>  $request->vision_en,
+                'type'        => 'vision',
+                'about_id'      => $id
+            ]);
         
         foreach ($request->means_ar as $meanKey => $means) :
             $mean = new AboutData;

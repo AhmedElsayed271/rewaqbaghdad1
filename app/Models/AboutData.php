@@ -9,4 +9,6 @@ class AboutData extends Model
 {
     use HasFactory;
     public $timestamps = false;
+    protected $guarded = [];
+    protected $fillable = ['content_ar','content_en','name_en','name_ar','type','about_id'];
 }

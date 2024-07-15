@@ -90,12 +90,21 @@
             <div class="row">
                 <div class="col-md-5 mb-3">
                     <label>{{ __('global.about.target_name') }} ({{ LangNative('ar') }}) <strong class="text-danger">*</strong></label>
-                    <textarea name="target_ar[]" required maxlength="255" class="form-control" rows="3">{{$target->content_ar}}</textarea>
+                    <textarea name="target_ar[name_ar][]" required maxlength="255" class="form-control" rows="3">{{$target->name_ar ?? ""}}</textarea>
                 </div>
                 
                 <div class="col-md-5 mb-3">
                     <label>{{ __('global.about.target_name') }} ({{ LangNative('en') }}) <strong class="text-danger">*</strong></label>
-                    <textarea name="target_en[]" required maxlength="255" class="form-control" rows="3">{{$target->content_en}}</textarea>
+                    <textarea name="target_en[name_en][]" required maxlength="255" class="form-control" rows="3">{{$target->name_en ?? ""}}</textarea>
+                </div>
+                <div class="col-md-5 mb-3">
+                    <label>{{ __('global.about.target_content') }} ({{ LangNative('ar') }}) <strong class="text-danger">*</strong></label>
+                    <textarea name="target_ar[content_ar][]" required maxlength="255" class="form-control" rows="3">{{$target->content_ar ?? ""}}</textarea>
+                </div>
+                
+                <div class="col-md-5 mb-3">
+                    <label>{{ __('global.about.target_content') }} ({{ LangNative('en') }}) <strong class="text-danger">*</strong></label>
+                    <textarea name="target_en[content_en][]" required maxlength="255" class="form-control" rows="3">{{$target->content_en ?? ""}}</textarea>
                 </div>
                 @if($targetKey!=0)
                     <div class="col-md-2 mb-3">
@@ -108,37 +117,24 @@
         <div class="targets-rows"></div>
         <div class="row">
             <div class="col-md-12">
-                <span data-row="targets-rows" data-title="{{ __('global.about.target_name') }}" data-name="target" class="btn btn-primary add-row">{{ __('global.about.addrow') }}</span>
+                <span class="btn btn-primary add-row1" data-row="targets-rows" data-title="{{ __('global.about.target_name') }}" data-name="target" >{{ __('global.about.addrow') }}</span>
             </div>
         </div>{{-- End Row --}}
 
 
         <h1 class="text-center my-3">{{ __('global.about.vision') }}</h1>
-        @foreach ($row->allvisions as $visionKey => $vision)
+ 
             <div class="row">
                 <div class="col-md-5 mb-3">
                     <label>{{ __('global.about.vision_name') }} ({{ LangNative('ar') }}) <strong class="text-danger">*</strong></label>
-                    <textarea name="vision_ar[]" required maxlength="255" class="form-control" rows="3">{{$vision->content_ar}}</textarea>
+                    <textarea name="vision_ar" required maxlength="255" class="form-control" rows="3">{{ $row->allvisions[0]->content_ar ?? "" }}</textarea>
                 </div>
                 
                 <div class="col-md-5 mb-3">
                     <label>{{ __('global.about.vision_name') }} ({{ LangNative('en') }}) <strong class="text-danger">*</strong></label>
-                    <textarea name="vision_en[]" required maxlength="255" class="form-control" rows="3">{{$vision->content_en}}</textarea>
+                    <textarea name="vision_en" required maxlength="255" class="form-control" rows="3">{{ $row->allvisions[0]->content_en ?? "" }}</textarea>
                 </div>
-                @if($visionKey!=0)
-                    <div class="col-md-2 mb-3">
-                        <div style="opacity:0"><label>{{ __('global.delete') }}</label></div>
-                        <span class="btn btn-danger del-row">{{ __('global.delete') }}</span>
-                    </div>
-                @endif
             </div>
-        @endforeach
-        <div class="vision-rows"></div>
-        <div class="row">
-            <div class="col-md-12">
-                <span data-row="vision-rows" data-title="{{ __('global.about.vision_name') }}" data-name="vision" class="btn btn-primary add-row">{{ __('global.about.addrow') }}</span>
-            </div>
-        </div>{{-- End Row --}}
         
         <h1 class="text-center my-3">{{ __('global.about.means') }}</h1>
         @foreach ($row->allmeans as $meansKey => $mean)
@@ -198,6 +194,37 @@
             <div class="col-md-2 mb-3">
                 <div style="opacity:0"><label>{{ __('global.delete') }}</label></div>
                 <span class="btn btn-danger del-row">{{ __('global.delete') }}</span>
+            </div>
+        </div>
+        `);
+    });
+    $('.add-row1').on('click', function() {
+        var row = $(this).data('row');
+        var name = $(this).data('name');
+        var title = $(this).data('title');
+        $('.'+row).append(`
+        <div class="row">
+            <div class="col-md-5 mb-3">
+                <label>`+title+` ({{ LangNative('ar') }}) <strong class="text-danger">*</strong></label>
+                <textarea name="`+name+`_ar[name_ar][]" required maxlength="255" class="form-control" rows="3"></textarea>
+            </div>
+            
+            <div class="col-md-5 mb-3">
+                <label>`+title+` ({{ LangNative('en') }}) <strong class="text-danger">*</strong></label>
+                <textarea name="`+name+`_en[name_en][]" required maxlength="255" class="form-control" rows="3"></textarea>
+            </div>
+            <div class="col-md-2 mb-3">
+                <div style="opacity:0"><label>{{ __('global.delete') }}</label></div>
+                <span class="btn btn-danger del-row">{{ __('global.delete') }}</span>
+            </div>
+            <div class="col-md-5 mb-3">
+              <label>{{ __('global.about.target_content') }} ({{ LangNative('ar') }}) <strong class="text-danger">*</strong></label>
+                <textarea name="`+name+`_ar[content_ar][]" required maxlength="255" class="form-control" rows="3"></textarea>
+            </div>
+            
+            <div class="col-md-5 mb-3">
+                <label>{{ __('global.about.target_content') }} ({{ LangNative('en') }}) <strong class="text-danger">*</strong></label>
+                <textarea name="`+name+`_en[content_en][]" required maxlength="255" class="form-control" rows="3"></textarea>
             </div>
         </div>
         `);

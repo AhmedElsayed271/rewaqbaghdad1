@@ -11,10 +11,10 @@ class OurvisionController extends Controller
 {
     public function ourvision()
     {   
-        $visions = AboutData::where('type','vision')->get();
+        $vision = AboutData::where('type','vision')->first();
 
         $targets = AboutData::where('type','targets')->get();
         
-        return view('front.ourvision.ourvision', compact('visions','targets'));
+        return view('front.ourvision.ourvision', compact('vision','targets'));
     }
 }
