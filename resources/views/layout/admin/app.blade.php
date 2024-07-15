@@ -49,6 +49,7 @@
                 z-index: 999999999999999 !important;
             }
         </style>
+        
         @yield('style')
 	</head>
 

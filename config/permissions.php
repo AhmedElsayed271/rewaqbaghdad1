@@ -85,6 +85,24 @@ return [
             ],
             'name' => 'global.activity.news'
         ],
+        'etmamCategory' => [
+            'permission' => [
+                ['permission' => 'read', 'name' => 'read'], 
+                ['permission' => 'create', 'name' => 'create'], 
+                ['permission' => 'update', 'name' => 'update'], 
+                ['permission' => 'delete', 'name' => 'delete']
+            ],
+            'name' => 'global.etmam'
+        ],
+        'etmamNews' => [
+            'permission' => [
+                ['permission' => 'read', 'name' => 'read'], 
+                ['permission' => 'create', 'name' => 'create'], 
+                ['permission' => 'update', 'name' => 'update'], 
+                ['permission' => 'delete', 'name' => 'delete']
+            ],
+            'name' => 'global.etmam_news'
+        ],
         'mediaNews' => [
             'permission' => [
                 ['permission' => 'read', 'name' => 'read'], 

@@ -77,6 +77,7 @@
                 $admin->hasPermission('read-about') ||
                     $admin->hasPermission('read-bookTeam') ||
                     $admin->hasPermission('read-centerTeam') ||
+                    $admin->hasPermission('read-faqs') ||
                     $admin->is_superadmin)
                 <li class="slide">
                     <a class="side-menu__item" data-toggle="slide" href="#">
@@ -99,6 +100,11 @@
                         @if ($admin->hasPermission('read-bookTeam') || $admin->is_superadmin)
                             <li><a class="slide-item"
                                     href="{{ url(appLangKey() . '/admin/book-team') }}">{{ __('global.book_team.title') }}</a>
+                            </li>
+                        @endif
+                        @if ($admin->hasPermission('read-faqs') || $admin->is_superadmin)
+                            <li><a class="slide-item"
+                                    href="{{ url(appLangKey() . '/admin/faq') }}">{{ __('global.faq_title') }}</a>
                             </li>
                         @endif
                     </ul>
@@ -141,6 +147,28 @@
                         @if ($admin->hasPermission('read-activites') || $admin->is_superadmin)
                             <li><a class="slide-item"
                                     href="{{ url(appLangKey() . '/admin/activities') }}">{{ __('global.activity.news') }}</a>
+                            </li>
+                        @endif
+
+                    </ul>
+                </li>
+            @endif
+            @if ($admin->hasPermission('read-etmamNews') || $admin->hasPermission('read-etmamCategory') || $admin->is_superadmin)
+                <li class="slide">
+                    <a class="side-menu__item" data-toggle="slide" href="#">
+                        <i class="fa-regular fa-file"></i>
+                        <span class="side-menu__label">{{ __('global.etmam') }}</span><i
+                            class="angle fe fe-chevron-down"></i></a>
+                    <ul class="slide-menu">
+                        @if ($admin->hasPermission('read-etmamCategory') || $admin->is_superadmin)
+                            <li><a class="slide-item"
+                                    href="{{ url(appLangKey() . '/admin/etmam-categories') }}">{{ __('global.etmam_category') }}</a>
+                            </li>
+                        @endif
+
+                        @if ($admin->hasPermission('read-etmamNews') || $admin->is_superadmin)
+                            <li><a class="slide-item"
+                                    href="{{ url(appLangKey() . '/admin/etmam-news') }}">{{ __('global.etmam_news') }}</a>
                             </li>
                         @endif
 
@@ -205,27 +233,27 @@
                             </li>
                         @endif
                         @if ($admin->hasPermission('read-rewaqTeam') || $admin->is_superadmin)
-                        <li><a class="slide-item"
-                                href="{{ url(appLangKey() . '/admin/rewaq-team') }}">{{ __('global.rewaq.team.title') }}</a>
-                        </li>
+                            <li><a class="slide-item"
+                                    href="{{ url(appLangKey() . '/admin/rewaq-team') }}">{{ __('global.rewaq.team.title') }}</a>
+                            </li>
                         @endif
 
                         @if ($admin->hasPermission('read-rewaqPublishRule') || $admin->is_superadmin)
-                        <li><a class="slide-item"
-                                href="{{ url(appLangKey() . '/admin/rewaq/publish/rule') }}">{{ __('global.rewaq.publish_rule') }}</a>
-                        </li>
+                            <li><a class="slide-item"
+                                    href="{{ url(appLangKey() . '/admin/rewaq/publish/rule') }}">{{ __('global.rewaq.publish_rule') }}</a>
+                            </li>
                         @endif
 
                         @if ($admin->hasPermission('read-RewaqBooks') || $admin->is_superadmin)
-                        <li><a class="slide-item"
-                                href="{{ url(appLangKey() . '/admin/rewaq-books') }}">{{ __('global.rewaq.book.title') }}</a>
-                        </li>
+                            <li><a class="slide-item"
+                                    href="{{ url(appLangKey() . '/admin/rewaq-books') }}">{{ __('global.rewaq.book.title') }}</a>
+                            </li>
                         @endif
 
                     </ul>
                 </li>
             @endif
-            
+
             @if (
                 $admin->hasPermission('edit-MagazineInfo') ||
                     $admin->hasPermission('read-RewaMagazineTeam') ||
@@ -240,26 +268,25 @@
                     <ul class="slide-menu">
 
                         @if ($admin->hasPermission('read-RewaMagazineTeam') || $admin->is_superadmin)
-                        <li><a class="slide-item"
-                                href="{{ url(appLangKey() . '/admin/magazine-team') }}">{{ __('global.magazine.team.title') }}</a>
-                        </li>
+                            <li><a class="slide-item"
+                                    href="{{ url(appLangKey() . '/admin/magazine-team') }}">{{ __('global.magazine.team.title') }}</a>
+                            </li>
                         @endif
                         @if ($admin->hasPermission('edit-MagazineInfo') || $admin->is_superadmin)
-                        <li><a class="slide-item"
-                                href="{{ url(appLangKey() . '/admin/magazine') }}">{{ __('global.magazine.magazine_edit') }}</a>
-                        </li>
-
+                            <li><a class="slide-item"
+                                    href="{{ url(appLangKey() . '/admin/magazine') }}">{{ __('global.magazine.magazine_edit') }}</a>
+                            </li>
                         @endif
                         @if ($admin->hasPermission('edit-rewaqMagazineRules') || $admin->is_superadmin)
-                        <li><a class="slide-item"
-                                href="{{ url(appLangKey() . '/admin/magazine/publish/rule') }}">{{ __('global.magazine.publish_rule') }}</a>
-                        </li>
+                            <li><a class="slide-item"
+                                    href="{{ url(appLangKey() . '/admin/magazine/publish/rule') }}">{{ __('global.magazine.publish_rule') }}</a>
+                            </li>
                         @endif
 
                         @if ($admin->hasPermission('read-magazineblog') || $admin->is_superadmin)
-                        <li><a class="slide-item"
-                                href="{{ url(appLangKey() . '/admin/magazine-blog') }}">{{ __('global.magazine.blog.title') }}</a>
-                        </li>
+                            <li><a class="slide-item"
+                                    href="{{ url(appLangKey() . '/admin/magazine-blog') }}">{{ __('global.magazine.blog.title') }}</a>
+                            </li>
                         @endif
 
                     </ul>
@@ -273,78 +300,65 @@
                     $admin->hasPermission('read-khetabmagazinemteam') ||
                     $admin->hasPermission('read-khetabmagazinerulesedit') ||
                     $admin->hasPermission('read-magazineblog') ||
-                    $admin->is_superadmin)
-            <li class="slide">
-                <a class="side-menu__item" data-toggle="slide" href="#">
-                    <i class="fa-solid fa-layer-group"></i>
-                    <span class="side-menu__label">{{ __('global.khetab_magazine.title') }}</span><i
-                        class="angle fe fe-chevron-down"></i></a>
-                <ul class="slide-menu">
-
-                    @if ( $admin->hasPermission('read-khetabmagazinemteam') || $admin->is_superadmin)
-                    <li><a class="slide-item"
-                            href="{{ url(appLangKey() . '/admin/khetab-magazine-team') }}">{{ __('global.khetab_magazine.team.title') }}</a>
-                    </li>
-                    @endif
-                    @if ( $admin->hasPermission('edit-khetabmagazineedit') || $admin->is_superadmin)
-                    <li><a class="slide-item"
-                            href="{{ url(appLangKey() . '/admin/khetab-magazine') }}">{{ __('global.khetab_magazine.magazine_edit') }}</a>
-                    </li>
-                    @endif
-
-                    @if ( $admin->hasPermission('edit-khetabmagazinerulesedit') || $admin->is_superadmin)
-                    <li><a class="slide-item"
-                            href="{{ url(appLangKey() . '/admin/khetab-magazine/publish/rule') }}">{{ __('global.khetab_magazine.publish_rule') }}</a>
-                    </li>
-                    @endif
-
-                    @if ( $admin->hasPermission('read-magazineblog') || $admin->is_superadmin)
-                    <li><a class="slide-item"
-                            href="{{ url(appLangKey() . '/admin/khetab-magazine-blog') }}">{{ __('global.khetab_magazine.blog.title') }}</a>
-                    </li>
-                    @endif
-
-                </ul>
-            </li>
-            @endif
-
-            @if (
-                $admin->hasPermission('edit-MEJEELPMagazine') ||
+                    $admin->hasPermission('edit-MEJEELPMagazine') ||
                     $admin->hasPermission('read-MEJEELPTeam') ||
                     $admin->hasPermission('edit-MEJEELPMagazinerule') ||
                     $admin->hasPermission('read-MEJEELPBlog') ||
                     $admin->is_superadmin)
+                <li class="slide">
+                    <a class="side-menu__item" data-toggle="slide" href="#">
+                        <i class="fa-solid fa-layer-group"></i>
+                        <span class="side-menu__label">{{ __('global.Special_editions') }}</span><i
+                            class="angle fe fe-chevron-down"></i></a>
+                    <ul class="slide-menu">
 
-            <li class="slide">
-                <a class="side-menu__item" data-toggle="slide" href="#">
-                    <i class="fa-solid fa-layer-group"></i>
-                    <span class="side-menu__label">{{ __('global.MEJEELP_magazine.title') }}</span><i
-                        class="angle fe fe-chevron-down"></i></a>
-                <ul class="slide-menu">
-                    @if($admin->hasPermission('read-MEJEELPTeam') ||   $admin->is_superadmin)
-                    <li><a class="slide-item"
-                            href="{{ url(appLangKey() . '/admin/MEJEELP-magazine-team') }}">{{ __('global.MEJEELP_magazine.team.title') }}</a>
-                    </li>
+                        @if ($admin->hasPermission('read-khetabmagazinemteam') || $admin->is_superadmin)
+                            <li><a class="slide-item"
+                                    href="{{ url(appLangKey() . '/admin/khetab-magazine-team') }}">{{ __('global.khetab_magazine.team.title') }}</a>
+                            </li>
+                        @endif
+                        @if ($admin->hasPermission('edit-khetabmagazineedit') || $admin->is_superadmin)
+                            <li><a class="slide-item"
+                                    href="{{ url(appLangKey() . '/admin/khetab-magazine') }}">{{ __('global.khetab_magazine.magazine_edit') }}</a>
+                            </li>
+                        @endif
+
+                        @if ($admin->hasPermission('edit-khetabmagazinerulesedit') || $admin->is_superadmin)
+                            <li><a class="slide-item"
+                                    href="{{ url(appLangKey() . '/admin/khetab-magazine/publish/rule') }}">{{ __('global.khetab_magazine.publish_rule') }}</a>
+                            </li>
+                        @endif
+
+                        @if ($admin->hasPermission('read-magazineblog') || $admin->is_superadmin)
+                            <li><a class="slide-item"
+                                    href="{{ url(appLangKey() . '/admin/khetab-magazine-blog') }}">{{ __('global.khetab_magazine.blog.title') }}</a>
+                            </li>
+                        @endif
+                        @if ($admin->hasPermission('read-MEJEELPTeam') || $admin->is_superadmin)
+                        <li><a class="slide-item"
+                                href="{{ url(appLangKey() . '/admin/MEJEELP-magazine-team') }}">{{ __('global.MEJEELP_magazine.team.title') }}</a>
+                        </li>
                     @endif
-                    @if($admin->hasPermission('read-MEJEELPMagazine') || $admin->is_superadmin)
-                    <li><a class="slide-item"
-                            href="{{ url(appLangKey() . '/admin/MEJEELP-magazine') }}">{{ __('global.MEJEELP_magazine.magazine_edit') }}</a>
-                    </li>
+                    @if ($admin->hasPermission('read-MEJEELPMagazine') || $admin->is_superadmin)
+                        <li><a class="slide-item"
+                                href="{{ url(appLangKey() . '/admin/MEJEELP-magazine') }}">{{ __('global.MEJEELP_magazine.magazine_edit') }}</a>
+                        </li>
                     @endif
 
-                    @if($admin->hasPermission('read-MEJEELPMagazinerule') || $admin->is_superadmin)
-                    <li><a class="slide-item"
-                            href="{{ url(appLangKey() . '/admin/MEJEELP-magazine/publish/rule') }}">{{ __('global.MEJEELP_magazine.publish_rule') }}</a>
-                    </li>
+                    @if ($admin->hasPermission('read-MEJEELPMagazinerule') || $admin->is_superadmin)
+                        <li><a class="slide-item"
+                                href="{{ url(appLangKey() . '/admin/MEJEELP-magazine/publish/rule') }}">{{ __('global.MEJEELP_magazine.publish_rule') }}</a>
+                        </li>
                     @endif
-                    @if($admin->hasPermission('read-MEJEELPBlog') || $admin->is_superadmin)
-                    <li><a class="slide-item"
-                            href="{{ url(appLangKey() . '/admin/MEJEELP-magazine-blog') }}">{{ __('global.MEJEELP_magazine.blog.title') }}</a>
-                    </li>
+                    @if ($admin->hasPermission('read-MEJEELPBlog') || $admin->is_superadmin)
+                        <li><a class="slide-item"
+                                href="{{ url(appLangKey() . '/admin/MEJEELP-magazine-blog') }}">{{ __('global.MEJEELP_magazine.blog.title') }}</a>
+                        </li>
                     @endif
-                </ul>
-            </li>
+                    </ul>
+                </li>
             @endif
+
             <li class="slide">
                 <a class="side-menu__item" data-toggle="slide" href="#">
                     <i class="fa-solid fa-mobile-screen-button"></i>
@@ -364,81 +378,72 @@
                 </ul>
             </li>
 
-            
+
             @if ($admin->hasPermission('read-events') || $admin->is_superadmin)
-
-            <li class="slide">
-                <a class="side-menu__item" href="{{ url(appLangKey() . '/admin/events') }}">
-                    <i class="fa-regular fa-calendar-days"></i>
-                    <span class="side-menu__label">{{ __('global.event.title') }}</span>
-                </a>
-            </li>
+                <li class="slide">
+                    <a class="side-menu__item" href="{{ url(appLangKey() . '/admin/events') }}">
+                        <i class="fa-regular fa-calendar-days"></i>
+                        <span class="side-menu__label">{{ __('global.event.title') }}</span>
+                    </a>
+                </li>
             @endif
-            @if ($admin->hasPermission('read-faqs') || $admin->is_superadmin)
 
-            <li class="slide">
-                <a class="side-menu__item" href="{{ url(appLangKey() . '/admin/faq') }}">
-                    <i class="fa-regular fa-calendar-days"></i>
-                    <span class="side-menu__label">{{ __('global.faq_title') }}</span>
-                </a>
-            </li>
-            @endif
             @if ($admin->hasPermission('read-iraqMeter') || $admin->is_superadmin)
-            <li class="slide">
-                <a class="side-menu__item" href="{{ url(appLangKey() . '/admin/iraq-meter') }}">
-                    <i class="fa-solid fa-rss"></i>
-                    <span class="side-menu__label">{{ __('global.iraqmeter.title') }}</span>
-                </a>
-            </li>
+                <li class="slide">
+                    <a class="side-menu__item" href="{{ url(appLangKey() . '/admin/iraq-meter') }}">
+                        <i class="fa-solid fa-rss"></i>
+                        <span class="side-menu__label">{{ __('global.iraqmeter.title') }}</span>
+                    </a>
+                </li>
             @endif
-             
+
             @if ($admin->hasPermission('read-konMedia') || $admin->is_superadmin)
-            <li class="slide">
-                <a class="side-menu__item" href="{{ url(appLangKey() . '/admin/kon-news') }}">
-                    <i class="fa-solid fa-rss"></i>
-                    <span class="side-menu__label">{{ __('global.kone_media.title') }}</span>
-                </a>
-            </li>
+                <li class="slide">
+                    <a class="side-menu__item" href="{{ url(appLangKey() . '/admin/kon-news') }}">
+                        <i class="fa-solid fa-rss"></i>
+                        <span class="side-menu__label">{{ __('global.kone_media.title') }}</span>
+                    </a>
+                </li>
             @endif
             @if ($admin->hasPermission('read-slider') || $admin->is_superadmin)
-            <li class="slide">
-                <a class="side-menu__item" href="{{ url(appLangKey() . '/admin/slider') }}">
-                    <i class="fa-solid fa-sliders"></i>
-                    <span class="side-menu__label">{{ __('global.slider.title') }}</span>
-                </a>
-            </li>
+                <li class="slide">
+                    <a class="side-menu__item" href="{{ url(appLangKey() . '/admin/slider') }}">
+                        <i class="fa-solid fa-sliders"></i>
+                        <span class="side-menu__label">{{ __('global.slider.title') }}</span>
+                    </a>
+                </li>
             @endif
             @if ($admin->hasPermission('read-electronicsService') || $admin->is_superadmin)
-            <li class="slide">
-                <a class="side-menu__item" href="{{ url(appLangKey() . '/admin/electronic-services') }}">
-                    <i class="fa-solid fa-list-ul"></i>
-                    <span class="side-menu__label">{{ __('global.electronic.title') }}</span>
-                </a>
-            </li>
+                <li class="slide">
+                    <a class="side-menu__item" href="{{ url(appLangKey() . '/admin/electronic-services') }}">
+                        <i class="fa-solid fa-list-ul"></i>
+                        <span class="side-menu__label">{{ __('global.electronic.title') }}</span>
+                    </a>
+                </li>
             @endif
             @if ($admin->hasPermission('read-newsLetter') || $admin->is_superadmin)
-            <li class="slide">
-                <a class="side-menu__item" href="{{ url(appLangKey() . '/admin/newsletters') }}">
-                    <i class="fa-regular fa-paper-plane"></i>
-                    <span class="side-menu__label">{{ __('global.newsletter.title') }}</span>
-                </a>
-            </li>
+                <li class="slide">
+                    <a class="side-menu__item" href="{{ url(appLangKey() . '/admin/newsletters') }}">
+                        <i class="fa-regular fa-paper-plane"></i>
+                        <span class="side-menu__label">{{ __('global.newsletter.title') }}</span>
+                    </a>
+                </li>
             @endif
             @if ($admin->hasPermission('read-backup') || $admin->is_superadmin)
-            <li class="slide">
-                <a class="side-menu__item" href="{{ url(appLangKey() . '/admin/backup') }}">
-                    <i class="fa-solid fa-database"></i>
-                    <span class="side-menu__label">{{ __('global.backup') }}</span>
-                </a>
-            </li>
+                <li class="slide">
+                    <a class="side-menu__item" href="{{ url(appLangKey() . '/admin/backup') }}">
+                        <i class="fa-solid fa-database"></i>
+                        <span class="side-menu__label">{{ __('global.backup') }}</span>
+                    </a>
+                </li>
             @endif
             @if ($admin->hasPermission('read-setting') || $admin->is_superadmin)
-            <li class="slide">
-                <a class="side-menu__item" href="{{ url('/admin/settings') }}">
-                    <i class="fa-solid fa-gear"></i>
-                    <span class="side-menu__label">{{ __('global.settings') }}</span>
-                </a>
-            </li>
+                <li class="slide">
+                    <a class="side-menu__item" href="{{ url('/admin/settings') }}">
+                        <i class="fa-solid fa-gear"></i>
+                        <span class="side-menu__label">{{ __('global.settings') }}</span>
+                    </a>
+                </li>
             @endif
 
             <li class="slide">

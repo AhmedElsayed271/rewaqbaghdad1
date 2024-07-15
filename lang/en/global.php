@@ -116,6 +116,11 @@ return [
     'admin_img' => 'supervisor image',
     'my_account' => 'my account',
     'admin_data' => 'Supervisor data',
+    
+    
+    /********************* medad *******************/
+    'etmam' => 'etmam',
+    'etmam_category' => 'Etmam Category',
 
 
     //
@@ -209,7 +214,7 @@ return [
     ],
 
     'version' => [
-        'title' => 'Publications',
+        'title' => 'medad',
         'categories' => 'Publication sections',
         'add_category' => 'Add a new section',
         'categor_name' => 'section Name',
@@ -225,7 +230,7 @@ return [
         'news_tags' => 'decorations',
         'created_at' => 'date of publication',
     ],
-
+    'Special_editions' => 'Special Editions',
     'activity' => [
         'title' => 'activities',
         'categories' => 'Activities sections',

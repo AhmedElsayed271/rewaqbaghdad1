@@ -107,6 +107,11 @@ return [
     'admin_img' => 'صورة المشرف',
     'my_account' => 'حسابي',
     'admin_data' => 'بيانات المشرف',
+        
+    /********************* etmam *******************/
+    'etmam' => 'اتمام',
+    'etmam_category' => 'اقسام اتمام',
+    'etmam_news' => 'اخبار اتمام',
 
 
     //
@@ -210,7 +215,7 @@ return [
     ],
 
     'version' => [
-        'title' => 'اصدارات',
+        'title' => 'مداد',
         'categories' => 'أقسام الاصدارات',
         'add_category' => 'اضافة قسم جديد',
         'categor_name' => 'اسم القسم',
@@ -226,7 +231,7 @@ return [
         'news_tags' => 'الأوسمة',
         'created_at' => 'تاريخ النشر',
     ],
-
+    'Special_editions' => 'اصدارات خاصة',
     'activity' => [
         'title' => 'نشاطات',
         'categories' => 'أقسام النشاطات',

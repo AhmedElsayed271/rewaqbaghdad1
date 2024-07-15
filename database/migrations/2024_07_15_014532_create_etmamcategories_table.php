@@ -13,13 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('activitycategory_translation', function (Blueprint $table) {
+        Schema::create('etmamcategories', function (Blueprint $table) {
             $table->id();
-            $table->string('locale', 5);
-            $table->string('name', 50)->nullable();
-
-            $table->bigInteger('category_id')->unsigned();
-            $table->foreign('category_id')->references('id')->on('activitycategories')->onDelete('cascade')->onUpdate('cascade');
+            $table->integer('sort')->default(1);
+            $table->string('slug', 100)->nullable()->unique();
+            $table->timestamps();
         });
     }
 
@@ -30,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('activitycategory_translations');
+        Schema::dropIfExists('etmamcategories');
     }
 };

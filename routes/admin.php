@@ -11,6 +11,7 @@ use App\Models\MEJEELPblogTranslation;
 use Illuminate\Support\Facades\Response;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\RoleController;
+use App\Http\Controllers\Admin\EtmamcategoryController;
 use App\Http\Controllers\Admin\KhetabMagazineblogController;
 
 Route::group(['prefix' => 'admin','middleware' => AuthAdmin::class], function () {
@@ -80,10 +81,18 @@ Route::group(['prefix' => 'admin','middleware' => AuthAdmin::class], function ()
     // activity categories
     Route::get('/activity-categories/json', 'ActivitycategoryController@json');
     Route::resource('/activity-categories', 'ActivitycategoryController');
+
+    // Etmamt categories
+    Route::get('/etmam-categories/json', 'EtmamcategoryController@json');
+    Route::resource('/etmam-categories', 'EtmamcategoryController');
     
     // activities
     Route::get('/activities/json', 'ActivityController@json');
     Route::resource('/activities', 'ActivityController');
+
+    // etmam news
+    Route::get('/etmam-news/json', 'EtmamNewsController@json');
+    Route::resource('/etmam-news', 'EtmamNewsController');
     
     
     // media news
