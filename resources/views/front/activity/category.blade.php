@@ -7,9 +7,9 @@
 {{-- bg-white-greding --}}
 <section class="about-us-sec my-5">
     <div class="container">
-        <div class="row pt-5 justify-content-center align-items-basline">
+        <div class="row pt-5 justify-content-center align-items-basline bg-white">
             <div class="col-lg-5">
-                <h2 class="title-sec">@yield('title')</h2>
+                {{-- <h2 class="title-sec">@yield('title')</h2> --}}
                 <div class="img-box text-center pb-3 border-0">
                     <img src="{{ $activities[0]->img }}" alt="{{ $activities[0]->translation->title }}" class="border-0">
                 </div>
@@ -114,7 +114,7 @@
 
                 </div>
             </div> --}}
-            {{-- <div class="col-lg-12 mt-3 text-center">{!! $activities->links() !!}</div> --}}
+            <div class="col-lg-12 mt-3 text-center">{!! $activities->links() !!}</div>
         </div>
     </div>
 </section>

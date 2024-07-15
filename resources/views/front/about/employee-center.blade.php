@@ -13,7 +13,6 @@
 
     .center-cards .card-title {
         color: var(--new-color);
-        background-color: white;
     }
 
     .center-cards .card-title img {
@@ -21,7 +20,7 @@
         height: 60px;
     }
 
-    .center-cards .row>div {
+    .center-cards .row div div {
         background-color: var(--new-color)
     }
 
@@ -75,11 +74,11 @@
                     مركز فكري يهتم بثلاثة محاور رئيسة:
                 </h1>
             </div>
-            <div class="center-cards ">
+            <div class="center-cards">
                 <div class="row justify-content-center align-items-center">
-                    <div class="col-md-4 rounded pb-5 pt-2">
-                        <div class="p-2">
-                            <div class="card-title py-1 rounded d-flex justify-content-center align-items-center">
+                    <div class="col-md-4  pb-5 pt-2">
+                        <div class="p-2 py-3 rounded">
+                            <div class="card-title py-1 rounded d-flex justify-content-center align-items-center bg-white">
                                 <img src="/uploads/files/shares/icons/Group 23.png" alt="title-img" />
                                 <h3 class="font-bold p-2">العلاقات العامة </h3>
                             </div>
@@ -94,9 +93,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 rounded pb-5 pt-2 ">
-                        <div class="p-2">
-                            <div class="card-title py-1 rounded d-flex justify-content-center align-items-center">
+                    <div class="col-md-4 pb-5 pt-2 ">
+                        <div class="p-2 py-3 rounded">
+                            <div class="card-title py-1 rounded d-flex justify-content-center align-items-center bg-white">
                                 <img src="/uploads/files/shares/icons/Group 24.png" alt="title-img" />
                                 <h3 class="font-bold p-2">البرامج</h3>
                             </div>
@@ -112,13 +111,13 @@
                         </div>
                     </div>
                     <div class="col-md-4 rounded pb-5 pt-2">
-                        <div class="p-2 ">
-                            <div class="card-title py-1 rounded d-flex justify-content-center align-items-center">
+                        <div class="p-2 py-3 rounded">
+                            <div class="card-title py-1 rounded d-flex justify-content-center align-items-center bg-white">
                                 <img src="/uploads/files/shares/icons/Frame 77.png" alt="title-img" />
                                 <h3 class="font-bold p-2">الدراسات والأبحاث</h3>
                             </div>
                             <div class="card-body">
-                                <p class="font-bold text-white py-2 pt-4">يعنى المركز بتطوير وتعزيز العلاقات
+                                <p class="font-bold text-white py-2 pt-4 ">يعنى المركز بتطوير وتعزيز العلاقات
                                     بين المؤسسات والشركات والأفراد
                                     والحكومات، وذلك من خلال تقديم
                                     الاستشارات والتوجيهات اللازمة لتوثيق

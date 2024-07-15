@@ -57,13 +57,13 @@ class MagazineController extends Controller
         $ec = Magazineteam::where('id', $magazine->ec_id)->select('id','img')->with('translation:name,job_title,parent_id')->first();
         $dec = Magazineteam::where('id', $magazine->dec_id)->select('id','img')->with('translation:name,job_title,parent_id')->first();
         $me = Magazineteam::where('id', $magazine->me_id)->select('id','img')->with('translation:name,job_title,parent_id')->first();
-       
-        $blogs = Magazineblog::with('translation:title,description,parent_id')->orderBy('id', 'DESC')->paginate(10);
+
+        $blogs = Magazineblog::with('translation:title,description,parent_id')->orderBy('id', 'DESC')->get();
         $latestBlogs = Magazineblog::select('id','slug','img','created_at')->with('translation:title,parent_id')->orderBy('id', 'DESC')->limit(4)->get();
         $mostWatched = Magazineblog::select('id','slug','views','created_at')->with('translation:title,parent_id')->orderBy('views', 'DESC')->limit(4)->get();
         return view('front.magazine.index', compact('magazine','latestBlogs','mostWatched','blogs','cbd','ec','dec','me'));
     }
-    
+
     public function Tag($tag)
     {
         $check = MagazineblogTranslation::where('tags','like','%'.$tag.'%');
@@ -75,7 +75,7 @@ class MagazineController extends Controller
             $ec = Magazineteam::where('id', $magazine->ec_id)->select('id','img')->with('translation:name,job_title,parent_id')->first();
             $dec = Magazineteam::where('id', $magazine->dec_id)->select('id','img')->with('translation:name,job_title,parent_id')->first();
             $me = Magazineteam::where('id', $magazine->me_id)->select('id','img')->with('translation:name,job_title,parent_id')->first();
-            
+
             $blogs = Magazineblog::whereIn('id', $ids)->with('translation:title,description,parent_id')->orderBy('id', 'DESC')->paginate(10);
             $latestBlogs = Magazineblog::select('id','slug','img','created_at')->with('translation:title,parent_id')->orderBy('id', 'DESC')->limit(4)->get();
             $mostWatched = Magazineblog::select('id','slug','views','created_at')->with('translation:title,parent_id')->orderBy('views', 'DESC')->limit(4)->get();

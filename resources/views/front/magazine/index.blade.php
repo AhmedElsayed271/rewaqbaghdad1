@@ -5,6 +5,17 @@
 @section('page_img', $magazine->img)
 
 @section('content')
+    <style>
+        .book {
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .book img {
+            height: 350px;
+            object-fit: cover
+        }
+    </style>
 
     <section class="about-us-sec  my-5">
         <div class="container">
@@ -83,35 +94,33 @@
 
     <section class="activies-sec activies-brown">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    @foreach ($blogs as $blog)
-                        <div class="row justify-content-center align-items-center">
-                            <div class="col-lg-2">
-                                <a href="{{ langUrl('/magazine/blog/' . $blog->slug) }}">
-                                    <div class="img-box pb-3 pt-3">
-                                        <img src="{{ $blog->img }}" alt="{{ $blog->translation->title }}"
-                                            class="border-0">
-                                    </div>
-                                </a>
+            {{-- <div class="row">
+                <div class="col-lg-8"> --}}
+            <div class="row justify-content-center align-items-center">
+                @foreach ($blogs as $blog)
+                    <div class="col-md-4 book">
+                        <a href="{{ langUrl('/magazine/blog/' . $blog->slug) }}">
+                            <div class="pb-3 pt-3">
+                                <img src="{{ $blog->img }}" alt="{{ $blog->translation->title }}" class="border-0">
                             </div>
-                            <div class="col-lg-10">
-                                <a href="{{ langUrl('/magazine/blog/' . $blog->slug) }}">
-                                    <small class="title-sec mb-1">
-                                        <strong>
-                                            {{ __('front.the_number') }} {{ $blog->number }}
-                                        </strong>
-                                    </small>
-                                    <strong class="pt-1 pb-1 d-block">{{ $blog->translation->title }}</strong>
-                                    <p>{{ $blog->translation->description }}</p>
-                                    <img src="/front/assets/img/a.png" class="img-fluid pdf-img mb-3" alt="">
-                                </a>
-                            </div>
-                            <hr>
-                        </div>
-                    @endforeach
-                </div>
-                {{-- <div class="col-lg-3 margin20">
+                        </a>
+                        <a href="{{ langUrl('/magazine/blog/' . $blog->slug) }}">
+                            <small class="title-sec mb-1">
+                                <strong>
+                                    {{ __('front.the_number') }} {{ $blog->number }}
+                                </strong>
+                            </small>
+                            <strong class="pt-1 pb-1 d-block">{{ $blog->translation->title }}</strong>
+                            <p>{{ $blog->translation->description }}</p>
+                            {{-- <img src="/front/assets/img/a.png" class="img-fluid pdf-img mb-3" alt=""> --}}
+                        </a>
+                    </div>
+                @endforeach
+
+                {{-- <hr> --}}
+            </div>
+            {{-- </div> --}}
+            {{-- <div class="col-lg-3 margin20">
                     <div class="widget_raper mt-3">
 
                         <p class="text-green">{{ __('front.new_site') }}</p>
@@ -127,7 +136,7 @@
                         </div>
                     </div> --}}
 
-                    <div class="widget_raper bg-light p-2 mt-3">
+            {{-- <div class="widget_raper bg-light p-2 mt-3">
                         <p class="text-green">{{ __('front.most_watched') }}</p>
                         <div class="recent_post">
                             @foreach ($mostWatched as $most)
@@ -138,11 +147,11 @@
                                 <hr>
                             @endforeach
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-12 mt-3 text-center d-none d-xl-flex d-lg-flex d-md-flex d-sm-none d-xs-none">
-                    {!! $blogs->links() !!}</div>
-            </div>
+                    </div> --}}
+        </div>
+        {{-- <div class="col-lg-12 mt-3 text-center d-none d-xl-flex d-lg-flex d-md-flex d-sm-none d-xs-none">
+            {!! $blogs->links() !!}</div> --}}
+        {{-- </div> --}}
         </div>
     </section>
 

@@ -14,7 +14,7 @@
 
 
                 @foreach ($activitiesCategory as $index => $activityCategory)
-             
+
                 var swiper = new Swiper(".activities{{ $index }} .swiper-container", {
                         spaceBetween: 30,
                         centeredSlides: true,
@@ -192,13 +192,11 @@
                     <div class="section-title text-right pb-30">
                         <h2 class="title">{{ $activityCategory->translation->name }}</h2>
                     </div>
-                    <div class="row d-flex align-items-center news-sction" data-aos="zoom-in" data-aos-duration="1000">
+                    <div class="row d-flex align-items-center news-sction">
                         <div class="col-12 ">
                             <div class="swiper-container">
                                 <div class="swiper-wrapper">
                                     @foreach ($activityCategory->activites as $key => $row)
-                               
-
                                         <div class="swiper-slide">
                                             <div class="card" style="border: none ">
                                                 <a href="{{ langUrl('/activity/' . $row->slug) }}">

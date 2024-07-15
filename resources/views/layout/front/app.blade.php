@@ -253,17 +253,18 @@
                                             {{ __('front.who_we') }}
                                         </a>
                                         <ul class="dropdown-menu">
-                                            <li>
+                                            {{-- <li>
                                                 <a class="dropdown-item"
                                                     href="{{ langUrl('/about-us') }}">{{ __('front.about_us') }} </a>
-                                            </li>
-                                            <li>
-                                                <a class="dropdown-item"
-                                                    href="{{ langUrl('/ourvision') }}">{{ __('front.ourvision') }} </a>
-                                            </li>
+                                            </li> --}}
                                             <li>
                                                 <a class="dropdown-item"
                                                     href="{{ langUrl('/employee/center') }}">{{ __('front.center_members') }}</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item"
+                                                    href="{{ langUrl('/ourvision') }}">{{ __('front.ourvision') }}
+                                                </a>
                                             </li>
                                             <li>
                                                 <a class="dropdown-item" href="/faq">الاسئله الشائعة</a>
@@ -338,8 +339,8 @@
                                                     href="{{ langUrl('/magazine') }}">{{ __('front.magazine') }} </a>
                                             </li>
                                             <li>
-                                                <a class="dropdown-item"
-                                                    href="https://www.iamtheparliament.com" target="_blank">{{ __('front.i_parliament') }}</a>
+                                                <a class="dropdown-item" href="https://www.iamtheparliament.com"
+                                                    target="_blank">{{ __('front.i_parliament') }}</a>
                                             </li>
                                             <li>
                                                 <a class="dropdown-item"

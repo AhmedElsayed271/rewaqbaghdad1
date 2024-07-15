@@ -6,6 +6,32 @@
 
 @section('content')
 
+    <style>
+        .section-heading {
+            width: fit-content;
+        }
+
+        .section-heading h2 {
+            color: var(--new-color);
+        }
+
+        .book {
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .book a img {
+            height: 400px !important;
+        }
+
+        .book .pb-3,
+        .book .pt-3 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+
     {{-- bg-white-greding-green --}}
     <section class="about-us-sec my-5  ">
         <div class="container">
@@ -60,32 +86,32 @@
 
     <section class="activies-sec">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="row justify-content-center align-items-center">
-                        @foreach ($books as $book)
-                            <div class="col-lg-2">
-                                <a href="{{ langUrl('/rewaq/book/' . $book->slug) }}">
-                                    <div class="img-box pb-3 pt-3">
-                                        <img src="{{ $book->img }}" alt="{{ $book->translation->title }}"
-                                            class="border-0">
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-10">
-                                <a href="{{ langUrl('/rewaq/book/' . $book->slug) }}">
-                                    <small class="title-sec mb-1">
-                                        <strong>{{ formatDate($book->created_at) }}</strong>
-                                    </small>
-                                    <strong class="pt-1 pb-1 d-block">{{ $book->translation->title }}</strong>
-                                    <p>{{ $book->translation->description }}</p>
-                                </a>
-                            </div>
-                            <hr>
-                        @endforeach
-                    </div>
+            <a href="">
+                <div class="section-heading pb-30 text-center shadow-sm mx-auto rounded-30 my-3">
+                    <h2 class="font-bold p-3">الاصدارات</h2>
                 </div>
-                {{-- <div class="col-lg-3 margin20">
+            </a>
+            <div class="row justify-content-center align-items-center">
+                @foreach ($books as $book)
+                    <div class="col-md-3 book">
+                        <a href="{{ langUrl('/rewaq/book/' . $book->slug) }}">
+                            <div class="pb-3 pt-3">
+                                <img src="{{ $book->img }}" alt="{{ $book->translation->title }}"
+                                    class="border-0 rounded ">
+                            </div>
+                            <small class="title-sec mb-1">
+                                <strong>{{ formatDate($book->created_at) }}</strong>
+                            </small>
+                            <strong class="pt-1 pb-1 d-block">{{ $book->translation->title }}</strong>
+                            <p>{{ $book->translation->description }}</p>
+                        </a>
+                    </div>
+                @endforeach
+            </div>
+
+            {{-- </div>
+                </div> --}}
+            {{-- <div class="col-lg-3 margin20">
                     <div class="widget_raper mt-3">
                         <p class="text-green">{{ __('front.new_site') }}</p>
                         <div class="recent_post">
@@ -112,10 +138,9 @@
                     </div>
                 </div>
             </div> --}}
-                <div class="col-lg-12 mt-3 text-center  d-none d-xl-flex d-lg-flex d-md-flex d-sm-none d-xs-none">
-                    {{ $books->links() }}
-                </div>
-            </div>
+            {{-- <div class="col-lg-12 mt-3 text-center  d-none d-xl-flex d-lg-flex d-md-flex d-sm-none d-xs-none">
+                {{ $books->links() }}
+            </div> --}}
         </div>
     </section>
 

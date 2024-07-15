@@ -53,12 +53,12 @@ class RewaqController extends Controller
     public function index()
     {
         $rewaq = Rewaq::with('translation')->with('pm','am','ps')->first();
-        $books = Rewaqbook::with('translation:title,description,parent_id')->orderBy('id', 'DESC')->paginate(10);
+        $books = Rewaqbook::with('translation:title,description,parent_id')->orderBy('id', 'DESC')->get();
         $latestNews = Rewaqbook::select('id','slug','img','created_at')->with('translation:title,parent_id')->orderBy('id', 'DESC')->limit(4)->get();
         $mostWatched = Rewaqbook::select('id','slug','views','created_at')->with('translation:title,parent_id')->orderBy('views', 'DESC')->limit(4)->get();
         return view('front.rewaq.index', compact('rewaq','books','latestNews','mostWatched'));
     }
-    
+
     public function book($slug)
     {
         $check = Rewaqbook::where('slug', $slug);
@@ -76,7 +76,7 @@ class RewaqController extends Controller
         endif;
         abort(404);
     }
-    
+
     public function Tag($tag)
     {
         $check = RewaqbookTranslation::where('tags','like','%'.$tag.'%');
