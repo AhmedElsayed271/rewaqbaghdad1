@@ -41,7 +41,7 @@ return [
     'watch_seminar' => 'لمشاهدة الندوة',
     'latest_seminars' => 'أحدث الندوات',
     'select_type_activity' => 'حدد نوع النشاط',
-
+    'common_quesiton' => 'الاسئلة الشائعة',
 
     'address' => 'العنوان',
     'email' => 'البريد الإلكتروني',

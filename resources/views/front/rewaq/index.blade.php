@@ -83,6 +83,41 @@
             </div>
         </div>
     </section>
+    <div class="section-heading pb-30 text-center shadow-sm mx-auto rounded-30 my-3">
+        <h2 class="font-bold p-3">الاصدارات</h2>
+    </div>
+    @if (!$books->isEmpty())
+        <section class="our-books">
+            <div class="container">
+                <div class="section-title text-right pb-30">
+                </div>
+                <div class="row overflow-hidden" data-aos="zoom-in" data-aos-duration="1000">
+        
+                    <div class="swiper-container overflow-hidden">
+                        <div class="news-block-two swiper-wrapper">
+
+                            @foreach ($books as $book)
+                                <a class="swiper-slide" href="{{ langUrl('/rewaq/book/' . $book->slug) }}"
+                                    title="{{ $book->translation->title }}">
+                                    <div class="inner-box-book">
+                                        <div class="img-box">
+                                            <img src="{{ $book->img }}" alt="{{ $book->translation->title }}">
+                                        </div>
+                                        <div class="content">
+                                            <p>{{ $book->translation->title }}</p>
+                                        </div>
+                                        
+                                    </div>
+                                </a>
+                            @endforeach
+                        </div>
+                    </div>
+                    <div class="nexts"></div>
+                    <div class="prevs"></div>
+                </div>
+            </div>
+        </section>
+    @endif
 
     <section class="activies-sec">
         <div class="container">
@@ -148,4 +183,37 @@
 
 
 @section('js')
+    <script>
+        var swipers = new Swiper(".our-books .swiper-container", {
+            spaceBetween: 50,
+            centeredSlides: false,
+            slidesPerView: 4,
+            loop: true,
+            rtl: true,
+            keyboard: true,
+            draggable: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.nexts',
+                prevEl: '.prevs',
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                1024: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                }
+            }
+        });
+    </script>
 @endsection

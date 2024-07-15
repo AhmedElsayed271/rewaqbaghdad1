@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers\Front;
 
-use App\Http\Controllers\Controller;
+use App\Models\Faq;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class FaqController extends Controller
 {
     public function faq()
     {
-        return view('front.faq.faq');
+        $faqs = Faq::with('translation')->get();
+        return view('front.faq.faq', compact('faqs'));
     }
 }

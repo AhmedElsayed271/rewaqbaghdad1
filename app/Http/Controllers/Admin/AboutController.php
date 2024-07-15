@@ -26,7 +26,7 @@ class AboutController extends Controller
     
     public function update(Request $request)
     {
-        // return $request;
+        return $request;
         $validatedData = $request->validate([
             'img1' => 'required|string|max:200',
             'img2' => 'required|string|max:200',
@@ -34,10 +34,10 @@ class AboutController extends Controller
             'description' => 'array',
             'description.*' => 'required|string',
             
-            'target_ar' => 'array',
-            'target_ar.*' => 'required|string|max:255',
-            'target_en' => 'array',
-            'target_en.*' => 'required|string|max:255',
+            // 'target_ar' => 'array',
+            // 'target_ar.*' => 'required|string|max:255',
+            // 'target_en' => 'array',
+            // 'target_en.*' => 'required|string|max:255',
 
             'vision_ar' => 'array',
             'vision_ar.*' => 'required|string|max:255',

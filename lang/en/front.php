@@ -37,6 +37,7 @@ return [
 
     'all_results' => 'All Results',
 
+    'common_quesiton' => 'common questions',
 
     'activities' => 'Activities',
     'latest_activities' => 'Latest Activities',
