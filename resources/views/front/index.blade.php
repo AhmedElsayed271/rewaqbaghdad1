@@ -15,7 +15,7 @@
 
                 @foreach ($activitiesCategory as $index => $activityCategory)
 
-                var swiper = new Swiper(".activities{{ $index }} .swiper-container", {
+                    var swiper = new Swiper(".activities{{ $index }} .swiper-container", {
                         spaceBetween: 30,
                         centeredSlides: true,
                         slidesPerView: 3,
@@ -78,25 +78,12 @@
             color: var(--new-color) !important;
         }
 
-        .swiper-button-next1 i {
-            position: absolute;
-            bottom: 57%;
-            transform: translate(0, -50%);
-            z-index: 2;
-            background-color: #808080;
-            border-radius: 50%;
-            height: 40px;
-            width: 40px;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .activties-category .swiper-wrapper {
+            position: relative !important;
         }
 
-        .swiper-button-prev1 i {
-            position: absolute;
-            bottom: 60%;
-            transform: translate(0, -50%);
+        .swiper-button-next1 i {
+
             z-index: 2;
             background-color: #808080;
             border-radius: 50%;
@@ -106,7 +93,38 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            left: 19px;
+
+        }
+
+
+        .swiper-button-prev1 i {
+
+            z-index: 2;
+            background-color: #808080;
+            border-radius: 50%;
+            height: 40px;
+            width: 40px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          
+        }
+
+        .swiper-button-next1 {
+            z-index: 2;
+            position: absolute;
+            top: 50%;
+            transform: translate(0, -50%);
+
+        }
+         .swiper-button-prev1 {
+            z-index: 2;
+            position: absolute;
+            top: 50%;
+            transform: translate(0, -50%);
+            left: 0;
+
         }
     </style>
     <div class="banner container-fluid">
@@ -187,21 +205,21 @@
     </section>
     @if (!$activitiesCategory->isEmpty())
         @foreach ($activitiesCategory as $index => $activityCategory)
-            <section class="mt-6 activities{{ $index }}">
+            <section class="mt-6 activities{{ $index }} activties-category">
                 <div class="container">
                     <div class="section-title text-right pb-30">
                         <h2 class="title">{{ $activityCategory->translation->name }}</h2>
                     </div>
                     <div class="row d-flex align-items-center news-sction">
                         <div class="col-12 ">
-                            <div class="swiper-container">
+                            <div class="swiper-container ">
                                 <div class="swiper-wrapper">
                                     @foreach ($activityCategory->activites as $key => $row)
                                         <div class="swiper-slide">
                                             <div class="card" style="border: none ">
                                                 <a href="{{ langUrl('/activity/' . $row->slug) }}">
                                                     <div class="img-box">
-                                                        <img class="card-img-top" src="{{ $row->img }}"
+                                                        <img style="height: 380px" class="card-img-top" src="{{ $row->img }}"
                                                             alt="{{ $row->translation->title }}" class="border-0">
                                                     </div>
                                                 </a>
@@ -222,9 +240,10 @@
                                         </div>
                                     @endforeach
                                 </div>
+                                <div class="swiper-button-next1"><i class="fa-solid fa-arrow-right"></i></div>
+                                <div class="swiper-button-prev1"><i class="fa-solid fa-arrow-left"></i></div>
                             </div>
-                            <div class="swiper-button-next1"><i class="fa-solid fa-arrow-right"></i></div>
-                            <div class="swiper-button-prev1"><i class="fa-solid fa-arrow-right"></i></div>
+
                         </div>
                     </div>
                 </div>
