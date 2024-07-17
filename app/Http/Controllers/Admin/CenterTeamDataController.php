@@ -38,7 +38,7 @@ class CenterTeamDataController extends Controller
 
         DB::beginTransaction();
 
-        if($request->phtoo) {
+        if($request->photo) {
 
             $row->update([
                 'photo' => $request->photo,
