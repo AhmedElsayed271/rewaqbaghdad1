@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Front\FaqController;
 use App\Http\Controllers\OurvisionController;
+use App\Http\Controllers\Front\MedadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -125,6 +126,9 @@ Route::group(['namespace' => 'Front'], function(){
     Route::post('/request-invitation', 'ElectronicController@RequestInvitationSendMail');
     Route::get('/faq', 'FaqController@faq');
     Route::get('/ourvision ', 'OurvisionController@ourvision')->name('ourvision');
+    Route::get('/medad ', 'MedadController@index')->name('medad');
+    Route::get('/etmam ', 'EtmamController@index')->name('etmam');
+  
 
 });
 
@@ -132,6 +136,8 @@ Route::group(['namespace' => 'Front'], function(){
 
 Route::post('/subscription', 'Front\IndexController@subscription');
 Route::get('/active/subscription', 'Admin\NewsletterController@active');
+
+Route::get('/ourvision ', 'OurvisionController@ourvision')->name('ourvision');
 
 Route::group(['prefix' => 'filemanager', 'middleware'=>'authadmin:filemanager_show'], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
