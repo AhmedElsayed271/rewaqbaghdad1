@@ -33,7 +33,8 @@ return [
     'other_author_articles' => 'Other Puplications by this Author',
     'related_topics' => 'Related Topics',
     'recent' => 'Recent',
-
+    'read_more' => 'Read More',
+    'reserve_copy'  => 'Reserve Copy',
     'author_no_content' => 'No More Content from This Auther',
 
     'all_results' => 'All Results',

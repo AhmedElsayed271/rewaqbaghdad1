@@ -104,7 +104,9 @@
                             </small>
                             <strong class="pt-1 pb-1 d-block">{{ $book->translation->title }}</strong>
                             <p>{{ $book->translation->description }}</p>
+                     
                         </a>
+
                     </div>
                 @endforeach
             </div>

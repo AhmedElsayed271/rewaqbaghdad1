@@ -45,10 +45,13 @@
             align-items: center;
             justify-content: center;
         }
-        .nexts1 i ,  .prevs1 i {
+
+        .nexts1 i,
+        .prevs1 i {
             font-size: 20px;
             color: #fff;
         }
+
         .prevs1 {
             background-color: #808080;
             width: 45px;
@@ -132,18 +135,29 @@
                         <div class="news-block-two swiper-wrapper">
 
                             @foreach ($books as $book)
-                                <a class="swiper-slide" href="{{ langUrl('/rewaq/book/' . $book->slug) }}"
-                                    title="{{ $book->translation->title }}">
-                                    <div class="inner-box-book">
-                                        <div class="img-box">
-                                            <img src="{{ $book->img }}" alt="{{ $book->translation->title }}">
-                                        </div>
-                                        <div class="content">
-                                            <p>{{ $book->translation->title }}</p>
+                                <div class="swiper-slide">
+                                    <a class="" href="{{ langUrl('/rewaq/book/' . $book->slug) }}"
+                                        title="{{ $book->translation->title }}">
+                                        <div class="inner-box-book">
+                                            <div class="img-box">
+                                                <img src="{{ $book->img }}" alt="{{ $book->translation->title }}">
+                                            </div>
+                                            <div class="content">
+                                                <p>{{ $book->translation->title }}</p>
+                                            </div>
+
                                         </div>
 
+                                    </a>
+                                    <div class="btns d-flex justify-content-around align-items-center">
+                                        <a href="{{ $book->index_url }}" target="_blank"
+                                            class="btn btn">{{ __('front.read_more') }}</a>
+                                        <a href="{{ $book->promo_url }}" target="_blank"
+                                            class="btn btn">{{ __('front.reserve_copy') }}</a>
                                     </div>
-                                </a>
+                                </div>
+
+                         
                             @endforeach
                         </div>
                     </div>
