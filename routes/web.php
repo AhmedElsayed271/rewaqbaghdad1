@@ -137,7 +137,7 @@ Route::group(['namespace' => 'Front'], function(){
 Route::post('/subscription', 'Front\IndexController@subscription');
 Route::get('/active/subscription', 'Admin\NewsletterController@active');
 
-Route::get('/ourvision ', 'OurvisionController@ourvision')->name('ourvision');
+// Route::get('/ourvision ', 'OurvisionController@ourvision')->name('ourvision');
 
 Route::group(['prefix' => 'filemanager', 'middleware'=>'authadmin:filemanager_show'], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
