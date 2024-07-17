@@ -87,8 +87,8 @@
             z-index: 2;
             background-color: #808080;
             border-radius: 50%;
-            height: 40px;
-            width: 40px;
+            height: 45px;
+            width: 45px;
             color: #fff;
             display: flex;
             align-items: center;
@@ -102,26 +102,27 @@
             z-index: 2;
             background-color: #808080;
             border-radius: 50%;
-            height: 40px;
-            width: 40px;
+            height: 45px;
+            width: 45px;
             color: #fff;
             display: flex;
             align-items: center;
             justify-content: center;
-          
+
         }
 
         .swiper-button-next1 {
             z-index: 2;
             position: absolute;
-            top: 50%;
+            top: 40%;
             transform: translate(0, -50%);
 
         }
-         .swiper-button-prev1 {
+
+        .swiper-button-prev1 {
             z-index: 2;
             position: absolute;
-            top: 50%;
+            top: 40%;
             transform: translate(0, -50%);
             left: 0;
 
@@ -219,8 +220,9 @@
                                             <div class="card" style="border: none ">
                                                 <a href="{{ langUrl('/activity/' . $row->slug) }}">
                                                     <div class="img-box">
-                                                        <img style="height: 380px" class="card-img-top" src="{{ $row->img }}"
-                                                            alt="{{ $row->translation->title }}" class="border-0">
+                                                        <img style="height: 380px" class="card-img-top"
+                                                            src="{{ $row->img }}" alt="{{ $row->translation->title }}"
+                                                            class="border-0">
                                                     </div>
                                                 </a>
 
@@ -240,8 +242,8 @@
                                         </div>
                                     @endforeach
                                 </div>
-                                <div class="swiper-button-next1"><i class="fa-solid fa-arrow-right"></i></div>
-                                <div class="swiper-button-prev1"><i class="fa-solid fa-arrow-left"></i></div>
+                                <div class="swiper-button-next1 mx-2"><i class="fa-solid fa-arrow-right"></i></div>
+                                <div class="swiper-button-prev1 mx-2"><i class="fa-solid fa-arrow-left"></i></div>
                             </div>
 
                         </div>

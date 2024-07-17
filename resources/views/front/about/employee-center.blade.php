@@ -69,15 +69,15 @@
 
     <section class="members-center bg-white">
         <div class="container my-5 mb-5 ">
-            <div class="text-heading text-center ">
+            <div class="text-heading text-center">
                 <h1 class="mx-auto font-bold ">مركز رواق بغداد للسياسات العامة،
                     مركز فكري يهتم بثلاثة محاور رئيسة:
                 </h1>
             </div>
             <div class="center-cards">
                 <div class="row justify-content-center align-items-center">
-                    <div class="col-md-4  pb-5 pt-2">
-                        <div class="p-2 py-3 rounded">
+                    <div class="col-md-4 pb-3 pt-2">
+                        <div class="p-3 rounded">
                             <div class="card-title py-1 rounded d-flex justify-content-center align-items-center bg-white">
                                 <img src="/uploads/files/shares/icons/Group 23.png" alt="title-img" />
                                 <h3 class="font-bold p-2">العلاقات العامة </h3>
@@ -93,8 +93,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 pb-5 pt-2 ">
-                        <div class="p-2 py-3 rounded">
+                    <div class="col-md-4 pb-3 pt-2 ">
+                        <div class="p-3 rounded">
                             <div class="card-title py-1 rounded d-flex justify-content-center align-items-center bg-white">
                                 <img src="/uploads/files/shares/icons/Group 24.png" alt="title-img" />
                                 <h3 class="font-bold p-2">البرامج</h3>
@@ -110,8 +110,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 rounded pb-5 pt-2">
-                        <div class="p-2 py-3 rounded">
+                    <div class="col-md-4 pb-3 pt-2">
+                        <div class="p-3 rounded">
                             <div class="card-title py-1 rounded d-flex justify-content-center align-items-center bg-white">
                                 <img src="/uploads/files/shares/icons/Frame 77.png" alt="title-img" />
                                 <h3 class="font-bold p-2">الدراسات والأبحاث</h3>
