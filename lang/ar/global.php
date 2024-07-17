@@ -132,12 +132,19 @@ return [
 
     //
     'alert_main_admin' => 'لا يمكن حذف المدير الرئيسى',
-
-    //
+    'thephoto' => 'الصوره',
+    'content' => 'المحتوى',
+    'Head_of_the_center' => 'كلمة رئيس المجلس',
     'copy' => 'نسخ',
     'excel' => 'Excel',
     'print' => 'طباعة',
     'alert_done_subscription' => 'تم الاشتراك في النشرة البريدية بنجاح',
+
+    /********************* mahwier *******************/
+    'mahwier_title' => 'عنوان المحورط',
+    'mahwier_description' => 'وصف الحور',
+    'mahwiers' => 'المحاور',
+    'mahwier_add' => 'اضافة محور',
 
     /********************* About *******************/
     'about' => [

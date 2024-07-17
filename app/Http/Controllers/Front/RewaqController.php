@@ -34,7 +34,7 @@ class RewaqController extends Controller
         ]);
         $rewaq = Rewaq::select('contact_email')->first();
         $subject = $request->subject;
-        Mail::to($rewaq->contact_email)->send(new SendContactMail($request->except('_token'),$subject));
+        Mail::to($rewaq->contact_email)->send(new SendContactMail($request->except('_token'), $subject));
         return back()->with('success', __('front.alert_send_contact_main'));
     }
 
@@ -52,23 +52,23 @@ class RewaqController extends Controller
 
     public function index()
     {
-        $rewaq = Rewaq::with('translation')->with('pm','am','ps')->first();
+        $rewaq = Rewaq::with('translation')->with('pm', 'am', 'ps')->first();
         $books = Rewaqbook::with('translation:title,description,parent_id')->orderBy('id', 'DESC')->get();
-        $latestNews = Rewaqbook::select('id','slug','img','created_at')->with('translation:title,parent_id')->orderBy('id', 'DESC')->limit(4)->get();
-        $mostWatched = Rewaqbook::select('id','slug','views','created_at')->with('translation:title,parent_id')->orderBy('views', 'DESC')->limit(4)->get();
-        return view('front.rewaq.index', compact('rewaq','books','latestNews','mostWatched'));
+        $latestNews = Rewaqbook::select('id', 'slug', 'img', 'created_at')->with('translation:title,parent_id')->orderBy('id', 'DESC')->limit(4)->get();
+        $mostWatched = Rewaqbook::select('id', 'slug', 'views', 'created_at')->with('translation:title,parent_id')->orderBy('views', 'DESC')->limit(4)->get();
+        return view('front.rewaq.index', compact('rewaq', 'books', 'latestNews', 'mostWatched'));
     }
 
     public function book($slug)
     {
         $check = Rewaqbook::where('slug', $slug);
-        if( $check->count() >= 1 ):
+        if ($check->count() >= 1) :
             $book = $check->with('translation')->first();
 
-            if (!Cookie::has('book-'.$slug) ) :
-                Cookie::queue( Cookie::make('book-'.$slug, '', (60*24*356)) );
+            if (!Cookie::has('book-' . $slug)) :
+                Cookie::queue(Cookie::make('book-' . $slug, '', (60 * 24 * 356)));
                 $check->update([
-                    'views' => $book->views+1
+                    'views' => $book->views + 1
                 ]);
             endif;
 
@@ -79,16 +79,21 @@ class RewaqController extends Controller
 
     public function Tag($tag)
     {
-        $check = RewaqbookTranslation::where('tags','like','%'.$tag.'%');
-        if($check->count() >= 1 ):
+        $check = RewaqbookTranslation::where('tags', 'like', '%' . $tag . '%');
+        if ($check->count() >= 1) :
             $ids = $check->pluck('parent_id')->toArray();
 
             $books = Rewaqbook::whereIn('id', $ids)->with('translation:title,description,parent_id')->orderBy('id', 'DESC')->paginate(10);
-            $rewaq = Rewaq::with('translation')->with('pm','am','ps')->first();
-            $latestNews = Rewaqbook::select('id','slug','img','created_at')->with('translation:title,parent_id')->orderBy('id', 'DESC')->limit(4)->get();
-            $mostWatched = Rewaqbook::select('id','slug','views','created_at')->with('translation:title,parent_id')->orderBy('views', 'DESC')->limit(4)->get();
-            return view('front.rewaq.tag', compact('tag','rewaq','books','latestNews','mostWatched'));
+            $rewaq = Rewaq::with('translation')->with('pm', 'am', 'ps')->first();
+            $latestNews = Rewaqbook::select('id', 'slug', 'img', 'created_at')->with('translation:title,parent_id')->orderBy('id', 'DESC')->limit(4)->get();
+            $mostWatched = Rewaqbook::select('id', 'slug', 'views', 'created_at')->with('translation:title,parent_id')->orderBy('views', 'DESC')->limit(4)->get();
+            return view('front.rewaq.tag', compact('tag', 'rewaq', 'books', 'latestNews', 'mostWatched'));
         endif;
         abort(404);
+    }
+    public function versions()
+    {
+        $books = Rewaqbook::select('id', 'slug', 'img', 'created_at')->with('translation:title,description,parent_id')->orderBy('id', 'DESC')->get();
+        return view('front.rewaq.versions', compact('books'));
     }
 }

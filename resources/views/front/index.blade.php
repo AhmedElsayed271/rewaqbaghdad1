@@ -242,8 +242,8 @@
                                         </div>
                                     @endforeach
                                 </div>
-                                <div class="swiper-button-next1 mx-2"><i class="fa-solid fa-arrow-right"></i></div>
-                                <div class="swiper-button-prev1 mx-2"><i class="fa-solid fa-arrow-left"></i></div>
+                                <div class="swiper-button-next1">   <i class="fa-solid fa-chevron-right"></i></i></div>
+                                <div class="swiper-button-prev1">   <i class="fa-solid fa-chevron-left"></i></div>
                             </div>
 
                         </div>

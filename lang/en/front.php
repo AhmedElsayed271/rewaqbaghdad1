@@ -20,7 +20,8 @@ return [
     'to_go_to_resume' => 'Resumes',
 
     'authors' => 'Authors',
-
+   
+    'Head_of_the_center' => 'Speech of the Chairman of the Council',
     'versions' => 'Publications',
     'for_more' => 'For More',
 
@@ -32,7 +33,8 @@ return [
     'other_author_articles' => 'Other Puplications by this Author',
     'related_topics' => 'Related Topics',
     'recent' => 'Recent',
-
+    'read_more' => 'Read More',
+    'reserve_copy'  => 'Reserve Copy',
     'author_no_content' => 'No More Content from This Auther',
 
     'all_results' => 'All Results',

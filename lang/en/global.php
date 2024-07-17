@@ -77,7 +77,9 @@ return [
     'page_name' => 'Page name',
     '' => '',
     '' => '',
-
+    'thephoto' => 'photo',
+    'content' => 'content',
+    'Head_of_the_center' => 'Speech of the Chairman of the Council',
 
     /********************* faq *******************/
     'faq_title' => 'common questions',

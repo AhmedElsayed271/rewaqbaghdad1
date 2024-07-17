@@ -14,6 +14,8 @@ use App\Models\Setting;
 
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendContactMail;
+use App\Models\CenterTeamData;
+use App\Models\Mahawir;
 
 class AboutController extends Controller
 {
@@ -53,7 +55,9 @@ class AboutController extends Controller
         $teamsCEO = Centerteam::where('type','ceo')->with('translation')->get();
         $teamsCBD = Centerteam::where('type','cbd')->with('translation')->get();
         $setting = Teamsetting::where('slug','center-team')->first();
-        return view('front.about.employee-center', compact('setting','teamsEMP','teamsCBD','teamsCEO','teamsMEM'));
+        $mahawirs = Mahawir::with('translation')->get();
+        $headOfcenterWord = CenterTeamData::with('translation')->first();
+        return view('front.about.employee-center', compact('setting','teamsEMP','teamsCBD','teamsCEO','teamsMEM','mahawirs','headOfcenterWord'));
     }
     
     public function CenterWriters()

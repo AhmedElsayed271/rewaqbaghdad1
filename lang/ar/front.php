@@ -42,11 +42,12 @@ return [
     'latest_seminars' => 'أحدث الندوات',
     'select_type_activity' => 'حدد نوع النشاط',
     'common_quesiton' => 'الاسئلة الشائعة',
-
+   
     'address' => 'العنوان',
     'email' => 'البريد الإلكتروني',
     'phone' => 'الهاتف',
-
+    'read_more' => 'أقرأ المزيد',
+    'reserve_copy'  => 'أحجز نسختك',
     'subsites' => 'المواقع الفرعية',
     'rewaq' => 'دار الرواق',
     'new_site' => 'جديد الموقع',

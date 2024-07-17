@@ -30,6 +30,42 @@
             justify-content: center;
             align-items: center;
         }
+
+        .nexts1 {
+            background-color: #808080;
+            width: 45px;
+            height: 45px;
+            z-index: 2;
+            position: absolute;
+            bottom: 50%;
+            transform: translate(0, -50%);
+            border-radius: 50%;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nexts1 i,
+        .prevs1 i {
+            font-size: 20px;
+            color: #fff;
+        }
+
+        .prevs1 {
+            background-color: #808080;
+            width: 45px;
+            height: 45px;
+            z-index: 2;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            bottom: 50%;
+            transform: translate(0, -50%);
+            border-radius: 50%;
+            left: 20px;
+        }
     </style>
 
     {{-- bg-white-greding-green --}}
@@ -83,101 +119,58 @@
             </div>
         </div>
     </section>
-    <div class="section-heading pb-30 text-center shadow-sm mx-auto rounded-30 my-3">
-        <h2 class="font-bold p-3">الاصدارات</h2>
-    </div>
+    <a href="{{ route('rewaq.versions') }}">
+        <div class="section-heading pb-30 text-center shadow-sm mx-auto rounded-30 my-3">
+            <h2 class="font-bold p-3">الاصدارات</h2>
+        </div>
+    </a>
     @if (!$books->isEmpty())
         <section class="our-books">
             <div class="container">
                 <div class="section-title text-right pb-30">
                 </div>
                 <div class="row overflow-hidden" data-aos="zoom-in" data-aos-duration="1000">
-        
+
                     <div class="swiper-container overflow-hidden">
                         <div class="news-block-two swiper-wrapper">
 
                             @foreach ($books as $book)
-                                <a class="swiper-slide" href="{{ langUrl('/rewaq/book/' . $book->slug) }}"
-                                    title="{{ $book->translation->title }}">
-                                    <div class="inner-box-book">
-                                        <div class="img-box">
-                                            <img src="{{ $book->img }}" alt="{{ $book->translation->title }}">
+                                <div class="swiper-slide">
+                                    <a class="" href="{{ langUrl('/rewaq/book/' . $book->slug) }}"
+                                        title="{{ $book->translation->title }}">
+                                        <div class="inner-box-book">
+                                            <div class="img-box">
+                                                <img src="{{ $book->img }}" alt="{{ $book->translation->title }}">
+                                            </div>
+                                            <div class="content">
+                                                <p>{{ $book->translation->title }}</p>
+                                            </div>
+
                                         </div>
-                                        <div class="content">
-                                            <p>{{ $book->translation->title }}</p>
-                                        </div>
-                                        
+
+                                    </a>
+                                    <div class="btns d-flex justify-content-around align-items-center">
+                                        <a href="{{ $book->index_url }}" target="_blank"
+                                            class="btn btn">{{ __('front.read_more') }}</a>
+                                        <a href="{{ $book->promo_url }}" target="_blank"
+                                            class="btn btn">{{ __('front.reserve_copy') }}</a>
                                     </div>
-                                </a>
+                                </div>
+
+                         
                             @endforeach
                         </div>
                     </div>
-                    <div class="nexts"></div>
-                    <div class="prevs"></div>
+                    <div class="nexts1">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                    <div class="prevs1">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </div>
                 </div>
             </div>
         </section>
     @endif
-
-    <section class="activies-sec">
-        <div class="container">
-            <a href="">
-                <div class="section-heading pb-30 text-center shadow-sm mx-auto rounded-30 my-3">
-                    <h2 class="font-bold p-3">الاصدارات</h2>
-                </div>
-            </a>
-            <div class="row justify-content-center align-items-center">
-                @foreach ($books as $book)
-                    <div class="col-md-3 book">
-                        <a href="{{ langUrl('/rewaq/book/' . $book->slug) }}">
-                            <div class="pb-3 pt-3">
-                                <img src="{{ $book->img }}" alt="{{ $book->translation->title }}"
-                                    class="border-0 rounded ">
-                            </div>
-                            <small class="title-sec mb-1">
-                                <strong>{{ formatDate($book->created_at) }}</strong>
-                            </small>
-                            <strong class="pt-1 pb-1 d-block">{{ $book->translation->title }}</strong>
-                            <p>{{ $book->translation->description }}</p>
-                        </a>
-                    </div>
-                @endforeach
-            </div>
-
-            {{-- </div>
-                </div> --}}
-            {{-- <div class="col-lg-3 margin20">
-                    <div class="widget_raper mt-3">
-                        <p class="text-green">{{ __('front.new_site') }}</p>
-                        <div class="recent_post">
-                            @foreach ($latestNews as $latest)
-                                <a href="{{ langUrl('/rewaq/book/'.$latest->slug) }}" class="single_recent_post">
-                                    <span class="rp_img" style="background-image: url({{$latest->img}});"></span>
-                                    <span>{{ formatDate($latest->created_at) }}</span>
-                                    <h4>{{$latest->translation->title}}</h4>
-                                </a>
-                                <hr>
-                            @endforeach
-                        </div>
-                    </div>
-                  <div class="widget_raper bg-light p-2 mt-3">
-                    <p class="text-green">{{ __('front.most_watched') }}</p>
-                    <div class="recent_post">
-                        @foreach ($mostWatched as $most)
-                            <a href="{{ langUrl('/rewaq/book/'.$most->slug) }}" class="single_recent_post">
-                                <span>{{ formatDate($most->created_at) }}</span>
-                                <h4>{{ $most->translation->title }}</h4>
-                            </a>
-                            <hr>
-                        @endforeach
-                    </div>
-                </div>
-            </div> --}}
-            {{-- <div class="col-lg-12 mt-3 text-center  d-none d-xl-flex d-lg-flex d-md-flex d-sm-none d-xs-none">
-                {{ $books->links() }}
-            </div> --}}
-        </div>
-    </section>
 
 @endsection
 
@@ -197,8 +190,8 @@
                 clickable: true,
             },
             navigation: {
-                nextEl: '.nexts',
-                prevEl: '.prevs',
+                nextEl: '.nexts1',
+                prevEl: '.prevs1',
             },
             breakpoints: {
                 640: {

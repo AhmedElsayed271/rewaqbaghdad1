@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Models\MEJEELPblogTranslation;
 use Illuminate\Support\Facades\Response;
+
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\EtmamcategoryController;
@@ -65,6 +66,11 @@ Route::group(['prefix' => 'admin','middleware' => AuthAdmin::class], function ()
     Route::get('/center-team/json', 'CenterteamController@json');
     Route::resource('/center-team', 'CenterteamController');
     
+    // word Head of the centerroute 
+
+    Route::get('/word-headofcenter', 'CenterTeamDataController@edit');
+    Route::post('/word-headofcenter', 'CenterTeamDataController@update');
+
     // Book Team
     Route::post('/book-team/update/description', 'BookteamController@UpdateDescription');
     Route::get('/book-team/json', 'BookteamController@json');
@@ -93,6 +99,10 @@ Route::group(['prefix' => 'admin','middleware' => AuthAdmin::class], function ()
     // etmam news
     Route::get('/etmam-news/json', 'EtmamNewsController@json');
     Route::resource('/etmam-news', 'EtmamNewsController');
+
+    // Mahawier
+    Route::get('/mahawirs/json', 'MahawirController@json');
+    Route::resource('/mahawirs', 'MahawirController');
     
     
     // media news
