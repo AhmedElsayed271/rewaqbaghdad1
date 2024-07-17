@@ -78,6 +78,8 @@
                     $admin->hasPermission('read-bookTeam') ||
                     $admin->hasPermission('read-centerTeam') ||
                     $admin->hasPermission('read-faqs') ||
+                    $admin->hasPermission('read-Mahawirs') ||
+                    $admin->hasPermission('read-headofcenter') ||
                     $admin->is_superadmin)
                 <li class="slide">
                     <a class="side-menu__item" data-toggle="slide" href="#">
@@ -94,6 +96,17 @@
                         @if ($admin->hasPermission('read-centerTeam') || $admin->is_superadmin)
                             <li><a class="slide-item"
                                     href="{{ url(appLangKey() . '/admin/center-team') }}">{{ __('global.center_member.title') }}</a>
+                            </li>
+                        @endif
+
+                        @if ($admin->hasPermission('read-headofcenter') || $admin->is_superadmin)
+                            <li><a class="slide-item"
+                                    href="{{ url(appLangKey() . '/admin/word-headofcenter') }}">{{ __('global.Head_of_the_center') }}</a>
+                            </li>
+                        @endif
+                        @if ($admin->hasPermission('read-Mahawirs') || $admin->is_superadmin)
+                            <li><a class="slide-item"
+                                    href="{{ url(appLangKey() . '/admin/mahawirs') }}">{{ __('global.mahwiers') }}</a>
                             </li>
                         @endif
 

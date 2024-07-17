@@ -20,7 +20,8 @@ return [
     'to_go_to_resume' => 'Resumes',
 
     'authors' => 'Authors',
-
+   
+    'Head_of_the_center' => 'Speech of the Chairman of the Council',
     'versions' => 'Publications',
     'for_more' => 'For More',
 

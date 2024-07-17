@@ -76,57 +76,22 @@
             </div>
             <div class="center-cards">
                 <div class="row justify-content-center align-items-center">
+                    @foreach ($mahawirs as $mahawir)
                     <div class="col-md-4  pb-5 pt-2">
                         <div class="p-2 py-3 rounded">
                             <div class="card-title py-1 rounded d-flex justify-content-center align-items-center bg-white">
-                                <img src="/uploads/files/shares/icons/Group 23.png" alt="title-img" />
-                                <h3 class="font-bold p-2">العلاقات العامة </h3>
+                                <img src="{{ $mahawir->photo }}" alt="title-img" />
+                                <h3 class="font-bold p-2">{{ $mahawir->translation->title }} </h3>
                             </div>
                             <div class="card-body">
-                                <p class="font-bold text-white py-2 pt-4">يعنى المركز بتطوير وتعزيز العلاقات
-                                    بين المؤسسات والشركات والأفراد
-                                    والحكومات، وذلك من خلال تقديم
-                                    الاستشارات والتوجيهات اللازمة لتوثيق
-                                    العلاقات العامة وصياغة الرسائل
-                                    الرسائل الإعلامية المناسبة.
+                                <p class="font-bold text-white py-2 pt-4">
+                                    {{ $mahawir->translation->description }}
                                 </p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 pb-5 pt-2 ">
-                        <div class="p-2 py-3 rounded">
-                            <div class="card-title py-1 rounded d-flex justify-content-center align-items-center bg-white">
-                                <img src="/uploads/files/shares/icons/Group 24.png" alt="title-img" />
-                                <h3 class="font-bold p-2">البرامج</h3>
-                            </div>
-                            <div class="card-body">
-                                <p class="font-bold text-white py-2 pt-4">يعنى المركز بتطوير وتعزيز العلاقات
-                                    بين المؤسسات والشركات والأفراد
-                                    والحكومات، وذلك من خلال تقديم
-                                    الاستشارات والتوجيهات اللازمة لتوثيق
-                                    العلاقات العامة وصياغة الرسائل
-                                    الرسائل الإعلامية المناسبة.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 rounded pb-5 pt-2">
-                        <div class="p-2 py-3 rounded">
-                            <div class="card-title py-1 rounded d-flex justify-content-center align-items-center bg-white">
-                                <img src="/uploads/files/shares/icons/Frame 77.png" alt="title-img" />
-                                <h3 class="font-bold p-2">الدراسات والأبحاث</h3>
-                            </div>
-                            <div class="card-body">
-                                <p class="font-bold text-white py-2 pt-4 ">يعنى المركز بتطوير وتعزيز العلاقات
-                                    بين المؤسسات والشركات والأفراد
-                                    والحكومات، وذلك من خلال تقديم
-                                    الاستشارات والتوجيهات اللازمة لتوثيق
-                                    العلاقات العامة وصياغة الرسائل
-                                    الرسائل الإعلامية المناسبة.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
+             
                 </div>
             </div>
 
@@ -134,15 +99,10 @@
                 <div class="speech-info py-5 px-4 my-5">
                     <div class="content col-md-8">
                         <h3 class="font-bold text-white">كلمة رئيس المركز :</h3>
-                        <p class="text-white" style="font-size: 20px">خمس سنوات مرت ولا زال رواق بغداد يخطو خطوات حثيثة نحو بناء مركز تفكير يعمل
-                            بموضوعية واحتراف. تغيّر الرواق بعد عامه الثالث ليكون مشتملاً على ستّة مشاريع:
-                            أنا البرلمان، دار الرواق، مجلة الرواق، عراق ميتر، (كُنْ ) للتدريب والتطوير بودكاست (فكّر).
-                            وثلاثة مهام، وهي: أوراق السياسات وتقدير الموقف الجلسات والحلقات النقاشية،
-                            والعلاقات العامة. يتولى إدارة كل مشروع من المشاريع وكل مهمةٍ من المهمات
-                            أحد شبابنا الكفوئين الحريصين وقد أصبحوا مثالاً يحتذى به ونموذجاً يشار إليه. </p>
+                        <p class="text-white" style="font-size: 20px"> {!!  $headOfcenterWord->translation->content !!} </p>
                     </div>
                     <div class="ceo-img" style="width: 280px">
-                        <img src="/uploads/files/shares/ceo.png" alt="ceo-img" class="mx-auto" />
+                        <img src="{{ $headOfcenterWord->photo }}" alt="ceo-img" class="mx-auto" />
                     </div>
                 </div>
             </section>

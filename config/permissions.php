@@ -30,6 +30,15 @@ return [
             ],
             'name' => 'global.center_member.title'
         ],
+        'Mahawirs' => [
+            'permission' => [
+                ['permission' => 'read', 'name' => 'read'], 
+                ['permission' => 'create', 'name' => 'create'], 
+                ['permission' => 'update', 'name' => 'update'], 
+                ['permission' => 'delete', 'name' => 'delete']
+            ],
+            'name' => 'global.mahwiers'
+        ],
 
         'bookTeam' => [
             'permission' => [
@@ -47,7 +56,12 @@ return [
             ],
             'name' => 'global.about.title'
         ],
-  
+        'headofcenter' => [
+            'permission' => [
+                ['permission' => 'edit', 'name' => 'edit'], 
+            ],
+            'name' => 'global.Head_of_the_center'
+        ],
         'versionCategory' => [
             'permission' => [
                 ['permission' => 'read', 'name' => 'read'], 
@@ -204,6 +218,7 @@ return [
             ],
             'name' => 'global.magazine.publish_rule'
         ],
+     
         'khetabmagazinemteam' => [
             'permission' => [
                 ['permission' => 'read', 'name' => 'read'], 

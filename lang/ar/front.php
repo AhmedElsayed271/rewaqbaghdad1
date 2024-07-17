@@ -42,7 +42,7 @@ return [
     'latest_seminars' => 'أحدث الندوات',
     'select_type_activity' => 'حدد نوع النشاط',
     'common_quesiton' => 'الاسئلة الشائعة',
-
+   
     'address' => 'العنوان',
     'email' => 'البريد الإلكتروني',
     'phone' => 'الهاتف',

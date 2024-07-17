@@ -48,6 +48,7 @@ Route::group(['namespace' => 'Front'], function(){
     Route::get('/rewaq', 'RewaqController@index');
     Route::get('/rewaq/book/{slug}', 'RewaqController@book');
     Route::get('/rewaq/book/tag/{tag}', 'RewaqController@Tag');
+    Route::get('/rewaq/versions', 'RewaqController@versions')->name('rewaq.versions');
 
     Route::get('/rewaq/publish/role', 'RewaqController@PublishRole');
     Route::get('/rewaq/editorial-board', 'RewaqController@EditorialBoard');
