@@ -309,6 +309,13 @@ return [
             ],
             'name' => 'global.iraqmeter.title'
         ],
+        'iraqMeterInfo' => [
+            'permission' => [
+                ['permission' => 'edit', 'name' => 'edit'], 
+            ],
+            'name' => 'global.iraqmeter.edit'
+        ],
+     
         'konMedia' => [
             'permission' => [
                 ['permission' => 'read', 'name' => 'read'], 
@@ -317,6 +324,12 @@ return [
                 ['permission' => 'delete', 'name' => 'delete']
             ],
             'name' => 'global.kone_media.title'
+        ],
+        'konInfo' => [
+            'permission' => [
+                ['permission' => 'edit', 'name' => 'edit'], 
+            ],
+            'name' => 'global.kon.edit'
         ],
         'slider' => [
            'permission' => [

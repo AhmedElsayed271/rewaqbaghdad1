@@ -10,11 +10,11 @@
                     <strong class="fs-2 d-block mb-3 text-white">
                         كُــنْ لـلتدريب والـتطوير
                     </strong>
-                    <p>يهدف كٌــنْ لـلـتـدريـب والـتـطـوير الى صناعة قادةٍ بادوات عصرية تمكنهم من مواكبة التقدم والتطور العالمي لمزاولة عملهم بمهنية .</p>
+                    {!! $kon->translation->content !!}
                 </div>
                 <div class="col-lg-4">
                     <div class="img-box text-center border-0 rounded-30">
-                        <img src="{{url('/front/assets/img/be-vector.png')}}" alt="aboutImage" class=" w-50">
+                        <img src="{{ $kon->img }}" alt="aboutImage" class=" w-50">
                     </div>
                 </div>
             </div>

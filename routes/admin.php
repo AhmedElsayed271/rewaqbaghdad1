@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\RewaqVideoController;
 use App\Http\Controllers\Admin\EtmamcategoryController;
+use App\Http\Controllers\Admin\IraqmeterInfoEditController;
 use App\Http\Controllers\Admin\KhetabMagazineblogController;
 
 Route::group(['prefix' => 'admin','middleware' => AuthAdmin::class], function () {
@@ -166,6 +167,13 @@ Route::group(['prefix' => 'admin','middleware' => AuthAdmin::class], function ()
     // Iraq meter
     Route::get('/iraq-meter/json', 'IraqmeterController@json');
     Route::resource('/iraq-meter', 'IraqmeterController');
+     //rewaq
+     Route::get('/iraqmeter-edit', 'IraqmeterInfoEditController@edit')->name('iraqmeter.editInfo');
+     Route::post('/iraqmeter-edit', 'IraqmeterInfoEditController@update')->name('iraqmeter.updateInfo');
+     
+     //kun  edit info
+     Route::get('/kon-edit', 'KunInfoEditController@edit')->name('kon.editInfo');
+     Route::post('/kon-edit', 'KunInfoEditController@update')->name('kon.updateInfo');
     
     
     // Magazine Team

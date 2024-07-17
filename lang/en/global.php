@@ -532,7 +532,7 @@ return [
     ],
 
     'kone_media' => [
-        'title' => 'Kon news',
+        'title' => 'Kon',
         'add' => 'Add new news',
         'name' => 'The name of the news',
         'img' => 'The prominent image',
@@ -543,7 +543,8 @@ return [
 
 
     'iraqmeter' => [
-        'title' => 'Iraq Meter news',
+        'title' => 'Iraq Meter',
+        'edit' => 'edit kon info',
         'add' => 'Add new news',
         'name' => 'The name of the news',
         'img' => 'The prominent image',

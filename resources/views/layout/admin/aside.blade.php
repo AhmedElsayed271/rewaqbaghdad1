@@ -311,7 +311,56 @@
                 </li>
 
             @endif
+            @if ($admin->hasPermission('read-iraqMeter') || $admin->hasPermission('edit-iraqMeterInfo') || $admin->is_superadmin)
+                <li class="slide">
+                    <a class="side-menu__item" data-toggle="slide" href="#">
+                        <i class="fa-solid fa-layer-group"></i>
+                        <span class="side-menu__label">{{ __('global.iraqmeter.title') }}</span><i
+                            class="angle fe fe-chevron-down"></i></a>
+                    <ul class="slide-menu">
 
+                        @if ($admin->hasPermission('read-iraqMeter') || $admin->is_superadmin)
+                            <li><a class="slide-item"
+                                    href="{{ url(appLangKey() . '/admin/iraq-meter') }}">{{ __('global.iraqmeter.title') }}</a>
+                            </li>
+                        @endif
+                        
+                        @if ($admin->hasPermission('edit-iraqMeterInfo') || $admin->is_superadmin)
+                            <li><a class="slide-item"
+                                    href="{{ route('iraqmeter.editInfo') }}">{{ __('global.iraqmeter.edit') }}</a>
+                            </li>
+                        @endif
+
+
+                    </ul>
+                </li>
+
+            @endif
+            @if ($admin->hasPermission('read-konMedia') || $admin->hasPermission('edit-konInfo') || $admin->is_superadmin)
+                <li class="slide">
+                    <a class="side-menu__item" data-toggle="slide" href="#">
+                        <i class="fa-solid fa-layer-group"></i>
+                        <span class="side-menu__label">{{ __('global.kone_media.title') }}</span><i
+                            class="angle fe fe-chevron-down"></i></a>
+                    <ul class="slide-menu">
+
+                        @if ($admin->hasPermission('read-konInfo') || $admin->is_superadmin)
+                            <li><a class="slide-item"
+                                href="{{ route('kon.editInfo') }}">{{ __('global.kone_media.edit') }}</a>
+                            </li>
+                        @endif
+
+                        @if ($admin->hasPermission('edit-konMedia') || $admin->is_superadmin)
+                            <li><a class="slide-item"
+                                    href="{{ url(appLangKey() . '/admin/kon-news') }}">{{ __('global.kone_media.title') }}</a>
+                            </li>
+                        @endif
+
+
+                    </ul>
+                </li>
+
+            @endif
 
             @if (
                 $admin->hasPermission('edit-khetabmagazineedit') ||
@@ -353,26 +402,26 @@
                             </li>
                         @endif
                         @if ($admin->hasPermission('read-MEJEELPTeam') || $admin->is_superadmin)
-                        <li><a class="slide-item"
-                                href="{{ url(appLangKey() . '/admin/MEJEELP-magazine-team') }}">{{ __('global.MEJEELP_magazine.team.title') }}</a>
-                        </li>
-                    @endif
-                    @if ($admin->hasPermission('read-MEJEELPMagazine') || $admin->is_superadmin)
-                        <li><a class="slide-item"
-                                href="{{ url(appLangKey() . '/admin/MEJEELP-magazine') }}">{{ __('global.MEJEELP_magazine.magazine_edit') }}</a>
-                        </li>
-                    @endif
+                            <li><a class="slide-item"
+                                    href="{{ url(appLangKey() . '/admin/MEJEELP-magazine-team') }}">{{ __('global.MEJEELP_magazine.team.title') }}</a>
+                            </li>
+                        @endif
+                        @if ($admin->hasPermission('read-MEJEELPMagazine') || $admin->is_superadmin)
+                            <li><a class="slide-item"
+                                    href="{{ url(appLangKey() . '/admin/MEJEELP-magazine') }}">{{ __('global.MEJEELP_magazine.magazine_edit') }}</a>
+                            </li>
+                        @endif
 
-                    @if ($admin->hasPermission('read-MEJEELPMagazinerule') || $admin->is_superadmin)
-                        <li><a class="slide-item"
-                                href="{{ url(appLangKey() . '/admin/MEJEELP-magazine/publish/rule') }}">{{ __('global.MEJEELP_magazine.publish_rule') }}</a>
-                        </li>
-                    @endif
-                    @if ($admin->hasPermission('read-MEJEELPBlog') || $admin->is_superadmin)
-                        <li><a class="slide-item"
-                                href="{{ url(appLangKey() . '/admin/MEJEELP-magazine-blog') }}">{{ __('global.MEJEELP_magazine.blog.title') }}</a>
-                        </li>
-                    @endif
+                        @if ($admin->hasPermission('read-MEJEELPMagazinerule') || $admin->is_superadmin)
+                            <li><a class="slide-item"
+                                    href="{{ url(appLangKey() . '/admin/MEJEELP-magazine/publish/rule') }}">{{ __('global.MEJEELP_magazine.publish_rule') }}</a>
+                            </li>
+                        @endif
+                        @if ($admin->hasPermission('read-MEJEELPBlog') || $admin->is_superadmin)
+                            <li><a class="slide-item"
+                                    href="{{ url(appLangKey() . '/admin/MEJEELP-magazine-blog') }}">{{ __('global.MEJEELP_magazine.blog.title') }}</a>
+                            </li>
+                        @endif
                     </ul>
                 </li>
             @endif
@@ -406,23 +455,9 @@
                 </li>
             @endif
 
-            @if ($admin->hasPermission('read-iraqMeter') || $admin->is_superadmin)
-                <li class="slide">
-                    <a class="side-menu__item" href="{{ url(appLangKey() . '/admin/iraq-meter') }}">
-                        <i class="fa-solid fa-rss"></i>
-                        <span class="side-menu__label">{{ __('global.iraqmeter.title') }}</span>
-                    </a>
-                </li>
-            @endif
 
-            @if ($admin->hasPermission('read-konMedia') || $admin->is_superadmin)
-                <li class="slide">
-                    <a class="side-menu__item" href="{{ url(appLangKey() . '/admin/kon-news') }}">
-                        <i class="fa-solid fa-rss"></i>
-                        <span class="side-menu__label">{{ __('global.kone_media.title') }}</span>
-                    </a>
-                </li>
-            @endif
+
+
             @if ($admin->hasPermission('read-slider') || $admin->is_superadmin)
                 <li class="slide">
                     <a class="side-menu__item" href="{{ url(appLangKey() . '/admin/slider') }}">

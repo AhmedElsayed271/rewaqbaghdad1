@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers\Front;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Cookie;
-
 use App\Models\Iraqmeter;
+use Illuminate\Http\Request;
+use App\Models\IraqmeterInfoEdit;
+
+use App\Http\Controllers\Controller;
 use App\Models\IraqmeterTranslation;
+use App\Models\KunInfoEdit;
+use Illuminate\Support\Facades\Cookie;
 
 class IraqmeterController extends Controller
 {
@@ -23,7 +25,9 @@ class IraqmeterController extends Controller
     
     public function kon()
     {
-        return view('front.iraq-meter.kon');
+
+        $kon = KunInfoEdit::with('translation')->first();
+        return view('front.iraq-meter.kon',compact('kon'));
     }
     
     public function Tag($tag)
@@ -41,7 +45,8 @@ class IraqmeterController extends Controller
     
     public function Info()
     {
-        return view('front.iraq-meter.info');
+        $iraqmeterInfo = IraqmeterInfoEdit::with('translation')->first();
+        return view('front.iraq-meter.info',compact('iraqmeterInfo'));
     }
     
     public function blogs()

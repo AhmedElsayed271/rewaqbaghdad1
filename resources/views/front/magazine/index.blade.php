@@ -24,7 +24,7 @@
                     <strong class="fs-2 text-end d-block mb-3 text-white">
                         @yield('title')
                     </strong>
-                    <p>{{ $magazine->translation->content }}</p>
+                    <p>{!! $magazine->translation->content !!}</p>
                     <div class="row justify-content-center align-items-end">
                         <div class="col-lg-6">
                             <div class="text">
