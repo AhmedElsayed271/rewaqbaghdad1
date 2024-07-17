@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Response;
 
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\RoleController;
+use App\Http\Controllers\Admin\RewaqVideoController;
 use App\Http\Controllers\Admin\EtmamcategoryController;
 use App\Http\Controllers\Admin\KhetabMagazineblogController;
 
@@ -158,6 +159,9 @@ Route::group(['prefix' => 'admin','middleware' => AuthAdmin::class], function ()
     Route::get('/rewaq-books/json', 'RewaqbookController@json');
     Route::resource('/rewaq-books', 'RewaqbookController');
     
+      // rewaq videos
+      Route::get('/rewaq-videos/json', 'RewaqVideoController@json');
+      Route::resource('/rewaq-videos', 'RewaqVideoController');
     
     // Iraq meter
     Route::get('/iraq-meter/json', 'IraqmeterController@json');

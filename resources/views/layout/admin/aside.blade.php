@@ -250,6 +250,11 @@
                                     href="{{ url(appLangKey() . '/admin/rewaq-team') }}">{{ __('global.rewaq.team.title') }}</a>
                             </li>
                         @endif
+                        @if ($admin->hasPermission('read-rewaqVideo') || $admin->is_superadmin)
+                            <li><a class="slide-item"
+                                    href="{{ url(appLangKey() . '/admin/rewaq-videos') }}">{{ __('global.rewaq_videos') }}</a>
+                            </li>
+                        @endif
 
                         @if ($admin->hasPermission('read-rewaqPublishRule') || $admin->is_superadmin)
                             <li><a class="slide-item"

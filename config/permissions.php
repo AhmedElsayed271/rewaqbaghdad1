@@ -163,6 +163,15 @@ return [
             ],
             'name' => 'global.rewaq.team.title'
         ],
+        'rewaqVideo' => [
+            'permission' => [
+                ['permission' => 'read', 'name' => 'read'], 
+                ['permission' => 'create', 'name' => 'create'], 
+                ['permission' => 'update', 'name' => 'update'], 
+                ['permission' => 'delete', 'name' => 'delete']
+            ],
+            'name' => 'global.rewaq_videos'
+        ],
         'RewaqBooks' => [
             'permission' => [
                 ['permission' => 'read', 'name' => 'read'], 

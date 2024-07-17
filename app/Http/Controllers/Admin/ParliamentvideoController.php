@@ -11,10 +11,10 @@ class ParliamentvideoController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('authadmin:parliamentvideo_show')->only('json','index');
-        $this->middleware('authadmin:parliamentvideo_create')->only('create','store');
-        $this->middleware('authadmin:parliamentvideo_edit')->only('edit', 'update');
-        $this->middleware('authadmin:parliamentvideo_delete')->only('destroy');
+        // $this->middleware('authadmin:parliamentvideo_show')->only('json','index');
+        // $this->middleware('authadmin:parliamentvideo_create')->only('create','store');
+        // $this->middleware('authadmin:parliamentvideo_edit')->only('edit', 'update');
+        // $this->middleware('authadmin:parliamentvideo_delete')->only('destroy');
     }
 
     public function json()
@@ -32,6 +32,7 @@ class ParliamentvideoController extends Controller
      */
     public function index()
     {
+        $query = Parliamentvideo::with('translation')->get();
         return view('admin.parliament.video.index');
     }
 

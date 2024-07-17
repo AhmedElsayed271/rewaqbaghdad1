@@ -150,6 +150,7 @@ return [
     'print' => 'print',
     'alert_done_subscription' => 'You have successfully subscribed to the newsletter',
 
+    'rewaq_videos' => 'Rewaq Videos',
     /********************* About *******************/
     'about' => [
         'aside_title' => 'who are we',

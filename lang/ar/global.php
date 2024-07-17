@@ -139,6 +139,8 @@ return [
     'excel' => 'Excel',
     'print' => 'طباعة',
     'alert_done_subscription' => 'تم الاشتراك في النشرة البريدية بنجاح',
+    
+    'rewaq_videos' => 'معرض رواق للفيديو',
 
     /********************* mahwier *******************/
     'mahwier_title' => 'عنوان المحورط',
