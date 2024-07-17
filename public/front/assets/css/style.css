@@ -4,6 +4,7 @@
 }
 :root {
     --new-color: #2BC1D2;
+    --secondary-color: #1dadbd;
     --white-color: #fff;
 }
 
@@ -1258,7 +1259,7 @@ footer .submit {
   text-align: center;
 /* object-fit: cover; */
   border-radius: 10px;
-  width: 100% !important;
+width: 100%;
   height: 250px !important;
 }
 

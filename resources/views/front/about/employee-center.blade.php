@@ -99,10 +99,10 @@
                 <div class="speech-info py-5 px-4 my-5">
                     <div class="content col-md-8">
                         <h3 class="font-bold text-white">كلمة رئيس المركز :</h3>
-                        <p class="text-white" style="font-size: 20px"> {!!  $headOfcenterWord->translation->content !!} </p>
+                        <p class="text-white" style="font-size: 21px"> {!!  $headOfcenterWord->translation->content !!} </p>
                     </div>
                     <div class="ceo-img" style="width: 280px">
-                        <img src="{{ $headOfcenterWord->photo }}" alt="ceo-img" class="mx-auto" />
+                        <img src="{{ $headOfcenterWord->photo }}" alt="ceo-img" class="mx-auto rounded-30" />
                     </div>
                 </div>
             </section>

@@ -357,7 +357,7 @@
                                                 <a class="dropdown-item" href="{{ langUrl('/kon') }}">كُــنْ </a>
                                             </li>
                                             <li class="">
-                                                <a class="dropdown-item" href="" id="navbarDropdown"
+                                                <a class="dropdown-item" href="/medad" id="navbarDropdown"
                                                     role="button" data-toggle="dropdown">
                                                     مِداد
                                                 </a>
@@ -371,7 +371,7 @@
                                                 </ul>
                                             </li>
                                             <li>
-                                                <a class="dropdown-item" href="">إتمام</a>
+                                                <a class="dropdown-item" href="/etmam">إتمام</a>
                                             </li>
 
                                         </ul>

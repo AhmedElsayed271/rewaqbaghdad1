@@ -96,9 +96,9 @@
         <div class="container">
             {{-- <div class="row">
                 <div class="col-lg-8"> --}}
-            <div class="row justify-content-center align-items-center">
+            <div class="row justify-content-center align-items-start">
                 @foreach ($blogs as $blog)
-                    <div class="col-md-4 book">
+                    <div class="col-md-3 book">
                         <a href="{{ langUrl('/magazine/blog/' . $blog->slug) }}">
                             <div class="pb-3 pt-3">
                                 <img src="{{ $blog->img }}" alt="{{ $blog->translation->title }}" class="border-0">

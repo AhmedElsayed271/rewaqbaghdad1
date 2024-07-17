@@ -20,6 +20,19 @@
             margin-bottom: 20px;
         }
 
+        .inner-box-book .content {
+            line-clamp: 3 !important;
+        }
+
+        .btns a {
+            background-color: var(--new-color);
+            color: var(--white-color);
+            transition: .2s all linear;
+        }
+        .btns a:hover{
+        background-color: var(--secondary-color);
+
+        }
         .book a img {
             height: 400px !important;
         }
@@ -65,6 +78,19 @@
             transform: translate(0, -50%);
             border-radius: 50%;
             left: 20px;
+        }
+        .btns{
+            bottom: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+        }
+        @media (max-width:767px){
+        .content p{
+            padding: 0px !important;
+        }
+        .inner-box-book .content{
+            padding-bottom:0px !important;
+        }
         }
     </style>
 
@@ -135,29 +161,25 @@
                         <div class="news-block-two swiper-wrapper">
 
                             @foreach ($books as $book)
-                                <div class="swiper-slide">
-                                    <a class="" href="{{ langUrl('/rewaq/book/' . $book->slug) }}"
-                                        title="{{ $book->translation->title }}">
-                                        <div class="inner-box-book">
-                                            <div class="img-box">
-                                                <img src="{{ $book->img }}" alt="{{ $book->translation->title }}">
+                                <div class="swiper-slide position-relative">
+                                        <a class="" href="{{ langUrl('/rewaq/book/' . $book->slug) }}"
+                                            title="{{ $book->translation->title }}">
+                                            <div class="inner-box-book">
+                                                <div class="img-box">
+                                                    <img src="{{ $book->img }}" alt="{{ $book->translation->title }}">
+                                                </div>
+                                                <div class="content">
+                                                    <p class="py-4">{{ $book->translation->title }}</p>
+                                                </div>
                                             </div>
-                                            <div class="content">
-                                                <p>{{ $book->translation->title }}</p>
-                                            </div>
-
-                                        </div>
-
-                                    </a>
-                                    <div class="btns d-flex justify-content-around align-items-center">
+                                        </a>
+                                    <div class="btns d-flex justify-content-around align-items-center position-absolute ">
                                         <a href="{{ $book->index_url }}" target="_blank"
-                                            class="btn btn">{{ __('front.read_more') }}</a>
+                                            class="p-2 rounded ">{{ __('front.read_more') }}</a>
                                         <a href="{{ $book->promo_url }}" target="_blank"
-                                            class="btn btn">{{ __('front.reserve_copy') }}</a>
+                                            class="p-2 rounded">{{ __('front.reserve_copy') }}</a>
                                     </div>
                                 </div>
-
-                         
                             @endforeach
                         </div>
                     </div>
@@ -172,7 +194,19 @@
         </section>
     @endif
 
+
+    {{-- videos section --}}
+    <section class="my-5 videos-sec">
+        <a href="">
+            <div class="section-heading pb-30 text-center shadow-sm mx-auto rounded-30 my-3">
+                <h2 class="font-bold p-3">معرض الفيديو</h2>
+            </div>
+        </a>
+    </section>
+
+
 @endsection
+
 
 
 @section('js')

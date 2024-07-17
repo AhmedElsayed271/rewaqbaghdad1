@@ -3,6 +3,24 @@
 
 @section('content')
 
+   <section class="about-us-sec my-5">
+        <div class="container">
+            <div class="iraq-meter row py-3 justify-content-center align-items-center">
+                <div class="col-lg-8">
+                    <strong class="fs-2 d-block mb-3 text-white">
+                        كُــنْ لـلتدريب والـتطوير
+                    </strong>
+                    <p>يهدف كٌــنْ لـلـتـدريـب والـتـطـوير الى صناعة قادةٍ بادوات عصرية تمكنهم من مواكبة التقدم والتطور العالمي لمزاولة عملهم بمهنية .</p>
+                </div>
+                <div class="col-lg-4">
+                    <div class="img-box text-center border-0 rounded-30">
+                        <img src="{{url('/front/assets/img/be-vector.png')}}" alt="aboutImage" class=" w-50">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 <section class="perlament-sec blue mt-10 mb-2">
         <div class="container">
             <div class="row">
@@ -14,8 +32,8 @@
             </div>
         </div>
     </section>
- 
-    <section class="parlmente-sec blue mb-5 h-auto">
+
+    {{-- <section class="parlmente-sec blue mb-5 h-auto">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
@@ -33,10 +51,10 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
-   
-    <section class="title blue mt-2">
+
+    {{-- <section class="title blue mt-2">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -44,10 +62,10 @@
                         لمعرفة  كُـــنْ
                     </h3>
                 </div>
-               
+
             </div>
         </div>
-    </section>
+    </section> --}}
 
    <section class="vector vector-2 booking-section">
     <div class="container">
@@ -59,7 +77,7 @@
                 <p>
                     يمكنك زيارة موقعنا الالكتروني لمعرفة تفاصيل الدورات , والعروض والمشاركة
                     <br>
-                    في الدورات التي ترغب في الحصول عليها بلأضافة الى يمكنك اقتراح توفير 
+                    في الدورات التي ترغب في الحصول عليها بلأضافة الى يمكنك اقتراح توفير
                     <br>
                     دورات  .. لا تتردد في الزيارة
                                 </p>
@@ -71,7 +89,7 @@
                     <a href="https://www.youtube.com/channel/UCez_ypwyfMW4__OYfYIOD8g" class="btn btn-1">
                         تعرف علينا
                     </a>
-                   
+
                 </div>
             </div>
         </div>
@@ -114,6 +132,6 @@
         </div>
     </div>
    </section>
-   
+
 @endsection
 
