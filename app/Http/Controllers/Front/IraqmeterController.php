@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\IraqmeterInfoEdit;
 
 use App\Http\Controllers\Controller;
+use App\Models\IraqmeterSurvey;
 use App\Models\IraqmeterTranslation;
 use App\Models\KunInfoEdit;
 use Illuminate\Support\Facades\Cookie;
@@ -46,7 +47,8 @@ class IraqmeterController extends Controller
     public function Info()
     {
         $iraqmeterInfo = IraqmeterInfoEdit::with('translation')->first();
-        return view('front.iraq-meter.info',compact('iraqmeterInfo'));
+        $books = IraqmeterSurvey::with('translation')->get();
+        return view('front.iraq-meter.info',compact('iraqmeterInfo', 'books'));
     }
     
     public function blogs()

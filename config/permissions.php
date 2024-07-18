@@ -309,6 +309,15 @@ return [
             ],
             'name' => 'global.iraqmeter.title'
         ],
+        'iraqmeterSurvey' => [
+            'permission' => [
+                ['permission' => 'read', 'name' => 'read'], 
+                ['permission' => 'create', 'name' => 'create'], 
+                ['permission' => 'update', 'name' => 'update'], 
+                ['permission' => 'delete', 'name' => 'delete']
+            ],
+            'name' => 'global.iraqmeter.surveys'
+        ],
         'iraqMeterInfo' => [
             'permission' => [
                 ['permission' => 'edit', 'name' => 'edit'], 
