@@ -167,6 +167,11 @@ Route::group(['prefix' => 'admin','middleware' => AuthAdmin::class], function ()
     // Iraq meter
     Route::get('/iraq-meter/json', 'IraqmeterController@json');
     Route::resource('/iraq-meter', 'IraqmeterController');
+
+    // Iraq meter survey
+    Route::get('/iraqmeter-surveys/json', 'IraqmeterSurveyController@json');
+    Route::resource('/iraqmeter-surveys', 'IraqmeterSurveyController');
+    
      //rewaq
      Route::get('/iraqmeter-edit', 'IraqmeterInfoEditController@edit')->name('iraqmeter.editInfo');
      Route::post('/iraqmeter-edit', 'IraqmeterInfoEditController@update')->name('iraqmeter.updateInfo');

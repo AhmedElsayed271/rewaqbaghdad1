@@ -551,6 +551,8 @@ return [
         'content' => 'The content of the news',
         'tags' => 'decorations',
         'description' => 'Short description of the news',
+        'survey_add' => 'add suervey',
+        'surveys' => 'surveys',
     ],
 
     'event' => [

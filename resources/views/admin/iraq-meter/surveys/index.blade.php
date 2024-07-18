@@ -1,9 +1,9 @@
 @extends('layout.admin.app')
-@section('title', __('global.magazine.blog.title'))
+@section('title', __('global.iraqmeter.surveys'))
 
 @section('breadcrumb')
 <li class="breadcrumb-item">@yield('title')</li>
-<li class="breadcrumb-item"><a href="{{ url('/admin/magazine-blog/create') }}">{{__('global.magazine.blog.add')}}</a></li>
+<li class="breadcrumb-item"><a href="{{ route('iraqmeter-surveys.create') }}">{{__('global.iraqmeter.survey_add')}}</a></li>
 @endsection
 
 @section('datatable-css')
@@ -17,7 +17,7 @@
 @section('content')
 
 <div class="mb-2">
-    <a class="btn btn-secondary" href="{{ url('/admin/magazine-blog/create') }}">{{__('global.magazine.blog.add')}}</a>
+    <a class="btn btn-secondary" href="{{route('iraqmeter-surveys.create') }}">{{__('global.iraqmeter.survey_add')}}</a>
 </div>
 
 <div class="table-responsive">
@@ -55,7 +55,7 @@
             @if(app()->getLocale()=='ar')
             language: {"url": "{{ url('/admin/assets/plugins/datatable/Arabic.json') }}"},
             @endif
-            ajax: "{{ url('/admin/magazine-blog/json') }}",
+            ajax: "{{ url('/admin/iraqmeter-surveys/json') }}",
             scrollY:550,
             scrollX:true,
             columns: [
@@ -80,8 +80,8 @@
                 {
                     targets: 4,
                     render: function (data, type, row, meta) {
-                        var edit = '<a href="{{ url('/admin/magazine-blog') }}/'+row.id+'/edit" class="btn mb-1 btn-sm btn-info"><i class="fa-fw fas fa-pen-alt"></i></a>';
-                        var del = '<form style="display:inline-block" action="{{url('/admin/magazine-blog')}}/'+row.id+'" method="post">@csrf {{ method_field('DELETE') }} <button onclick="if(confirm(`{{__("global.alert_delete")}}`)){return true;}else{return false;}" class="btn btn-sm mb-1 btn-danger"><i class="far fa-fw fa-trash-alt"></i></button></form>';
+                        var edit = '<a href="{{ url('/admin/iraqmeter-surveys') }}/'+row.id+'/edit" class="btn mb-1 btn-sm btn-info"><i class="fa-fw fas fa-pen-alt"></i></a>';
+                        var del = '<form style="display:inline-block" action="{{url('/admin/iraqmeter-surveys')}}/'+row.id+'" method="post">@csrf {{ method_field('DELETE') }} <button onclick="if(confirm(`{{__("global.alert_delete")}}`)){return true;}else{return false;}" class="btn btn-sm mb-1 btn-danger"><i class="far fa-fw fa-trash-alt"></i></button></form>';
                         var btns = '';
                         @if(auth('admin')->user()->hasPermission('update-magazineblog') || auth('admin')->user()->is_superadmin)
                             btns += edit + ' ' ;

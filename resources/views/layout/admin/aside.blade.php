@@ -311,7 +311,7 @@
                 </li>
 
             @endif
-            @if ($admin->hasPermission('read-iraqMeter') || $admin->hasPermission('edit-iraqMeterInfo') || $admin->is_superadmin)
+            @if ($admin->hasPermission('read-iraqMeter') || $admin->hasPermission('edit-iraqMeterInfo') || $admin->hasPermission('read-iraqmeterSurvey') || $admin->is_superadmin)
                 <li class="slide">
                     <a class="side-menu__item" data-toggle="slide" href="#">
                         <i class="fa-solid fa-layer-group"></i>
@@ -322,6 +322,11 @@
                         @if ($admin->hasPermission('read-iraqMeter') || $admin->is_superadmin)
                             <li><a class="slide-item"
                                     href="{{ url(appLangKey() . '/admin/iraq-meter') }}">{{ __('global.iraqmeter.title') }}</a>
+                            </li>
+                        @endif
+                        @if ($admin->hasPermission('read-iraqmeterSurvey') || $admin->is_superadmin)
+                            <li><a class="slide-item"
+                                    href="{{ route('iraqmeter-surveys.index') }}">{{ __('global.iraqmeter.surveys') }}</a>
                             </li>
                         @endif
                         

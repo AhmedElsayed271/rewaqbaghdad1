@@ -2,12 +2,13 @@
 @section('title', __('global.magazine.blog.add'))
 
 @section('breadcrumb')
-    <li class="breadcrumb-item"><a href="{{ url('/admin/magazine-blog') }}">{{ __('global.magazine.blog.title') }}</a></li>
+    <li class="breadcrumb-item"><a href="{{ route('iraqmeter-surveys.index') }}">{{ __('global.iraqmeter.surveys') }}</a></li>
     <li class="breadcrumb-item">@yield('title')</li>
 @endsection
 
 @section('content')
-<form action="{{ url('/admin/magazine-blog') }}" method="post">@csrf
+<form action="{{ route('iraqmeter-surveys.store') }}" method="post">
+    @csrf
     <div class="row">
 
         <div class="col-md-6 mb-3">
@@ -18,10 +19,10 @@
                     <i class="fas fa-image"></i> {{ __('global.choose') }}
                 </a>
                 </span>
-                <input id="thumimg1" required dir="ltr" class="form-control" type="text" name="img" value="{{ old('img') }}" />
+                <input id="thumimg1" required dir="ltr" class="form-control" type="text" name="photo" value="{{ old('photo') }}" />
             </div>
             <div id="holderimg1" style="margin-top:15px;max-height:100px;">
-                <img src="{{ old('img') }}" style="height: 5rem;">
+                <img src="{{ old('photo') }}" style="height: 5rem;">
             </div>
         </div>
         
@@ -49,21 +50,7 @@
                 <input type="text" class="form-control" value="{{old('slug', time())}}" name="slug" id="basic-url" required />
             </div>
         </div>
-        
-        <div class="col-md-6 mb-3">
-            <label>{{ __('global.magazine.blog.promo_url') }}</label>
-            <input dir="ltr" type="url" class="form-control" name="promo_url" value="{{ old("promo_url") }}" />
-        </div>
-        
-        <div class="col-md-3 mb-3">
-            <label>{{ __('global.magazine.blog.number') }} <strong class="text-danger">*</strong></label>
-            <input required type="number" class="form-control" name="number" required value="{{ old("number") }}" />
-        </div>
-        
-        <div class="col-md-3 mb-3">
-            <label>{{ __('global.version.created_at') }} <strong class="text-danger">*</strong></label>
-            <input required type="date" class="form-control" name="created_at" required value="{{ old("created_at") ?? date('Y-m-d') }}" />
-        </div>
+
         
         <div class="col-12">
             <div class="panel panel-primary tabs-style-3 p-0 pt-2">
@@ -90,40 +77,18 @@
                                         <label>{{ __('global.magazine.blog.name') }} ({{ $properties['native'] }}) <strong class="text-danger">*</strong></label>
                                         <input dir="{{langDir($localeCode)}}" required type="text" class="form-control" name="title[{{$localeCode}}]" required value="{{ old("title")[$localeCode] ?? '' }}" />
                                     </div>
-
-                                    <div class="col-md-6 mb-3">
-                                        <label>{{ __('global.magazine.blog.writer') }} ({{ $properties['native'] }}) <strong class="text-danger">*</strong></label>
-                                        <input dir="{{langDir($localeCode)}}" required type="text" class="form-control" name="writer[{{$localeCode}}]" required value="{{ old("writer")[$localeCode] ?? '' }}" />
-                                    </div>
                                     
                                     <div class="col-md-6 mb-3">
                                         <label>{{ __('global.magazine.blog.description') }} ({{ $properties['native'] }}) <strong class="text-danger">*</strong></label>
                                         <textarea dir="{{langDir($localeCode)}}" required name="description[{{$localeCode}}]" class="form-control" rows="5">{{ old("description")[$localeCode] ?? '' }}</textarea>
                                     </div>
 
-                                    <div class="col-md-6 mb-3">
-                                        <label>{{ __('global.magazine.blog.tags') }} ({{ $properties['native'] }})</label>
-                                        <br />
-                                        <input name="tags[{{$localeCode}}]" value="{{ old("tags")[$localeCode] ?? '' }}" class="tag_{{$localeCode}}" placeholder="{{ __('global.version.news_tags') }}" />
-                                    </div>
-
+                                    
                                     <div class="col-md-12 mb-3">
-                                        <label>{{ __('global.magazine.blog.editorial') }} ({{ LangNative($localeCode) }}) <strong class="text-danger">*</strong></label>
+                                        <label>{{ __('global.content') }}  ({{ LangNative($localeCode) }}) </label>
                                         <textarea name="content[{{$localeCode}}]" class="form-control my-editor" rows="5">{!! old('content')[$localeCode] ?? '' !!}</textarea>
                                     </div>
                                     
-                                    
-                                    @for ($i = 1; $i < 10; $i++)
-                                        <div class="col-md-6 mb-3">
-                                            <label>{{ __('global.magazine.blog.input_title') }} {{$i}} ({{ LangNative($localeCode) }}) </label>
-                                            <input dir="{{langDir($localeCode)}}" name="title_{{$i}}[{{$localeCode}}]" value="{{ old("title_".$i)[$localeCode] ?? '' }}" class="form-control" />
-                                        </div>
-                                        
-                                        <div class="col-md-12 mb-3">
-                                            <label>{{ __('global.magazine.blog.input_content') }} {{$i}} ({{ LangNative($localeCode) }}) </label>
-                                            <textarea name="content_{{$i}}[{{$localeCode}}]" class="form-control my-editor" rows="5">{!! old('content_'.$i)[$localeCode] ?? '' !!}</textarea>
-                                        </div>
-                                    @endfor
                                     
                                 </div>
                             </div>
