@@ -49,81 +49,6 @@
                         عراق ميتر
                     </strong>
                     {!! $iraqmeterInfo->translation->content !!}
-                    {{-- <div class="col-lg-6">
-                        <div class="text">
-                            <figure class="admin-thumb">
-                                @if (isset($cbd))
-                                    <img width="27" height="27" src="{{ $cbd->img }}"
-                                        alt="{{ $cbd->translation->name }}">
-                                @endif
-                            </figure>
-                            <h4>
-                                @if (isset($cbd))
-                                    <a href="#">{{ $cbd->translation->job_title }}: <span
-                                            class=" magazine-emp-namecolor text-white"></span></a>
-                                @endif
-                            </h4>
-                        </div>
-                    </div> --}}
-                    {{-- <div class="col-lg-6">
-                        <div class="text">
-                            <figure class="admin-thumb">
-                                @if (isset($ec))
-                                    <img width="27" height="27" src="{{ $ec->img }}"
-                                        alt="{{ $ec->translation->name }}">
-                                @endif
-                            </figure>
-                            <h4>
-                                @if (isset($ec))
-                                    <a href="#">{{ $ec->translation->job_title }}: <span
-                                            class=" magazine-emp-namecolor text-white">{{ $ec->translation->name }}</span></a>
-                                @endif
-                            </h4>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="text">
-                            <figure class="admin-thumb">
-                                @if (isset($dec))
-                                    <img width="27" height="27" src="{{ $dec->img }}"
-                                        alt="{{ $dec->translation->name }}">
-                                @endif
-                            </figure>
-                            <h4>
-                                @if (isset($dec))
-                                    <a href="#">{{ $dec->translation->job_title }}: <span
-                                            class=" magazine-emp-namecolor text-white">{{ $dec->translation->name }}</span></a>
-                                @endif
-                            </h4>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="text">
-                            <figure class="admin-thumb">
-                                @if (isset($me))
-                                    <img width="27" height="27" src="{{ $me->img }}"
-                                        alt="{{ $me->translation->name }}">
-                                @endif
-                            </figure>
-                            <h4>
-                                @if (isset($me))
-                                    <a href="#">{{ $me->translation->job_title }}: <span
-                                            class="magazine-emp-namecolor text-white">{{ $me->translation->name }}</span></a>
-                                @endif
-                            </h4>
-                        </div>
-                    </div> --}}
-                    <div class="col-lg-12">
-                        <div class="text">
-                            <figure class="admin-thumb">
-                                {{-- {{ $rewaq->ps->psinfo->img }} --}}
-                                <img width="27" height="27" src="" alt="LogoImage">
-                            </figure>
-                            {{-- {{ $rewaq->ps->job_title }} --}}
-                            <h4><a href="#">: المدير <span
-                            class="dar-emp-namecolor text-white">احمد </span></a></h4>
-                        </div>
-                    </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="img-box text-center border-0 rounded-30">
@@ -132,8 +57,52 @@
                 </div>
             </div>
         </div>
+
     </section>
 
+    @if (!$IraqmeterSurveys->isEmpty())
+    <section class="our-books">
+        <div class="container">
+            <div class="section-title text-right pb-30">
+            </div>
+            <div class="row overflow-hidden" data-aos="zoom-in" data-aos-duration="1000">
+
+                <div class="swiper-container overflow-hidden">
+                    <div class="news-block-two swiper-wrapper">
+
+                        @foreach ($IraqmeterSurveys as $IraqmeterSurvey)
+                            <div class="swiper-slide position-relative">
+                                <a class="" href="{{ langUrl('/rewaq/book/' . $IraqmeterSurvey->slug) }}"
+                                    title="{{ $IraqmeterSurvey->translation->title }}">
+                                    <div class="inner-box-book">
+                                        <div class="img-box">
+                                            <img src="{{ $IraqmeterSurvey->photo }}" alt="{{ $IraqmeterSurvey->translation->title }}">
+                                        </div>
+                                        <div class="content">
+                                            <p class="py-4">{{ $IraqmeterSurvey->translation->title }}</p>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="btns d-flex justify-content-around align-items-center position-absolute ">
+                                    <a href="{{ $IraqmeterSurvey->pdf }}" target="_blank"
+                                        class="p-2 rounded ">{{ __('front.read_more') }}</a>
+                                    <a href="" target="_blank"
+                                        class="p-2 rounded">{{ __('front.reserve_copy') }}</a>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+                <div class="nexts1">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+                <div class="prevs1">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+    @endif
 
 
 
@@ -170,49 +139,7 @@
         </div>
     </section>
 
-    @if (!$books->isEmpty())
-        <section class="our-books">
-            <div class="container">
-                <div class="section-title text-right pb-30">
-                </div>
-                <div class="row overflow-hidden" data-aos="zoom-in" data-aos-duration="1000">
 
-                    <div class="swiper-container overflow-hidden">
-                        <div class="news-block-two swiper-wrapper">
-
-                            @foreach ($books as $book)
-                                <div class="swiper-slide position-relative">
-                                    <a class="" href="{{ langUrl('/rewaq/book/' . $book->slug) }}"
-                                        title="{{ $book->translation->title }}">
-                                        <div class="inner-box-book">
-                                            <div class="img-box">
-                                                <img src="{{ $book->photo }}" alt="{{ $book->translation->title }}">
-                                            </div>
-                                            <div class="content">
-                                                <p class="py-4">{{ $book->translation->title }}</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <div class="btns d-flex justify-content-around align-items-center position-absolute ">
-                                        <a href="{{ $book->pdf }}" target="_blank"
-                                            class="p-2 rounded ">{{ __('front.read_more') }}</a>
-                                        <a href="{{ $book->promo_url }}" target="_blank"
-                                            class="p-2 rounded">{{ __('front.reserve_copy') }}</a>
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
-                    <div class="nexts1">
-                        <i class="fa-solid fa-chevron-right"></i>
-                    </div>
-                    <div class="prevs1">
-                        <i class="fa-solid fa-chevron-left"></i>
-                    </div>
-                </div>
-            </div>
-        </section>
-    @endif
 
     <section class="vector-about">
         <div class="container">
