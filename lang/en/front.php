@@ -46,7 +46,9 @@ return [
     'watch_seminar' => 'Watch Seminar',
     'latest_seminars' => 'Latest Seminar',
     'select_type_activity' => 'Select Activity Type',
-
+    'etmam' => 'etmam',
+    'the_most_recent' => 'the most recent',
+    
 
     'address' => 'Address',
     'email' => 'Email',

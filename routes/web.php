@@ -128,6 +128,8 @@ Route::group(['namespace' => 'Front'], function(){
     Route::get('/ourvision ', 'OurvisionController@ourvision')->name('ourvision');
     Route::get('/medad ', 'MedadController@index')->name('medad');
     Route::get('/etmam ', 'EtmamController@index')->name('etmam');
+    Route::get('/etmam/{slug}', 'EtmamController@SingleEtmam');
+    Route::get('/all-etmam', 'EtmamController@All');
   
 
 });

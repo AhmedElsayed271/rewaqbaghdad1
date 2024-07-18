@@ -42,7 +42,8 @@ return [
     'latest_seminars' => 'أحدث الندوات',
     'select_type_activity' => 'حدد نوع النشاط',
     'common_quesiton' => 'الاسئلة الشائعة',
-   
+    'etmam' => 'اتمام',
+    'the_most_recent' => 'الاحدث',
     'address' => 'العنوان',
     'email' => 'البريد الإلكتروني',
     'phone' => 'الهاتف',
@@ -104,7 +105,7 @@ return [
     'par_mes2' => 'لازم تختار صح',
 
     'view_details' => 'عرض التفاصيل',
-
+  
     'download_google_Play' => 'للتحميل من جوجل بلاي',
     'download_apple_store' => 'للتحميل من ابل ستور',
     'videos_about_application' => 'فيديوهات تعريفية عن التطبيق',
