@@ -47,8 +47,10 @@ class IraqmeterController extends Controller
     public function Info()
     {
         $iraqmeterInfo = IraqmeterInfoEdit::with('translation')->first();
-        $books = IraqmeterSurvey::with('translation')->get();
-        return view('front.iraq-meter.info',compact('iraqmeterInfo', 'books'));
+
+        $IraqmeterSurveys = IraqmeterSurvey::with('translation')->get();
+        
+        return view('front.iraq-meter.info',compact('IraqmeterSurveys', 'iraqmeterInfo'));
     }
     
     public function blogs()

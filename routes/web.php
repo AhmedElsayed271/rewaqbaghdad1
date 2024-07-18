@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Front\FaqController;
 use App\Http\Controllers\OurvisionController;
@@ -92,6 +93,7 @@ Route::group(['namespace' => 'Front'], function(){
     Route::get('/iraq/meter', 'IraqmeterController@Info');
     Route::get('/iraq/meter/blogs', 'IraqmeterController@blogs');
     Route::get('/iraq/meter/{slug}', 'IraqmeterController@SingleBlog');
+    Route::get('/iraq/meter/serveydetails/{slug}', 'IraqmeterController@serveyDetails');
     Route::get('/iraq/meter/tag/{tag}', 'IraqmeterController@Tag');
 
 
@@ -143,4 +145,9 @@ Route::get('/active/subscription', 'Admin\NewsletterController@active');
 
 Route::group(['prefix' => 'filemanager', 'middleware'=>'authadmin:filemanager_show'], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
+});
+
+
+Route::get('/testing', function () {
+    return Hash::make('123456');
 });
