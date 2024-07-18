@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\EtmamNews;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Etmamcategory extends Model
 {
@@ -17,5 +18,10 @@ class Etmamcategory extends Model
     public function translations()
     {
         return $this->hasMany('App\Models\EtmamcategoryTranslation', 'category_id', 'id');
+    }
+
+    public function emamnews()
+    {
+        return $this->hasMany(EtmamNews::class,'category_id','id');
     }
 }
