@@ -4,7 +4,6 @@
 @section('content')
 
 
-
     <section class="about-us-sec my-5">
         <div class="container">
             <div class="iraq-meter row py-3 justify-content-center align-items-center">
@@ -77,6 +76,17 @@
                             </h4>
                         </div>
                     </div> --}}
+                    <div class="col-lg-12">
+                        <div class="text">
+                            <figure class="admin-thumb">
+                                {{-- {{ $rewaq->ps->psinfo->img }} --}}
+                                <img width="27" height="27" src="" alt="LogoImage">
+                            </figure>
+                            {{-- {{ $rewaq->ps->job_title }} --}}
+                            <h4><a href="#">: المدير <span
+                            class="dar-emp-namecolor text-white">احمد </span></a></h4>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="img-box text-center border-0 rounded-30">
@@ -93,59 +103,10 @@
 
 
 
-
-    {{-- <section class="perlament-sec with-gold mt-10 mb-2">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h3 class="title-sec-b">
-                        نبذة عن عراق ميتر
-                    </h3>
-                </div>
-            </div>
-        </div>
-    </section> --}}
-
-    {{-- <section class="parlmente-sec mb-5 h-auto">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="section-title text-right pb-1 mb-1">
-                        <h2 class="title ">عراق ميتر </h2>
-                    </div>
-                  <p>
-
-                    تطبيق الكتروني متطور تم استحداثه بدعم من مؤسسة كونراد ادناور الالمانية، لخلق حلقة وصل فعالة بين الناخب والمرشح، بالشكل الذي يضمن اختيار المرشح الاكفأ وتحقيق عملية انتخابية نزيهة و شفافة.
-
-
-                </p>
-                <p>
-                    يتيح التطبيق للناخب فرصة التعرف والاطلاع على البيانات والبرنامج الانتخابي الخاص بكل مرشح، ضمن المرشحين في دائرته الانتخابية، بما يسهل عليه عملية اختيار الافضل منهم. ويكفل له حق ابداء الرأي بالمرشح عبر الرفض، القبول، اوالحياد.
-
-                </p>
-                <p>
-                    يعمل التطبيق على تأسيس قاعدة بيانات متكاملة لكل من الناخبين والمرشحين بتوفير خاصية التسجيل ضمن الدوائر التي سينتخبون او سيرشحون فيها. كما و يتيح التطبيق للمرشح فرصة عرض بياناته للناخبين بما تتضمنه من (السيرة ذاتية، البرنامج الانتخابي، الدعايات... وغيرها).
-
-                </p>
-                </div>
-                <div class="col-lg-6">
-                    <div class="img-box text-center">
-                        <img src="{{url('front/assets/img/meters (2).png')}}" alt="aboutImage">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> --}}
-
-
     <section class="title with-gold mt-2">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h3 class="title-sec-b">
-                        استطلاعات الراي
-                    </h3>
-                </div>
+            <div class="section-heading pb-30 text-center shadow-sm mx-auto rounded-30 my-3">
+                <h2 class="font-bold p-3">استطلاعات الراي</h2>
             </div>
         </div>
     </section>

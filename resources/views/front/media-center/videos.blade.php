@@ -24,7 +24,7 @@
 
 <section class="gallery-area videos mt-10">
     <div class="container bg-light raduis-35 p-5">
-      
+
         <div class="row">
             <ul class="nav nav-pills mb-5" id="pills-tab" role="tablist">
                 <li class="nav-item" role="presentation">

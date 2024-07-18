@@ -29,10 +29,12 @@
             color: var(--white-color);
             transition: .2s all linear;
         }
-        .btns a:hover{
-        background-color: var(--secondary-color);
+
+        .btns a:hover {
+            background-color: var(--secondary-color);
 
         }
+
         .book a img {
             height: 400px !important;
         }
@@ -79,18 +81,21 @@
             border-radius: 50%;
             left: 20px;
         }
-        .btns{
+
+        .btns {
             bottom: 0 !important;
             left: 0 !important;
             right: 0 !important;
         }
-        @media (max-width:767px){
-        .content p{
-            padding: 0px !important;
-        }
-        .inner-box-book .content{
-            padding-bottom:0px !important;
-        }
+
+        @media (max-width:767px) {
+            .content p {
+                padding: 0px !important;
+            }
+
+            .inner-box-book .content {
+                padding-bottom: 0px !important;
+            }
         }
     </style>
 
@@ -162,17 +167,17 @@
 
                             @foreach ($books as $book)
                                 <div class="swiper-slide position-relative">
-                                        <a class="" href="{{ langUrl('/rewaq/book/' . $book->slug) }}"
-                                            title="{{ $book->translation->title }}">
-                                            <div class="inner-box-book">
-                                                <div class="img-box">
-                                                    <img src="{{ $book->img }}" alt="{{ $book->translation->title }}">
-                                                </div>
-                                                <div class="content">
-                                                    <p class="py-4">{{ $book->translation->title }}</p>
-                                                </div>
+                                    <a class="" href="{{ langUrl('/rewaq/book/' . $book->slug) }}"
+                                        title="{{ $book->translation->title }}">
+                                        <div class="inner-box-book">
+                                            <div class="img-box">
+                                                <img src="{{ $book->img }}" alt="{{ $book->translation->title }}">
                                             </div>
-                                        </a>
+                                            <div class="content">
+                                                <p class="py-4">{{ $book->translation->title }}</p>
+                                            </div>
+                                        </div>
+                                    </a>
                                     <div class="btns d-flex justify-content-around align-items-center position-absolute ">
                                         <a href="{{ $book->index_url }}" target="_blank"
                                             class="p-2 rounded ">{{ __('front.read_more') }}</a>
