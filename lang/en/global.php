@@ -539,6 +539,11 @@ return [
         'content' => 'The content of the news',
         'tags' => 'decorations',
         'description' => 'Short description of the news',
+        'price' => 'price',
+        'upcomingtrainings' => "Upcoming Trainings",
+        'upcomingtraining_add' => "Add Upcoming Training",
+        'training_appointment' => 'Training Appointment',
+        'trainer_info' => 'Trainer Info',
     ],
 
 
@@ -553,6 +558,8 @@ return [
         'description' => 'Short description of the news',
         'survey_add' => 'add suervey',
         'surveys' => 'surveys',
+        'kon_videos' => 'kon videos library',
+        
     ],
 
     'event' => [

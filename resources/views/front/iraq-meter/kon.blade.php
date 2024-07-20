@@ -2,8 +2,74 @@
 @section('title', 'Kon')
 
 @section('content')
+    <style>
+        .nexts1 {
+            background-color: #808080;
+            width: 45px;
+            height: 45px;
+            z-index: 2;
+            position: absolute;
+            bottom: 50%;
+            transform: translate(0, -50%);
+            border-radius: 50%;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-   <section class="about-us-sec my-5">
+        .nexts1 i,
+        .prevs1 i {
+            font-size: 20px;
+            color: #fff;
+        }
+
+        .prevs1 {
+            background-color: #808080;
+            width: 45px;
+            height: 45px;
+            z-index: 2;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            bottom: 50%;
+            transform: translate(0, -50%);
+            border-radius: 50%;
+            left: 20px;
+        }
+        
+        .nexts i,
+        .prevs i {
+            font-size: 20px;
+            color: #fff;
+        }
+
+        .prevs {
+            background-color: #808080;
+            width: 45px;
+            height: 45px;
+            z-index: 2;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            bottom: 50%;
+            transform: translate(0, -50%);
+            border-radius: 50%;
+            left: 20px;
+        }
+
+        .inner-box-book .content {
+            padding: 0;
+            
+        }
+        .inner-box-book .content :first-of-type {
+            margin-top: 30px;
+
+        }
+    </style>
+    <section class="about-us-sec my-5">
         <div class="container">
             <div class="iraq-meter row py-3 justify-content-center align-items-center">
                 <div class="col-lg-8">
@@ -20,8 +86,228 @@
             </div>
         </div>
     </section>
+    <section class="title with-gold mt-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h3 class="title-sec-b">
+                        
+                        <a href="{{ route('kon.allKon') }}">{{__('front.kon_training')}}</a>
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    @if (!$konTrainings->isEmpty())
+        <section class="our-trainings mt-5">
+            <div class="container">
+                <div class="section-title text-right pb-30">
+                </div>
+                <div class="row overflow-hidden" data-aos="zoom-in" data-aos-duration="1000">
 
-<section class="perlament-sec blue mt-10 mb-2">
+                    <div class="swiper-container overflow-hidden">
+                        <div class="news-block-two swiper-wrapper">
+
+                            @foreach ($konTrainings as $training)
+                                <div class="swiper-slide position-relative">
+                                    <a class="" href="{{ route('kon.trainingDetails', $training->slug) }}"
+                                        title="{{ $training->translation->title }}">
+                                        <div class="inner-box-book">
+                                            <div class="img-box">
+                                                <img src="{{ $training->photo }}"
+                                                    alt="{{ $training->translation->title }}">
+                                            </div>
+                                          
+                                            <div class="content">
+                                                <p>{{ $training->translation->title }}</p>
+                                            </div>
+                                            <div class="content">
+                                                <p>{{ $training->translation->description }}</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                    <div class="nexts1">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                    <div class="prevs1">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+    @endif
+    <section class="title with-gold mt-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h3 class="title-sec-b">
+                        
+                        <a href="{{ route('kon.allUpcommingTrainings') }}">{{__('front.kon_upcommingtrainings')}}</a>
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    @if (!$upcomingtrainings->isEmpty())
+        <section class="our-trainings mt-5">
+            <div class="container">
+                <div class="section-title text-right pb-30">
+                </div>
+                <div class="row overflow-hidden" data-aos="zoom-in" data-aos-duration="1000">
+
+                    <div class="swiper-container overflow-hidden">
+                        <div class="news-block-two swiper-wrapper">
+
+                            @foreach ($upcomingtrainings as $upcomingtraining)
+                         
+                            <div class="swiper-slide position-relative">
+                                <a href="{{ route('kon.upcommingTrainingDetails', $upcomingtraining->slug) }}">
+                                    <div class="pb-3 pt-3">
+                                        <img src="{{ $upcomingtraining->photo }}" alt="{{ $upcomingtraining->translation->title }}"
+                                            class="border-0 rounded ">
+                                    </div>
+                                    <small class="title-sec mb-1">
+                                        <strong>{{ formatDate($upcomingtraining->created_at) }}</strong>
+                                    </small>
+                                    <strong class="pt-1 pb-1 d-block">{{ $upcomingtraining->translation->title }}</strong>
+                                    <p>{{ $upcomingtraining->translation->description }}</p>
+                             
+                                </a>
+        
+                            </div>
+            
+                            @endforeach
+                        </div>
+                    </div>
+                    <div class="nexts1">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                    <div class="prevs1">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+    @endif
+        {{-- videos section --}}
+    <section class="my-5 videos-sec">
+        <a href="">
+            <div class="section-heading pb-30 text-center shadow-sm mx-auto rounded-30 my-3">
+                <h2 class="font-bold p-3">معرض الفيديو</h2>
+            </div>
+        </a>
+    </section>
+
+    @if (!$videos->isEmpty())
+        <section class="our-videos">
+            <div class="container">
+                <div class="section-title text-right pb-30">
+                </div>
+                <div class="row overflow-hidden" data-aos="zoom-in" data-aos-duration="1000">
+
+                    <div class="swiper-container overflow-hidden">
+                        <div class="news-block-two swiper-wrapper">
+
+                            @foreach ($videos as $video)
+                                <div class="swiper-slide position-relative">
+                                    <div class="meeting-event-box">
+                                        <div class="content justify-content-left">
+                                            <a id="copyVideo" data-videoUrl="{{ $video->video_url }}"
+                                                class="share-btn copyVideo">
+                                                <i class="fas fa-share"></i>
+                                            </a>
+                                        </div>
+                                        <figure class="reveal-effect animated"><a href="{{ $video->video_url }}"
+                                                data-fancybox>
+                                                <i class="fas fa-play"></i></a>
+                                            <img width="100%" height="100%" src="{{ $video->img }}"
+                                                alt="{{ $video->translation->name }}"></a>
+                                        </figure>
+                                        <div class="content">
+                                            <h5>
+                                                {{ $video->translation->name }}
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                    <div class="nexts">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                    <div class="prevs">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+    @endif
+    <section class="title with-gold mt-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h3 class="title-sec-b">
+                        
+                        طلب تدريب
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact-page-section asking asking-visit">
+        <div class="container p-5">
+            <form class="row" action="{{ route('kon.RequestTraining') }}" method="post">@csrf
+                <div class="form-column col-lg-8 col-md-12 col-sm-12">
+                    <div class="inner-column">
+                        <div class="contact-form">
+                            @if ($errors->all())
+                                @foreach ($errors->all() as $message)
+                                    <div class="alert alert-warning p-1 mb-1"><i class="fas fa-exclamation-triangle"></i>
+                                        {{ $message }}</div>
+                                @endforeach
+                            @endif
+                            <div id="contact-form" novalidate="novalidate">
+                                <div class="row clearfix">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                                        <label for="name"> <span class="req">*</span> {{ __('front.name') }}</label>
+                                        <input type="text" name="name" required value="{{ old('name') }}"
+                                            placeholder="{{ __('front.name') }}">
+                                    </div>
+                                
+                               
+                                    <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                                        <label for="email"> <span class="req">*</span>
+                                            {{ __('front.email') }}</label>
+                                        <input type="email" name="email" required value="{{ old('email') }}"
+                                            placeholder="{{ __('front.email') }}">
+                                    </div>
+
+                                    <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                                        <label for="text"> <span class="req">*</span>
+                                            {{ __('front.subject') }}</label>
+                                        <textarea name="subject" required placeholder="{{ __('front.subject') }}">{{ old('list_visitors') }}</textarea>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                    <button class="theme-btn btn-style-two bg-green">
+                        <span class="txt">{{ __('front.btn_send') }}</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+    {{-- <section class="perlament-sec blue mt-10 mb-2">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -31,7 +317,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     {{-- <section class="parlmente-sec blue mb-5 h-auto">
         <div class="container">
@@ -67,7 +353,7 @@
         </div>
     </section> --}}
 
-   <section class="vector vector-2 booking-section">
+    {{-- <section class="vector vector-2 booking-section">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-12">
@@ -82,9 +368,9 @@
                     دورات  .. لا تتردد في الزيارة
                                 </p>
                 <div class="btns">
-                    {{-- <a href="#" class="btn btn-1">
+                    <a href="#" class="btn btn-1">
                         لزيارة الموقع
-                    </a> --}}
+                    </a>
 
                     <a href="https://www.youtube.com/channel/UCez_ypwyfMW4__OYfYIOD8g" class="btn btn-1">
                         تعرف علينا
@@ -94,10 +380,10 @@
             </div>
         </div>
     </div>
-   </section>
+   </section>  --}}
 
 
-   <section class="vector-about">
+    {{-- <section class="vector-about">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 p-0">
@@ -131,7 +417,106 @@
             </div>
         </div>
     </div>
-   </section>
+   </section> --}}
 
 @endsection
 
+@section('js')
+    <script>
+        var swipers = new Swiper(".our-trainings .swiper-container", {
+            spaceBetween: 50,
+            centeredSlides: false,
+            slidesPerView: 4,
+            loop: true,
+            rtl: true,
+            keyboard: true,
+            draggable: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.nexts1',
+                prevEl: '.prevs1',
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                1024: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                }
+            }
+        });
+    </script>
+     <script>
+        var swipers = new Swiper(".our-books .swiper-container", {
+            spaceBetween: 50,
+            centeredSlides: false,
+            slidesPerView: 4,
+            loop: true,
+            rtl: true,
+            keyboard: true,
+            draggable: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.nexts1',
+                prevEl: '.prevs1',
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                1024: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                }
+            }
+        });
+        var swipers = new Swiper(".our-videos .swiper-container", {
+            spaceBetween: 50,
+            centeredSlides: false,
+            slidesPerView: 4,
+            loop: true,
+            rtl: true,
+            keyboard: true,
+            draggable: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.nexts',
+                prevEl: '.prevs',
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                1024: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                }
+            }
+        });
+    </script>
+@endsection

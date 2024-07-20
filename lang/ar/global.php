@@ -112,7 +112,7 @@ return [
     'etmam' => 'اتمام',
     'etmam_category' => 'اقسام اتمام',
     'etmam_news' => 'اخبار اتمام',
-
+    
 
     //
     'alert_update' => 'هل أنت متاكد من تحديث البيانات؟',
@@ -223,6 +223,14 @@ return [
         'content' => 'محتوي الخبر',
         'tags' => 'الأوسمة',
         'description' => 'وصف قصير للخبر',
+        'training' => 'التدريبات والورش',
+        'training_add' => 'اضافة تدريب',
+        'kon_videos' => 'معرض فيديو كن',
+        'price' => 'رسوم التدريب',
+        'upcomingtrainings' => "التدريبات القادمة",
+        'upcomingtraining_add' => "اضافة تدريب قادم",
+        'training_appointment' => 'موعد التدريب',
+        'trainer_info' => 'معلومات عن المدريب',
     ],
 
     'version' => [

@@ -138,6 +138,7 @@ class ElectronicController extends Controller
         ]);
         $data = Electronicservice::where('slug', 'request-survey')->with('translation')->first();
         $subject = $data->translation->title;
+        new SendContactMail($request->except('_token'), $subject);
         Mail::to($data->email)->send(new SendContactMail($request->except('_token'), $subject));
         return back()->with('success', __('front.alert_send_contact_main'));
     }
@@ -161,7 +162,7 @@ class ElectronicController extends Controller
         ]);
         $data = Electronicservice::where('slug', 'visit-center')->with('translation')->first();
         $subject = $data->translation->title;
-
+        new SendContactMail($request->except('_token'), $subject);
         Mail::to($data->email)->send(new SendContactMail($request->except('_token'), $subject));
         return back()->with('success', __('front.alert_send_contact_main'));
     }

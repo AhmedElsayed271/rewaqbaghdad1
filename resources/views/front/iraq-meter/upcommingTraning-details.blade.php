@@ -1,8 +1,8 @@
 @extends('layout.front.app')
-@section('title', $iraqmeterSurvey->translation->title)
+@section('title', $upcommingTraining->translation->title)
 
-@section('description', $iraqmeterSurvey->translation->description)
-@section('page_img', $iraqmeterSurvey->img)
+@section('description', $upcommingTraining->translation->description)
+@section('page_img', $upcommingTraining->img)
 
 @section('content')
 
@@ -20,8 +20,8 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item text-greenn"><a href="{{ langUrl() }}">{{__('front.home')}}</a></li>
-          <li class="breadcrumb-item text-greenn"><a href="{{ route('iraqmeter.allsurvey') }}">{{__('front.surveys')}}</a></li>
-          <li class="breadcrumb-item text-greenn active">{{ $iraqmeterSurvey->translation->title }}</li>
+          <li class="breadcrumb-item text-greenn"><a href="{{ route('kon.allUpcommingTrainings') }}">{{__('front.kon_upcommingtrainings')}}</a></li>
+          <li class="breadcrumb-item text-greenn active">{{ $upcommingTraining->translation->title }}</li>
         </ol>
       </nav>
 </section>
@@ -32,17 +32,17 @@
         <div class="row">
             <div class="col-lg-7 position-relative overflow-hidden">
                 <h3 class="title-sec-b bg-green">
-                    {{__('front.about_survey')}}
+                    {{__('front.kon_about_upcommingtrainings')}}
                 </h3>
                 <div class="content">
-                    <p>{!! $iraqmeterSurvey->translation->content !!}</p>
+                    <p>{!! $upcommingTraining->translation->content !!}</p>
                 </div>
                 <hr class="mt-5">
                  <ul class="releated">
 
-                    @if (!empty($iraqmeterSurvey->translation->tags))
+                    @if (!empty($upcommingTraining->translation->tags))
                         @php
-                            $tags = explode(',', $iraqmeterSurvey->translation->tags);
+                            $tags = explode(',', $upcommingTraining->translation->tags);
                         @endphp
                         @foreach ($tags as $tag)
                             <li>
@@ -59,13 +59,13 @@
             </div>
             
             <div class="col-lg-4">
-                <img src="{{$iraqmeterSurvey->photo}}" alt="{{$iraqmeterSurvey->translation->title}}">
+                <img src="{{$upcommingTraining->photo}}" alt="{{$upcommingTraining->translation->title}}">
                 <div class="title-page text-center d-block mt-4 text-green border-0">
-                    {{$iraqmeterSurvey->translation->title}}
+                    {{$upcommingTraining->translation->title}}
                 </div>
                 <div class="btns d-flex justify-content-around align-items-center">
-                   <a href="{{ $iraqmeterSurvey->pdf }}" target="_blank" class="btn btn">{{__('front.read_more')}}</a>
-                    <a href="{{ $iraqmeterSurvey->promo_url }}" target="_blank" class="btn btn">{{__('front.book_promo')}}</a>
+                   <a href="#" target="_blank" class="btn btn">{{__('front.read_more')}}</a>
+                    <a href="#" target="_blank" class="btn btn">{{__('front.book_promo')}}</a>
                 </div>
             </div>
         </div>

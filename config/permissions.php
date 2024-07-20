@@ -334,6 +334,34 @@ return [
             ],
             'name' => 'global.kone_media.title'
         ],
+
+        'konTraining' => [
+            'permission' => [
+                ['permission' => 'read', 'name' => 'read'], 
+                ['permission' => 'create', 'name' => 'create'], 
+                ['permission' => 'update', 'name' => 'update'], 
+                ['permission' => 'delete', 'name' => 'delete']
+            ],
+            'name' => 'global.kone_media.training'
+        ],
+        'Upcomingtraining' => [
+            'permission' => [
+                ['permission' => 'read', 'name' => 'read'], 
+                ['permission' => 'create', 'name' => 'create'], 
+                ['permission' => 'update', 'name' => 'update'], 
+                ['permission' => 'delete', 'name' => 'delete']
+            ],
+            'name' => 'global.kone_media.upcomingtrainings'
+        ],
+        'konVideo' => [
+            'permission' => [
+                ['permission' => 'read', 'name' => 'read'], 
+                ['permission' => 'create', 'name' => 'create'], 
+                ['permission' => 'update', 'name' => 'update'], 
+                ['permission' => 'delete', 'name' => 'delete']
+            ],
+            'name' => 'global.kone_media.kon_videos'
+        ],
         'konInfo' => [
             'permission' => [
                 ['permission' => 'edit', 'name' => 'edit'], 

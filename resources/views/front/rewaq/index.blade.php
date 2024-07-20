@@ -29,10 +29,12 @@
             color: var(--white-color);
             transition: .2s all linear;
         }
-        .btns a:hover{
-        background-color: var(--secondary-color);
+
+        .btns a:hover {
+            background-color: var(--secondary-color);
 
         }
+
         .book a img {
             height: 400px !important;
         }
@@ -79,18 +81,56 @@
             border-radius: 50%;
             left: 20px;
         }
-        .btns{
+        .nexts {
+            background-color: #808080;
+            width: 45px;
+            height: 45px;
+            z-index: 2;
+            position: absolute;
+            bottom: 50%;
+            transform: translate(0, -50%);
+            border-radius: 50%;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nexts i,
+        .prevs i {
+            font-size: 20px;
+            color: #fff;
+        }
+
+        .prevs {
+            background-color: #808080;
+            width: 45px;
+            height: 45px;
+            z-index: 2;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            bottom: 50%;
+            transform: translate(0, -50%);
+            border-radius: 50%;
+            left: 20px;
+        }
+
+        .btns {
             bottom: 0 !important;
             left: 0 !important;
             right: 0 !important;
         }
-        @media (max-width:767px){
-        .content p{
-            padding: 0px !important;
-        }
-        .inner-box-book .content{
-            padding-bottom:0px !important;
-        }
+
+        @media (max-width:767px) {
+            .content p {
+                padding: 0px !important;
+            }
+
+            .inner-box-book .content {
+                padding-bottom: 0px !important;
+            }
         }
     </style>
 
@@ -162,17 +202,17 @@
 
                             @foreach ($books as $book)
                                 <div class="swiper-slide position-relative">
-                                        <a class="" href="{{ langUrl('/rewaq/book/' . $book->slug) }}"
-                                            title="{{ $book->translation->title }}">
-                                            <div class="inner-box-book">
-                                                <div class="img-box">
-                                                    <img src="{{ $book->img }}" alt="{{ $book->translation->title }}">
-                                                </div>
-                                                <div class="content">
-                                                    <p class="py-4">{{ $book->translation->title }}</p>
-                                                </div>
+                                    <a class="" href="{{ langUrl('/rewaq/book/' . $book->slug) }}"
+                                        title="{{ $book->translation->title }}">
+                                        <div class="inner-box-book">
+                                            <div class="img-box">
+                                                <img src="{{ $book->img }}" alt="{{ $book->translation->title }}">
                                             </div>
-                                        </a>
+                                            <div class="content">
+                                                <p class="py-4">{{ $book->translation->title }}</p>
+                                            </div>
+                                        </div>
+                                    </a>
                                     <div class="btns d-flex justify-content-around align-items-center position-absolute ">
                                         <a href="{{ $book->index_url }}" target="_blank"
                                             class="p-2 rounded ">{{ __('front.read_more') }}</a>
@@ -194,7 +234,6 @@
         </section>
     @endif
 
-
     {{-- videos section --}}
     <section class="my-5 videos-sec">
         <a href="">
@@ -203,6 +242,56 @@
             </div>
         </a>
     </section>
+
+    @if (!$videos->isEmpty())
+        <section class="our-videos">
+            <div class="container">
+                <div class="section-title text-right pb-30">
+                </div>
+                <div class="row overflow-hidden" data-aos="zoom-in" data-aos-duration="1000">
+
+                    <div class="swiper-container overflow-hidden">
+                        <div class="news-block-two swiper-wrapper">
+
+                            @foreach ($videos as $video)
+                                <div class="swiper-slide position-relative">
+                                    <div class="meeting-event-box">
+                                        <div class="content justify-content-left">
+                                            <a id="copyVideo" data-videoUrl="{{ $video->video_url }}"
+                                                class="share-btn copyVideo">
+                                                <i class="fas fa-share"></i>
+                                            </a>
+                                        </div>
+                                        <figure class="reveal-effect animated"><a href="{{ $video->video_url }}"
+                                                data-fancybox>
+                                                <i class="fas fa-play"></i></a>
+                                            <img width="100%" height="100%" src="{{ $video->img }}"
+                                                alt="{{ $video->translation->name }}"></a>
+                                        </figure>
+                                        <div class="content">
+                                            <h5>
+                                                {{ $video->translation->name }}
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                    <div class="nexts">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                    <div class="prevs">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+    @endif
+
+
+
+
 
 
 @endsection
@@ -226,6 +315,37 @@
             navigation: {
                 nextEl: '.nexts1',
                 prevEl: '.prevs1',
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                1024: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                }
+            }
+        });
+        var swipers = new Swiper(".our-videos .swiper-container", {
+            spaceBetween: 50,
+            centeredSlides: false,
+            slidesPerView: 4,
+            loop: true,
+            rtl: true,
+            keyboard: true,
+            draggable: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.nexts',
+                prevEl: '.prevs',
             },
             breakpoints: {
                 640: {

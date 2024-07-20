@@ -3,7 +3,7 @@
 
 @section('breadcrumb')
 <li class="breadcrumb-item">@yield('title')</li>
-<li class="breadcrumb-item"><a href="{{ route('rewaq-videos.create') }}">{{__('global.parliament.video.video_add')}}</a></li>
+<li class="breadcrumb-item"><a href="{{ route('kon-videos.create') }}">{{__('global.parliament.video.video_add')}}</a></li>
 @endsection
 
 @section('datatable-css')
@@ -17,7 +17,7 @@
 @section('content')
 
 <div class="mb-2">
-    <a class="btn btn-secondary" href="{{ route('rewaq-videos.create') }}">{{__('global.parliament.video.video_add')}}</a>
+    <a class="btn btn-secondary" href="{{ route('kon-videos.create') }}">{{__('global.parliament.video.video_add')}}</a>
 </div>
 
 <div class="table-responsive">
@@ -55,7 +55,7 @@
             @if(app()->getLocale()=='ar')
             language: {"url": "{{ url('/admin/assets/plugins/datatable/Arabic.json') }}"},
             @endif
-            ajax: "{{ url('/admin/rewaq-videos/json') }}",
+            ajax: "{{ url('/admin/kon-videos/json') }}",
             scrollY:550,
             scrollX:true,
             columns: [
@@ -80,19 +80,17 @@
                 {
                     targets: 4,
                     render: function (data, type, row, meta) {
-                        var edit = '<a href="{{ url('/admin/rewaq-videos') }}/'+row.id+'/edit" class="btn mb-1 btn-sm btn-info"><i class="fa-fw fas fa-pen-alt"></i></a>';
-                        var del = '<form style="display:inline-block" action="{{url('/admin/rewaq-videos')}}/'+row.id+'" method="post">@csrf {{ method_field('DELETE') }} <button onclick="if(confirm(`{{__("global.alert_delete")}}`)){return true;}else{return false;}" class="btn btn-sm mb-1 btn-danger"><i class="far fa-fw fa-trash-alt"></i></button></form>';
+                        var edit = '<a href="{{ url('/admin/kon-videos') }}/'+row.id+'/edit" class="btn mb-1 btn-sm btn-info"><i class="fa-fw fas fa-pen-alt"></i></a>';
+                        var del = '<form style="display:inline-block" action="{{url('/admin/kon-videos')}}/'+row.id+'" method="post">@csrf {{ method_field('DELETE') }} <button onclick="if(confirm(`{{__("global.alert_delete")}}`)){return true;}else{return false;}" class="btn btn-sm mb-1 btn-danger"><i class="far fa-fw fa-trash-alt"></i></button></form>';
                         var btns = '';
-                        @if(auth('admin')->user()->hasPermission('update-rewaqVideo') || auth('admin')->user()->is_superadmin)
+                        @if(auth('admin')->user()->hasPermission('update-konVideo') || auth('admin')->user()->is_superadmin)
                             btns += edit + ' ' ;
                          @endif
-                        @if(auth('admin')->user()->hasPermission('delete-rewaqVideo') || auth('admin')->user()->is_superadmin)
+                        @if(auth('admin')->user()->hasPermission('delete-konVideo') || auth('admin')->user()->is_superadmin)
                             btns += del;
                         @endif
                    
                         return btns;
-
-
                     }
                 },
                 

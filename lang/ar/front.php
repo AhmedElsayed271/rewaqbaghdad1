@@ -164,10 +164,16 @@ return [
     'years_service' => 'عدد سنوات الخدمة',
     'events' => 'فعاليات',
 
-
+    'about_survey' => 'نبذه عن استطلاع الرأي',
+    'surveys' => 'استطلاعات الرأي',
     'center_news' => 'اخبار المركز',
     'research_and_studies' => 'بحوث ودراسات',
     'our_books' => 'كتبنا',
+    'kon_training' => 'تدريبات و ورش',
+    'about_kontraining' => 'نبذه عن التدريب',
+
+    'kon_upcommingtrainings' => 'تدريبات قادمة',
+    'kon_about_upcommingtrainings' => '  نبذه عن التدريب القادم',
 
     'editorial_number' => 'افتتاحية العدد',
     'archives' => 'الأرشيف',

@@ -14,6 +14,7 @@ use App\Models\Rewaqpublishrule;
 
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendContactMail;
+use App\Models\RewaqVideo;
 
 class RewaqController extends Controller
 {
@@ -56,7 +57,8 @@ class RewaqController extends Controller
         $books = Rewaqbook::with('translation:title,description,parent_id')->orderBy('id', 'DESC')->get();
         $latestNews = Rewaqbook::select('id', 'slug', 'img', 'created_at')->with('translation:title,parent_id')->orderBy('id', 'DESC')->limit(4)->get();
         $mostWatched = Rewaqbook::select('id', 'slug', 'views', 'created_at')->with('translation:title,parent_id')->orderBy('views', 'DESC')->limit(4)->get();
-        return view('front.rewaq.index', compact('rewaq', 'books', 'latestNews', 'mostWatched'));
+        $videos = RewaqVideo::with('translation')->get();
+        return view('front.rewaq.index', compact('rewaq', 'books', 'latestNews', 'mostWatched','videos'));
     }
 
     public function book($slug)

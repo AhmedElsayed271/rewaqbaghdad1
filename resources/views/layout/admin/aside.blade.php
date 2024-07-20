@@ -311,7 +311,11 @@
                 </li>
 
             @endif
-            @if ($admin->hasPermission('read-iraqMeter') || $admin->hasPermission('edit-iraqMeterInfo') || $admin->hasPermission('read-iraqmeterSurvey') || $admin->is_superadmin)
+            @if (
+                $admin->hasPermission('read-iraqMeter') ||
+                    $admin->hasPermission('edit-iraqMeterInfo') ||
+                    $admin->hasPermission('read-iraqmeterSurvey') ||
+                    $admin->is_superadmin)
                 <li class="slide">
                     <a class="side-menu__item" data-toggle="slide" href="#">
                         <i class="fa-solid fa-layer-group"></i>
@@ -329,7 +333,7 @@
                                     href="{{ route('iraqmeter-surveys.index') }}">{{ __('global.iraqmeter.surveys') }}</a>
                             </li>
                         @endif
-                        
+
                         @if ($admin->hasPermission('edit-iraqMeterInfo') || $admin->is_superadmin)
                             <li><a class="slide-item"
                                     href="{{ route('iraqmeter.editInfo') }}">{{ __('global.iraqmeter.edit') }}</a>
@@ -351,9 +355,26 @@
 
                         @if ($admin->hasPermission('read-konInfo') || $admin->is_superadmin)
                             <li><a class="slide-item"
-                                href="{{ route('kon.editInfo') }}">{{ __('global.kone_media.edit') }}</a>
+                                    href="{{ route('kon.editInfo') }}">{{ __('global.kone_media.edit') }}</a>
                             </li>
                         @endif
+
+                        @if ($admin->hasPermission('read-konTraining') || $admin->is_superadmin)
+                            <li><a class="slide-item"
+                                    href="{{ route('kon-trainings.index') }}">{{ __('global.kone_media.training') }}</a>
+                            </li>
+                        @endif
+                        @if ($admin->hasPermission('read-Upcomingtraining') || $admin->is_superadmin)
+                            <li><a class="slide-item"
+                                    href="{{ route('kon-upcomingtrainings.index') }}">{{ __('global.kone_media.upcomingtrainings') }}</a>
+                            </li>
+                        @endif
+                        @if ($admin->hasPermission('read-konVideo') || $admin->is_superadmin)
+                            <li><a class="slide-item"
+                                    href="{{ route('kon-videos.index') }}">{{ __('global.kone_media.kon_videos') }}</a>
+                            </li>
+                        @endif
+
 
                         @if ($admin->hasPermission('edit-konMedia') || $admin->is_superadmin)
                             <li><a class="slide-item"

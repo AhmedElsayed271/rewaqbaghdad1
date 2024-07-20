@@ -13,17 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('rewaq_video_translations', function (Blueprint $table) {
+        Schema::create('kon_video_translations', function (Blueprint $table) {
             $table->id();
             
             $table->string('locale', 5);
 
             $table->string('name', 200)->nullable();
 
-            $table->bigInteger('video_id')->unsigned();
+            $table->bigInteger('kon_video_id')->unsigned();
 
-            $table->foreign('video_id')->references('id')
-            ->on('rewaq_videos')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('kon_video_id')->references('id')
+            ->on('kon_videos')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
@@ -34,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('rewaq_video_translations');
+        Schema::dropIfExists('kon_video_translations');
     }
 };

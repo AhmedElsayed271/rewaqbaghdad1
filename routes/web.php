@@ -93,7 +93,8 @@ Route::group(['namespace' => 'Front'], function(){
     Route::get('/iraq/meter', 'IraqmeterController@Info');
     Route::get('/iraq/meter/blogs', 'IraqmeterController@blogs');
     Route::get('/iraq/meter/{slug}', 'IraqmeterController@SingleBlog');
-    Route::get('/iraq/meter/serveydetails/{slug}', 'IraqmeterController@serveyDetails');
+    Route::get('/iraq/meter/surveydetails/{slug}', 'IraqmeterController@serveyDetails')->name('iraqmeter.serveyDetails');
+    Route::get('/iraq-meter/all-survey', 'IraqmeterController@allsurvey')->name('iraqmeter.allsurvey');
     Route::get('/iraq/meter/tag/{tag}', 'IraqmeterController@Tag');
 
 
@@ -101,7 +102,11 @@ Route::group(['namespace' => 'Front'], function(){
     Route::get('/boadcast/details', 'IraqmeterController@boadcastDetails');
 
     Route::get('/kon', 'IraqmeterController@kon');
-
+    Route::get('/kon/all', 'IraqmeterController@allKon')->name('kon.allKon');
+    Route::get('/kon/trainingdetails/{slug}', 'IraqmeterController@trainingDetails')->name('kon.trainingDetails');
+    Route::get('/kon/upcommingtrainingdetails/{slug}', 'IraqmeterController@upcommingTrainingDetails')->name('kon.upcommingTrainingDetails');
+    Route::get('/kon/allUpcommingTrainings', 'IraqmeterController@allUpcommingTrainings')->name('kon.allUpcommingTrainings');
+    Route::post('/kon/request-training', 'MailController@RequestTraining')->name('kon.RequestTraining');
 
     Route::get('/media/center/news', 'MediacenterController@news');
     Route::get('/media/center/news/{slug}', 'MediacenterController@SingleNews');
@@ -147,7 +152,3 @@ Route::group(['prefix' => 'filemanager', 'middleware'=>'authadmin:filemanager_sh
     \UniSharp\LaravelFilemanager\Lfm::routes();
 });
 
-
-Route::get('/testing', function () {
-    return Hash::make('123456');
-});

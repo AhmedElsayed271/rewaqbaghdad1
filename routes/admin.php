@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Response;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\RewaqVideoController;
+use App\Http\Controllers\UpcomingtrainingController;
+use App\Http\Controllers\Admin\KonTrainingController;
 use App\Http\Controllers\Admin\EtmamcategoryController;
 use App\Http\Controllers\Admin\IraqmeterInfoEditController;
 use App\Http\Controllers\Admin\KhetabMagazineblogController;
@@ -180,7 +182,17 @@ Route::group(['prefix' => 'admin','middleware' => AuthAdmin::class], function ()
      Route::get('/kon-edit', 'KunInfoEditController@edit')->name('kon.editInfo');
      Route::post('/kon-edit', 'KunInfoEditController@update')->name('kon.updateInfo');
     
-    
+     // rewaq videos
+     Route::get('/kon-videos/json', 'KonVideoController@json');
+     Route::resource('/kon-videos', 'KonVideoController');
+
+    // kon Training
+    Route::get('/kon-trainings/json', 'KonTrainingController@json');
+    Route::resource('/kon-trainings', 'KonTrainingController');
+    // kon Training
+    Route::get('/kon-upcomingtrainings/json', 'UpcomingtrainingController@json');
+    Route::resource('/kon-upcomingtrainings', 'UpcomingtrainingController');
+
     // Magazine Team
     Route::get('/magazine-team/json', 'MagazineteamController@json');
     Route::resource('/magazine-team', 'MagazineteamController');

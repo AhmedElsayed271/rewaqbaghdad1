@@ -1,9 +1,9 @@
 @extends('layout.admin.app')
-@section('title', __('global.parliament.video.title'))
+@section('title', __('global.kone_media.upcomingtrainings'))
 
 @section('breadcrumb')
 <li class="breadcrumb-item">@yield('title')</li>
-<li class="breadcrumb-item"><a href="{{ route('rewaq-videos.create') }}">{{__('global.parliament.video.video_add')}}</a></li>
+<li class="breadcrumb-item"><a href="{{ route('kon-upcomingtrainings.create') }}">{{__('global.kone_media.upcomingtraining_add')}}</a></li>
 @endsection
 
 @section('datatable-css')
@@ -17,7 +17,7 @@
 @section('content')
 
 <div class="mb-2">
-    <a class="btn btn-secondary" href="{{ route('rewaq-videos.create') }}">{{__('global.parliament.video.video_add')}}</a>
+    <a class="btn btn-secondary" href="{{route('kon-upcomingtrainings.create') }}">{{__('global.kone_media.upcomingtraining_add')}}</a>
 </div>
 
 <div class="table-responsive">
@@ -25,8 +25,8 @@
         <thead>
             <tr>
                 <th>{{__('global.id')}}</th>
-                <th>{{__('global.parliament.video.video_name')}}</th>
-                <th>{{__('global.parliament.video.video_url')}}</th>
+                <th>{{__('global.title')}}</th>
+                <th>{{__('global.slug')}}</th>
                 <th>{{__('global.created_at')}}</th>
                 <th>{{__('global.actions')}}</th>
             </tr>
@@ -55,20 +55,20 @@
             @if(app()->getLocale()=='ar')
             language: {"url": "{{ url('/admin/assets/plugins/datatable/Arabic.json') }}"},
             @endif
-            ajax: "{{ url('/admin/rewaq-videos/json') }}",
+            ajax: "{{ url('/admin/kon-upcomingtrainings/json') }}",
             scrollY:550,
             scrollX:true,
             columns: [
                 {data: 'id', name: 'id'},
-                {data: 'translation.name', name: 'translation.name'},
-                {data: 'video_url', name: 'video_url'},
+                {data: 'translation.title', name: 'translation.title'},
+                {data: 'slug', name: 'slug'},
                 {data: 'created_at', name: 'created_at'},
             ],
             columnDefs: [
                 {
                     targets: 2,
                     render: function (data, type, row, meta) {
-                        return "<a target='_blank' href='"+data+"'><i class='fa-solid fa-up-right-from-square'></i></a>";
+                        return "<a target='_blank' href='{{url('/')}}/kon/trainingdetails/"+data+"'><i class='fa-solid fa-up-right-from-square'></i></a>";
                     }
                 },
                 {
@@ -80,19 +80,16 @@
                 {
                     targets: 4,
                     render: function (data, type, row, meta) {
-                        var edit = '<a href="{{ url('/admin/rewaq-videos') }}/'+row.id+'/edit" class="btn mb-1 btn-sm btn-info"><i class="fa-fw fas fa-pen-alt"></i></a>';
-                        var del = '<form style="display:inline-block" action="{{url('/admin/rewaq-videos')}}/'+row.id+'" method="post">@csrf {{ method_field('DELETE') }} <button onclick="if(confirm(`{{__("global.alert_delete")}}`)){return true;}else{return false;}" class="btn btn-sm mb-1 btn-danger"><i class="far fa-fw fa-trash-alt"></i></button></form>';
+                        var edit = '<a href="{{ url('/admin/kon-upcomingtrainings') }}/'+row.id+'/edit" class="btn mb-1 btn-sm btn-info"><i class="fa-fw fas fa-pen-alt"></i></a>';
+                        var del = '<form style="display:inline-block" action="{{url('/admin/kon-upcomingtrainings')}}/'+row.id+'" method="post">@csrf {{ method_field('DELETE') }} <button onclick="if(confirm(`{{__("global.alert_delete")}}`)){return true;}else{return false;}" class="btn btn-sm mb-1 btn-danger"><i class="far fa-fw fa-trash-alt"></i></button></form>';
                         var btns = '';
-                        @if(auth('admin')->user()->hasPermission('update-rewaqVideo') || auth('admin')->user()->is_superadmin)
+                        @if(auth('admin')->user()->hasPermission('update-Upcomingtraining') || auth('admin')->user()->is_superadmin)
                             btns += edit + ' ' ;
                          @endif
-                        @if(auth('admin')->user()->hasPermission('delete-rewaqVideo') || auth('admin')->user()->is_superadmin)
+                        @if(auth('admin')->user()->hasPermission('delete-Upcomingtraining') || auth('admin')->user()->is_superadmin)
                             btns += del;
                         @endif
-                   
                         return btns;
-
-
                     }
                 },
                 

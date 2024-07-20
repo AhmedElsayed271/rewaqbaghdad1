@@ -167,12 +167,14 @@ return [
     'the_activities' => 'Activities',
     'years_service' => 'Years of Service',
     'events' => 'Events',
-
-
+    'about_survey' => 'Abou Survey',
+    'surveys' => 'Surveys',
     'center_news' => "Center's News",
     'research_and_studies' => 'Research and Studies',
     'our_books' => 'Our Books',
-
+    'kon_training' => 'trainings',
+    'kon_upcommingtrainings' => 'Upcomming Training',
+    'about_kontraining' => 'About Training',
     'editorial_number' => 'Issue Editorial',
     'archives' => 'Archive',
 
