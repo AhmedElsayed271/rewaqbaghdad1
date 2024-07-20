@@ -289,7 +289,60 @@
         </section>
     @endif
 
+    <section class="my-5 videos-sec">
+        <a href="">
+            <div class="section-heading pb-30 text-center shadow-sm mx-auto rounded-30 my-3">
+                <h2 class="font-bold p-3">تواصل معنا</h2>
+            </div>
+        </a>
+    </section>
+    <section class="contact-page-section asking asking-visit">
+        <div class="container p-5">
+            <form class="row" action="{{ route('kon.RequestTraining') }}" method="post">@csrf
+                <div class="form-column col-lg-8 col-md-12 col-sm-12">
+                    <div class="inner-column">
+                        <div class="contact-form">
+                            @if ($errors->all())
+                                @foreach ($errors->all() as $message)
+                                    <div class="alert alert-warning p-1 mb-1"><i class="fas fa-exclamation-triangle"></i>
+                                        {{ $message }}</div>
+                                @endforeach
+                            @endif
+                            <div id="contact-form" novalidate="novalidate">
+                                <div class="row clearfix">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                                        <label for="name"> <span class="req">*</span> {{ __('front.name') }}</label>
+                                        <input type="text" name="name" required value="{{ old('name') }}"
+                                            placeholder="{{ __('front.name') }}">
+                                    </div>
+                                
+                               
+                                    <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                                        <label for="email"> <span class="req">*</span>
+                                            {{ __('front.email') }}</label>
+                                        <input type="email" name="email" required value="{{ old('email') }}"
+                                            placeholder="{{ __('front.email') }}">
+                                    </div>
 
+                                    <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                                        <label for="text"> <span class="req">*</span>
+                                            {{ __('front.how_help') }}</label>
+                                        <textarea name="subject" required placeholder="{{ __('front.how_help') }}">{{ old('list_visitors') }}</textarea>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                    <button class="theme-btn btn-style-two bg-green">
+                        <span class="txt">{{ __('front.btn_send') }}</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
 
 
 

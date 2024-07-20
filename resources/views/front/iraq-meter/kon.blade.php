@@ -163,7 +163,7 @@
                         <div class="news-block-two swiper-wrapper">
 
                             @foreach ($upcomingtrainings as $upcomingtraining)
-                         
+                          
                             <div class="swiper-slide position-relative">
                                 <a href="{{ route('kon.upcommingTrainingDetails', $upcomingtraining->slug) }}">
                                     <div class="pb-3 pt-3">
@@ -172,6 +172,10 @@
                                     </div>
                                     <small class="title-sec mb-1">
                                         <strong>{{ formatDate($upcomingtraining->created_at) }}</strong>
+                                    </small>
+                                    <br />
+                                    <small class="title-sec mb-1">
+                                        <strong>{{ __('front.priceTraining') }} : ${{ $upcomingtraining->price }} </strong>
                                     </small>
                                     <strong class="pt-1 pb-1 d-block">{{ $upcomingtraining->translation->title }}</strong>
                                     <p>{{ $upcomingtraining->translation->description }}</p>

@@ -16,7 +16,7 @@
             object-fit: cover
         }
     </style>
-
+     
     <section class="about-us-sec  my-5">
         <div class="container">
             <div class="row py-3 justify-content-center align-items-center">
@@ -91,7 +91,13 @@
             </div>
         </div>
     </section>
-
+    <section class="my-5 videos-sec">
+        <a href="">
+            <div class="section-heading pb-30 text-center shadow-sm mx-auto rounded-30 my-3">
+                <h2 class="font-bold p-3">الاصدارات</h2>
+            </div>
+        </a>
+    </section>
     <section class="activies-sec activies-brown">
         <div class="container">
             {{-- <div class="row">

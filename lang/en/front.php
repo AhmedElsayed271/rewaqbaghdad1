@@ -176,10 +176,11 @@ return [
     'kon_upcommingtrainings' => 'Upcomming Training',
     'request_training' => 'Request Training',
     'request_questionnaire' => 'Request Questionnaire',
+    'priceTraining' => "Price Training",
     'about_kontraining' => 'About Training',
     'editorial_number' => 'Issue Editorial',
     'archives' => 'Archive',
-
+    'how_help' => "How Help You",
     'to_join_us' => 'To Join Us',
 
     'subscribe_with_us' => 'To recieve all our news, subscribe to us',

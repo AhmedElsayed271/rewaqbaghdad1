@@ -178,9 +178,9 @@ return [
     'request_questionnaire' => 'طلب استبيان',
     'editorial_number' => 'افتتاحية العدد',
     'archives' => 'الأرشيف',
-
+    'priceTraining' => "رسوم التدريب",
     'to_join_us' => 'للأشتراك معنا',
-
+    'how_help' => "كيف نساعدكم",
     'subscribe_with_us' => 'ليصلك كل جديد اشترك معنا',
     'follow_social_sites' => 'وقم بمتابعتنا على مواقع التواصل الأجتماعي',
     'enter_email' => 'أدخل بريدك الإلكتروني',
