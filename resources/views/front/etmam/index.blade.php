@@ -98,12 +98,15 @@
                         {{ __('front.etmam') }}
                     </strong>
                     <p>
+                        يتيح التطبيق للناخب فرصة التعرف والاطلاع على البيانات والبرنامج الانتخابي الخاص بكل مرشح، ضمن
+                        المرشحين في دائرته الانتخابية، بما يسهل عليه عملية اختيار الافضل منهم. ويكفل له حق ابداء الرأي
+                        بالمرشح عبر الرفض، القبول، اوالحياد.
                     </p>
 
                 </div>
                 <div class="col-lg-4">
                     <div class="img-box text-center border-0 rounded-30">
-                        <img src="/uploads/files/shares/669845d101dcb.png" alt="aboutImage" class=" w-50">
+                        <img src="/uploads/files/shares/projects/img5.png" alt="aboutImage" class=" w-50">
                     </div>
                 </div>
             </div>
@@ -164,7 +167,7 @@
     </div>
     <section class="contact-page-section asking asking-visit">
         <div class="container p-5">
-            <form class="row" action="{{ url()->current() }}" method="post">@csrf
+            <form class="row justify-content-start align-items-start" action="{{ url()->current() }}" method="post">@csrf
                 <div class="form-column col-lg-8 col-md-12 col-sm-12">
                     <div class="inner-column">
                         <div class="contact-form">
@@ -205,18 +208,18 @@
                                             {{ __('front.subject') }}</label>
                                         <textarea name="subject" required placeholder="{{ __('front.subject') }}">{{ old('list_visitors') }}</textarea>
                                     </div>
-
+                                    <div class="d-flex col-lg-12 col-md-12 col-sm-12 form-group">
+                                        <button class="theme-btn btn-style-two bg-green">
+                                            <span class="txt">{{ __('front.btn_send') }}</span>
+                                        </button>
+                                    </div>
 
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                    <button class="theme-btn btn-style-two bg-green">
-                        <span class="txt">{{ __('front.btn_send') }}</span>
-                    </button>
-                </div>
+
             </form>
         </div>
     </section>

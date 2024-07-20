@@ -29,7 +29,7 @@
                             {{ formatDate($activity->created_at) }}
                         </small>
                     </div>
-                    <div>{!! $activity->translation->content !!}</div>   
+                    <div>{!! $activity->translation->content !!}</div>
                     @if (!empty($activity->url))
                         <br>
                         <a href="{{ $activity->url }}" class="btn btn-info" data-fancybox>
@@ -39,7 +39,7 @@
                 </div>
                 <br>
                 <hr>
-            
+
                 <ul class="releated mt-3">
                     @if (!empty($activity->translation->tags))
                         @php
@@ -55,15 +55,15 @@
                     @endif
                 </ul>
             </div>
-            
+
             <div class="col-lg-1">
             </div>
-            
+
             <div class="col-lg-3">
-                
+
                 <div class="form-group">
-                    @include('front.events')
-              
+                    {{-- @include('front.events') --}}
+
                   <div class="widget_raper blue mt-3">
                     <p>{{ __('front.latest_activities') }}</p>
                     <div class="recent_post">

@@ -76,7 +76,7 @@
                 </div>
             </div>
         </div>
-        
+
     </section>
 
     {{-- <section class="perlament-sec with-gold mt-10 mb-2">
@@ -243,7 +243,7 @@
         </div>
     </section>
 
-  
+
 
     <section class="vector-about">
         <div class="container">
