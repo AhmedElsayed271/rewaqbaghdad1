@@ -38,7 +38,7 @@
             border-radius: 50%;
             left: 20px;
         }
-        
+
         .nexts i,
         .prevs i {
             font-size: 20px;
@@ -62,7 +62,7 @@
 
         .inner-box-book .content {
             padding: 0;
-            
+
         }
         .inner-box-book .content :first-of-type {
             margin-top: 30px;
@@ -89,15 +89,15 @@
     <section class="title with-gold mt-2">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h3 class="title-sec-b">
-                        
+                <div class="col-lg-12 section-heading mx-auto">
+                    <h2 class="shadow-sm mx-auto rounded-30 p-3 font-bold">
                         <a href="{{ route('kon.allKon') }}">{{__('front.kon_training')}}</a>
-                    </h3>
+                    </h2>
                 </div>
             </div>
         </div>
     </section>
+
     @if (!$konTrainings->isEmpty())
         <section class="our-trainings mt-5">
             <div class="container">
@@ -117,7 +117,7 @@
                                                 <img src="{{ $training->photo }}"
                                                     alt="{{ $training->translation->title }}">
                                             </div>
-                                          
+
                                             <div class="content">
                                                 <p>{{ $training->translation->title }}</p>
                                             </div>
@@ -143,11 +143,10 @@
     <section class="title with-gold mt-2">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h3 class="title-sec-b">
-                        
+                <div class="col-lg-12 section-heading mx-auto">
+                    <h2 class="my-5 text-center shadow-sm mx-auto rounded-30 font-bold  p-3">
                         <a href="{{ route('kon.allUpcommingTrainings') }}">{{__('front.kon_upcommingtrainings')}}</a>
-                    </h3>
+                    </h2>
                 </div>
             </div>
         </div>
@@ -163,7 +162,7 @@
                         <div class="news-block-two swiper-wrapper">
 
                             @foreach ($upcomingtrainings as $upcomingtraining)
-                          
+
                             <div class="swiper-slide position-relative">
                                 <a href="{{ route('kon.upcommingTrainingDetails', $upcomingtraining->slug) }}">
                                     <div class="pb-3 pt-3">
@@ -179,11 +178,11 @@
                                     </small>
                                     <strong class="pt-1 pb-1 d-block">{{ $upcomingtraining->translation->title }}</strong>
                                     <p>{{ $upcomingtraining->translation->description }}</p>
-                             
+
                                 </a>
-        
+
                             </div>
-            
+
                             @endforeach
                         </div>
                     </div>
@@ -256,7 +255,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h3 class="title-sec-b">
-                        
+
                         طلب تدريب
                     </h3>
                 </div>
@@ -282,8 +281,8 @@
                                         <input type="text" name="name" required value="{{ old('name') }}"
                                             placeholder="{{ __('front.name') }}">
                                     </div>
-                                
-                               
+
+
                                     <div class="col-lg-12 col-md-12 col-sm-12 form-group">
                                         <label for="email"> <span class="req">*</span>
                                             {{ __('front.email') }}</label>
