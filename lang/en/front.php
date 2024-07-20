@@ -174,6 +174,8 @@ return [
     'our_books' => 'Our Books',
     'kon_training' => 'trainings',
     'kon_upcommingtrainings' => 'Upcomming Training',
+    'request_training' => 'Request Training',
+    'request_questionnaire' => 'Request Questionnaire',
     'about_kontraining' => 'About Training',
     'editorial_number' => 'Issue Editorial',
     'archives' => 'Archive',

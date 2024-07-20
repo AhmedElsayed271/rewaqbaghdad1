@@ -9,7 +9,7 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class RequestTraining extends Mailable
+class RequestQuestionnaire extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -18,10 +18,9 @@ class RequestTraining extends Mailable
      *
      * @return void
      */
-
     public $data = [];
 
-    public function __construct($data)
+    public function __construct($data = [])
     {
         $this->data = $data;
     }
@@ -34,7 +33,7 @@ class RequestTraining extends Mailable
     public function envelope()
     {
         return new Envelope(
-            subject: __('front.request_training'),
+            subject: __('global.request_questionnaire'),
         );
     }
 
@@ -46,7 +45,7 @@ class RequestTraining extends Mailable
     public function content()
     {
         return new Content(
-            view: 'emails.RequestTraining',
+            view: 'emails.RequestQuestionnaire',
         );
     }
 

@@ -107,6 +107,7 @@ Route::group(['namespace' => 'Front'], function(){
     Route::get('/kon/upcommingtrainingdetails/{slug}', 'IraqmeterController@upcommingTrainingDetails')->name('kon.upcommingTrainingDetails');
     Route::get('/kon/allUpcommingTrainings', 'IraqmeterController@allUpcommingTrainings')->name('kon.allUpcommingTrainings');
     Route::post('/kon/request-training', 'MailController@RequestTraining')->name('kon.RequestTraining');
+    Route::post('/iraqmeter/request-questionnaire', 'MailController@requestQuestionnaire')->name('iraqmeter.requestQuestionnaire');
 
     Route::get('/media/center/news', 'MediacenterController@news');
     Route::get('/media/center/news/{slug}', 'MediacenterController@SingleNews');

@@ -174,7 +174,8 @@ return [
 
     'kon_upcommingtrainings' => 'تدريبات قادمة',
     'kon_about_upcommingtrainings' => '  نبذه عن التدريب القادم',
-
+    'request_training' => 'طلب تدريب',
+    'request_questionnaire' => 'طلب استبيان',
     'editorial_number' => 'افتتاحية العدد',
     'archives' => 'الأرشيف',
 
