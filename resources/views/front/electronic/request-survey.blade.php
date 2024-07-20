@@ -64,19 +64,19 @@
                                 <div class="alert alert-warning p-1 mb-1"><i class="fas fa-exclamation-triangle"></i> {{ $message }}</div>
                             @endforeach
                         @endif
-                       
+
                         <div id="contact-form" novalidate="novalidate">
                             <div class="row clearfix">
                                 <div class="col-lg-12 col-md-12 col-sm-12 form-group">
                                     <label for="survey_title"> <span class="req">*</span> {{__('front.survey_title')}}</label>
                                     <input type="text" name="survey_title" required value="{{old('survey_title')}}" placeholder="{{__('front.survey_title')}}">
                                 </div>
-                               
+
                                 <div class="col-lg-12 col-md-12 col-sm-12 form-group">
                                     <label for="text"> <span class="req">*</span> {{__('front.purpose_of_survey')}}</label>
                                     <input type="text" name="purpose_of_survey" required value="{{old('purpose_of_survey')}}" placeholder="{{__('front.purpose_of_survey')}}">
                                 </div>
-                                {{-- <div class="col-lg-12 col-md-12 col-sm-12 form-group">                                    
+                                {{-- <div class="col-lg-12 col-md-12 col-sm-12 form-group">
                                     <div class="row">
                                         <div class="col-lg-3">
                                     <label for="email"> <span class="req">*</span> {{__('front.type')}} </label>
@@ -100,7 +100,7 @@
                                         </div>
                                        </div>
                                     </div>
-                                    
+
                                 </div> --}}
                                 {{-- <div class="col-lg-6 col-md-6 col-sm-12 form-group">
                                     <div class="d-flex justify-content-between">
@@ -115,11 +115,11 @@
                                     <label for="text"> <span class="req">*</span> {{__('front.number_of_sample')}}</label>
                                     <input type="text" name="number_of_sample" required value="{{old('number_of_sample')}}" placeholder="{{__('front.number_of_sample')}}">
                                 </div> --}}
-                                
+
                                 <div class="title title-before d-grid justify-content-center align-items-center mt-5">
-                            
+
                                     <h2>{{__('front.personal_info')}}</h2>
-                                    
+
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 form-group">
                                     <label for="text"> <span class="req">*</span>  {{__('front.name')}}</label>
@@ -138,7 +138,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+            <div class="col-lg-12 col-md-12 col-sm-12 form-group d-flex">
                 <button class="theme-btn btn-style-two bg-green">
                     <span class="txt">{{__('front.btn_send')}}</span>
                 </button>

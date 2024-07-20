@@ -796,7 +796,7 @@
     </div>
 </section> --}}
 
-    <section class="subescribe-sec bg-light pt-3 mt-5 mb-5">
+    {{-- <section class="subescribe-sec bg-light pt-3 mt-5 mb-5">
         <div class="container">
 
             <div class="row align-items-center">
@@ -869,5 +869,5 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 @endsection

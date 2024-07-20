@@ -32,15 +32,14 @@
         }
     </style>
 
-  
+
     <section class="title with-gold mt-7 mb-7">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h3 class="title-sec-b">
-                        
-                        <a href="{{ route('iraqmeter.allsurvey') }}">استطلاعات الراي</a>
-                    </h3>
+             <div class="col-lg-12 text-center section-heading mx-auto">
+                    <h2 class="pb-30 text-center shadow-sm mx-auto rounded-30 my-5 p-3">
+                        <a href="{{ route('iraqmeter.allsurvey') }}" class="font-bold ">{{ __('front.surveys') }}</a>
+                    </h2>
                 </div>
             </div>
         </div>
@@ -48,7 +47,7 @@
 
     <section class="activies-sec">
         <div class="container">
-    
+
             <div class="row justify-content-center align-items-center">
                 @foreach ($iraqmeterSurveys as $iraqmeterSurvey)
                     <div class="col-md-3 book">
@@ -62,7 +61,7 @@
                             </small>
                             <strong class="pt-1 pb-1 d-block">{{ $iraqmeterSurvey->translation->title }}</strong>
                             <p>{{ $iraqmeterSurvey->translation->description }}</p>
-                     
+
                         </a>
 
                     </div>

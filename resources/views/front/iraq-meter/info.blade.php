@@ -39,15 +39,18 @@
             border-radius: 50%;
             left: 20px;
         }
+
         .btns a {
             background-color: var(--new-color);
             color: var(--white-color);
             transition: .2s all linear;
         }
-        .btns a:hover{
-        background-color: var(--secondary-color);
+
+        .btns a:hover {
+            background-color: var(--secondary-color);
 
         }
+
         .book a img {
             height: 400px !important;
         }
@@ -57,6 +60,12 @@
             display: flex;
             justify-content: center;
             align-items: center;
+        }
+
+        .btns {
+            bottom: 0;
+            right: 0;
+            left: 0;
         }
     </style>
 
@@ -79,26 +88,14 @@
 
     </section>
 
-    {{-- <section class="perlament-sec with-gold mt-10 mb-2">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h3 class="title-sec-b">
-                        نبذة عن عراق ميتر
-                    </h3>
-                </div>
-            </div>
-        </div>
-    </section>  --}}
 
-    <section class="title with-gold mt-2">
+    <section class="title with-gold mt-2 ">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h3 class="title-sec-b">
-                        
-                        <a href="{{ route('iraqmeter.allsurvey') }}">{{__('front.surveys')}}</a>
-                    </h3>
+            <div class="row justify-center">
+                <div class="col-lg-12 text-center section-heading mx-auto">
+                    <h2 class="pb-30 text-center shadow-sm mx-auto rounded-30 my-5 p-3">
+                        <a href="{{ route('iraqmeter.allsurvey') }}" class="font-bold ">{{ __('front.surveys') }}</a>
+                    </h2>
                 </div>
             </div>
         </div>
@@ -106,66 +103,56 @@
 
 
     @if (!$IraqmeterSurveys->isEmpty())
-    <section class="our-surveys mt-5 mb-5">
-        <div class="container">
-            <div class="section-title text-right pb-30">
-            </div>
-            <div class="row overflow-hidden" data-aos="zoom-in" data-aos-duration="1000">
+        <section class="our-surveys my-5 pb-5">
+            <div class="container">
+                <div class="section-title text-right pb-30">
+                </div>
+                <div class="row overflow-hidden" data-aos="zoom-in" data-aos-duration="1000">
 
-                <div class="swiper-container overflow-hidden">
-                    <div class="news-block-two swiper-wrapper">
+                    <div class="swiper-container overflow-hidden">
+                        <div class="news-block-two swiper-wrapper">
 
-                        @foreach ($IraqmeterSurveys as $IraqmeterSurvey)
-                            <div class="swiper-slide position-relative">
-                                <a class="" href="{{ route('iraqmeter.serveyDetails', $IraqmeterSurvey->slug) }}"
-                                    title="{{ $IraqmeterSurvey->translation->title }}">
-                                    <div class="inner-box-book">
-                                        <div class="img-box">
-                                            <img src="{{ $IraqmeterSurvey->photo }}" alt="{{ $IraqmeterSurvey->translation->title }}">
+                            @foreach ($IraqmeterSurveys as $IraqmeterSurvey)
+                                <div class="swiper-slide position-relative">
+                                    <a class="" href="{{ route('iraqmeter.serveyDetails', $IraqmeterSurvey->slug) }}"
+                                        title="{{ $IraqmeterSurvey->translation->title }}">
+                                        <div class="inner-box-book">
+                                            <div class="img-box">
+                                                <img src="{{ $IraqmeterSurvey->photo }}"
+                                                    alt="{{ $IraqmeterSurvey->translation->title }}">
+                                            </div>
+                                            <div class="content">
+                                                <p class="py-4">{{ $IraqmeterSurvey->translation->title }}</p>
+                                            </div>
                                         </div>
-                                        <div class="content">
-                                            <p class="py-4">{{ $IraqmeterSurvey->translation->title }}</p>
-                                        </div>
+                                    </a>
+                                    <div class="btns d-flex justify-content-around align-items-center position-absolute ">
+                                        <a href="{{ $IraqmeterSurvey->pdf }}" target="_blank" class="p-2 rounded "
+                                            style="margin-left: 10px">{{ __('front.read_more') }}</a>
+                                        <a href="" target="_blank"
+                                            class="p-2 rounded">{{ __('front.reserve_copy') }}</a>
                                     </div>
-                                </a>
-                                <div class="btns d-flex justify-content-around align-items-center position-absolute ">
-                                    <a href="{{ $IraqmeterSurvey->pdf }}" target="_blank"
-                                        class="p-2 rounded " style="margin-left: 10px">{{ __('front.read_more') }}</a>
-                                    <a href="" target="_blank"
-                                        class="p-2 rounded">{{ __('front.reserve_copy') }}</a>
                                 </div>
-                            </div>
-                        @endforeach
+                            @endforeach
+                        </div>
+                    </div>
+                    <div class="nexts1">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                    <div class="prevs1">
+                        <i class="fa-solid fa-chevron-left"></i>
                     </div>
                 </div>
-                <div class="nexts1">
-                    <i class="fa-solid fa-chevron-right"></i>
-                </div>
-                <div class="prevs1">
-                    <i class="fa-solid fa-chevron-left"></i>
-                </div>
             </div>
-        </div>
-    </section>
+        </section>
     @endif
 
 
 
 
-
-
-    <section class="title with-gold mt-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h3 class="title-sec-b">
-                        
-                        طلب استبيان
-                    </h3>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="section-heading pb-30 text-center shadow-sm mx-auto rounded-30 my-5">
+        <h2 class="font-bold p-3">طلب استبيان</h2>
+    </div>
     <section class="contact-page-section asking asking-visit">
         <div class="container p-5">
             <form class="row" action="{{ route('iraqmeter.requestQuestionnaire') }}" method="post">@csrf
@@ -185,8 +172,8 @@
                                         <input type="text" name="name" required value="{{ old('name') }}"
                                             placeholder="{{ __('front.name') }}">
                                     </div>
-                                
-                               
+
+
                                     <div class="col-lg-12 col-md-12 col-sm-12 form-group">
                                         <label for="email"> <span class="req">*</span>
                                             {{ __('front.email') }}</label>
@@ -199,14 +186,12 @@
                                             {{ __('front.subject') }}</label>
                                         <textarea name="subject" required placeholder="{{ __('front.subject') }}">{{ old('list_visitors') }}</textarea>
                                     </div>
-
-
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                <div class="col-12 d-flex form-group">
                     <button class="theme-btn btn-style-two bg-green">
                         <span class="txt">{{ __('front.btn_send') }}</span>
                     </button>
@@ -214,10 +199,10 @@
             </form>
         </div>
     </section>
-  
 
 
-  
+
+
     <section class="vector booking-section">
         <div class="container">
             <div class="row justify-content-center">
@@ -234,9 +219,9 @@
                         <a href="{{ url('request-survey') }}" class="btn btn-1">
                             لطلب استبيان
                         </a>
-                        <a href="{{url('iraq/meter/blogs')}}" class="btn btn-2">
-                        للذهاب الى الاستبيانات
-                    </a>
+                        <a href="{{ url('iraq/meter/blogs') }}" class="btn btn-2">
+                            للذهاب الى الاستبيانات
+                        </a>
                     </div>
                 </div>
             </div>
@@ -281,7 +266,7 @@
         </div>
     </section>
 
-  
+
 @endsection
 
 @section('js')
