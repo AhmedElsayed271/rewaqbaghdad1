@@ -144,7 +144,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 section-heading mx-auto">
-                    <h2 class="my-5 text-center shadow-sm mx-auto rounded-30 font-bold  p-3">
+                    <h2 class="my-5 text-center shadow-sm mx-auto rounded-30 font-boldn  p-3">
                         <a href="{{ route('kon.allUpcommingTrainings') }}">{{__('front.kon_upcommingtrainings')}}</a>
                     </h2>
                 </div>

@@ -282,14 +282,14 @@
                 </a>
             </div>
             <div class="col-md-3 my-2">
-                <a href="">
+                <a href="/medad">
                     <div class="project-img mx-auto">
                         <img src="/uploads/files/shares/projects/img4.png" alt="project-img4">
                     </div>
                 </a>
             </div>
             <div class="col-md-3 my-2">
-                <a href="">
+                <a href="/etmam">
                     <div class="project-img mx-auto">
                         <img src="/uploads/files/shares/projects/img5.png" alt="project-img5">
                     </div>

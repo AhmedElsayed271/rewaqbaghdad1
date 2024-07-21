@@ -560,32 +560,27 @@
                         @endfor
 
                         <li class="col-4 col-lg-3">
-                            <a href="#">
+                            <a href="/boadcast">
                                 <img src="{{ url('/front/assets/img/mick.png') }}" alt="LogoImage">
                             </a>
                         </li>
 
-                        {{-- <li class="col">
-                            <a data-md-tooltip="{{__('front.i_parliament')}}" href="{{ langUrl('/parliament') }}">
-                                <img src="{{url('front')}}/assets/img/4.png" alt="{{__('front.i_parliament')}}">
+                        <li class="col-4 col-lg-3">
+                            <a href="/medad">
+                                <div class="project-img mx-auto">
+                                    <img src="/uploads/files/shares/projects/img4.png" alt="project-img4">
+                                </div>
                             </a>
                         </li>
-                        <li class="col">
-                            <a data-md-tooltip="{{__('front.magazine')}}" href="{{ langUrl('/magazine') }}">
-                                <img src="{{url('front')}}/assets/img/2.png" alt="{{__('front.magazine')}}">
+                        <div class="col-4 col-lg-3">
+                            <a href="/etmam">
+                                <div class="project-img mx-auto">
+                                    <img src="/uploads/files/shares/projects/img5.png" alt="project-img5">
+                                </div>
                             </a>
-                        </li>
-                        <li class="col">
-                            <a data-md-tooltip="{{__('front.rewaq')}}" href="{{ langUrl('/rewaq') }}">
-                                <img src="{{url('front')}}/assets/img/ruwaq2.png" alt="{{__('front.rewaq')}}">
-                            </a>
-                        </li>
+                        </div>
 
-                        <li class="col">
-                            <a data-md-tooltip="{{__('front.kun')}}" href="#">
-                                <img src="{{url('front')}}/assets/img/kon.png" alt="LogoImage">
-                            </a>
-                        </li> --}}
+
 
                     </ul>
                     <ul class="d-flex social-media">
