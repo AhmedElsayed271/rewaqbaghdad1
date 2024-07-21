@@ -12,11 +12,11 @@
         }
 
         .book img {
-            height: 350px;
-            object-fit: cover
+            height: 420px;
+            object-fit:cover;
         }
     </style>
-     
+
     <section class="about-us-sec  my-5">
         <div class="container">
             <div class="row py-3 justify-content-center align-items-center">
@@ -110,16 +110,18 @@
                                 <img src="{{ $blog->img }}" alt="{{ $blog->translation->title }}" class="border-0">
                             </div>
                         </a>
-                        <a href="{{ langUrl('/magazine/blog/' . $blog->slug) }}">
-                            <small class="title-sec mb-1">
-                                <strong>
-                                    {{ __('front.the_number') }} {{ $blog->number }}
-                                </strong>
-                            </small>
-                            <strong class="pt-1 pb-1 d-block">{{ $blog->translation->title }}</strong>
-                            <p>{{ $blog->translation->description }}</p>
-                            {{-- <img src="/front/assets/img/a.png" class="img-fluid pdf-img mb-3" alt=""> --}}
-                        </a>
+                        <div class="me-3">
+                            <a href="{{ langUrl('/magazine/blog/' . $blog->slug) }}">
+                                <small class="title-sec mb-1">
+                                    <strong>
+                                        {{ __('front.the_number') }} {{ $blog->number }}
+                                    </strong>
+                                </small>
+                                <strong class="pt-1 pb-1 d-block">{{ $blog->translation->title }}</strong>
+                                <p>{{ $blog->translation->description }}</p>
+                                {{-- <img src="/front/assets/img/a.png" class="img-fluid pdf-img mb-3" alt=""> --}}
+                            </a>
+                        </div>
                     </div>
                 @endforeach
 
