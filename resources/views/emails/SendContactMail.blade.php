@@ -7,7 +7,7 @@
         <title>{{ $subject }}</title>
     </head>
     <body>
-
+      
         @foreach($data as $key => $val):
             <h3 style="text-align:center">{{__('front.'.$key)}}</h3>
             <p style="text-align: center">{{ $val }}</p>

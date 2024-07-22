@@ -7,11 +7,15 @@ use Illuminate\Http\Request;
 use App\Models\IraqmeterInfoEdit;
 
 use App\Http\Controllers\Controller;
+use App\Models\AfkarFakar;
+use App\Models\BodcastBlog;
+use App\Models\BodcastInfoEdit;
 use App\Models\IraqmeterSurvey;
 use App\Models\IraqmeterTranslation;
 use App\Models\KonTraining;
 use App\Models\konVideo;
 use App\Models\KunInfoEdit;
+use App\Models\OurEpisodes;
 use App\Models\Upcomingtraining;
 use Illuminate\Support\Facades\Cookie;
 
@@ -19,9 +23,27 @@ class IraqmeterController extends Controller
 {
     public function boadcast()
     {
-        return view('front.iraq-meter.boadcast');
+        $bodcastInfo        = BodcastInfoEdit::with('translation')->first();
+        $ourEpisodes         = OurEpisodes::with('translation')->get(); 
+        $afkarFakar         = AfkarFakar::with('translation')->get(); 
+        $blogs         = BodcastBlog::with('translation')->get(); 
+        return view('front.iraq-meter.boadcast', compact('bodcastInfo','ourEpisodes','afkarFakar','blogs'));
     }
     
+    public function boadcastBlogDetails($slug)
+    {
+        $blog = BodcastBlog::with('translation')->where('slug', $slug)->first();
+
+        return view('front.iraq-meter.bodcastblog-details', compact('blog'));
+    }
+    public function bodcastBlogs()
+    {
+        $blogs = BodcastBlog::with('translation')->paginate(20);
+
+        return view('front.iraq-meter.bodcast-blogs', compact('blogs'));
+    }
+
+
     public function boadcastDetails()
     {
         return view('front.iraq-meter.boadcast-details');

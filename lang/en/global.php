@@ -43,7 +43,10 @@ return [
     'slug' => 'Slug',
     'close' => 'cancel',
     'filemanager' => 'files manager',
-
+    'medadedit_info' => 'Medad Edit Info', 
+    'etmamedit_info' => 'Etmam Edit Info',  
+    'project_manager_photo' => 'project manager photo', 
+    'project_manager_name' => "project manager name",  
     /********************* settings *******************/
     'settings' => 'settings',
     'site_name' => 'Website name',
@@ -143,13 +146,14 @@ return [
 
     //
     'alert_main_admin' => 'The main manager cannot be deleted',
-
+    'add' => 'add',
     //
     'copy' => 'caoy',
     'excel' => 'Excel',
     'print' => 'print',
     'alert_done_subscription' => 'You have successfully subscribed to the newsletter',
-
+    'title' => 'title',
+    'short_description' => 'short description',
     'rewaq_videos' => 'Rewaq Videos',
     /********************* About *******************/
     'about' => [
@@ -168,7 +172,6 @@ return [
 
         'means' => 'Center means',
         'means_name' => 'The name of the mean',
-
     ],
 
     'center_member' => [
@@ -180,7 +183,6 @@ return [
         'email' => 'email',
         'add_new' => 'Add a new member',
         'cv_link' => 'CV link',
-
         'jobs_titles' => [
             'ar' => [
                 'cbd' => 'Chairman',
@@ -544,6 +546,10 @@ return [
         'upcomingtraining_add' => "Add Upcoming Training",
         'training_appointment' => 'Training Appointment',
         'trainer_info' => 'Trainer Info',
+    ],
+    'bodcast' => [
+        'title' => 'Bodcast Fakar',
+        'our_episodes' => 'Our Episodes',
     ],
 
 

@@ -31,6 +31,7 @@ class IraqmeterInfoEditController extends Controller
         $validatedData = $request->validate([
             'contact_email' => 'required|email|string|max:50',
             'img' => 'required|string|max:255',
+            'project_manager_photo' => 'required|string|max:255',
 
             'facebook'  => 'nullable|url|max:255',
             'twitter'   => 'nullable|url|max:255',
@@ -42,6 +43,8 @@ class IraqmeterInfoEditController extends Controller
             'tiktok'    => 'nullable|url|max:255',
             'content' => 'required|array',
             'content.*' => 'required|string',
+            'project_manager' => 'required|array',
+            'project_manager.*' => 'required|string',
         ]);
         try {
 
@@ -61,6 +64,7 @@ class IraqmeterInfoEditController extends Controller
                     'whatsapp' => $request->whatsapp,
                     'telegram' => $request->telegram,
                     'tiktok' => $request->tiktok,
+                    'proejct_manager_img' => $request->project_manager_photo,
                 ]);
                
             } else {
@@ -76,6 +80,7 @@ class IraqmeterInfoEditController extends Controller
                     'whatsapp' => $request->whatsapp,
                     'telegram' => $request->telegram,
                     'tiktok' => $request->tiktok,
+                    'project_manager_photo' => $request->project_manager_photo,
                 ]);
                 $id = $iraqmeterInfoEdit->id;
             }
@@ -85,6 +90,7 @@ class IraqmeterInfoEditController extends Controller
                 IraqmeterInfoEditTranslation::where(['parent_id'=>$id ,'locale'=>$key])
                 ->update([
                     'content' => $request->content[$key],
+                    'project_manager' => $request->project_manager[$key],
                 ]);
             endforeach;
             DB::commit();

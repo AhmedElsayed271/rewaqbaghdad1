@@ -19,4 +19,9 @@ class Versioncategory extends Model
         return $this->hasMany('App\Models\VersioncategoryTranslation', 'category_id', 'id');
     }
 
+    public function versions()
+    {
+        return $this->hasMany(Version::class,'category_id','id');
+    }
+
 }

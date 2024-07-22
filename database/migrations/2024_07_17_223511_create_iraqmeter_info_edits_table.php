@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('telegram', 255)->nullable();
             $table->string('tiktok', 255)->nullable();
             $table->string('whatsapp', 255)->nullable();
-
+            $table->string('proejct_manager_img');
             $table->timestamps();
         });
     }

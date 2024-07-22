@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('locale', 5);
             $table->text('content')->nullable();
-            
+            $table->string('project_manager')->nullable();
             $table->bigInteger('parent_id')->unsigned();
             $table->foreign('parent_id')->references('id')->on('iraqmeter_info_edits')->onDelete('cascade')->onUpdate('cascade');
         });

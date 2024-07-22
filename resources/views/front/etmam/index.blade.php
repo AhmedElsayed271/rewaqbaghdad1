@@ -1,5 +1,5 @@
 @extends('layout.front.app')
-{{-- @section('title', 'صفحة فارغة') --}}
+@section('title', __('front.etmam'))
 
 {{-- @section('breadcrumb')
     <li class="breadcrumb-item">@yield('title')</li>
@@ -98,15 +98,13 @@
                         {{ __('front.etmam') }}
                     </strong>
                     <p>
-                        يتيح التطبيق للناخب فرصة التعرف والاطلاع على البيانات والبرنامج الانتخابي الخاص بكل مرشح، ضمن
-                        المرشحين في دائرته الانتخابية، بما يسهل عليه عملية اختيار الافضل منهم. ويكفل له حق ابداء الرأي
-                        بالمرشح عبر الرفض، القبول، اوالحياد.
+                        {!! $etmamInfo->translation->content !!}
                     </p>
 
                 </div>
                 <div class="col-lg-4">
                     <div class="img-box text-center border-0 rounded-30">
-                        <img src="/uploads/files/shares/projects/img5.png" alt="aboutImage" class=" w-50">
+                        <img src="{{ $etmamInfo->img  }}" alt="aboutImage" class=" w-50">
                     </div>
                 </div>
             </div>
@@ -165,9 +163,12 @@
             @endif
         </div>
     </div>
+    <div class="section-heading pb-30 text-center shadow-sm mx-auto rounded-30 my-5">
+        <h2 class="font-bold p-3">{{ __('front.request_event') }}</h2>
+    </div>
     <section class="contact-page-section asking asking-visit">
         <div class="container p-5">
-            <form class="row justify-content-start align-items-start" action="{{ url()->current() }}" method="post">@csrf
+            <form class="row justify-content-start align-items-start" action="{{ route('etmam.requestEvent') }}" method="post">@csrf
                 <div class="form-column col-lg-8 col-md-12 col-sm-12">
                     <div class="inner-column">
                         <div class="contact-form">
@@ -219,7 +220,6 @@
                         </div>
                     </div>
                 </div>
-
             </form>
         </div>
     </section>

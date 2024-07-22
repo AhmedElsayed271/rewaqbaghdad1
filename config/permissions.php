@@ -368,6 +368,51 @@ return [
             ],
             'name' => 'global.kon.edit'
         ],
+        'Bodcast' => [
+            'permission' => [
+                ['permission' => 'read', 'name' => 'read'], 
+                ['permission' => 'create', 'name' => 'create'], 
+                ['permission' => 'update', 'name' => 'update'], 
+                ['permission' => 'delete', 'name' => 'delete']
+            ],
+            'name' => 'global.bodcast.our_episodes'
+        ],
+        'afakar' => [
+            'permission' => [
+                ['permission' => 'read', 'name' => 'read'], 
+                ['permission' => 'create', 'name' => 'create'], 
+                ['permission' => 'update', 'name' => 'update'], 
+                ['permission' => 'delete', 'name' => 'delete']
+            ],
+            'name' => 'global.bodcast.afakar'
+        ],
+        'bodcastBlog' => [
+            'permission' => [
+                ['permission' => 'read', 'name' => 'read'], 
+                ['permission' => 'create', 'name' => 'create'], 
+                ['permission' => 'update', 'name' => 'update'], 
+                ['permission' => 'delete', 'name' => 'delete']
+            ],
+            'name' => 'global.bodcast.afakar'
+        ],
+        'bodcastInfo' => [
+            'permission' => [
+                ['permission' => 'edit', 'name' => 'edit'], 
+            ],
+            'name' => 'global.bodcast.edit_info'
+        ],
+        'Medadinfo' => [
+            'permission' => [
+                ['permission' => 'edit', 'name' => 'edit'], 
+            ],
+            'name' => 'global.medadedit_info'
+        ],
+        'Etmaminfo' => [
+            'permission' => [
+                ['permission' => 'edit', 'name' => 'edit'], 
+            ],
+            'name' => 'global.etmamedit_info'
+        ],
         'slider' => [
            'permission' => [
                 ['permission' => 'read', 'name' => 'read'], 

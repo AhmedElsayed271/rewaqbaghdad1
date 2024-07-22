@@ -124,13 +124,18 @@
                 </li>
             @endif
 
-            @if ($admin->hasPermission('read-versionCategory') || $admin->hasPermission('read-versionNews') || $admin->is_superadmin)
+            @if ($admin->hasPermission('read-versionCategory') || $admin->hasPermission('read-edit-Medadinfo') || $admin->hasPermission('read-versionNews') || $admin->is_superadmin)
                 <li class="slide">
                     <a class="side-menu__item" data-toggle="slide" href="#">
                         <i class="fa-solid fa-certificate"></i>
                         <span class="side-menu__label">{{ __('global.version.title') }}</span><i
                             class="angle fe fe-chevron-down"></i></a>
                     <ul class="slide-menu">
+                        @if ($admin->hasPermission('read-edit-Medadinfo') || $admin->is_superadmin)
+                            <li><a class="slide-item"
+                                    href="{{ route('medad.editInfo') }}">{{ __('global.medadedit_info') }}</a>
+                            </li>
+                        @endif
                         @if ($admin->hasPermission('read-versionCategory') || $admin->is_superadmin)
                             <li><a class="slide-item"
                                     href="{{ url(appLangKey() . '/admin/version-categories') }}">{{ __('global.version.categories') }}</a>
@@ -166,13 +171,18 @@
                     </ul>
                 </li>
             @endif
-            @if ($admin->hasPermission('read-etmamNews') || $admin->hasPermission('read-etmamCategory') || $admin->is_superadmin)
+            @if ($admin->hasPermission('read-etmamNews') || $admin->hasPermission('read-Etmaminfo') || $admin->hasPermission('read-etmamCategory') || $admin->is_superadmin)
                 <li class="slide">
                     <a class="side-menu__item" data-toggle="slide" href="#">
                         <i class="fa-regular fa-file"></i>
                         <span class="side-menu__label">{{ __('global.etmam') }}</span><i
                             class="angle fe fe-chevron-down"></i></a>
                     <ul class="slide-menu">
+                        @if ($admin->hasPermission('read-Etmaminfo') || $admin->is_superadmin)
+                            <li><a class="slide-item"
+                                    href="{{ route('etmam.editInfo') }}">{{ __('global.etmamedit_info') }}</a>
+                            </li>
+                        @endif
                         @if ($admin->hasPermission('read-etmamCategory') || $admin->is_superadmin)
                             <li><a class="slide-item"
                                     href="{{ url(appLangKey() . '/admin/etmam-categories') }}">{{ __('global.etmam_category') }}</a>
@@ -382,6 +392,43 @@
                             </li>
                         @endif
 
+
+                    </ul>
+                </li>
+
+            @endif
+            @if ($admin->hasPermission('read-Bodcast') || 
+            $admin->hasPermission('edit-bodcastBlog') || 
+            $admin->hasPermission('read-bodcastBlog') || 
+            $admin->is_superadmin
+            )
+                <li class="slide">
+                    <a class="side-menu__item" data-toggle="slide" href="#">
+                        <i class="fa-solid fa-layer-group"></i>
+                        <span class="side-menu__label">{{ __('global.bodcast.title') }}</span><i
+                            class="angle fe fe-chevron-down"></i></a>
+                    <ul class="slide-menu">
+
+                        @if ($admin->hasPermission('read-Bodcast') || $admin->is_superadmin)
+                            <li><a class="slide-item"
+                                    href="{{ route('bodcasts-fakar.index') }}">{{ __('global.bodcast.our_episodes') }}</a>
+                            </li>
+                        @endif
+                        @if ($admin->hasPermission('read-afakar') || $admin->is_superadmin)
+                            <li><a class="slide-item"
+                                    href="{{ route('afkar-fakar.index') }}">{{ __('global.bodcast.afkar') }}</a>
+                            </li>
+                        @endif
+                        @if ($admin->hasPermission('read-bodcastBlog') || $admin->is_superadmin)
+                            <li><a class="slide-item"
+                                    href="{{ route('bodcast-blog.index') }}">{{ __('global.bodcast.our_blogs') }}</a>
+                            </li>
+                        @endif
+                        @if ($admin->hasPermission('edit-bodcastBlog') || $admin->is_superadmin)
+                            <li><a class="slide-item"
+                                    href="{{ route('bodcast.editInfo') }}">{{ __('global.bodcast.edit_info') }}</a>
+                            </li>
+                        @endif
 
                     </ul>
                 </li>

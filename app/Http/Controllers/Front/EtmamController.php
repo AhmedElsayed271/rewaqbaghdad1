@@ -6,6 +6,7 @@ use App\Models\EtmamNews;
 use Illuminate\Http\Request;
 use App\Models\Etmamcategory;
 use App\Http\Controllers\Controller;
+use App\Models\EtmamInfo;
 use Illuminate\Support\Facades\Cookie;
 
 class EtmamController extends Controller
@@ -14,7 +15,8 @@ class EtmamController extends Controller
     {
         
         $etmamCategories = Etmamcategory::with('translation','emamnews.translation')->get();
-        return view('front.etmam.index',compact('etmamCategories'));
+        $etmamInfo = EtmamInfo::with('translation')->first();
+        return view('front.etmam.index',compact('etmamCategories','etmamInfo'));
     }
 
     public function SingleEtmam($slug)

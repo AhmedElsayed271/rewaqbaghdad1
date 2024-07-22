@@ -298,7 +298,8 @@
     </section>
     <section class="contact-page-section asking asking-visit">
         <div class="container p-5">
-            <form class="row" action="{{ route('kon.RequestTraining') }}" method="post">@csrf
+            <form class="row" action="{{ route('rewaq.contact') }}" method="post">
+                @csrf
                 <div class="form-column col-lg-8 col-md-12 col-sm-12">
                     <div class="inner-column">
                         <div class="contact-form">
@@ -327,7 +328,7 @@
                                     <div class="col-lg-12 col-md-12 col-sm-12 form-group">
                                         <label for="text"> <span class="req">*</span>
                                             {{ __('front.how_help') }}</label>
-                                        <textarea name="subject" required placeholder="{{ __('front.how_help') }}">{{ old('list_visitors') }}</textarea>
+                                        <textarea name="how_help" required placeholder="{{ __('front.how_help') }}">{{ old('list_visitors') }}</textarea>
                                     </div>
 
                                 </div>
@@ -352,68 +353,68 @@
 
 
 @section('js')
-    <script>
-        var swipers = new Swiper(".our-books .swiper-container", {
-            spaceBetween: 50,
-            centeredSlides: false,
-            slidesPerView: 4,
-            loop: true,
-            rtl: true,
-            keyboard: true,
-            draggable: true,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
+<script>
+    var swipers = new Swiper(".our-books .swiper-container", {
+        spaceBetween: 50,
+        centeredSlides: false,
+        slidesPerView: 4,
+        loop: true,
+        rtl: true,
+        keyboard: true,
+        draggable: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.nexts1',
+            prevEl: '.prevs1',
+        },
+        breakpoints: {
+            640: {
+                slidesPerView: 1,
+                spaceBetween: 20,
             },
-            navigation: {
-                nextEl: '.nexts1',
-                prevEl: '.prevs1',
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 20,
             },
-            breakpoints: {
-                640: {
-                    slidesPerView: 1,
-                    spaceBetween: 20,
-                },
-                768: {
-                    slidesPerView: 2,
-                    spaceBetween: 20,
-                },
-                1024: {
-                    slidesPerView: 2,
-                    spaceBetween: 20,
-                }
+            1024: {
+                slidesPerView: 2,
+                spaceBetween: 20,
             }
-        });
-        var swipers = new Swiper(".our-videos .swiper-container", {
-            spaceBetween: 50,
-            centeredSlides: false,
-            slidesPerView: 4,
-            loop: true,
-            rtl: true,
-            keyboard: true,
-            draggable: true,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
+        }
+    });
+    var swipers = new Swiper(".our-videos .swiper-container", {
+        spaceBetween: 50,
+        centeredSlides: false,
+        slidesPerView: 4,
+        loop: true,
+        rtl: true,
+        keyboard: true,
+        draggable: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.nexts',
+            prevEl: '.prevs',
+        },
+        breakpoints: {
+            640: {
+                slidesPerView: 1,
+                spaceBetween: 20,
             },
-            navigation: {
-                nextEl: '.nexts',
-                prevEl: '.prevs',
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 20,
             },
-            breakpoints: {
-                640: {
-                    slidesPerView: 1,
-                    spaceBetween: 20,
-                },
-                768: {
-                    slidesPerView: 2,
-                    spaceBetween: 20,
-                },
-                1024: {
-                    slidesPerView: 2,
-                    spaceBetween: 20,
-                }
+            1024: {
+                slidesPerView: 2,
+                spaceBetween: 20,
             }
-        });
-    </script>
+        }
+    });
+</script>
 @endsection

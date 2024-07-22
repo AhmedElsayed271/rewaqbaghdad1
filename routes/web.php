@@ -19,6 +19,7 @@ use App\Http\Controllers\Front\MedadController;
 Route::pattern('tag', '.*');
 
 Route::group(['namespace' => 'Front'], function(){
+
     Route::get('/', 'IndexController@index');
     Route::get('/search', 'IndexController@search');
 
@@ -48,6 +49,7 @@ Route::group(['namespace' => 'Front'], function(){
 
 
     Route::get('/rewaq', 'RewaqController@index');
+    Route::post('/rewaq/contact', 'MailController@rewaqContactUs')->name('rewaq.contact');
     Route::get('/rewaq/book/{slug}', 'RewaqController@book');
     Route::get('/rewaq/book/tag/{tag}', 'RewaqController@Tag');
     Route::get('/rewaq/versions', 'RewaqController@versions')->name('rewaq.versions');
@@ -98,9 +100,13 @@ Route::group(['namespace' => 'Front'], function(){
     Route::get('/iraq/meter/tag/{tag}', 'IraqmeterController@Tag');
 
 
+   
+
     Route::get('/boadcast', 'IraqmeterController@boadcast');
     Route::get('/boadcast/details', 'IraqmeterController@boadcastDetails');
-
+    Route::get('/boadcast/blog-details/{slug}', 'IraqmeterController@boadcastBlogDetails')->name('bodcast.blog-details');
+    Route::get('/boadcast/blogs/', 'IraqmeterController@bodcastBlogs')->name('bodcast.blogs');
+    Route::post('/bodcast-contactus', 'MailController@contactUsBodcast')->name('bodcast.contactus');
     Route::get('/kon', 'IraqmeterController@kon');
     Route::get('/kon/all', 'IraqmeterController@allKon')->name('kon.allKon');
     Route::get('/kon/trainingdetails/{slug}', 'IraqmeterController@trainingDetails')->name('kon.trainingDetails');
@@ -122,7 +128,9 @@ Route::group(['namespace' => 'Front'], function(){
     Route::post('/visit-center', 'ElectronicController@VisitCenterSendMail');
 
     Route::get('/request-survey', 'ElectronicController@RequestSurvey');
+
     Route::post('/request-survey', 'ElectronicController@RequestSurveySendMail');
+   
 
     Route::get('/request-host-event', 'ElectronicController@RequestHost');
     Route::post('/request-host-event', 'ElectronicController@RequestHostSendMail');
@@ -135,7 +143,9 @@ Route::group(['namespace' => 'Front'], function(){
     Route::get('/faq', 'FaqController@faq');
     Route::get('/ourvision ', 'OurvisionController@ourvision')->name('ourvision');
     Route::get('/medad ', 'MedadController@index')->name('medad');
-    Route::get('/etmam ', 'EtmamController@index')->name('etmam');
+    Route::post('/medad/request-publish', 'MailController@requestPublish')->name('medad.request.publish');
+    Route::get('/etmam', 'EtmamController@index')->name('etmam');
+    Route::post('/etmam/request-event', 'MailController@requestEvent')->name('etmam.requestEvent');
     Route::get('/etmam/{slug}', 'EtmamController@SingleEtmam');
     Route::get('/all-etmam', 'EtmamController@All');
   

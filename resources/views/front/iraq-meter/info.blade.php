@@ -78,6 +78,7 @@
                     </strong>
                     {!! $iraqmeterInfo->translation->content !!}
                 </div>
+    
                 <div class="col-lg-4">
                     <div class="img-box text-center border-0 rounded-30">
                         <img src="{{ $iraqmeterInfo->img }}" alt="aboutImage" class=" w-50">

@@ -33,7 +33,7 @@ class RequestQuestionnaire extends Mailable
     public function envelope()
     {
         return new Envelope(
-            subject: __('global.request_questionnaire'),
+            subject: __('front.request_questionnaire'),
         );
     }
 

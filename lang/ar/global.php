@@ -43,7 +43,7 @@ return [
     'slug' => 'Slug',
     'close' => 'الغاء',
     'filemanager' => 'مدير الملفات',
-
+    'add' => 'اضافة',
     /********************* settings *******************/
     'settings' => 'الإعدادت',
     'site_name' => 'اسم الموقع',
@@ -129,8 +129,12 @@ return [
     'alert_error_403' => 'ليس لديك الصلاحية لفتح هذه الصفحة',
 
     'alert_error_login' => 'خطا فى بيانات الدخول',
-
     //
+    'medadedit_info' => 'تعديل بينات مداد',
+    'etmamedit_info' => 'تعديل بينات اتمام',     
+    //
+    'project_manager_photo' => 'صورة مدير المشروع',
+    'project_manager_name' => "اسم مدير المشروع", 
     'alert_main_admin' => 'لا يمكن حذف المدير الرئيسى',
     'thephoto' => 'الصوره',
     'content' => 'المحتوى',
@@ -139,7 +143,8 @@ return [
     'excel' => 'Excel',
     'print' => 'طباعة',
     'alert_done_subscription' => 'تم الاشتراك في النشرة البريدية بنجاح',
-    
+    'title' => 'العوان',
+    'short_description' => 'وصف قصير',
     'rewaq_videos' => 'معرض رواق للفيديو',
 
     /********************* mahwier *******************/
@@ -231,6 +236,17 @@ return [
         'upcomingtraining_add' => "اضافة تدريب قادم",
         'training_appointment' => 'موعد التدريب',
         'trainer_info' => 'معلومات عن المدريب',
+    ],
+    'bodcast' => [
+        'title' => 'بودكاست فكر',
+        'our_episodes' => 'حلقاتنا',
+        'add_episode' => 'اضافة حلقة',
+        'afkar'         => 'افكار فكر',
+        'our_blogs'         => 'مقالتنا',
+        'add_blog'          => 'اضافة مقالة',
+        'blog_name'          => 'عنوان المقالة',
+        'edit_info'         => 'تعديل بينات بودكاست'
+        
     ],
 
     'version' => [
