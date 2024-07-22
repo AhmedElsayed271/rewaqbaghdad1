@@ -316,8 +316,8 @@
                                         <input type="text" name="name" required value="{{ old('name') }}"
                                             placeholder="{{ __('front.name') }}">
                                     </div>
-                                
-                               
+
+
                                     <div class="col-lg-12 col-md-12 col-sm-12 form-group">
                                         <label for="email"> <span class="req">*</span>
                                             {{ __('front.email') }}</label>
@@ -336,7 +336,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                <div class="col-lg-12 col-md-12 col-sm-12 form-group d-flex">
                     <button class="theme-btn btn-style-two bg-green">
                         <span class="txt">{{ __('front.btn_send') }}</span>
                     </button>

@@ -50,6 +50,7 @@
 
         }
     }
+
 </style>
 
 @section('content')
@@ -75,16 +76,16 @@
                 </h1>
             </div>
             <div class="center-cards">
-                <div class="row justify-content-center align-items-center">
+                <div class="row justify-content-center align-items-start">
                     @foreach ($mahawirs as $mahawir)
-                    <div class="col-md-4  pb-5 pt-2">
-                        <div class="p-2 py-3 rounded">
+                    <div class="col-md-4 pb-5 pt-2 ">
+                        <div class="p-2 py-3 rounded" style="height: 280px">
                             <div class="card-title py-1 rounded d-flex justify-content-center align-items-center bg-white">
                                 <img src="{{ $mahawir->photo }}" alt="title-img" />
                                 <h3 class="font-bold p-2">{{ $mahawir->translation->title }} </h3>
                             </div>
                             <div class="card-body">
-                                <p class="font-bold text-white py-2 pt-4">
+                                <p class="font-bold text-white py-2 pt-4 line-clamp-2">
                                     {{ $mahawir->translation->description }}
                                 </p>
                             </div>

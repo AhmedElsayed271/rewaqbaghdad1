@@ -77,8 +77,21 @@
                         عراق ميتر
                     </strong>
                     {!! $iraqmeterInfo->translation->content !!}
+                                        <div class="col-lg-6">
+                        <div class="text">
+                            <figure class="admin-thumb">
+                                    <img width="27" height="27" src=""
+                                        alt="admin-img">
+                            </figure>
+                            <h4>
+                                    <a href="#">مدير المشروع : <span
+                                            class=" magazine-emp-namecolor text-white">محمود</span></a>
+                            </h4>
+                        </div>
+                    </div>
+
                 </div>
-    
+
                 <div class="col-lg-4">
                     <div class="img-box text-center border-0 rounded-30">
                         <img src="{{ $iraqmeterInfo->img }}" alt="aboutImage" class=" w-50">
