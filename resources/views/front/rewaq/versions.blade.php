@@ -32,7 +32,7 @@
         }
     </style>
 
-    {{-- 
+    {{--
     <section class="about-us-sec my-5  ">
         <div class="container">
             <div class="row py-3 justify-content-center align-items-center">
@@ -91,7 +91,7 @@
                     <h2 class="font-bold p-3">{{ __('front.versions') }}</h2>
                 </div>
             </a>
-            <div class="row justify-content-center align-items-center">
+            <div class="row justify-content-center align-items-start">
                 @foreach ($books as $book)
                     <div class="col-md-3 book">
                         <a href="{{ langUrl('/rewaq/book/' . $book->slug) }}">
@@ -104,7 +104,7 @@
                             </small>
                             <strong class="pt-1 pb-1 d-block">{{ $book->translation->title }}</strong>
                             <p>{{ $book->translation->description }}</p>
-                     
+
                         </a>
 
                     </div>
