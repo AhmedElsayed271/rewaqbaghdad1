@@ -257,7 +257,7 @@
     {{-- Projects Section --}}
     <section class="container">
         <div class="section-title text-right pb-30">
-            <h2 class="title">مشاريـع المركز</h2>
+            <h2 class="title">{{ __('front.project_marakaz') }}</h2>
         </div>
         <div class="projects row justify-content-center align-items-center">
             <div class="col-md-3 my-2">

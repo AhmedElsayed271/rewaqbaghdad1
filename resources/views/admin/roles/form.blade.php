@@ -9,7 +9,7 @@
     </div>
     <div class="col-xl-6">
 
-        <label>{{ __('global.role_name') }} <strong class="text-danger">*</strong></label>
+    <label>{{ __('global.role_description') }} <strong class="text-danger">*</strong></label>
         <input type="text" class="form-control" name="description" required="required"
             value="{{ old('description', $role->description ?? '') }}" />
         <br />

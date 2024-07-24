@@ -21,7 +21,7 @@
             <tr>
                 <th>{{ __('global.id') }}</th>
                 <th>{{ __('global.role_name') }}</th>
-                <th>{{ __('global.display_name') }}</th>
+                <th>{{ __('global.role_description') }}</th>
                 <th>{{ __('global.created_at') }}</th>
                 <th>{{ __('global.actions') }}</th>
             </tr>
@@ -57,7 +57,7 @@
             columns: [
                 {data: 'id', name: 'id'},
                 {data: 'name', name: 'name'},
-                {data: 'display_name', name: 'display_name'},
+                {data: 'description', name: 'description'},
                 {data: 'created_at', name: 'created_at'},
             ],
             columnDefs: [

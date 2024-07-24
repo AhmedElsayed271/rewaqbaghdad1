@@ -187,7 +187,7 @@
     </section>
     <a href="{{ route('rewaq.versions') }}">
         <div class="section-heading pb-30 text-center shadow-sm mx-auto rounded-30 my-3">
-            <h2 class="font-bold p-3">الاصدارات</h2>
+            <h2 class="font-bold p-3">{{ __('front.versions') }}</h2>
         </div>
     </a>
     @if (!$books->isEmpty())
@@ -238,7 +238,7 @@
     <section class="my-5 videos-sec">
         <a href="">
             <div class="section-heading pb-30 text-center shadow-sm mx-auto rounded-30 my-3">
-                <h2 class="font-bold p-3">معرض الفيديو</h2>
+                <h2 class="font-bold p-3">{{ __('front.videos') }}</h2>
             </div>
         </a>
     </section>
@@ -292,7 +292,7 @@
     <section class="my-5 videos-sec">
         <a href="">
             <div class="section-heading pb-30 text-center shadow-sm mx-auto rounded-30 my-3">
-                <h2 class="font-bold p-3">تواصل معنا</h2>
+                <h2 class="font-bold p-3">{{ __('front.contact_us') }}</h2>
             </div>
         </a>
     </section>

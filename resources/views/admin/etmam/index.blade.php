@@ -1,5 +1,5 @@
 @extends('layout.admin.app')
-@section('title', __('global.activity.news'))
+@section('title', __('global.etmam_news'))
 
 @section('breadcrumb')
 <li class="breadcrumb-item">@yield('title')</li>
@@ -70,7 +70,7 @@
                 {
                     targets: 3,
                     render: function (data, type, row, meta) {
-                        return "<a target='_blank' href='{{url('/')}}/activity/"+data+"'><i class='fa-solid fa-up-right-from-square'></i></a>";
+                        return "<a target='_blank' href='{{url('/')}}/etmam/"+data+"'><i class='fa-solid fa-up-right-from-square'></i></a>";
                     }
                 },
                 {

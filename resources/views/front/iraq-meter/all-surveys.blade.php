@@ -67,7 +67,9 @@
                     </div>
                 @endforeach
             </div>
-
+            <div class="col-lg-12 mt-3 text-center m-auto justify-content-center  d-none d-xl-flex d-lg-flex d-md-flex d-sm-none d-xs-none">
+                {{ $iraqmeterSurveys->links() }}
+            </div>
         </div>
     </section>
 

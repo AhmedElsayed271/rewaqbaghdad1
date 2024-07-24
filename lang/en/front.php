@@ -115,7 +115,7 @@ return [
     'videos_about_application' => 'Videos About the Application',
 
 
-    'kun' => 'KUN',
+    'kun' => 'Kon',
     'iraqmeter' => 'Iraq Meter',
     'latest_news' => 'Latest News',
 
@@ -138,8 +138,8 @@ return [
     'targets' => 'Goals',
     'request_survey_message' => 'To request a survey, please fill the following form',
     'btn_send' => 'Send',
-
-
+    'spceial_version' => 'special version',
+    'bodcast' => 'bodcast',
     'survey_title' => 'Survey Title',
     'purpose_of_survey' => 'The Purpose of the Survey',
     'type' => 'Type',
@@ -200,6 +200,7 @@ return [
     'our_blogs' => 'our blogs',
     'bodcast_fakar' => 'bodcast fakar',
     'request_event'   => "Request for Event Organization",
+    'project_marakaz' => 'projects center',
     '' => '',
     '' => '',
     

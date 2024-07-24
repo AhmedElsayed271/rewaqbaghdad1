@@ -47,6 +47,7 @@ return [
     'etmamedit_info' => 'Etmam Edit Info',  
     'project_manager_photo' => 'project manager photo', 
     'project_manager_name' => "project manager name",  
+    'role_description' => "Role Description",
     /********************* settings *******************/
     'settings' => 'settings',
     'site_name' => 'Website name',

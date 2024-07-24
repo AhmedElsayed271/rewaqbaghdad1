@@ -68,7 +68,7 @@
                 {
                     targets: 2,
                     render: function (data, type, row, meta) {
-                        return "<a target='_blank' href='{{url('/')}}/media/news/"+data+"'><i class='fa-solid fa-up-right-from-square'></i></a>";
+                        return "<a target='_blank' href='{{url('/boadcast/blog-details')}}/"+data+"'><i class='fa-solid fa-up-right-from-square'></i></a>";
                     }
                 },
                 {

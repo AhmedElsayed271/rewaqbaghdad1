@@ -95,7 +95,8 @@ class RewaqController extends Controller
     }
     public function versions()
     {
-        $books = Rewaqbook::select('id', 'slug', 'img', 'created_at')->with('translation:title,description,parent_id')->orderBy('id', 'DESC')->get();
+        $books = Rewaqbook::select('id', 'slug', 'img', 'created_at')->with('translation:title,description,parent_id')->orderBy('id', 'DESC')->paginate(20);
+        
         return view('front.rewaq.versions', compact('books'));
     }
 }

@@ -80,12 +80,12 @@
                                         <div class="col-lg-6">
                         <div class="text">
                             <figure class="admin-thumb">
-                                    <img width="27" height="27" src=""
+                                    <img width="27" height="27" src="{{ $iraqmeterInfo->proejct_manager_img }}"
                                         alt="admin-img">
                             </figure>
                             <h4>
                                     <a href="#">مدير المشروع : <span
-                                            class=" magazine-emp-namecolor text-white">محمود</span></a>
+                                            class=" magazine-emp-namecolor text-white">{{ $iraqmeterInfo->translation->project_manager }}</span></a>
                             </h4>
                         </div>
                     </div>

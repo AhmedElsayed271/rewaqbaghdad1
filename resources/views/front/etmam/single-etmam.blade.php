@@ -10,7 +10,7 @@
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ langUrl() }}">{{__('front.home')}}</a></li>
-        <li class="breadcrumb-item"><a href="#">{{__('front.etmam')}}</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('etmam') }}">{{__('front.etmam')}}</a></li>
         <li class="breadcrumb-item active">{{ $EtmamNew->category->name }}</li>
       </ol>
     </nav>
@@ -40,7 +40,7 @@
                 <br>
                 <hr>
             
-                <ul class="releated mt-3">
+                {{-- <ul class="releated mt-3">
                     @if (!empty($EtmamNew->translation->tags))
                         @php
                             $tags = explode(',', $EtmamNew->translation->tags);
@@ -53,7 +53,7 @@
                             </li>
                         @endforeach
                     @endif
-                </ul>
+                </ul> --}}
             </div>
             
             <div class="col-lg-1">

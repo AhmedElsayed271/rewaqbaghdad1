@@ -133,6 +133,7 @@ return [
     'medadedit_info' => 'تعديل بينات مداد',
     'etmamedit_info' => 'تعديل بينات اتمام',     
     //
+    'role_description' => "وصف الصلاحية",
     'project_manager_photo' => 'صورة مدير المشروع',
     'project_manager_name' => "اسم مدير المشروع", 
     'alert_main_admin' => 'لا يمكن حذف المدير الرئيسى',

@@ -41,6 +41,24 @@
             display: none !important
         }
 
+           .medad-list {
+                position: absolute;
+                top: 0;
+                right: 155px;
+                background: #fff;
+                border-radius: 5px;
+                padding-right: 10px;
+                padding-top: 10px;
+                padding-bottom:10px;
+                display: none;
+            }
+            .medad-parent {
+                position: relative;
+            }
+            .medad-parent:hover > .medad-list 
+            {
+                display: block;
+            }
         @media (max-width: 768px) {
 
             @if (appLangKey() == 'ar')
@@ -267,7 +285,8 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a class="dropdown-item" href="/faq">الاسئله الشائعة</a>
+                                                <a class="dropdown-item"
+                                                    href="/faq">{{ __('front.common_quesiton') }}</a>
                                             </li>
                                             <li>
                                                 <a class="dropdown-item"
@@ -279,7 +298,7 @@
 
                                         <a class="nav-link  dropdown-toggle" href="{{ langUrl('/versions') }}"
                                             role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            إصدارات خاصة
+                                            {{ __('front.spceial_version') }}
                                         </a>
                                         <ul class="dropdown-menu">
                                             @php
@@ -293,7 +312,8 @@
 
                                             <li>
                                                 <a class="dropdown-item"
-                                                    href="{{ langUrl('/khetab-magazine') }}">مجلة الخطاب </a>
+                                                    href="{{ langUrl('/khetab-magazine') }}">{{ __('front.khetab_magazine') }}
+                                                </a>
                                             </li>
 
                                             <li>
@@ -328,7 +348,7 @@
 
                                         <a class="nav-link  dropdown-toggle" href="#" role="button"
                                             data-bs-toggle="dropdown" aria-expanded="false">
-                                            مشاريع المركز </a>
+                                            {{ __('front.project_marakaz') }} </a>
                                         <ul class="dropdown-menu">
                                             <li>
                                                 <a class="dropdown-item"
@@ -349,19 +369,21 @@
 
 
                                             <li>
-                                                <a class="dropdown-item" href="{{ langUrl('/boadcast') }}">بودكاست
+                                                <a class="dropdown-item" href="{{ langUrl('/boadcast') }}">
+                                                    {{ __('front.bodcast') }}
                                                 </a>
                                             </li>
 
                                             <li>
-                                                <a class="dropdown-item" href="{{ langUrl('/kon') }}">كُــنْ </a>
+                                                <a class="dropdown-item"
+                                                    href="{{ langUrl('/kon') }}">{{ __('front.kun') }} </a>
                                             </li>
-                                            <li class="">
-                                                <a class="dropdown-item" href="/medad" id="navbarDropdown"
+                                            <li class="position-relative  medad-parent">
+                                                <a class="dropdown-item dropdown-toggle" href="/medad" id="navbarDropdown"
                                                     role="button" data-toggle="dropdown">
-                                                    مِداد
+                                                    {{ __('medad') }}
                                                 </a>
-                                                <ul class="dropdown" aria-labelledby="navbarDropdown">
+                                                <ul class="dropdown medad-list" aria-labelledby="navbarDropdown">
                                                     @foreach ($VersionsCats as $VS)
                                                         <li>
                                                             <a class="dropdown-item"
@@ -371,7 +393,7 @@
                                                 </ul>
                                             </li>
                                             <li>
-                                                <a class="dropdown-item" href="/etmam">إتمام</a>
+                                                <a class="dropdown-item" href="/etmam">{{ __('front.etmam') }}</a>
                                             </li>
 
                                         </ul>

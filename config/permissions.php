@@ -366,7 +366,7 @@ return [
             'permission' => [
                 ['permission' => 'edit', 'name' => 'edit'], 
             ],
-            'name' => 'global.kon.edit'
+            'name' => 'global.kone_media.edit'
         ],
         'Bodcast' => [
             'permission' => [
@@ -384,7 +384,7 @@ return [
                 ['permission' => 'update', 'name' => 'update'], 
                 ['permission' => 'delete', 'name' => 'delete']
             ],
-            'name' => 'global.bodcast.afakar'
+            'name' => 'global.bodcast.afkar'
         ],
         'bodcastBlog' => [
             'permission' => [
@@ -393,7 +393,7 @@ return [
                 ['permission' => 'update', 'name' => 'update'], 
                 ['permission' => 'delete', 'name' => 'delete']
             ],
-            'name' => 'global.bodcast.afakar'
+            'name' => 'global.bodcast.our_blogs'
         ],
         'bodcastInfo' => [
             'permission' => [

@@ -167,7 +167,7 @@ class IraqmeterController extends Controller
 
     public function allsurvey()
     {
-        $iraqmeterSurveys = IraqmeterSurvey::select('id', 'slug', 'photo', 'created_at')->with('translation:title,description,iraqmeter_survey_id')->orderBy('id', 'DESC')->get();
+        $iraqmeterSurveys = IraqmeterSurvey::select('id', 'slug', 'photo', 'created_at')->with('translation:title,description,iraqmeter_survey_id')->orderBy('id', 'DESC')->paginate(20);
         return view('front.iraq-meter.all-surveys', compact('iraqmeterSurveys'));
     }
     public function allKon()
