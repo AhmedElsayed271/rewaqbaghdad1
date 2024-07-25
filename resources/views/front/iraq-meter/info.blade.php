@@ -217,30 +217,7 @@
 
 
 
-    <section class="vector booking-section">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-12">
-                    <img src="{{ url('front') }}/assets/img/vector1.png" class="img-fluid" alt="">
-                </div>
-                <div class="col-lg-12">
-                    <p>
-                        يمكنك طلب استبيانك الخاص واترك لنا باقي الامر .. فريق مختص بعمل
-                        <br>
-                        استبيانات في جميع محافظات العراق
-                    </p>
-                    <div class="btns">
-                        <a href="{{ url('request-survey') }}" class="btn btn-1">
-                            لطلب استبيان
-                        </a>
-                        <a href="{{ url('iraq/meter/blogs') }}" class="btn btn-2">
-                            للذهاب الى الاستبيانات
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
 
 

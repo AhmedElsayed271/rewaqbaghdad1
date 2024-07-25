@@ -78,7 +78,7 @@
                     </strong>
                     <p>{!! $bodcastInfo->translation->content !!}</p>
                 </div>
-           
+
                 <div class="col-lg-4">
                     <div class="img-box text-center border-0 rounded-30">
                         <img src="{{ $bodcastInfo->img }}" alt="aboutImage" class=" w-50">
@@ -89,18 +89,6 @@
     </section>
 
 
-    <section class="title blue mt-2">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h3 class="title-sec-b">
-                        لمعرفة بودكاست فكر
-                    </h3>
-                </div>
-
-            </div>
-        </div>
-    </section>
     {{-- videos section --}}
     <section class="my-5 videos-sec">
         <a href="">
@@ -288,8 +276,8 @@
                                         <input type="text" name="name" required value="{{ old('name') }}"
                                             placeholder="{{ __('front.company_name') }}">
                                     </div>
-                               
-                           
+
+
                                     <div class="col-lg-12 col-md-12 col-sm-12 form-group">
                                         <label for="email"> <span class="req">*</span>
                                             {{ __('front.email') }}</label>
@@ -381,7 +369,7 @@
         </div>
     </section>
 
-    
+
 @endsection
 
 @section('js')
