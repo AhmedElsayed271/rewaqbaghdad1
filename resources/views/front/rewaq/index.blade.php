@@ -216,7 +216,7 @@
                                     <div class="btns d-flex justify-content-around align-items-center position-absolute ">
                                         <a href="{{ $book->index_url }}" target="_blank"
                                             class="p-2 rounded ">{{ __('front.read_more') }}</a>
-                                        <a href="{{ $book->promo_url }}" target="_blank"
+                                        <a href="{{ route('rewaq.bookingBook', $book->slug)}}" target="_blank"
                                             class="p-2 rounded">{{ __('front.reserve_copy') }}</a>
                                     </div>
                                 </div>

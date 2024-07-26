@@ -58,7 +58,7 @@ class MagazineController extends Controller
         $dec = Magazineteam::where('id', $magazine->dec_id)->select('id','img')->with('translation:name,job_title,parent_id')->first();
         $me = Magazineteam::where('id', $magazine->me_id)->select('id','img')->with('translation:name,job_title,parent_id')->first();
 
-        $blogs = Magazineblog::with('translation:title,description,parent_id')->orderBy('id', 'DESC')->get();
+        $blogs = Magazineblog::with('translation:title,description,parent_id')->orderBy('id', 'DESC')->paginate(20);
         $latestBlogs = Magazineblog::select('id','slug','img','created_at')->with('translation:title,parent_id')->orderBy('id', 'DESC')->limit(4)->get();
         $mostWatched = Magazineblog::select('id','slug','views','created_at')->with('translation:title,parent_id')->orderBy('views', 'DESC')->limit(4)->get();
         return view('front.magazine.index', compact('magazine','latestBlogs','mostWatched','blogs','cbd','ec','dec','me'));

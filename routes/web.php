@@ -59,6 +59,9 @@ Route::group(['namespace' => 'Front'], function(){
     Route::get('/rewaq/contact-us', 'RewaqController@contact');
     Route::post('/rewaq/contact-us', 'RewaqController@sendMail');
 
+    Route::get('/rewaq/booking-book/{slug}', 'RewaqController@reserveBook')->name('rewaq.bookingBook');
+    Route::post('/rewaq/reserve-book/', 'MailController@reserveBook')->name('rewaq.mail.bookingBook');
+
     Route::get('/magazine', 'MagazineController@index');
     Route::get('/magazine/blog/{slug}', 'MagazineController@SingleMagazine');
     Route::get('/magazine/tag/{tag}', 'MagazineController@Tag');

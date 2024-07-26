@@ -94,7 +94,7 @@
     <section class="my-5 videos-sec">
         <a href="">
             <div class="section-heading pb-30 text-center shadow-sm mx-auto rounded-30 my-3">
-                <h2 class="font-bold p-3">الاصدارات</h2>
+                <h2 class="font-bold p-3">{{ __('front.versions') }}</h2>
             </div>
         </a>
     </section>
@@ -157,9 +157,9 @@
                         </div>
                     </div> --}}
         </div>
-        {{-- <div class="col-lg-12 mt-3 text-center d-none d-xl-flex d-lg-flex d-md-flex d-sm-none d-xs-none">
-            {!! $blogs->links() !!}</div> --}}
-        {{-- </div> --}}
+            <div class="col-lg-12 mt-3 text-center justify-content-center d-none d-xl-flex d-lg-flex d-md-flex d-sm-none d-xs-none">
+                {!! $blogs->links() !!}</div> 
+            </div>
         </div>
     </section>
 

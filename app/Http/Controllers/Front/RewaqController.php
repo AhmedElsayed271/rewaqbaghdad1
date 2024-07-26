@@ -99,4 +99,16 @@ class RewaqController extends Controller
         
         return view('front.rewaq.versions', compact('books'));
     }
+
+    public function reserveBook($slug)
+    {
+        $book = Rewaqbook::where('slug', $slug)->first();
+
+        if (!$book)
+        {
+            abort(404);
+        }
+
+        return view('front.rewaq.bookingbook', compact('book'));
+    }
 }

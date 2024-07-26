@@ -68,6 +68,7 @@ class MailController extends Controller
     {
         $validatedData = $request->validate([
             'email' => 'required|email|string|max:50',
+            
             'name' => 'required|string|max:100',
             'how_help' => 'required|string|max:100',
         ]);
@@ -76,6 +77,24 @@ class MailController extends Controller
         $rewaq = Rewaq::first();
    
         $subject = $request->subject;
+        
+        Mail::to($rewaq->contact_email)->send(new SendContactMail($request->except('_token'), $subject));
+        return back()->with('success', __('front.alert_send_contact_main'));
+    }
+    public function reserveBook(Request $request)
+    {
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:100',
+            'phone' => 'required|numeric|digits_between:1,12',
+            'name_version' => 'required|string|max:100',
+            'num_copies' => 'required|numeric|min:1',
+            'personal_address' => 'required|string|max:100',
+        ]);
+
+
+        $rewaq = Rewaq::first();
+   
+        $subject = trans('front.booking_your_copy');
         
         Mail::to($rewaq->contact_email)->send(new SendContactMail($request->except('_token'), $subject));
         return back()->with('success', __('front.alert_send_contact_main'));

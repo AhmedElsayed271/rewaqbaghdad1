@@ -71,8 +71,8 @@
     <section class="members-center bg-white">
         <div class="container my-5 mb-5 ">
             <div class="text-heading text-center">
-                <h1 class="mx-auto font-bold ">مركز رواق بغداد للسياسات العامة،
-                    مركز فكري يهتم بثلاثة محاور رئيسة:
+                <h1 class="mx-auto font-bold "> 
+                    {{ __('front.mahawir_section_title') }}              
                 </h1>
             </div>
             <div class="center-cards">
