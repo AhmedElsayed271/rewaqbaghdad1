@@ -263,56 +263,56 @@
             <div class="col-md-3 my-2">
                 <a href="/magazine">
                     <div class="project-img mx-auto">
-                        <img src="/uploads/files/shares/projects/alrewaq.png" alt="project-img1">
+                        <img src="{{asset('images/projects/alrewaq.png')}}" alt="project-img1">
                     </div>
                 </a>
             </div>
             <div class="col-md-3 my-2">
                 <a href="https://www.iamtheparliament.com" target="_self">
                     <div class="project-img mx-auto">
-                        <img src="/uploads/files/shares/projects/img2.png" alt="project-img2">
+                        <img src="{{asset('images/projects/img2.png')}}" alt="project-img2">
                     </div>
                 </a>
             </div>
             <div class="col-md-3 my-2">
                 <a href="/rewaq">
                     <div class="project-img mx-auto">
-                        <img src="/uploads/files/shares/projects/img3.png" alt="project-img3">
+                        <img src="{{asset('images/projects/img3.png')}}" alt="project-img3">
                     </div>
                 </a>
             </div>
             <div class="col-md-3 my-2">
                 <a href="/medad">
                     <div class="project-img mx-auto">
-                        <img src="/uploads/files/shares/projects/img4.png" alt="project-img4">
+                        <img src="{{asset('images/projects/img4.png')}}" alt="project-img4">
                     </div>
                 </a>
             </div>
             <div class="col-md-3 my-2">
                 <a href="/etmam">
                     <div class="project-img mx-auto">
-                        <img src="/uploads/files/shares/projects/img5.png" alt="project-img5">
+                        <img src="{{asset('images/projects/img5.png')}}" alt="project-img5">
                     </div>
                 </a>
             </div>
             <div class="col-md-3 my-2">
                 <a href="/iraq/meter">
                     <div class="project-img mx-auto">
-                        <img src="/uploads/files/shares/projects/img6.png" alt="project-img6">
+                        <img src="{{asset('images/projects/img6.png')}}" alt="project-img6">
                     </div>
                 </a>
             </div>
             <div class="col-md-3 my-2">
                 <a href="/boadcast">
                     <div class="project-img mx-auto">
-                        <img src="/uploads/files/shares/projects/img7.png" alt="project-img7">
+                        <img src="{{asset('images/projects/img7.png')}}" alt="project-img7">
                     </div>
                 </a>
             </div>
             <div class="col-md-3 my-2">
                 <a href="/kon">
                     <div class="project-img mx-auto">
-                        <img src="/uploads/files/shares/projects//kun.png" alt="project-img8">
+                        <img src="{{asset('images/projects/kun.png')}}" alt="project-img8">
                     </div>
                 </a>
             </div>
