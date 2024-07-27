@@ -165,7 +165,7 @@
 
 
     <div class="section-heading pb-30 text-center shadow-sm mx-auto rounded-30 my-5">
-        <h2 class="font-bold p-3">طلب استبيان</h2>
+        <h2 class="font-bold p-3">{{ __('front.request_questionnaire') }}</h2>
     </div>
     <section class="contact-page-section asking asking-visit">
         <div class="container p-5">

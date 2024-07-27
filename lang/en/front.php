@@ -201,6 +201,13 @@ return [
     'bodcast_fakar' => 'bodcast fakar',
     'request_event'   => "Request for Event Organization",
     'project_marakaz' => 'projects center',
+    'name_version' => "name of version",
+    'num_copies' => 'number of copies',
+    'booking_your_copy' => 'Booking Your Copy',
+    'personal_address'  => 'Personal address',
+    'our_vision_section_title' => "The vision of the Rwaq Baghdad Center for Public Policy:",
+    'our_target_section_title' => "Objectives of the Rwaq Baghdad Center for Public Policy:",
+    'mahawir_section_title' => "Rwaq Baghdad Center for Public Policy, an intellectual center so that the main axes can be accessed :",
     '' => '',
     '' => '',
     
