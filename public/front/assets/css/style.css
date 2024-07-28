@@ -1037,7 +1037,7 @@ footer .social-media li a {
 
 .top-header {
     padding-bottom: 15px;
-        background: rgb(178, 228, 237);
+    background: var(--new-color);
 }
 
 .top-header .navbar-toggler i {

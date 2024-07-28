@@ -41,24 +41,26 @@
             display: none !important
         }
 
-           .medad-list {
-                position: absolute;
-                top: 0;
-                right: 155px;
-                background: #fff;
-                border-radius: 5px;
-                padding-right: 10px;
-                padding-top: 10px;
-                padding-bottom:10px;
-                display: none;
-            }
-            .medad-parent {
-                position: relative;
-            }
-            .medad-parent:hover > .medad-list 
-            {
-                display: block;
-            }
+        .medad-list {
+            position: absolute;
+            top: 0;
+            right: 155px;
+            background: #fff;
+            border-radius: 5px;
+            padding-right: 10px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            display: none;
+        }
+
+        .medad-parent {
+            position: relative;
+        }
+
+        .medad-parent:hover>.medad-list {
+            display: block;
+        }
+
         @media (max-width: 768px) {
 
             @if (appLangKey() == 'ar')
@@ -379,8 +381,8 @@
                                                     href="{{ langUrl('/kon') }}">{{ __('front.kun') }} </a>
                                             </li>
                                             <li class="position-relative  medad-parent">
-                                                <a class="dropdown-item dropdown-toggle" href="/medad" id="navbarDropdown"
-                                                    role="button" data-toggle="dropdown">
+                                                <a class="dropdown-item dropdown-toggle" href="/medad"
+                                                    id="navbarDropdown" role="button" data-toggle="dropdown">
                                                     {{ __('medad') }}
                                                 </a>
                                                 <ul class="dropdown medad-list" aria-labelledby="navbarDropdown">
@@ -566,45 +568,64 @@
                         <button type="submit" class="submit">{{ __('front.subscription') }}</button>
                         <input type="email" name="email" required placeholder="{{ __('front.enter_email') }}">
                     </form>
-                    <ul class="logos row">
-
-                        @for ($i = 1; $i < 6; $i++)
-                            @php
-                                $name = "img_$i";
-                                $link = "img_$i" . '_link';
-                            @endphp
-                            <li class="col-4 col-lg-3">
-                                <a data-md-tooltip="{{ $SiteData->translation->$name }}"
-                                    href="{{ $SiteData->$link }}">
-                                    <img src="{{ $SiteData->$name }}" alt="{{ $SiteData->translation->$name }}" />
-                                </a>
-                            </li>
-                        @endfor
-
-                        <li class="col-4 col-lg-3">
-                            <a href="/boadcast">
-                                <img src="{{ url('/front/assets/img/mick.png') }}" alt="LogoImage">
-                            </a>
-                        </li>
-
-                        <li class="col-4 col-lg-3">
-                            <a href="/medad">
+                    <div class="logos row justify-content-between align-items-center pb-5">
+                        <div class="col-md-3 my-2">
+                            <a href="/magazine">
                                 <div class="project-img mx-auto">
-                                    <img src="/uploads/files/shares/projects/img4.png" alt="project-img4">
-                                </div>
-                            </a>
-                        </li>
-                        <div class="col-4 col-lg-3">
-                            <a href="/etmam">
-                                <div class="project-img mx-auto">
-                                    <img src="/uploads/files/shares/projects/img5.png" alt="project-img5">
+                                    <img src="{{ asset('images/projects/alrewaq.png') }}" alt="project-img1">
                                 </div>
                             </a>
                         </div>
-
-
-
-                    </ul>
+                        <div class="col-md-3 my-2">
+                            <a href="https://www.iamtheparliament.com" target="_self">
+                                <div class="project-img mx-auto">
+                                    <img src="{{ asset('images/projects/img2.png') }}" alt="project-img2">
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 my-2">
+                            <a href="/rewaq">
+                                <div class="project-img mx-auto">
+                                    <img src="{{ asset('images/projects/img3.png') }}" alt="project-img3">
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 my-2">
+                            <a href="/medad">
+                                <div class="project-img mx-auto">
+                                    <img src="{{ asset('images/projects/img4.png') }}" alt="project-img4">
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 my-2">
+                            <a href="/etmam">
+                                <div class="project-img mx-auto">
+                                    <img src="{{ asset('images/projects/img5.png') }}" alt="project-img5">
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 my-2">
+                            <a href="/iraq/meter">
+                                <div class="project-img mx-auto">
+                                    <img src="{{ asset('images/projects/img6.png') }}" alt="project-img6">
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 my-2">
+                            <a href="/boadcast">
+                                <div class="project-img mx-auto">
+                                    <img src="{{ asset('images/projects/img7.png') }}" alt="project-img7">
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 my-2">
+                            <a href="/kon">
+                                <div class="project-img mx-auto">
+                                    <img src="{{ asset('images/projects/kun.png') }}" alt="project-img8">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                     <ul class="d-flex social-media">
                         @if (!empty($SiteData->facebook))
                             <li><a target="_balnak" href="{{ $SiteData->facebook }}"><i
@@ -647,12 +668,6 @@
                             <li>
                         @endif
                     </ul>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12 border-top text-center p-3">
-                    <p class="m-0">© {{ date('Y') }} <a
-                            href="https://www.iraqtechno.com/">{{ __('front.copyright') }}</a></p>
                 </div>
             </div>
         </div>

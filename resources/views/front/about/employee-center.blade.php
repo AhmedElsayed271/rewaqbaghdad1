@@ -71,8 +71,8 @@
     <section class="members-center bg-white">
         <div class="container my-5 mb-5 ">
             <div class="text-heading text-center">
-                <h1 class="mx-auto font-bold "> 
-                    {{ __('front.mahawir_section_title') }}              
+                <h1 class="mx-auto font-bold w-50">
+                    {{ __('front.mahawir_section_title') }}
                 </h1>
             </div>
             <div class="center-cards">
@@ -98,10 +98,8 @@
 
             <section class="ceo-speech container rounded my-5">
                 <div class="speech-info py-5 px-4 my-5">
-                    <div class="content col-md-8">
                         <h3 class="font-bold text-white">كلمة رئيس المركز :</h3>
                         <p class="text-white" style="font-size: 21px"> {!!  $headOfcenterWord->translation->content !!} </p>
-                    </div>
                     <div class="ceo-img" style="width: 280px">
                         <img src="{{ $headOfcenterWord->photo }}" alt="ceo-img" class="mx-auto rounded-30" />
                     </div>
