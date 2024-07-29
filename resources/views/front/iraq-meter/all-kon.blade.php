@@ -32,15 +32,14 @@
         }
     </style>
 
-  
-    <section class="title with-gold mt-7 mb-7">
+
+        <section class="title with-gold mt-2">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h3 class="title-sec-b">
-                        
+                <div class="col-lg-12 section-heading mx-auto">
+                    <h2 class="my-5 text-center shadow-sm mx-auto rounded-30 font-bold p-3">
                         <a href="#">{{ __('front.kon_training') }}</a>
-                    </h3>
+                    </h2>
                 </div>
             </div>
         </div>
@@ -48,8 +47,8 @@
 
     <section class="activies-sec">
         <div class="container">
-    
-            <div class="row justify-content-center align-items-center">
+
+            <div class="row justify-content-center align-items-start">
                 @foreach ($konTrainings as $training)
                     <div class="col-md-3 book">
                         <a href="{{ route('kon.trainingDetails', $training->slug) }}">
@@ -62,7 +61,7 @@
                             </small>
                             <strong class="pt-1 pb-1 d-block">{{ $training->translation->title }}</strong>
                             <p>{{ $training->translation->description }}</p>
-                     
+
                         </a>
 
                     </div>

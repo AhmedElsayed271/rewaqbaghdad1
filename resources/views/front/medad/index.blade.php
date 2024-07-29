@@ -112,7 +112,7 @@
                         <p>
                           {!! $medadInfo->translation->content !!}
                         </p>
-    
+
                     </div>
                     <div class="col-lg-4">
                         <div class="img-box text-center border-0 rounded-30">

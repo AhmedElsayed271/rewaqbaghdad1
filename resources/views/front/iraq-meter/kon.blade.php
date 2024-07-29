@@ -144,7 +144,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 section-heading mx-auto">
-                    <h2 class="my-5 text-center shadow-sm mx-auto rounded-30 font-boldn  p-3">
+                    <h2 class="my-5 text-center shadow-sm mx-auto rounded-30 font-bold p-3">
                         <a href="{{ route('kon.allUpcommingTrainings') }}">{{__('front.kon_upcommingtrainings')}}</a>
                     </h2>
                 </div>
@@ -253,11 +253,10 @@
     <section class="title with-gold mt-2">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h3 class="title-sec-b">
-
-                        طلب تدريب
-                    </h3>
+                <div class="col-lg-12 section-heading mx-auto">
+                    <h2 class="my-5 text-center shadow-sm mx-auto rounded-30 font-bold p-3">
+            طلب تدريب
+                    </h2>
                 </div>
             </div>
         </div>
@@ -302,7 +301,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                <div class="col-lg-12 col-md-12 col-sm-12 form-group d-flex">
                     <button class="theme-btn btn-style-two bg-green">
                         <span class="txt">{{ __('front.btn_send') }}</span>
                     </button>

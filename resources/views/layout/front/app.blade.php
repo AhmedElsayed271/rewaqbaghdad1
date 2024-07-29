@@ -44,7 +44,7 @@
         .medad-list {
             position: absolute;
             top: 0;
-            right: 155px;
+            right: 100px;
             background: #fff;
             border-radius: 5px;
             padding-right: 10px;
@@ -383,7 +383,7 @@
                                             <li class="position-relative  medad-parent">
                                                 <a class="dropdown-item dropdown-toggle" href="/medad"
                                                     id="navbarDropdown" role="button" data-toggle="dropdown">
-                                                    {{ __('medad') }}
+                                                    مداد
                                                 </a>
                                                 <ul class="dropdown medad-list" aria-labelledby="navbarDropdown">
                                                     @foreach ($VersionsCats as $VS)
