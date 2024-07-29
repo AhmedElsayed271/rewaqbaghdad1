@@ -30,59 +30,22 @@
             justify-content: center;
             align-items: center;
         }
+
+        .btns a {
+            background-color: var(--new-color);
+            color: var(--white-color);
+            transition: .2s all linear;
+        }
+
+        .btns {
+            left: 0 !important;
+            right: 0 !important;
+        }
+        .btns a:hover {
+            background-color: var(--secondary-color);
+        }
     </style>
 
-    {{--
-    <section class="about-us-sec my-5  ">
-        <div class="container">
-            <div class="row py-3 justify-content-center align-items-center">
-                <div class="col-lg-8">
-                    <strong class="fs-2 text-end d-block mb-3 text-white">
-                        @yield('title')
-                    </strong>
-                    <p>{{ $rewaq->translation->content }}</p>
-                    <div class="row justify-content-center align-items-end">
-
-                        <div class="col-lg-6">
-                            <div class="text">
-                                <figure class="admin-thumb">
-                                    <img width="27" height="27" src="{{ $rewaq->pm->pminfo->img }}" alt="LogoImage">
-                                </figure>
-                                <h4><a href="#">{{ $rewaq->pm->job_title }}: <span
-                                            class="dar-emp-namecolor text-white">{{ $rewaq->pm->name }}</span></a></h4>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6">
-                            <div class="text">
-                                <figure class="admin-thumb">
-                                    <img width="27" height="27" src="{{ $rewaq->am->aminfo->img }}" alt="LogoImage">
-                                </figure>
-                                <h4><a href="#">{{ $rewaq->am->job_title }}: <span
-                                            class="dar-emp-namecolor text-white">{{ $rewaq->am->name }}</span></a></h4>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-12">
-                            <div class="text">
-                                <figure class="admin-thumb">
-                                    <img width="27" height="27" src="{{ $rewaq->ps->psinfo->img }}" alt="LogoImage">
-                                </figure>
-                                <h4><a href="#">{{ $rewaq->ps->job_title }}: <span
-                                            class="dar-emp-namecolor text-white">{{ $rewaq->ps->name }}</span></a></h4>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="img-box text-center shadow-sm rounded-30">
-                        <img src="{{ $rewaq->img }}" alt="{{ __('front.rewaq') }}" class="border-0 w-50">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> --}}
 
     <section class="activies-sec">
         <div class="container">
@@ -93,7 +56,7 @@
             </a>
             <div class="row justify-content-center align-items-start">
                 @foreach ($books as $book)
-                    <div class="col-md-3 book">
+                    <div class="col-md-3 book position-relative my-3 border">
                         <a href="{{ langUrl('/rewaq/book/' . $book->slug) }}">
                             <div class="pb-3 pt-3">
                                 <img src="{{ $book->img }}" alt="{{ $book->translation->title }}"
@@ -104,8 +67,13 @@
                             </small>
                             <strong class="pt-1 pb-1 d-block">{{ $book->translation->title }}</strong>
                             <p>{{ $book->translation->description }}</p>
-
                         </a>
+                        <div class="btns d-flex justify-content-around align-items-center">
+                            <a href="{{ $book->index_url }}" target="_blank"
+                                class="p-2 rounded ">{{ __('front.read_more') }}</a>
+                            <a href="{{ route('rewaq.bookingBook', $book->slug) }}" target="_blank"
+                                class="p-2 rounded">{{ __('front.reserve_copy') }}</a>
+                        </div>
 
                     </div>
                 @endforeach
@@ -140,7 +108,8 @@
                     </div>
                 </div>
             </div> --}}
-            <div class="col-lg-12 mt-3 text-center m-auto justify-content-center  d-none d-xl-flex d-lg-flex d-md-flex d-sm-none d-xs-none">
+            <div
+                class="col-lg-12 mt-3 text-center m-auto justify-content-center  d-none d-xl-flex d-lg-flex d-md-flex d-sm-none d-xs-none">
                 {{ $books->links() }}
             </div>
         </div>

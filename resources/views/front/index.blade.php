@@ -54,7 +54,7 @@
 
 @section('content')
     <style>
-        .news-sction .card-body p {
+        .news-section .card-body p {
             color: var(--new-color);
             font-size: 20px !important;
         }
@@ -161,9 +161,11 @@
         <section class="center-blogs mt-10">
             <div class="container">
                 <div class="section-title text-right pb-30">
-                    <h2 class="title">{{ __('front.center_news') }}</h2>
+                    <a href="/media/center/news">
+                        <h2 class="title">{{ __('front.center_news') }}</h2>
+                    </a>
                 </div>
-                <div class="row d-flex align-items-center news-sction" data-aos="zoom-in" data-aos-duration="1000">
+                <div class="row d-flex align-items-center news-section" data-aos="zoom-in" data-aos-duration="1000">
                     <div class="col-12 ">
                         <div class="swiper-container">
                             <div class="swiper-wrapper">
@@ -182,7 +184,7 @@
                                                 <div class="card-body">
                                                     {{-- <h4 class="card-title">{{$Medianew->translation->title}}</h4> --}}
                                                     {{-- card-text --}}
-                                                    <p class="card-text py-2">{{ $Medianew->translation->description }}</p>
+                                                    <p class="py-2">{{ $Medianew->translation->description }}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -211,7 +213,7 @@
                     <div class="section-title text-right pb-30">
                         <h2 class="title">{{ $activityCategory->translation->name }}</h2>
                     </div>
-                    <div class="row d-flex align-items-center news-sction">
+                    <div class="row d-flex align-items-center news-section">
                         <div class="col-12 ">
                             <div class="swiper-container ">
                                 <div class="swiper-wrapper">
@@ -242,8 +244,8 @@
                                         </div>
                                     @endforeach
                                 </div>
-                                <div class="swiper-button-next1">   <i class="fa-solid fa-chevron-right"></i></i></div>
-                                <div class="swiper-button-prev1">   <i class="fa-solid fa-chevron-left"></i></div>
+                                <div class="swiper-button-next1"> <i class="fa-solid fa-chevron-right"></i></i></div>
+                                <div class="swiper-button-prev1"> <i class="fa-solid fa-chevron-left"></i></div>
                             </div>
 
                         </div>
@@ -263,56 +265,56 @@
             <div class="col-md-3 my-2">
                 <a href="/magazine">
                     <div class="project-img mx-auto">
-                        <img src="{{asset('images/projects/alrewaq.png')}}" alt="project-img1">
+                        <img src="{{ asset('images/projects/alrewaq.png') }}" alt="project-img1">
                     </div>
                 </a>
             </div>
             <div class="col-md-3 my-2">
                 <a href="https://www.iamtheparliament.com" target="_self">
                     <div class="project-img mx-auto">
-                        <img src="{{asset('images/projects/img2.png')}}" alt="project-img2">
+                        <img src="{{ asset('images/projects/img2.png') }}" alt="project-img2">
                     </div>
                 </a>
             </div>
             <div class="col-md-3 my-2">
                 <a href="/rewaq">
                     <div class="project-img mx-auto">
-                        <img src="{{asset('images/projects/img3.png')}}" alt="project-img3">
+                        <img src="{{ asset('images/projects/img3.png') }}" alt="project-img3">
                     </div>
                 </a>
             </div>
             <div class="col-md-3 my-2">
                 <a href="/medad">
                     <div class="project-img mx-auto">
-                        <img src="{{asset('images/projects/img4.png')}}" alt="project-img4">
+                        <img src="{{ asset('images/projects/img4.png') }}" alt="project-img4">
                     </div>
                 </a>
             </div>
             <div class="col-md-3 my-2">
                 <a href="/etmam">
                     <div class="project-img mx-auto">
-                        <img src="{{asset('images/projects/img5.png')}}" alt="project-img5">
+                        <img src="{{ asset('images/projects/img5.png') }}" alt="project-img5">
                     </div>
                 </a>
             </div>
             <div class="col-md-3 my-2">
                 <a href="/iraq/meter">
                     <div class="project-img mx-auto">
-                        <img src="{{asset('images/projects/img6.png')}}" alt="project-img6">
+                        <img src="{{ asset('images/projects/img6.png') }}" alt="project-img6">
                     </div>
                 </a>
             </div>
             <div class="col-md-3 my-2">
                 <a href="/boadcast">
                     <div class="project-img mx-auto">
-                        <img src="{{asset('images/projects/img7.png')}}" alt="project-img7">
+                        <img src="{{ asset('images/projects/img7.png') }}" alt="project-img7">
                     </div>
                 </a>
             </div>
             <div class="col-md-3 my-2">
                 <a href="/kon">
                     <div class="project-img mx-auto">
-                        <img src="{{asset('images/projects/kun.png')}}" alt="project-img8">
+                        <img src="{{ asset('images/projects/kun.png') }}" alt="project-img8">
                     </div>
                 </a>
             </div>

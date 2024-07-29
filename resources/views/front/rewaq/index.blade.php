@@ -67,7 +67,7 @@
             color: #fff;
         }
 
-        .prevs1 {
+        .prevs1,.nexts {
             background-color: #808080;
             width: 45px;
             height: 45px;
@@ -82,18 +82,7 @@
             left: 20px;
         }
         .nexts {
-            background-color: #808080;
-            width: 45px;
-            height: 45px;
-            z-index: 2;
-            position: absolute;
-            bottom: 50%;
-            transform: translate(0, -50%);
-            border-radius: 50%;
             right: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
         .nexts i,

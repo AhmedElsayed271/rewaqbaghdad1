@@ -233,8 +233,8 @@
                                     <div class="btns d-flex justify-content-around align-items-center">
                                         <a href="{{ $blog->pdf }}" target="_blank"
                                             class="p-2 rounded ">{{ __('front.read_more') }}</a>
-                                        <a href="#" target="_blank"
-                                            class="p-2 rounded">{{ __('front.reserve_copy') }}</a>
+                                        {{-- <a href="#" target="_blank"
+                                            class="p-2 rounded">{{ __('front.reserve_copy') }}</a> --}}
                                     </div>
                                 </div>
                             @endforeach
@@ -320,7 +320,7 @@
                             للاستماع للبودكاست
                         </a>
                         <a href="https://www.youtube.com/channel/UCd_Jrcqu00p6Yj12w4DtshA/" class="btn btn-1">
-                            الذهاب لليوتوب
+                            الذهاب لليوتيوب
                         </a>
                     </div>
                 </div>

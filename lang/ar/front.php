@@ -36,7 +36,7 @@ return [
   'all_results' => 'جميع النتائج',
 
 
-  'activities' => 'نشاطات',
+  'activities' => 'نشاطات المركز',
   'latest_activities' => 'احدث النشاطات',
   'watch_seminar' => 'لمشاهدة الندوة',
   'latest_seminars' => 'أحدث الندوات',
@@ -114,7 +114,7 @@ return [
   'kun' => 'كن',
   'iraqmeter' => 'عراق ميتر',
   'latest_news' => 'أخر الأخبار',
-  'name_version' => "اسم الصدار",
+  'name_version' => "اسم الاصدار",
   'media_center' => 'المركز الإعلامي',
   'gallery' => 'مكتبة الصور',
   'number_items' => 'عدد العناصر',
@@ -202,7 +202,7 @@ return [
   'bodcast_fakar' => 'بودكاست فكر',
   'num_copies' => 'عدد النسخ',
   'booking_your_copy' => 'احجز نسختك',
-  
+
   'personal_address'  => 'العنوان الشخصي',
   'our_vision_section_title' => "رؤية مركز رواق بغداد للسياسات العامة:",
   'our_target_section_title' => "أهداف مركز رواق بغداد للسياسات العامة:",
