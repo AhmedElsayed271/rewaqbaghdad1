@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\AuthAdmin;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Front\FaqController;
@@ -162,7 +163,7 @@ Route::get('/active/subscription', 'Admin\NewsletterController@active');
 
 // Route::get('/ourvision ', 'OurvisionController@ourvision')->name('ourvision');
 
-Route::group(['prefix' => 'filemanager', 'middleware'=>'authadmin:filemanager_show'], function () {
+Route::group(['prefix' => 'filemanager'], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
 });
 
