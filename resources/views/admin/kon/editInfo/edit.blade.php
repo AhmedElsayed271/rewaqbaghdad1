@@ -120,4 +120,7 @@
 @section('script')
 <script src="https://cdn.tiny.cloud/1/otxtjzn8hxfaiakhhweykeu54br83y2fv3wicdf7cekpllxi/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 <script src="{{ url('/admin/editor/config.js') }}"></script>
+
+
+
 @endsection
