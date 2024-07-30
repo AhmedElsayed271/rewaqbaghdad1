@@ -230,7 +230,7 @@
                                             </div>
                                         </div>
                                     </a>
-                                    <div class="btns d-flex justify-content-around align-items-center">
+                                    <div class="btns d-flex justify-content-start align-items-start">
                                         <a href="{{ $blog->pdf }}" target="_blank"
                                             class="p-2 rounded ">{{ __('front.read_more') }}</a>
                                         {{-- <a href="#" target="_blank"
