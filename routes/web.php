@@ -50,6 +50,7 @@ Route::group(['namespace' => 'Front'], function(){
 
 
     Route::get('/rewaq', 'RewaqController@index');
+    Route::get('/rewaq/videos', 'RewaqController@videos')->name('rewaq.videos');
     Route::post('/rewaq/contact', 'MailController@rewaqContactUs')->name('rewaq.contact');
     Route::get('/rewaq/book/{slug}', 'RewaqController@book');
     Route::get('/rewaq/book/tag/{tag}', 'RewaqController@Tag');
@@ -103,11 +104,15 @@ Route::group(['namespace' => 'Front'], function(){
     Route::get('/iraq-meter/all-survey', 'IraqmeterController@allsurvey')->name('iraqmeter.allsurvey');
     Route::get('/iraq/meter/tag/{tag}', 'IraqmeterController@Tag');
 
+    Route::get('/iraqmeter/booking-book/{slug}', 'IraqmeterController@reserveBook')->name('iraq.bookingBook');
+
 
    
 
     Route::get('/boadcast', 'IraqmeterController@boadcast');
     Route::get('/boadcast/details', 'IraqmeterController@boadcastDetails');
+    Route::get('/boadcast/ourepisodes', 'IraqmeterController@ourEpisodes')->name('bodcast.ourEpisodes');
+    Route::get('/boadcast/afkarfakar', 'IraqmeterController@afkarFakar')->name('bodcast.afkarFakar');
     Route::get('/boadcast/blog-details/{slug}', 'IraqmeterController@boadcastBlogDetails')->name('bodcast.blog-details');
     Route::get('/boadcast/blogs/', 'IraqmeterController@bodcastBlogs')->name('bodcast.blogs');
     Route::post('/bodcast-contactus', 'MailController@contactUsBodcast')->name('bodcast.contactus');

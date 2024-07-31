@@ -225,7 +225,7 @@
 
     {{-- videos section --}}
     <section class="my-5 videos-sec">
-        <a href="">
+        <a href="{{ route('rewaq.videos') }}">
             <div class="section-heading pb-30 text-center shadow-sm mx-auto rounded-30 my-3">
                 <h2 class="font-bold p-3">{{ __('front.videos') }}</h2>
             </div>

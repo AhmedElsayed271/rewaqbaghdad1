@@ -2,21 +2,22 @@
 
 namespace App\Http\Controllers\Front;
 
+use App\Models\konVideo;
 use App\Models\Iraqmeter;
-use Illuminate\Http\Request;
-use App\Models\IraqmeterInfoEdit;
+use App\Models\Rewaqbook;
 
-use App\Http\Controllers\Controller;
 use App\Models\AfkarFakar;
 use App\Models\BodcastBlog;
-use App\Models\BodcastInfoEdit;
-use App\Models\IraqmeterSurvey;
-use App\Models\IraqmeterTranslation;
 use App\Models\KonTraining;
-use App\Models\konVideo;
 use App\Models\KunInfoEdit;
 use App\Models\OurEpisodes;
+use Illuminate\Http\Request;
+use App\Models\BodcastInfoEdit;
+use App\Models\IraqmeterSurvey;
 use App\Models\Upcomingtraining;
+use App\Models\IraqmeterInfoEdit;
+use App\Http\Controllers\Controller;
+use App\Models\IraqmeterTranslation;
 use Illuminate\Support\Facades\Cookie;
 
 class IraqmeterController extends Controller
@@ -165,6 +166,19 @@ class IraqmeterController extends Controller
         abort(404);
     }
 
+    public function ourEpisodes()
+    {
+        $videos =  OurEpisodes::with('translation')->paginate(20);
+
+        return view('front.iraq-meter.bodcast-ourepisode',compact('videos'));
+    }
+    public function afkarFakar()
+    {
+        $videos =  AfkarFakar::with('translation')->paginate(20);
+
+        return view('front.iraq-meter.bodcast-afakarfakar',compact('videos'));
+    }
+
     public function allsurvey()
     {
         $iraqmeterSurveys = IraqmeterSurvey::select('id', 'slug', 'photo', 'created_at')->with('translation:title,description,iraqmeter_survey_id')->orderBy('id', 'DESC')->paginate(20);
@@ -183,5 +197,18 @@ class IraqmeterController extends Controller
         return view('front.iraq-meter.allUplcommingTrainings', compact('allUpcommingTrainings'));
     }
 
+    
+    public function reserveBook($slug)
+    {
+
+        $survey = IraqmeterSurvey::where('slug', $slug)->first();
+
+        if (!$survey)
+        {
+            abort(404);
+        }
+
+        return view('front.iraq-meter.bookingbook', compact('survey'));
+    }
 
 }

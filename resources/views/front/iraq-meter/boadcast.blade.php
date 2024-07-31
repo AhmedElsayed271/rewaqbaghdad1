@@ -91,7 +91,7 @@
 
     {{-- videos section --}}
     <section class="my-5 videos-sec">
-        <a href="">
+        <a href="{{ route('bodcast.ourEpisodes') }}">
             <div class="section-heading pb-30 text-center shadow-sm mx-auto rounded-30 my-3">
                 <h2 class="font-bold p-3">{{ __('front.our_episodes') }}</h2>
             </div>
@@ -145,7 +145,7 @@
     @endif
     {{-- videos section --}}
     <section class="my-5 videos-sec">
-        <a href="">
+        <a href="{{ route('bodcast.afkarFakar') }}">
             <div class="section-heading pb-30 text-center shadow-sm mx-auto rounded-30 my-3">
                 <h2 class="font-bold p-3">{{ __('front.afkar_fakar') }}</h2>
             </div>
