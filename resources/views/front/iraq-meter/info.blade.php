@@ -143,7 +143,7 @@
                                     <div class="btns d-flex justify-content-around align-items-center position-absolute ">
                                         <a href="{{ $IraqmeterSurvey->pdf }}" target="_blank" class="p-2 rounded "
                                             style="margin-left: 10px">{{ __('front.read_more') }}</a>
-                                        <a href="" target="_blank"
+                                        <a href="{{ route('iraq.bookingBook', $IraqmeterSurvey->slug) }}" target="_blank"
                                             class="p-2 rounded">{{ __('front.reserve_copy') }}</a>
                                     </div>
                                 </div>

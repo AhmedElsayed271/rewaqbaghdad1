@@ -33,7 +33,7 @@
     </style>
 
 
-        <section class="title with-gold mt-2">
+    <section class="title with-gold mt-2">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 section-heading mx-auto">
@@ -68,6 +68,10 @@
                 @endforeach
             </div>
 
+        </div>
+        <div
+            class="col-lg-12 mt-3 text-center m-auto justify-content-center  d-none d-xl-flex d-lg-flex d-md-flex d-sm-none d-xs-none">
+            {{ $konTrainings->links() }}
         </div>
     </section>
 

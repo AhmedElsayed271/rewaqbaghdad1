@@ -95,7 +95,7 @@ class RewaqController extends Controller
     }
     public function versions()
     {
-        $books = Rewaqbook::select('id', 'slug', 'img', 'created_at')->with('translation:title,description,parent_id')->orderBy('id', 'DESC')->paginate(20);
+        $books = Rewaqbook::select('id', 'slug', 'img', 'index_url', 'created_at')->with('translation:title,description,parent_id')->orderBy('id', 'DESC')->paginate(20);
         
         return view('front.rewaq.versions', compact('books'));
     }
@@ -110,5 +110,12 @@ class RewaqController extends Controller
         }
 
         return view('front.rewaq.bookingbook', compact('book'));
+    }
+
+    public function videos()
+    {
+        $videos = RewaqVideo::with('translation')->paginate(20);
+
+        return view('front.rewaq.videos',compact('videos'));
     }
 }
