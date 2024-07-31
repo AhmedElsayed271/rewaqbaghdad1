@@ -193,7 +193,7 @@ class IraqmeterController extends Controller
     {
         $allUpcommingTrainings = Upcomingtraining::select('id', 'slug', 'photo', 'created_at')
         ->with('translation:title,description,upcomingtraining_id')
-        ->orderBy('id', 'DESC')->get();
+        ->orderBy('id', 'DESC')->paginate(12);
         return view('front.iraq-meter.allUplcommingTrainings', compact('allUpcommingTrainings'));
     }
 
@@ -209,6 +209,13 @@ class IraqmeterController extends Controller
         }
 
         return view('front.iraq-meter.bookingbook', compact('survey'));
+    }
+
+    public function konVideos()
+    {
+        $videos =  konVideo::with('translation')->paginate(20);
+
+        return view('front.iraq-meter.konVideos',compact('videos'));
     }
 
 }
