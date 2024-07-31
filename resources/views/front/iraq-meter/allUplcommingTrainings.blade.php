@@ -32,37 +32,31 @@
         }
     </style>
 
-  
-    <section class="title with-gold mt-7 mb-7">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h3 class="title-sec-b">
-                        
-                        <a href="#">{{ __('front.kon_training') }}</a>
-                    </h3>
-                </div>
+        <section class="my-5 videos-sec">
+        <a href="{{ route('bodcast.blogs') }}">
+            <div class="section-heading pb-30 text-center shadow-sm mx-auto rounded-30 my-3">
+                <h2 class="font-bold p-3">{{ __('front.kon_training') }}</h2>
             </div>
-        </div>
+        </a>
     </section>
 
     <section class="activies-sec">
         <div class="container">
-    
-            <div class="row justify-content-center align-items-center">
+
+            <div class="row justify-content-center align-items-start">
                 @foreach ($allUpcommingTrainings as $allUpcommingTraining)
                     <div class="col-md-3 book">
                         <a href="{{ route('kon.upcommingTrainingDetails', $allUpcommingTraining->slug) }}">
                             <div class="pb-3 pt-3">
                                 <img src="{{ $allUpcommingTraining->photo }}" alt="{{ $allUpcommingTraining->translation->title }}"
-                                    class="border-0 rounded ">
+                                    class="border-0 rounded h-full ">
                             </div>
                             <small class="title-sec mb-1">
                                 <strong>{{ formatDate($allUpcommingTraining->created_at)  }}</strong>
                             </small>
                             <strong class="pt-1 pb-1 d-block">{{ $allUpcommingTraining->translation->title }}</strong>
                             <p>{{ $allUpcommingTraining->translation->description }}</p>
-                     
+
                         </a>
 
                     </div>
