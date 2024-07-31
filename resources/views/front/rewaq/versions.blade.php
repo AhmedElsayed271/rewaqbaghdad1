@@ -57,7 +57,7 @@
             <div class="row justify-content-center align-items-start">
                 @foreach ($books as $book)
 
-                    <div class="col-md-3 book position-relative my-3 border">
+                    <div class="col-md-3 book position-relative my-3 ">
                         <a href="{{ langUrl('/rewaq/book/' . $book->slug) }}">
                             <div class="pb-3 pt-3">
                                 <img src="{{ $book->img }}" alt="{{ $book->translation->title }}"
