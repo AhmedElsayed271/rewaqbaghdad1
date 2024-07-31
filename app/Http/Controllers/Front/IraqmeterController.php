@@ -186,7 +186,7 @@ class IraqmeterController extends Controller
     }
     public function allKon()
     {
-        $konTrainings = KonTraining::select('id', 'slug', 'photo', 'created_at')->with('translation:title,description,kon_training_id')->orderBy('id', 'DESC')->get();
+        $konTrainings = KonTraining::select('id', 'slug', 'photo', 'created_at')->with('translation:title,description,kon_training_id')->orderBy('id', 'DESC')->paginate(12);
         return view('front.iraq-meter.all-kon', compact('konTrainings'));
     }
     public function allUpcommingTrainings()
