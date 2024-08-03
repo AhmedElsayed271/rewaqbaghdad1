@@ -35,7 +35,7 @@
         <section class="my-5 videos-sec">
         <a href="{{ route('bodcast.blogs') }}">
             <div class="section-heading pb-30 text-center shadow-sm mx-auto rounded-30 my-3">
-                <h2 class="font-bold p-3">{{ __('front.kon_training') }}</h2>
+                <h2 class="font-bold p-3">{{ __('front.kon_upcommingtrainings') }}</h2>
             </div>
         </a>
     </section>
@@ -62,7 +62,10 @@
                     </div>
                 @endforeach
             </div>
-
+            <div
+            class="col-lg-12 mt-3 text-center m-auto justify-content-center  d-none d-xl-flex d-lg-flex d-md-flex d-sm-none d-xs-none">
+            {{ $allUpcommingTrainings->links() }}
+        </div>
         </div>
     </section>
 

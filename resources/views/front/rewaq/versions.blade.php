@@ -56,12 +56,7 @@
             </a>
             <div class="row justify-content-center align-items-start">
                 @foreach ($books as $book)
-<<<<<<< HEAD
                     <div class="col-md-3 book position-relative my-3">
-=======
-
-                    <div class="col-md-3 book position-relative my-3 ">
->>>>>>> e747782f194bcb268f11eef83f774cb9a37bd429
                         <a href="{{ langUrl('/rewaq/book/' . $book->slug) }}">
                             <div class="pb-3 pt-3">
                                 <img src="{{ $book->img }}" alt="{{ $book->translation->title }}"

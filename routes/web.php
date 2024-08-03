@@ -92,10 +92,13 @@ Route::group(['namespace' => 'Front'], function(){
     Route::get('/parliament', 'ParliamentController@index');
 
 
+
     Route::get('/kon-media/center/news', 'KonMediaController@news');
     Route::get('/kon-media/center/news/{slug}', 'KonMediaController@SingleNews');
     Route::get('/kon-media/center/news/tag/{tag}', 'KonMediaController@Tag');
 
+
+  
 
     Route::get('/iraq/meter', 'IraqmeterController@Info');
     Route::get('/iraq/meter/blogs', 'IraqmeterController@blogs');
@@ -122,6 +125,7 @@ Route::group(['namespace' => 'Front'], function(){
     Route::get('/kon/upcommingtrainingdetails/{slug}', 'IraqmeterController@upcommingTrainingDetails')->name('kon.upcommingTrainingDetails');
     Route::get('/kon/allUpcommingTrainings', 'IraqmeterController@allUpcommingTrainings')->name('kon.allUpcommingTrainings');
     Route::post('/kon/request-training', 'MailController@RequestTraining')->name('kon.RequestTraining');
+    Route::get('/kon/videos', 'IraqmeterController@konVideos')->name('kon.videos');
     Route::post('/iraqmeter/request-questionnaire', 'MailController@requestQuestionnaire')->name('iraqmeter.requestQuestionnaire');
 
     Route::get('/media/center/news', 'MediacenterController@news');
