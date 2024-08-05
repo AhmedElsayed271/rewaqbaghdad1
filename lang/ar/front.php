@@ -204,7 +204,7 @@ return [
   'booking_your_copy' => 'احجز نسختك',
 
   'personal_address'  => 'العنوان الشخصي',
-  'our_vision_section_title' => "رؤية مركز رواق بغداد للسياسات العامة:",
-  'our_target_section_title' => "أهداف مركز رواق بغداد للسياسات العامة:",
+  'our_vision_section_title' => " رؤيتنا",
+  'our_target_section_title' => "اهدافنا",
   'mahawir_section_title' => "مركز رواق بغداد للسياسات العامة، مركز فكري يهتم بثلاثة محاور رئيسية:",
 ];

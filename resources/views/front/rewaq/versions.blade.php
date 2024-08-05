@@ -36,8 +36,14 @@
             color: var(--white-color);
             transition: .2s all linear;
         }
-
+        .book{
+            position: relative;
+            background-color: red;
+            height: 100%;
+        }
         .btns {
+            position:absolute;
+            bottom: 0 !important;
             left: 0 !important;
             right: 0 !important;
         }
@@ -54,9 +60,9 @@
                     <h2 class="font-bold p-3">{{ __('front.versions') }}</h2>
                 </div>
             </a>
-            <div class="row justify-content-center align-items-start">
+            <div class="row justify-content-center align-items-stretch">
                 @foreach ($books as $book)
-                    <div class="col-md-3 book position-relative my-3">
+                    <div class="col-md-3 book position-relative my-3 ">
                         <a href="{{ langUrl('/rewaq/book/' . $book->slug) }}">
                             <div class="pb-3 pt-3">
                                 <img src="{{ $book->img }}" alt="{{ $book->translation->title }}"
@@ -66,9 +72,9 @@
                                 <strong>{{ formatDate($book->created_at) }}</strong>
                             </small>
                             <strong class="pt-1 pb-1 d-block">{{ $book->translation->title }}</strong>
-                            <p>{{ $book->translation->description }}</p>
+                            <p >{{ $book->translation->description }}</p>
                         </a>
-                        <div class="btns d-flex justify-content-around align-items-center">
+                        <div class="btns pos-absolute d-flex justify-content-around align-items-end">
                             <a href="{{ $book->index_url }}" target="_blank"
                                 class="p-2 rounded ">{{ __('front.read_more') }}</a>
                             <a href="{{ route('rewaq.bookingBook', $book->slug) }}" target="_blank"

@@ -6,7 +6,7 @@
 
 @section('content')
 
-<section class="breadcrumb-btns mt-5">
+<section class=" mt-5">
     <nav aria-label="breadcrumb">
         <ul class="breadcrumb">
             <li class="btn border-breadcrumb-magazine"><a href="{{ langUrl('/magazine/publish/role') }}">{{__('front.publication_rules')}}</a></li>
@@ -36,7 +36,7 @@
                 </h3>
             </div>
             <div class="col-lg-6 position-relative overflow-hidden">
-                
+
                 @for ($i = 1; $i <10; $i++)
                     @php
                         $title = "title_".$i;
@@ -50,10 +50,10 @@
                 @endfor
 
             </div>
-            
+
             <div class="col-lg-2">
             </div>
-            
+
             <div class="col-lg-4">
                 <img src="{{ $blog->img }}" alt="{{ $blog->translation->title }}">
                 <div class="title-page text-center d-block mt-4 text-gold">

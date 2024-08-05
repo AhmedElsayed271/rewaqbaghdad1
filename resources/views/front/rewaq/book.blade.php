@@ -6,7 +6,7 @@
 
 @section('content')
 
-<section class="breadcrumb-btns green-2 mt-5">
+<section class=" mt-5">
     <nav aria-label="breadcrumb">
         <ul class="breadcrumb">
           <li class="btn"><a href="{{langUrl('/rewaq/publish/role')}}">{{__('front.publish_role')}}</a></li>
@@ -54,10 +54,10 @@
                     @endif
                  </ul>
             </div>
-            
+
             <div class="col-lg-1">
             </div>
-            
+
             <div class="col-lg-4">
                 <img src="{{$book->img}}" alt="{{$book->translation->title}}">
                 <div class="title-page text-center d-block mt-4 text-green border-0">

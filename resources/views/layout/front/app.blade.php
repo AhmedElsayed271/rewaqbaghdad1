@@ -296,6 +296,29 @@
                                             </li>
                                         </ul>
                                     </li>
+                                    
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link  dropdown-toggle" href="{{ langUrl('/activities') }}"
+                                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            {{ __('front.activities') }}
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            @php
+                                                $ActivityCats = \App\Models\Activitycategory::with('translation')
+                                                    ->orderBy('sort', 'asc')
+                                                    ->get();
+                                            @endphp
+                                            {{-- <li>
+                                                <a class="dropdown-item" href="{{langUrl('/activities')}}">{{__('front.all_results')}}</a>
+                                            </li> --}}
+                                            @foreach ($ActivityCats as $AC)
+                                                <li>
+                                                    <a class="dropdown-item"
+                                                        href="{{ langUrl('/activities/category/' . $AC->slug) }}">{{ $AC->translation->name }}</a>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    </li>
                                     <li class="nav-item dropdown">
 
                                         <a class="nav-link  dropdown-toggle" href="{{ langUrl('/versions') }}"
@@ -324,28 +347,7 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link  dropdown-toggle" href="{{ langUrl('/activities') }}"
-                                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            {{ __('front.activities') }}
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            @php
-                                                $ActivityCats = \App\Models\Activitycategory::with('translation')
-                                                    ->orderBy('sort', 'asc')
-                                                    ->get();
-                                            @endphp
-                                            {{-- <li>
-                                                <a class="dropdown-item" href="{{langUrl('/activities')}}">{{__('front.all_results')}}</a>
-                                            </li> --}}
-                                            @foreach ($ActivityCats as $AC)
-                                                <li>
-                                                    <a class="dropdown-item"
-                                                        href="{{ langUrl('/activities/category/' . $AC->slug) }}">{{ $AC->translation->name }}</a>
-                                                </li>
-                                            @endforeach
-                                        </ul>
-                                    </li>
+
                                     <li class="nav-item dropdown">
 
                                         <a class="nav-link  dropdown-toggle" href="#" role="button"
