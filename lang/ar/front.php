@@ -18,7 +18,7 @@ return [
   'to_go_to_resume' => 'للذهاب للسيرة الذاتية',
   'spceial_version' => 'اصدرارت خاصة',
   'authors' => 'الكتاب',
-  'bodcast' => 'بودكاست',
+  'bodcast' => 'فكّر',
   'versions' => 'اصدارات',
   'for_more' => 'للمزيد',
 

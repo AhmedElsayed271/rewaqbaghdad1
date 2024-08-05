@@ -77,15 +77,15 @@
                         عراق ميتر
                     </strong>
                     {!! $iraqmeterInfo->translation->content !!}
-                                        <div class="col-lg-6">
+                    <div class="col-lg-6">
                         <div class="text">
                             <figure class="admin-thumb">
-                                    <img width="27" height="27" src="{{ $iraqmeterInfo->proejct_manager_img }}"
-                                        alt="admin-img">
+                                <img width="27" height="27" src="{{ $iraqmeterInfo->proejct_manager_img }}"
+                                    alt="admin-img">
                             </figure>
                             <h4>
-                                    <a href="#">مدير المشروع : <span
-                                            class=" magazine-emp-namecolor text-white">{{ $iraqmeterInfo->translation->project_manager }}</span></a>
+                                <a href="#">مدير المشروع : <span
+                                        class=" magazine-emp-namecolor text-white">{{ $iraqmeterInfo->translation->project_manager }}</span></a>
                             </h4>
                         </div>
                     </div>
@@ -234,22 +234,28 @@
                             أو يمكنكم التواصل مباشرةً معنا
                         </p>
                         <ul class="social-box">
-                            <li>
-                                <img src="{{ url('front') }}/assets/img/facebook.png" alt="">
-                                عراق ميتر
-                            </li>
-                            <li>
-                                <img src="{{ url('front') }}/assets/img/insta.png" alt="">
-                                عراق ميتر
-                            </li>
+                            <a href="https://www.facebook.com/IRAQMETER">
+                                <li>
+                                    <img src="{{ url('front') }}/assets/img/facebook.png" alt="">
+                                    عراق ميتر
+                                </li>
+                            </a>
+                            <a href="https://www.instagram.com/iraq_meter24/">
+                                <li>
+                                    <img src="{{ url('front') }}/assets/img/insta.png" alt="">
+                                    عراق ميتر
+                                </li>
+                            </a>
                             <li>
                                 <img src="{{ url('front') }}/assets/img/email.png" alt="">
                                 <a href="mailto:iraq_meter@gamil.com">iraq_meter@gamil.com</a>
                             </li>
-                            <li>
-                                <img src="{{ url('front') }}/assets/img/whatsapp.png" alt="">
-                                +964 783 577 4084
-                            </li>
+                            <a href="tel:+964 783 577 4084">
+                                <li>
+                                    <img src="{{ url('front') }}/assets/img/whatsapp.png" alt="">
+                                    +964 783 577 4084
+                                </li>
+                            </a>
                         </ul>
                     </div>
                 </div>

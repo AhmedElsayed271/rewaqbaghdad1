@@ -104,7 +104,7 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="img-box text-center border-0 rounded-30">
-                        <img src="{{ $etmamInfo->img  }}" alt="aboutImage" class=" w-50">
+                        <img src="{{ $etmamInfo->img }}" alt="aboutImage" class=" w-50">
                     </div>
                 </div>
             </div>
@@ -116,9 +116,11 @@
                 @foreach ($etmamCategories as $index => $etmamCategory)
                     <section class="mt-6 etmams{{ $index }} etmams-categories">
                         <div class="container">
-                            <div class="section-title text-right pb-30">
-                                <h2 class="title">{{ $etmamCategory->translation->name }}</h2>
-                            </div>
+                            <a href="/activities/category/{{$etmamCategory->slug}}">
+                                <div class="section-title text-right pb-30">
+                                    <h2 class="title">{{ $etmamCategory->translation->name }}</h2>
+                                </div>
+                            </a>
                             <div class="row d-flex align-items-center news-sction">
                                 <div class="col-12 ">
                                     <div class="swiper-container ">
@@ -168,7 +170,8 @@
     </div>
     <section class="contact-page-section asking asking-visit">
         <div class="container p-5">
-            <form class="row justify-content-start align-items-start" action="{{ route('etmam.requestEvent') }}" method="post">@csrf
+            <form class="row justify-content-start align-items-start" action="{{ route('etmam.requestEvent') }}"
+                method="post">@csrf
                 <div class="form-column col-lg-8 col-md-12 col-sm-12">
                     <div class="inner-column">
                         <div class="contact-form">

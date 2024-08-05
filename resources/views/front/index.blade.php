@@ -210,9 +210,11 @@
         @foreach ($activitiesCategory as $index => $activityCategory)
             <section class="mt-6 activities{{ $index }} activties-category">
                 <div class="container">
-                    <div class="section-title text-right pb-30">
-                        <h2 class="title">{{ $activityCategory->translation->name }}</h2>
-                    </div>
+                    <a href="/activities">
+                        <div class="section-title text-right pb-30">
+                            <h2 class="title">{{ $activityCategory->translation->name }}</h2>
+                        </div>
+                    </a>
                     <div class="row d-flex align-items-center news-section">
                         <div class="col-12 ">
                             <div class="swiper-container ">
@@ -259,7 +261,10 @@
     {{-- Projects Section --}}
     <section class="container">
         <div class="section-title text-right pb-30">
-            <h2 class="title">{{ __('front.project_marakaz') }}</h2>
+            <a href="/activities">
+                            <h2 class="title">{{ __('front.project_marakaz') }}</h2>
+
+            </a>
         </div>
         <div class="projects row justify-content-center align-items-center">
             <div class="col-md-3 my-2">

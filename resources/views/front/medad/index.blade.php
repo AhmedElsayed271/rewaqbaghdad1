@@ -102,34 +102,36 @@
         }
     </style>
 
-        <section class="about-us-sec my-5">
-            <div class="container">
-                <div class="iraq-meter row py-3 justify-content-center align-items-center">
-                    <div class="col-lg-8">
-                        <strong class="fs-2 d-block mb-3 text-white">
-                            {{ __('front.medad') }}
-                        </strong>
-                        <p>
-                          {!! $medadInfo->translation->content !!}
-                        </p>
+    <section class="about-us-sec my-5">
+        <div class="container">
+            <div class="iraq-meter row py-3 justify-content-center align-items-center">
+                <div class="col-lg-8">
+                    <strong class="fs-2 d-block mb-3 text-white">
+                        {{ __('front.medad') }}
+                    </strong>
+                    <p>
+                        {!! $medadInfo->translation->content !!}
+                    </p>
 
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="img-box text-center border-0 rounded-30">
-                            <img src="{{ $medadInfo->img }}" alt="aboutImage" class=" w-50">
-                        </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="img-box text-center border-0 rounded-30">
+                        <img src="{{ $medadInfo->img }}" alt="aboutImage" class=" w-50">
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
     @if (!$versioncategory->isEmpty())
         @foreach ($versioncategory as $index => $versioncategory)
             <section class="mt-6 versions{{ $index }} activties-category">
                 <div class="container">
-                    <div class="section-title text-right pb-30">
-                        <h2 class="title">{{ $versioncategory->translation->name }}</h2>
-                    </div>
+                    <a href="/versions/category/{{$versioncategory->slug}}">
+                        <div class="section-title text-right pb-30">
+                            <h2 class="title">{{ $versioncategory->translation->name }}</h2>
+                        </div>
+                    </a>
                     <div class="row d-flex align-items-center news-sction">
                         <div class="col-12 ">
                             <div class="swiper-container ">
@@ -180,7 +182,8 @@
     </section>
     <section class="contact-page-section asking asking-visit">
         <div class="container p-5">
-            <form class="row justify-content-start align-items-start" action="{{ route('medad.request.publish') }}" method="post" enctype="multipart/form-data">
+            <form class="row justify-content-start align-items-start" action="{{ route('medad.request.publish') }}"
+                method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="form-column col-lg-8 col-md-12 col-sm-12">
                     <div class="inner-column">
@@ -199,7 +202,8 @@
                                             placeholder="{{ __('front.name') }}">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                                        <label for="name"> <span class="req">*</span> {{ __('front.job_title') }}</label>
+                                        <label for="name"> <span class="req">*</span>
+                                            {{ __('front.job_title') }}</label>
                                         <input type="text" name="job_title" required value="{{ old('job_title') }}"
                                             placeholder="{{ __('front.job_title') }}">
                                     </div>
@@ -216,8 +220,11 @@
                                         <textarea name="subject_research" required placeholder="{{ __('front.subject_research') }}">{{ old('list_visitors') }}</textarea>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                        <label for="text"> <span class="req">*</span> {{__('front.request_publish')}}</label>
-                                        <input type="file" accept="application/pdf" name="request_publish[]" required value="{{old('request_publish')}}" placeholder="{{__('front.request_publish')}}">
+                                        <label for="text"> <span class="req">*</span>
+                                            {{ __('front.request_publish') }}</label>
+                                        <input type="file" accept="application/pdf" name="request_publish[]" required
+                                            value="{{ old('request_publish') }}"
+                                            placeholder="{{ __('front.request_publish') }}">
                                     </div>
                                     <div class="d-flex col-lg-12 col-md-12 col-sm-12 form-group">
                                         <button class="theme-btn btn-style-two bg-green">
