@@ -6,7 +6,7 @@
         grabCursor: true,
         centeredSlides: true,
         spaceBetween: 20,
-        slidesPerView: 'auto',
+        slidesPerView: 3,
         loop: true,
         rtl: true,
         slideShadows: false,

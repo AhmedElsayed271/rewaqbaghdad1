@@ -296,58 +296,6 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link  dropdown-toggle" href="{{ langUrl('/activities') }}"
-                                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            {{ __('front.activities') }}
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            @php
-                                                $ActivityCats = \App\Models\Activitycategory::with('translation')
-                                                    ->orderBy('sort', 'asc')
-                                                    ->get();
-                                            @endphp
-                                            {{-- <li>
-                                                <a class="dropdown-item" href="{{langUrl('/activities')}}">{{__('front.all_results')}}</a>
-                                            </li> --}}
-                                            @foreach ($ActivityCats as $AC)
-                                                <li>
-                                                    <a class="dropdown-item"
-                                                        href="{{ langUrl('/activities/category/' . $AC->slug) }}">{{ $AC->translation->name }}</a>
-                                                </li>
-                                            @endforeach
-                                        </ul>
-                                    </li>
-                                    <li class="nav-item dropdown">
-
-                                        <a class="nav-link  dropdown-toggle" href="{{ langUrl('/versions') }}"
-                                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            {{ __('front.spceial_version') }}
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            @php
-                                                $VersionsCats = \App\Models\Versioncategory::with('translation')
-                                                    ->orderBy('sort', 'asc')
-                                                    ->get();
-                                            @endphp
-                                            {{-- <li>
-                                                <a class="dropdown-item" href="{{langUrl('/versions')}}">{{__('front.all_results')}}</a>
-                                            </li> --}}
-
-                                            <li>
-                                                <a class="dropdown-item"
-                                                    href="{{ langUrl('/khetab-magazine') }}">{{ __('front.khetab_magazine') }}
-                                                </a>
-                                            </li>
-
-                                            <li>
-                                                <a class="dropdown-item"
-                                                    href="{{ langUrl('/MEJEELP-magazine') }}">MEJEELP </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-
                                     <li class="nav-item dropdown">
 
                                         <a class="nav-link  dropdown-toggle" href="#" role="button"
@@ -388,6 +336,11 @@
                                                     مداد
                                                 </a>
                                                 <ul class="dropdown medad-list" aria-labelledby="navbarDropdown">
+                                                    @php
+                                                        $VersionsCats = \App\Models\Versioncategory::with('translation')
+                                                            ->orderBy('sort', 'asc')
+                                                            ->get();
+                                                    @endphp
                                                     @foreach ($VersionsCats as $VS)
                                                         <li>
                                                             <a class="dropdown-item"
@@ -402,6 +355,54 @@
 
                                         </ul>
                                     </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link  dropdown-toggle" href="{{ langUrl('/activities') }}"
+                                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            {{ __('front.activities') }}
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            @php
+                                                $ActivityCats = \App\Models\Activitycategory::with('translation')
+                                                    ->orderBy('sort', 'asc')
+                                                    ->get();
+                                            @endphp
+                                            {{-- <li>
+                                                <a class="dropdown-item" href="{{langUrl('/activities')}}">{{__('front.all_results')}}</a>
+                                            </li> --}}
+                                            @foreach ($ActivityCats as $AC)
+                                                <li>
+                                                    <a class="dropdown-item"
+                                                        href="{{ langUrl('/activities/category/' . $AC->slug) }}">{{ $AC->translation->name }}</a>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item dropdown">
+
+                                        <a class="nav-link  dropdown-toggle" href="{{ langUrl('/versions') }}"
+                                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            {{ __('front.spceial_version') }}
+                                        </a>
+                                        <ul class="dropdown-menu">
+
+                                            {{-- <li>
+                                                <a class="dropdown-item" href="{{langUrl('/versions')}}">{{__('front.all_results')}}</a>
+                                            </li> --}}
+
+                                            <li>
+                                                <a class="dropdown-item"
+                                                    href="{{ langUrl('/khetab-magazine') }}">{{ __('front.khetab_magazine') }}
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a class="dropdown-item"
+                                                    href="{{ langUrl('/MEJEELP-magazine') }}">MEJEELP </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+
                                     <li class="nav-item dropdown">
                                         <a class="nav-link  dropdown-toggle" href="#" role="button"
                                             data-bs-toggle="dropdown" aria-expanded="false">
