@@ -136,7 +136,6 @@
             </div>
             <div class="col-lg-3 margin20">
                 <div class="form-group">
-                    @include('front.events')
                     <div class="widget_raper mt-3">
                         <p>{{ __('front.latest_versions') }}</p>
                         <div class="recent_post">
