@@ -302,39 +302,77 @@
                                             data-bs-toggle="dropdown" aria-expanded="false">
                                             {{ __('front.project_marakaz') }} </a>
                                         <ul class="dropdown-menu">
-                                            <li>
+                                            <li class="d-flex justify-between items-center">
+                                                <div class="project-img mx-auto">
+                                                    <img src="{{ asset('images/projects/img3.png') }}"
+                                                        alt="project-img1" width="38" height="38">
+                                                </div>
                                                 <a class="dropdown-item"
                                                     href="{{ langUrl('/rewaq') }}">{{ __('front.rewaq') }}</a>
                                             </li>
-                                            <li>
+                                            <li class="d-flex justify-between items-center">
+                                                <div class="project-img mx-auto">
+                                                    <img src="{{ asset('images/projects/alrewaq.png') }}"
+                                                        alt="project-img1" width="38" height="38">
+                                                </div>
                                                 <a class="dropdown-item"
                                                     href="{{ langUrl('/magazine') }}">{{ __('front.magazine') }} </a>
                                             </li>
-                                            <li>
+                                            <li class="d-flex justify-between items-center">
+                                                <div class="project-img mx-auto">
+                                                    <img src="{{ asset('images/projects/img2.png') }}"
+                                                        alt="project-img1" width="38" height="38">
+                                                </div>
                                                 <a class="dropdown-item" href="https://www.iamtheparliament.com"
                                                     target="_blank">{{ __('front.i_parliament') }}</a>
                                             </li>
-                                            <li>
+                                            <li class="d-flex justify-between items-center">
+                                                <div class="project-img mx-auto">
+                                                    <img src="{{ asset('images/projects/img6.png') }}"
+                                                        alt="project-img1" width="20" height="20">
+                                                </div>
                                                 <a class="dropdown-item"
                                                     href="{{ langUrl('/iraq/meter') }}">{{ __('front.iraqmeter') }}</a>
                                             </li>
 
 
-                                            <li>
+                                            <li class="d-flex justify-between items-center">
+                                                <div class="project-img mx-auto">
+                                                    <img src="{{ asset('images/projects/img7.png') }}"
+                                                        alt="project-img1" width="38" height="38">
+                                                </div>
                                                 <a class="dropdown-item" href="{{ langUrl('/boadcast') }}">
                                                     {{ __('front.bodcast') }}
                                                 </a>
                                             </li>
 
-                                            <li>
+                                            <li class="d-flex justify-between items-center">
+                                                <div class="project-img mx-auto">
+                                                    <img src="{{ asset('images/projects/kun.png') }}"
+                                                        alt="project-img1" width="38" height="38">
+                                                </div>
                                                 <a class="dropdown-item"
                                                     href="{{ langUrl('/kon') }}">{{ __('front.kun') }} </a>
                                             </li>
+
+
+
+
+
+
                                             <li class="position-relative  medad-parent">
-                                                <a class="dropdown-item dropdown-toggle" href="/medad"
-                                                    id="navbarDropdown" role="button" data-toggle="dropdown">
-                                                    مداد
-                                                </a>
+                                                <span class="d-flex justify-between items-center">
+                                                    <div class="project-img mx-auto">
+                                                        <img src="{{ asset('images/projects/img4.png') }}"
+                                                            alt="project-img1" width="38" height="38">
+                                                    </div>
+                                                    <a class="dropdown-item dropdown-toggle" href="/medad"
+                                                        id="navbarDropdown" role="button" data-toggle="dropdown">
+                                                        مداد
+                                                    </a>
+                                                </span>
+
+
                                                 <ul class="dropdown medad-list" aria-labelledby="navbarDropdown">
                                                     @php
                                                         $VersionsCats = \App\Models\Versioncategory::with('translation')
@@ -349,7 +387,11 @@
                                                     @endforeach
                                                 </ul>
                                             </li>
-                                            <li>
+                                            <li class="d-flex justify-between items-center">
+                                                <div class="project-img mx-auto">
+                                                    <img src="{{ asset('images/projects/img5.png') }}"
+                                                        alt="project-img1" width="38" height="38">
+                                                </div>
                                                 <a class="dropdown-item" href="/etmam">{{ __('front.etmam') }}</a>
                                             </li>
 
