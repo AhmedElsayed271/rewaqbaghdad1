@@ -2,16 +2,17 @@
 
 namespace App\Http\Controllers\Front;
 
-use App\Http\Controllers\Controller;
+use App\Models\Magazineblog;
 use Illuminate\Http\Request;
+use App\Mail\SendContactMail;
 use App\Models\KhetabMagazine;
 use App\Models\KhetabMagazineblog;
-use App\Models\KhetabMagazineblogTranslation;
 use App\Models\KhetabMagazineteam;
 use App\Models\KhetabMagazinerules;
-use Illuminate\Support\Facades\Cookie;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Mail;
-use App\Mail\SendContactMail;
+use Illuminate\Support\Facades\Cookie;
+use App\Models\KhetabMagazineblogTranslation;
 
 
 class KhetabMagazineController extends Controller
@@ -58,7 +59,7 @@ class KhetabMagazineController extends Controller
         $dec = KhetabMagazineteam::where('id', $magazine->dec_id)->select('id','img')->with('translation:name,job_title,parent_id')->first();
         $me = KhetabMagazineteam::where('id', $magazine->me_id)->select('id','img')->with('translation:name,job_title,parent_id')->first();
        
-        $blogs = KhetabMagazineblog::with('translation:title,description,parent_id')->orderBy('id', 'DESC')->paginate(10);
+        $blogs = Magazineblog::with('translation:title,description,parent_id')->orderBy('id', 'DESC')->paginate(10);
         $latestBlogs = KhetabMagazineblog::select('id','slug','img','created_at')->with('translation:title,parent_id')->orderBy('id', 'DESC')->limit(4)->get();
         $mostWatched = KhetabMagazineblog::select('id','slug','views','created_at')->with('translation:title,parent_id')->orderBy('views', 'DESC')->limit(4)->get();
         return view('front.khetab-magazine.index', compact('magazine','latestBlogs','mostWatched','blogs','cbd','ec','dec','me'));
