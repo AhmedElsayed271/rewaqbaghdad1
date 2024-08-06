@@ -20,11 +20,26 @@
             depth: 10,
             modifier: 2,
         },
+        breakpoints: {
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          }
+    },
         on: {
             resize: function () {
                 this.update();
             }
         },
+        
     });
 }
 var swiper = new Swiper(".researchers-sec .swiper-container", {
