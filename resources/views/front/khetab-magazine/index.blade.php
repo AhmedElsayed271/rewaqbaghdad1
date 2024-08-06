@@ -93,10 +93,10 @@
     <div class="container">
         <div class="row py-3 justify-content-center align-items-center">
             <div class="col-lg-8">
-                        <div class="image">
-                            <img src="" alt="">
-                        </div>
-                        <p class="py-2"></p>
+                <div class="image">
+                    <img src="" alt="">
+                </div>
+                <p class="py-2"></p>
             </div>
 
         </div>
