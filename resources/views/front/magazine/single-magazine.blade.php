@@ -20,7 +20,7 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item text-brown"><a href="{{ langUrl() }}">{{__('front.home')}}</a></li>
-            <li class="breadcrumb-item text-brown"><a href="{{ langUrl('/magazine') }}">{{__('front.magazine_archive')}}</a></li>
+            <li class="breadcrumb-item text-brown"><a href="{{ langUrl('/khetab-magazine') }}">{{__('front.magazine_archive')}}</a></li>
             <li class="breadcrumb-item text-brown active">@yield('title')</li>
         </ol>
     </nav>

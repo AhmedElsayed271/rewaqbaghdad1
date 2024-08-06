@@ -73,7 +73,7 @@ Route::group(['namespace' => 'Front'], function(){
     Route::post('/magazine/contact-us', 'MagazineController@sendMail');
 
     Route::get('/khetab-magazine', 'KhetabMagazineController@index');
-    Route::get('/khetab-magazine/blog/{slug}', 'KhetabMagazineController@SingleMagazine');
+    Route::get('/khetab-magazine/blog/{slug}', 'KhetabMagazineController@SingleMagazine')->name('khetab.magazine.blog');
     Route::get('/khetab-magazine/tag/{tag}', 'KhetabMagazineController@Tag');
     Route::get('/khetab-magazine/publish/role', 'KhetabMagazineController@PublishRole');
     Route::get('/khetab-magazine/editorial-board', 'KhetabMagazineController@EditorialBoard');
