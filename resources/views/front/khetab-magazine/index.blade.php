@@ -90,68 +90,17 @@
     </section>
 
 
-    {{-- <section class="activies-sec activies-brown">
     <div class="container">
-        <div class="row">
+        <div class="row py-3 justify-content-center align-items-center">
             <div class="col-lg-8">
-                @foreach ($blogs as $blog)
-                    <div class="row justify-content-center align-items-center">
-                        <div class="col-lg-2">
-                            <a href="{{langUrl('/khetab-magazine/blog/'.$blog->slug)}}">
-                                <div class="img-box pb-3 pt-3">
-                                <img src="{{$blog->img}}" alt="{{ $blog->translation->title }}" class="border-0">
-                            </div>
-                            </a>
+                        <div class="image">
+                            <img src="" alt="">
                         </div>
-                        <div class="col-lg-10">
-                            <a href="{{langUrl('/khetab-magazine/blog/'.$blog->slug)}}">
-                                <small class="title-sec mb-1">
-                                <strong>
-                                    {{__('front.the_number')}} {{$blog->number}}
-                                </strong>
-                            </small>
-                            <strong class="pt-1 pb-1 d-block">{{ $blog->translation->title }}</strong>
-                            <p>{{ $blog->translation->description }}</p>
-                                <img src="/front/assets/img/a.png" class="img-fluid pdf-img mb-3" alt="">
-                            </a>
-                        </div>
-                        <hr>
-                    </div>
-                @endforeach
+                        <p class="py-2"></p>
             </div>
-            <div class="col-lg-3 margin20">
-                <div class="widget_raper mt-3">
 
-                    <p class="text-green">{{__('front.new_site')}}</p>
-                    <div class="recent_post">
-                        @foreach ($latestBlogs as $latest)
-                            <a href="{{langUrl('/khetab-magazine/blog/'.$latest->slug)}}" class="single_recent_post">
-                                <span class="rp_img" style="background-image: url({{$latest->img}});"></span>
-                                <span>{{ formatDate($latest->created_at) }}</span>
-                                <h4>{{ $latest->translation->title }}</h4>
-                            </a>
-                            <hr>
-                        @endforeach
-                    </div>
-                </div>
-
-                <div class="widget_raper bg-light p-2 mt-3">
-                    <p class="text-green">{{ __('front.most_watched') }}</p>
-                    <div class="recent_post">
-                        @foreach ($mostWatched as $most)
-                            <a href="{{langUrl('/khetab-magazine/blog/'.$most->slug)}}" class="single_recent_post">
-                                <span>{{ formatDate($most->created_at) }}</span>
-                                <h4>{{ $most->translation->title }}</h4>
-                            </a>
-                            <hr>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-12 mt-3 text-center d-none d-xl-flex d-lg-flex d-md-flex d-sm-none d-xs-none">{!! $blogs->links() !!}</div>
         </div>
     </div>
-</section> --}}
 
 @endsection
 
