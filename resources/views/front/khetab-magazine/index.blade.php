@@ -90,17 +90,6 @@
     </section>
 
 
-    <div class="container">
-        <div class="row py-3 justify-content-center align-items-center">
-            <div class="col-lg-8">
-                <div class="image">
-                    <img src="" alt="">
-                </div>
-                <p class="py-2"></p>
-            </div>
-
-        </div>
-    </div>
     <section class="activies-sec">
         <div class="container">
             <a href="">
@@ -120,7 +109,7 @@
                                 <strong>{{ formatDate($blog->created_at) }}</strong>
                             </small>
                             <strong class="pt-1 pb-1 d-block">{{ $blog->translation->title }}</strong>
-                            <p >{{ $blog->translation->description }}</p>
+                            <p id="blog-description">{{ $blog->translation->description }}</p>
                         </a>
                         <div class="btns pos-absolute d-flex justify-content-around align-items-end">
                             <a href="{{ $blog->pdf }}" target="_blank"
@@ -142,4 +131,10 @@
 
 
 @section('js')
+    <script>
+        const descriptionEle = document.getElementById('blog-description');
+        const elementContent = descriptionEle.innerHTML;
+        const newEle =elementContent.split(" ")
+        console.log(newEle);
+    </script>
 @endsection

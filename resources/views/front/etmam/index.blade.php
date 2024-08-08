@@ -116,7 +116,7 @@
                 @foreach ($etmamCategories as $index => $etmamCategory)
                     <section class="mt-6 etmams{{ $index }} etmams-categories">
                         <div class="container">
-                            <a href="/activities/category/{{$etmamCategory->slug}}">
+                            <a href="/activities/category/{{ $etmamCategory->slug }}">
                                 <div class="section-title text-right pb-30">
                                     <h2 class="title">{{ $etmamCategory->translation->name }}</h2>
                                 </div>
@@ -224,6 +224,52 @@
                     </div>
                 </div>
             </form>
+        </div>
+    </section>
+    {{-- Follow-us ection --}}
+
+    <section class="vector-about">
+        <section class="my-5 videos-sec">
+            <div class="section-heading pb-30 text-center shadow-sm mx-auto rounded-30 my-3">
+                <h2 class="font-bold p-3">{{ __('front.follow_us') }}</h2>
+            </div>
+        </section>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 p-0">
+                    <img src="{{ url('front') }}/assets/img/vector-bg.png" class="img-fluid" alt="">
+                </div>
+                <div class="col-lg-6">
+                    {{-- <img src="{{ url('front') }}/assets/img" class="top-img img-fluid" alt=""> --}}
+                    <div class="content-box">
+                        <p>{{__('front.follow-us-text')}}</p>
+                        <ul class="social-box">
+                            <a href="https://www.facebook.com/profile.php?id=61558814862412">
+                                <li>
+                                    <img src="{{ url('front') }}/assets/img/facebook.png" alt="">
+                                    {{ __('front.etmam') }}
+                                </li>
+                            </a>
+                            <a href="https://www.instagram.com/itmam.iq/">
+                                <li>
+                                    <img src="{{ url('front') }}/assets/img/insta.png" alt="">
+                                    {{ __('front.etmam') }}
+                                </li>
+                            </a>
+                            {{-- <li>
+                                <img src="{{ url('front') }}/assets/img/email.png" alt="">
+                                <a href="mailto:iraq_meter@gamil.com">iraq_meter@gamil.com</a>
+                            </li>
+                            <a href="tel:+964 783 577 4084">
+                                <li>
+                                    <img src="{{ url('front') }}/assets/img/whatsapp.png" alt="">
+                                    +964 783 577 4084
+                                </li>
+                            </a> --}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 @endsection

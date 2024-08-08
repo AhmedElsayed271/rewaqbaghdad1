@@ -169,6 +169,7 @@ return [
   'center_news' => 'اخبار المركز',
   'research_and_studies' => 'بحوث ودراسات',
   'our_books' => 'كتبنا',
+  'kon' =>"كن",
   'kon_training' => 'تدريبات و ورش',
   'about_kontraining' => 'نبذه عن التدريب',
 
@@ -206,5 +207,7 @@ return [
   'personal_address'  => 'العنوان الشخصي',
   'our_vision_section_title' => " رؤيتنا",
   'our_target_section_title' => "اهدافنا",
+  'our_message' => "رسالتنا",
+  'follow-us-text'=>"ابق على تواصل معنا عبر وسائل التواصل الاجتماعي وكن أول من يعرف بأحدث تحديثاتنا وأحداثنا والمزيد.",
   'mahawir_section_title' => "مركز رواق بغداد للسياسات العامة، مركز فكري يهتم بثلاثة محاور رئيسية:",
 ];

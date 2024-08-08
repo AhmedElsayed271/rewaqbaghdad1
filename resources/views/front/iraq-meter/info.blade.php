@@ -214,13 +214,6 @@
         </div>
     </section>
 
-
-
-
-
-
-
-
     <section class="vector-about">
         <div class="container">
             <div class="row">

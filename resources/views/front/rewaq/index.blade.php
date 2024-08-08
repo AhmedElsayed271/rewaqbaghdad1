@@ -67,7 +67,8 @@
             color: #fff;
         }
 
-        .prevs1,.nexts {
+        .prevs1,
+        .nexts {
             background-color: #808080;
             width: 45px;
             height: 45px;
@@ -81,6 +82,7 @@
             border-radius: 50%;
             left: 20px;
         }
+
         .nexts {
             right: 20px;
         }
@@ -205,7 +207,7 @@
                                     <div class="btns d-flex justify-content-around align-items-center position-absolute ">
                                         <a href="{{ $book->index_url }}" target="_blank"
                                             class="p-2 rounded ">{{ __('front.read_more') }}</a>
-                                        <a href="{{ route('rewaq.bookingBook', $book->slug)}}" target="_blank"
+                                        <a href="{{ route('rewaq.bookingBook', $book->slug) }}" target="_blank"
                                             class="p-2 rounded">{{ __('front.reserve_copy') }}</a>
                                     </div>
                                 </div>
@@ -279,11 +281,9 @@
     @endif
 
     <section class="my-5 videos-sec">
-        <a href="">
-            <div class="section-heading pb-30 text-center shadow-sm mx-auto rounded-30 my-3">
-                <h2 class="font-bold p-3">{{ __('front.contact_us') }}</h2>
-            </div>
-        </a>
+        <div class="section-heading pb-30 text-center shadow-sm mx-auto rounded-30 my-3">
+            <h2 class="font-bold p-3">{{ __('front.contact_us') }}</h2>
+        </div>
     </section>
     <section class="contact-page-section asking asking-visit">
         <div class="container p-5">
@@ -301,7 +301,8 @@
                             <div id="contact-form" novalidate="novalidate">
                                 <div class="row clearfix">
                                     <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                                        <label for="name"> <span class="req">*</span> {{ __('front.name') }}</label>
+                                        <label for="name"> <span class="req">*</span>
+                                            {{ __('front.name') }}</label>
                                         <input type="text" name="name" required value="{{ old('name') }}"
                                             placeholder="{{ __('front.name') }}">
                                     </div>
@@ -334,6 +335,54 @@
         </div>
     </section>
 
+    <section class="vector-about">
+
+        <section class="my-5 videos-sec">
+            <div class="section-heading pb-30 text-center shadow-sm mx-auto rounded-30 my-3">
+                <h2 class="font-bold p-3">{{ __('front.follow_us') }}</h2>
+            </div>
+        </section>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 p-0">
+                    <img src="{{ url('front') }}/assets/img/vector-bg.png" class="img-fluid" alt="">
+                </div>
+                <div class="col-lg-6">
+                    {{-- <img src="{{ url('front') }}/assets/img" class="top-img img-fluid" alt=""> --}}
+                    <div class="content-box">
+                        <p>{{__('front.follow-us-text')}}</p>
+
+                        <ul class="social-box">
+                            <a href="https://www.facebook.com/alrewaqpublishinghouse">
+                                <li>
+                                    <img src="{{ url('front') }}/assets/img/facebook.png" alt="">
+                                    {{ __('front.rewaq') }}
+                                </li>
+                            </a>
+                            <a href="https://www.instagram.com/daralrewaqiq/">
+                                <li>
+                                    <img src="{{ url('front') }}/assets/img/insta.png" alt="">
+                                    {{ __('front.rewaq') }}
+                                </li>
+                            </a>
+                            {{-- <li>
+                                <img src="{{ url('front') }}/assets/img/email.png" alt="">
+                                <a href="mailto:iraq_meter@gamil.com">iraq_meter@gamil.com</a>
+                            </li>
+                            <a href="tel:+964 783 577 4084">
+                                <li>
+                                    <img src="{{ url('front') }}/assets/img/whatsapp.png" alt="">
+                                    +964 783 577 4084
+                                </li>
+                            </a> --}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
 
 
 
@@ -342,68 +391,68 @@
 
 
 @section('js')
-<script>
-    var swipers = new Swiper(".our-books .swiper-container", {
-        spaceBetween: 50,
-        centeredSlides: false,
-        slidesPerView: 4,
-        loop: true,
-        rtl: true,
-        keyboard: true,
-        draggable: true,
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-        navigation: {
-            nextEl: '.nexts1',
-            prevEl: '.prevs1',
-        },
-        breakpoints: {
-            640: {
-                slidesPerView: 1,
-                spaceBetween: 20,
+    <script>
+        var swipers = new Swiper(".our-books .swiper-container", {
+            spaceBetween: 50,
+            centeredSlides: false,
+            slidesPerView: 4,
+            loop: true,
+            rtl: true,
+            keyboard: true,
+            draggable: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
             },
-            768: {
-                slidesPerView: 2,
-                spaceBetween: 20,
+            navigation: {
+                nextEl: '.nexts1',
+                prevEl: '.prevs1',
             },
-            1024: {
-                slidesPerView: 2,
-                spaceBetween: 20,
+            breakpoints: {
+                640: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                1024: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                }
             }
-        }
-    });
-    var swipers = new Swiper(".our-videos .swiper-container", {
-        spaceBetween: 50,
-        centeredSlides: false,
-        slidesPerView: 4,
-        loop: true,
-        rtl: true,
-        keyboard: true,
-        draggable: true,
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-        navigation: {
-            nextEl: '.nexts',
-            prevEl: '.prevs',
-        },
-        breakpoints: {
-            640: {
-                slidesPerView: 1,
-                spaceBetween: 20,
+        });
+        var swipers = new Swiper(".our-videos .swiper-container", {
+            spaceBetween: 50,
+            centeredSlides: false,
+            slidesPerView: 4,
+            loop: true,
+            rtl: true,
+            keyboard: true,
+            draggable: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
             },
-            768: {
-                slidesPerView: 2,
-                spaceBetween: 20,
+            navigation: {
+                nextEl: '.nexts',
+                prevEl: '.prevs',
             },
-            1024: {
-                slidesPerView: 2,
-                spaceBetween: 20,
+            breakpoints: {
+                640: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                1024: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                }
             }
-        }
-    });
-</script>
+        });
+    </script>
 @endsection

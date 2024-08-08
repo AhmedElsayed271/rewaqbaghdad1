@@ -4,6 +4,7 @@
 <style>
     .vision-polciy h2,
     .vision-target h2,
+    .our_message h2,
     .vision-target ul li {
         color: var(--new-color);
     }
@@ -21,20 +22,25 @@
 
     <div class="container our-vision my-5">
         <div class="row">
-                <div class="vision-polciy">
-                    <h2 class="font-bold">{{ __("front.our_vision_section_title") }}</h2>
-                    <p class="w-75 py-2" style="font-size: 18px">{{ appLangKey() == 'ar' ? $vision->content_ar : $vision->content_en }}
-                    </p>
-                </div>
-                <div class="vision-target py-5">
-                    <h2 class="font-bold">{{ __('front.our_target_section_title') }}</h2>
-                    <ul class="py-3">
-                        @foreach ($targets as $target)
+            <div class="vision-polciy">
+                <h2 class="font-bold">{{ __('front.our_vision_section_title') }}</h2>
+                <p class="w-75 py-2" style="font-size: 18px">
+                    {{ appLangKey() == 'ar' ? $vision->content_ar : $vision->content_en }}
+                </p>
+            </div>
+            <div class="our_message">
+                <h2 class="font-bold">{{ __('front.our_message') }}</h2>
+                <p class="w-75 py-2" style="font-size: 18px">test stets tststtstt</p>
+            </div>
+            <div class="vision-target py-5">
+                <h2 class="font-bold">{{ __('front.our_target_section_title') }}</h2>
+                <ul class="py-3">
+                    @foreach ($targets as $target)
                         <li>{{ appLangKey() == 'ar' ? $target->name_ar : $target->name_en }}</li>
                         <p class="py-2">{{ appLangKey() == 'ar' ? $target->content_ar : $target->content_en }}</p>
-                        @endforeach
-                    </ul>
-                </div>
+                    @endforeach
+                </ul>
+            </div>
         </div>
     </div>
 

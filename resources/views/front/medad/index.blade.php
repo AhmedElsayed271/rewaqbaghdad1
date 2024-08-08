@@ -226,7 +226,7 @@
                                             value="{{ old('request_publish') }}"
                                             placeholder="{{ __('front.request_publish') }}">
                                     </div>
-                                    <div class="d-flex col-lg-12 col-md-12 col-sm-12 form-group">
+                                    <div class="d-flex col-lg-12 col-md-12 col-sm-12 form-group my-3">
                                         <button class="theme-btn btn-style-two bg-green">
                                             <span class="txt">{{ __('front.btn_send') }}</span>
                                         </button>
@@ -240,5 +240,5 @@
 
             </form>
         </div>
-    </section>
+
 @endsection

@@ -11,16 +11,16 @@ return [
     'targets' => 'Our Goals',
     'vision' => 'Our Vision',
     'ourvision' => 'our vision',
- 
+
     'means' => 'Our Means',
     'about_us' => 'About Us',
-    // 
+    //
     'center_members' => 'Center Members',
     'board_directors' => 'Board of Directors',
     'to_go_to_resume' => 'Resumes',
 
     'authors' => 'Authors',
-   
+
     'Head_of_the_center' => 'Speech of the Chairman of the Council',
     'versions' => 'Publications',
     'for_more' => 'For More',
@@ -48,7 +48,7 @@ return [
     'select_type_activity' => 'Select Activity Type',
     'etmam' => 'etmam',
     'the_most_recent' => 'the most recent',
-    
+
 
     'address' => 'Address',
     'email' => 'Email',
@@ -64,7 +64,7 @@ return [
     'publish_role' => 'Puplishing Rules',
     'contact_us' => 'Contact Us',
 
-    
+
     'book_guide' => 'Book Guide',
     'editorial_board' => 'The Editorial Board',
     'alert_fill_form' => 'To contact us, please fill the form below:',
@@ -102,7 +102,7 @@ return [
     'about_parliament' => "About I'm the Parliament",
     'i' => 'I am',
     'parliament' => 'Parliament',
-    
+
     'to_download_app' => 'To Download the Application',
     'application' => 'Application',
     'par_mes1' => 'To descide on a better future',
@@ -207,8 +207,10 @@ return [
     'personal_address'  => 'Personal address',
     'our_vision_section_title' => "The vision of the Rwaq Baghdad Center for Public Policy:",
     'our_target_section_title' => "Objectives of the Rwaq Baghdad Center for Public Policy:",
+    'our_message' => "Our message",
+    'follow-us-text'=>"Stay connected with us on social media and be the first to know about our latest updates, events, and more.",
     'mahawir_section_title' => "Rwaq Baghdad Center for Public Policy, an intellectual center so that the main axes can be accessed :",
     '' => '',
     '' => '',
-    
+
 ];

@@ -4559,8 +4559,8 @@ div.bg-green {
 
 .vector-about .row {
     align-items: center;
-        box-shadow: rgb(48, 147, 208) 0px 0px 66px -15px;
-        position: relative;
+    box-shadow: rgb(48 147 208 / 45%) 0px 0px 66px -15px;
+    position: relative;
 }
 
 .vector-about .content-box {
