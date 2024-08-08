@@ -36,20 +36,25 @@
             color: var(--white-color);
             transition: .2s all linear;
         }
-        .book{
+
+        .book {
             position: relative;
-            background-color: red;
+            padding-bottom: 40px;
             height: 100%;
         }
+
         .btns {
-            position:absolute;
+            position: absolute;
             bottom: 0 !important;
             left: 0 !important;
             right: 0 !important;
         }
+
         .btns a:hover {
             background-color: var(--secondary-color);
         }
+
+     
     </style>
 
 
@@ -72,7 +77,7 @@
                                 <strong>{{ formatDate($book->created_at) }}</strong>
                             </small>
                             <strong class="pt-1 pb-1 d-block">{{ $book->translation->title }}</strong>
-                            <p >{{ $book->translation->description }}</p>
+                            <p class="custom-line-clamp">{{ $book->translation->description }}</p>
                         </a>
                         <div class="btns pos-absolute d-flex justify-content-around align-items-end">
                             <a href="{{ $book->index_url }}" target="_blank"

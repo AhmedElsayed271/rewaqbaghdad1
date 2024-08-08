@@ -4758,3 +4758,11 @@ div.bg-green {
 .projects .project-img {
     width: 50%;
 }
+
+.custom-line-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}

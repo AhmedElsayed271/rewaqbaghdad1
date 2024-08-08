@@ -30,7 +30,7 @@
             </div>
             <div class="our_message">
                 <h2 class="font-bold">{{ __('front.our_message') }}</h2>
-                <p class="w-75 py-2" style="font-size: 18px">test stets tststtstt</p>
+                <p class="w-75 py-2" style="font-size: 18px"> {{ appLangKey() == 'ar' ? $ourMessage->content_ar : $ourMessage->content_en }}</p>
             </div>
             <div class="vision-target py-5">
                 <h2 class="font-bold">{{ __('front.our_target_section_title') }}</h2>

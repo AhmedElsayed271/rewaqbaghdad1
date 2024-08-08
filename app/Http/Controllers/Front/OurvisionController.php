@@ -12,9 +12,10 @@ class OurvisionController extends Controller
     public function ourvision()
     {   
         $vision = AboutData::where('type','vision')->first();
+        $ourMessage = AboutData::where('type','our_message')->first();
 
         $targets = AboutData::where('type','targets')->get();
         
-        return view('front.ourvision.ourvision', compact('vision','targets'));
+        return view('front.ourvision.ourvision', compact('vision','targets','ourMessage'));
     }
 }

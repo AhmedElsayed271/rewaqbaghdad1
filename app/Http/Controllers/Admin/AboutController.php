@@ -20,14 +20,14 @@ class AboutController extends Controller
     public function index()
     {   
 
-        $row = About::with('translations','alltargets','allvisions','allmeans')->first();
+        $row = About::with('translations','alltargets','allvisions','allmeans','ourMessage')->first();
         return view('admin.about.index', compact('row'));
     }
     
     public function update(Request $request)
     {
         
-
+     
         $validatedData = $request->validate([
             'img1' => 'required|string|max:200',
             'img2' => 'required|string|max:200',
@@ -44,6 +44,10 @@ class AboutController extends Controller
             'vision_ar' => 'required|max:255',
 
             'vision_en' => 'required|max:255',
+          
+            'message_ar' => 'required|max:255',
+
+            'message_en' => 'required|max:255',
             
             'means_ar' => 'array',
             'means_ar.*' => 'required|string|max:255',
@@ -85,6 +89,13 @@ class AboutController extends Controller
                 'content_ar' =>  $request->vision_ar,
                 'content_en' =>  $request->vision_en,
                 'type'        => 'vision',
+                'about_id'      => $id
+            ]);
+
+            AboutData::firstOrCreate(['type' => 'our_message'], [
+                'content_ar' =>  $request->message_ar,
+                'content_en' =>  $request->message_en,
+                'type'        => 'our_message',
                 'about_id'      => $id
             ]);
         

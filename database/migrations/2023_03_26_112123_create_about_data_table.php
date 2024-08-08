@@ -15,8 +15,7 @@ return new class extends Migration
     {
         Schema::create('about_data', function (Blueprint $table) {
             $table->id();
-            
-            $table->enum('type', ['targets','vision','means'])->default('targets');
+            $table->enum('type', ['targets','vision','means','our_message'])->default('targets');
             $table->string('content_ar', 255)->nullable();
             $table->string('content_en', 255)->nullable();
             $table->string('name_ar', 255)->nullable();

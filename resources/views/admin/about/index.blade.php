@@ -135,6 +135,19 @@
                     <textarea name="vision_en" required maxlength="255" class="form-control" rows="3">{{ $row->allvisions[0]->content_en ?? "" }}</textarea>
                 </div>
             </div>
+        <h1 class="text-center my-3">{{ __('global.about.our_message') }}</h1>
+ 
+            <div class="row">
+                <div class="col-md-5 mb-3">
+                    <label>{{ __('global.about.name_message') }} ({{ LangNative('ar') }}) <strong class="text-danger">*</strong></label>
+                    <textarea name="message_ar" required maxlength="255" class="form-control" rows="3">{{ $row->ourMessage[0]->content_ar ?? "" }}</textarea>
+                </div>
+                
+                <div class="col-md-5 mb-3">
+                    <label>{{ __('global.about.name_message') }} ({{ LangNative('en') }}) <strong class="text-danger">*</strong></label>
+                    <textarea name="message_en" required maxlength="255" class="form-control" rows="3">{{ $row->ourMessage[0]->content_en ?? "" }}</textarea>
+                </div>
+            </div>
         
         <h1 class="text-center my-3">{{ __('global.about.means') }}</h1>
         @foreach ($row->allmeans as $meansKey => $mean)

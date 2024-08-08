@@ -168,7 +168,8 @@ return [
 
         'vision' => 'رؤية المركز',
         'vision_name' => 'اسم الرؤية',
-
+        'our_message' => 'رسالتنا',
+        'name_message' => "اسم الرسالة",
         'means' => 'وسائل المركز',
         'means_name' => 'اسم الوسيلة',
 

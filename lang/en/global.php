@@ -170,7 +170,8 @@ return [
 
         'vision' => 'Center vision',
         'vision_name' => 'vision name',
-
+        'our_message' => 'Our Message',
+        'name_message' => "name of message",
         'means' => 'Center means',
         'means_name' => 'The name of the mean',
     ],

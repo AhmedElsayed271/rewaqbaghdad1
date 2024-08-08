@@ -28,6 +28,10 @@ class About extends Model
     {
         return $this->hasMany('App\Models\AboutData', 'about_id', 'id')->where('type','vision');
     }
+    public function ourMessage()
+    {
+        return $this->hasMany('App\Models\AboutData', 'about_id', 'id')->where('type','our_message');
+    }
     
     public function allmeans()
     {
